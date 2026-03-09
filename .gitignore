@@ -454,3 +454,6 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 .claude
+
+# DocFX generated site
+docs/_site/

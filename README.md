@@ -2,7 +2,7 @@
 
 UI component library for [Avalonia](https://avaloniaui.net/) applications.
 
-**[Live demo](https://inventing-animals.github.io/ink/)**
+**[Documentation](https://inventing-animals.github.io/ink/)** | **[Live demo](https://inventing-animals.github.io/ink/demo/)**
 
 ## Installation
 

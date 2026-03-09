@@ -57,7 +57,7 @@ jobs:
       - name: Push to NuGet
         run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
 
-  deploy-wasm-demo:
+  deploy-pages:
     needs: build-and-test
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -78,19 +78,30 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Build docs site
+        run: docfx docs/docfx.json
+
       - name: Install WASM workload
         run: dotnet workload install wasm-tools
 
       - name: Publish WASM demo
         run: dotnet publish src/Ink.Demo.Browser/Ink.Demo.Browser.csproj -c Release -o ./wasm-out
 
+      - name: Copy WASM demo into docs site
+        run: |
+          mkdir -p ./docs/_site/demo
+          cp -r ./wasm-out/wwwroot/. ./docs/_site/demo/
+
       - name: Add .nojekyll
-        run: touch ./wasm-out/wwwroot/.nojekyll
+        run: touch ./docs/_site/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./wasm-out/wwwroot
+          path: ./docs/_site
 
       - name: Deploy to GitHub Pages
         id: deployment

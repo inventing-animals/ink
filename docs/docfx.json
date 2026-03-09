@@ -1,0 +1,38 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": ["**/*.csproj"],
+          "src": "../src/Ink.UI"
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**.yml", "api/index.md"]
+      },
+      {
+        "files": ["articles/**.md", "articles/**/toc.yml", "toc.yml", "*.md"]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["images/**"]
+      }
+    ],
+    "output": "_site",
+    "globalMetadata": {
+      "_appTitle": "Ink UI",
+      "_appName": "Ink UI",
+      "_appFooter": "Ink UI - Avalonia UI component library by Inventing Animals",
+      "_enableSearch": true
+    },
+    "template": ["default", "modern"]
+  }
+}
