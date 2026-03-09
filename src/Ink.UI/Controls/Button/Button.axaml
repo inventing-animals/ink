@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <!-- Base Button style -->
+    <Style Selector="Button">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.M}" />
+        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+
+        <!-- Default attached variant so style classes are set on load -->
+        <Setter Property="(ink:ButtonAssist.Variant)" Value="Secondary" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter
+                    x:Name="PART_ContentPresenter"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    Padding="{TemplateBinding Padding}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- ================================ -->
+    <!-- Secondary (default)              -->
+    <!-- ================================ -->
+    <Style Selector="Button.ink-secondary">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Strong}" />
+    </Style>
+    <Style Selector="Button.ink-secondary:pointerover">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+    </Style>
+    <Style Selector="Button.ink-secondary:pressed">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- Primary                          -->
+    <!-- ================================ -->
+    <Style Selector="Button.ink-primary">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
+    </Style>
+    <Style Selector="Button.ink-primary:pointerover">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+    </Style>
+    <Style Selector="Button.ink-primary:pressed">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Pressed}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent.Pressed}" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- Ghost                            -->
+    <!-- ================================ -->
+    <Style Selector="Button.ink-ghost">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.ink-ghost:pointerover">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+    </Style>
+    <Style Selector="Button.ink-ghost:pressed">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- Danger                           -->
+    <!-- ================================ -->
+    <Style Selector="Button.ink-danger">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger}" />
+    </Style>
+    <Style Selector="Button.ink-danger:pointerover">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+    </Style>
+    <Style Selector="Button.ink-danger:pressed">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- Disabled (all variants)          -->
+    <!-- ================================ -->
+    <Style Selector="Button:disabled">
+        <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+</Styles>

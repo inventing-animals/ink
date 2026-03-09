@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Ink.UI.Themes.InkTheme">
+
+    <!-- Always-loaded token dictionaries -->
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Metrics.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Typography.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <!-- Light -->
+    <Style Selector=":is(Styles).Light">
+        <Style.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Light.axaml" />
+                    <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Light.axaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Style.Resources>
+    </Style>
+
+    <!-- Dark -->
+    <Style Selector=":is(Styles).Dark">
+        <Style.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Dark.axaml" />
+                    <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Dark.axaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Style.Resources>
+    </Style>
+
+    <!-- Controls -->
+    <StyleInclude Source="avares://Ink.UI/Controls/Button/Button.axaml" />
+
+</Styles>

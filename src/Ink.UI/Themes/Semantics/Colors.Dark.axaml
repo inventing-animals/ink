@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- ========================= -->
+  <!-- Surfaces                  -->
+  <!-- ========================= -->
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Canvas"
+                   Color="{DynamicResource Ink.Palette.Neutral.1}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Panel"
+                   Color="{DynamicResource Ink.Palette.Neutral.2}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Raised"
+                   Color="{DynamicResource Ink.Palette.Neutral.3}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Dialog"
+                   Color="{DynamicResource Ink.Palette.Neutral.3}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Subtle"
+                   Color="{DynamicResource Ink.Palette.Neutral.3}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger"
+                   Color="{DynamicResource Ink.Palette.Neutral.4}" />
+
+  <!-- ========================= -->
+  <!-- Content (text/icons)      -->
+  <!-- ========================= -->
+  <SolidColorBrush x:Key="Ink.Brush.Content.Primary"
+                   Color="{DynamicResource Ink.Palette.Neutral.11}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Content.Secondary"
+                   Color="{DynamicResource Ink.Palette.Neutral.8}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Content.Muted"
+                   Color="{DynamicResource Ink.Palette.Neutral.7}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Content.Inverse"
+                   Color="{DynamicResource Ink.Palette.Neutral.1}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Content.Disabled"
+                   Color="{DynamicResource Ink.Palette.Neutral.7}" />
+
+  <!-- ========================= -->
+  <!-- Borders / dividers        -->
+  <!-- ========================= -->
+  <SolidColorBrush x:Key="Ink.Brush.Border.Subtle"
+                   Color="{DynamicResource Ink.Palette.Neutral.4}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Border.Strong"
+                   Color="{DynamicResource Ink.Palette.Neutral.5}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Divider"
+                   Color="{DynamicResource Ink.Palette.Neutral.4}" />
+
+  <!-- ========================= -->
+  <!-- Accent (primary)          -->
+  <!-- ========================= -->
+  <SolidColorBrush x:Key="Ink.Brush.Accent"
+                   Color="{DynamicResource Ink.Palette.Primary.6}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Hover"
+                   Color="{DynamicResource Ink.Palette.Primary.7}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Pressed"
+                   Color="{DynamicResource Ink.Palette.Primary.7}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Subtle"
+                   Color="{DynamicResource Ink.Palette.Primary.3}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Content"
+                   Color="{DynamicResource Ink.Palette.Neutral.12}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.FocusRing"
+                   Color="{DynamicResource Ink.Palette.Primary.6}" />
+
+  <!-- ========================= -->
+  <!-- Status: Danger            -->
+  <!-- ========================= -->
+  <SolidColorBrush x:Key="Ink.Brush.Danger"
+                   Color="{DynamicResource Ink.Palette.Danger.6}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Hover"
+                   Color="{DynamicResource Ink.Palette.Danger.7}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Subtle"
+                   Color="{DynamicResource Ink.Palette.Danger.3}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Content"
+                   Color="{DynamicResource Ink.Palette.Neutral.12}" />
+
+  <!-- ========================= -->
+  <!-- Inputs                    -->
+  <!-- ========================= -->
+  <SolidColorBrush x:Key="Ink.Brush.Input.Background"
+                   Color="{DynamicResource Ink.Palette.Neutral.2}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Input.Border"
+                   Color="{DynamicResource Ink.Palette.Neutral.5}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Input.Border.Hover"
+                   Color="{DynamicResource Ink.Palette.Neutral.6}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Input.Border.Focused"
+                   Color="{DynamicResource Ink.Palette.Primary.6}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Input.Placeholder"
+                   Color="{DynamicResource Ink.Palette.Neutral.7}" />
+
+</ResourceDictionary>

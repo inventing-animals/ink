@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- ========================= -->
+  <!-- Spacing scale (px)        -->
+  <!-- ========================= -->
+  <x:Double x:Key="Ink.Space.0">0</x:Double>
+  <x:Double x:Key="Ink.Space.1">4</x:Double>
+  <x:Double x:Key="Ink.Space.2">8</x:Double>
+  <x:Double x:Key="Ink.Space.3">12</x:Double>
+  <x:Double x:Key="Ink.Space.4">16</x:Double>
+  <x:Double x:Key="Ink.Space.5">24</x:Double>
+  <x:Double x:Key="Ink.Space.6">32</x:Double>
+  <x:Double x:Key="Ink.Space.7">48</x:Double>
+
+  <!-- Common paddings -->
+  <Thickness x:Key="Ink.Padding.Control.S">8,4</Thickness>
+  <Thickness x:Key="Ink.Padding.Control.M">12,6</Thickness>
+  <Thickness x:Key="Ink.Padding.Control.L">16,8</Thickness>
+
+  <!-- ========================= -->
+  <!-- Radius scale              -->
+  <!-- ========================= -->
+  <x:Double x:Key="Ink.Radius.S">6</x:Double>
+  <x:Double x:Key="Ink.Radius.M">10</x:Double>
+  <x:Double x:Key="Ink.Radius.L">14</x:Double>
+  <x:Double x:Key="Ink.Radius.Pill">999</x:Double>
+
+  <!-- Convenient CornerRadius tokens -->
+  <CornerRadius x:Key="Ink.CornerRadius.S">6</CornerRadius>
+  <CornerRadius x:Key="Ink.CornerRadius.M">10</CornerRadius>
+  <CornerRadius x:Key="Ink.CornerRadius.L">14</CornerRadius>
+  <CornerRadius x:Key="Ink.CornerRadius.Pill">999</CornerRadius>
+
+  <!-- ========================= -->
+  <!-- Border / stroke           -->
+  <!-- ========================= -->
+  <x:Double x:Key="Ink.Stroke.Thin">1</x:Double>
+  <x:Double x:Key="Ink.Stroke.Thick">2</x:Double>
+
+  <!-- ========================= -->
+  <!-- Control sizes (heights)   -->
+  <!-- ========================= -->
+  <x:Double x:Key="Ink.ControlHeight.S">28</x:Double>
+  <x:Double x:Key="Ink.ControlHeight.M">36</x:Double>
+  <x:Double x:Key="Ink.ControlHeight.L">44</x:Double>
+
+  <!-- Icon sizes -->
+  <x:Double x:Key="Ink.IconSize.S">14</x:Double>
+  <x:Double x:Key="Ink.IconSize.M">16</x:Double>
+  <x:Double x:Key="Ink.IconSize.L">20</x:Double>
+
+</ResourceDictionary>

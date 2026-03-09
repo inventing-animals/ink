@@ -1,0 +1,8 @@
+﻿<Solution>
+  <Project Path="src/Ink.UI/Ink.UI.csproj" />
+  <Project Path="src/Ink.Demo/Ink.Demo.csproj" />
+  <Project Path="src/Ink.Demo.iOS/Ink.Demo.iOS.csproj" />
+  <Project Path="src/Ink.Demo.Desktop/Ink.Demo.Desktop.csproj" />
+  <Project Path="src/Ink.Demo.Browser/Ink.Demo.Browser.csproj" />
+  <Project Path="src/Ink.Demo.Android/Ink.Demo.Android.csproj" />
+</Solution>

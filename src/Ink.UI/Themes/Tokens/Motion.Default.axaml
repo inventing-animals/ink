@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Global switches -->
+    <x:Boolean x:Key="Ink.Motion.Enabled">True</x:Boolean>
+    <x:Double x:Key="Ink.Motion.Scale">1.0</x:Double>
+
+    <!-- Durations (ms) -->
+    <x:Int32 x:Key="Ink.Motion.Duration.ShortMs">90</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.MediumMs">150</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.LongMs">240</x:Int32>
+
+    <!-- Durations (TimeSpan) - used by Avalonia transitions -->
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Short">0:0:0.09</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Medium">0:0:0.15</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Long">0:0:0.24</x:TimeSpan>
+
+    <!-- Small extras -->
+    <x:Int32 x:Key="Ink.Motion.Stagger.SmallMs">20</x:Int32>
+    <x:TimeSpan x:Key="Ink.Motion.Stagger.Small">0:0:0.02</x:TimeSpan>
+
+    <!-- Easing names as tokens (we can map to actual easings later if needed) -->
+    <x:String x:Key="Ink.Motion.Easing.Standard">Standard</x:String>
+    <x:String x:Key="Ink.Motion.Easing.Emphasized">Emphasized</x:String>
+    <x:String x:Key="Ink.Motion.Easing.Linear">Linear</x:String>
+
+</ResourceDictionary>

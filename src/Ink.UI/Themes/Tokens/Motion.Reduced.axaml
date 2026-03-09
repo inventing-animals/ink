@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <x:Boolean x:Key="Ink.Motion.Enabled">True</x:Boolean>
+    <x:Double x:Key="Ink.Motion.Scale">0.25</x:Double>
+
+    <x:Int32 x:Key="Ink.Motion.Duration.ShortMs">40</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.MediumMs">70</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.LongMs">110</x:Int32>
+
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Short">0:0:0.04</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Medium">0:0:0.07</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Long">0:0:0.11</x:TimeSpan>
+
+    <x:Int32 x:Key="Ink.Motion.Stagger.SmallMs">10</x:Int32>
+    <x:TimeSpan x:Key="Ink.Motion.Stagger.Small">0:0:0.01</x:TimeSpan>
+
+    <x:String x:Key="Ink.Motion.Easing.Standard">Linear</x:String>
+    <x:String x:Key="Ink.Motion.Easing.Emphasized">Linear</x:String>
+    <x:String x:Key="Ink.Motion.Easing.Linear">Linear</x:String>
+
+</ResourceDictionary>
