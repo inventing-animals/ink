@@ -95,6 +95,9 @@ jobs:
           mkdir -p ./docs/_site/demo
           cp -r ./wasm-out/wwwroot/. ./docs/_site/demo/
 
+      - name: Copy 404.html to site root for GitHub Pages SPA routing
+        run: cp ./wasm-out/wwwroot/404.html ./docs/_site/404.html
+
       - name: Add .nojekyll
         run: touch ./docs/_site/.nojekyll
 
