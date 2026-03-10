@@ -1,8 +1,67 @@
 root = true
 
 [*.cs]
-dotnet_diagnostic.SA1101.severity = none
+# -- Documentation ------------------------------------------------------------
+# SA1600: Elements must be documented - we don't require XML docs on all members
+# TODO: consider enabling for public APIs once the surface area stabilises
 dotnet_diagnostic.SA1600.severity = none
+
+# SA1601: Partial elements must be documented - same as above
 dotnet_diagnostic.SA1601.severity = none
-dotnet_diagnostic.SA1028.severity = none
+
+# SA1633: File must have header - we don't use file headers
+dotnet_diagnostic.SA1633.severity = none
+
+# -- Naming -------------------------------------------------------------------
+# SA1101: Prefix local calls with 'this.' - not our style
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1309: Field names must not begin with underscore - we use _camelCase for private fields
+dotnet_diagnostic.SA1309.severity = none
+
+# -- Ordering -----------------------------------------------------------------
+# SA1200: Using directives must be placed inside namespace - we place them outside
 dotnet_diagnostic.SA1200.severity = none
+
+# SA1201: Elements must appear in the correct order - too prescriptive for now
+# TODO: consider enabling to enforce consistent member ordering
+dotnet_diagnostic.SA1201.severity = none
+
+# SA1202: Elements must be ordered by access - too prescriptive for now
+# TODO: consider enabling alongside SA1201
+dotnet_diagnostic.SA1202.severity = none
+
+# -- Formatting ---------------------------------------------------------------
+# SA1028: Code must not contain trailing whitespace - handled by editor
+dotnet_diagnostic.SA1028.severity = none
+
+# SA1134: Attributes must not share line - we allow stacked attributes on one line
+dotnet_diagnostic.SA1134.severity = none
+
+# SA1413: Use trailing comma in multi-line initializers - not our style
+dotnet_diagnostic.SA1413.severity = none
+
+# SA1516: Elements must be separated by blank line - too strict for small members
+dotnet_diagnostic.SA1516.severity = none
+
+# -- Braces -------------------------------------------------------------------
+# SA1503: Braces must not be omitted - we allow braceless single-line statements
+# TODO: consider enabling as a safety rule
+dotnet_diagnostic.SA1503.severity = none
+
+# SA1519: Braces must not be omitted from multi-line child statement - same as above
+# TODO: consider enabling alongside SA1503
+dotnet_diagnostic.SA1519.severity = none
+
+# -- Parameters ---------------------------------------------------------------
+# SA1111: Closing parenthesis must be on line of last parameter - not our style
+dotnet_diagnostic.SA1111.severity = none
+
+# SA1116: Split parameters must start on line after declaration - not our style
+dotnet_diagnostic.SA1116.severity = none
+
+# SA1117: Parameters must be on same line or separate lines - not our style
+dotnet_diagnostic.SA1117.severity = none
+
+# SA1118: Parameter must not span multiple lines - too restrictive for LINQ/lambdas
+dotnet_diagnostic.SA1118.severity = none

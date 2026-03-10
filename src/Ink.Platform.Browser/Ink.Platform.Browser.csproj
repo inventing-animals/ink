@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+  <PropertyGroup>
+    <TargetFramework>net10.0-browser</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>InventingAnimals.Ink.Platform.Browser</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Inventing Animals</Authors>
+    <Company>Inventing Animals s.r.o.</Company>
+    <Description>Browser/WASM platform service implementations for Ink UI applications.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/inventing-animals/ink</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/inventing-animals/ink</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>avalonia;platform;browser;wasm;settings</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ink.Platform\Ink.Platform.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" />
+    <PackageReference Include="StyleCop.Analyzers" />
+    <PackageReference Include="Roslynator.Analyzers" />
+  </ItemGroup>
+</Project>

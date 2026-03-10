@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>InventingAnimals.Ink.Platform</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Inventing Animals</Authors>
+    <Company>Inventing Animals s.r.o.</Company>
+    <Description>Cross-platform service abstractions and default implementations for Ink UI applications.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/inventing-animals/ink</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/inventing-animals/ink</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>avalonia;platform;settings;cross-platform</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" />
+    <PackageReference Include="StyleCop.Analyzers" />
+    <PackageReference Include="Roslynator.Analyzers" />
+  </ItemGroup>
+</Project>

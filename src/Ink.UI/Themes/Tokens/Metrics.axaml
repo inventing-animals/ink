@@ -37,8 +37,8 @@
   <!-- ========================= -->
   <!-- Border / stroke           -->
   <!-- ========================= -->
-  <x:Double x:Key="Ink.Stroke.Thin">1</x:Double>
-  <x:Double x:Key="Ink.Stroke.Thick">2</x:Double>
+  <Thickness x:Key="Ink.Stroke.Thin">1</Thickness>
+  <Thickness x:Key="Ink.Stroke.Thick">2</Thickness>
 
   <!-- ========================= -->
   <!-- Control sizes (heights)   -->

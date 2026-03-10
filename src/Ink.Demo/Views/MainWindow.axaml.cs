@@ -1,8 +1,8 @@
-using Avalonia.Controls;
+using Ink.UI.Controls;
 
 namespace Ink.Demo.Views;
 
-public partial class MainWindow : Window
+public partial class MainWindow : DesktopWindow
 {
     public MainWindow()
     {

@@ -5,6 +5,14 @@
         {
           "files": ["**/*.csproj"],
           "src": "../src/Ink.UI"
+        },
+        {
+          "files": ["**/*.csproj"],
+          "src": "../src/Ink.Platform"
+        },
+        {
+          "files": ["**/*.csproj"],
+          "src": "../src/Ink.Platform.Browser"
         }
       ],
       "dest": "api",

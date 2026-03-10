@@ -1,11 +1,12 @@
+using System;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
-using System.Linq;
 using Avalonia.Markup.Xaml;
 using Ink.Demo.ViewModels;
 using Ink.Demo.Views;
+using Ink.UI.Controls;
 
 namespace Ink.Demo;
 
@@ -30,10 +31,11 @@ public partial class App : Application
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            singleViewPlatform.MainView = new MainView
-            {
-                DataContext = new MainViewModel()
-            };
+            var content = new MainView { DataContext = new MainViewModel() };
+
+            singleViewPlatform.MainView = OperatingSystem.IsBrowser()
+                ? new WebWindow { Content = content }
+                : new MobileWindow { Content = content };
         }
 
         base.OnFrameworkInitializationCompleted();
