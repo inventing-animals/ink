@@ -33,4 +33,4 @@ For a production B2B application, a platform with native URL rewriting such as [
 
 ## The Ink demo
 
-The live Ink demo is hosted on GitHub Pages with a `404.html` copy of `index.html`. It uses `InMemoryRouter` rather than `BrowserHistoryRouter` because the demo does not require the URL bar to reflect navigation state. For a real application on GitHub Pages, use `BrowserHistoryRouter` with the `404.html` workaround above.
+The live Ink demo is hosted on GitHub Pages with a `404.html` copy of `index.html` and uses `BrowserHistoryRouter`, so the URL bar reflects navigation state. The `404.html` workaround ensures that refreshing or sharing a deep link still loads the app correctly.
