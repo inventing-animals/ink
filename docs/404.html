@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Encode the original path and redirect to the demo so BrowserHistoryRouter
+        // can restore navigation state. Works for both direct deep links and browser
+        // refreshes on any GitHub Pages URL pushed by the router.
+        var target = '/ink/demo/?_p=' + encodeURIComponent(
+            window.location.pathname + window.location.search + window.location.hash
+        );
+        window.location.replace(target);
+    </script>
+</head>
+<body>
+    <p>Redirecting&hellip;</p>
+</body>
+</html>

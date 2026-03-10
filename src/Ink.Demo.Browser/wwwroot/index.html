@@ -31,6 +31,12 @@
         </h2>
     </div>
 </div>
+<script>
+    // Restore a path that was encoded by the SPA 404 redirect.
+    // Runs before the WASM module so BrowserHistoryRouter sees the correct URL.
+    var p = new URLSearchParams(window.location.search).get('_p');
+    if (p) window.history.replaceState(null, '', p);
+</script>
 <script type='module' src="./main.js"></script>
 </body>
 

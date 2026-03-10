@@ -94,7 +94,6 @@ jobs:
         run: |
           mkdir -p ./docs/_site/demo
           cp -r ./wasm-out/wwwroot/. ./docs/_site/demo/
-          cp ./docs/_site/demo/index.html ./docs/_site/demo/404.html
 
       - name: Add .nojekyll
         run: touch ./docs/_site/.nojekyll
