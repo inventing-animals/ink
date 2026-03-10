@@ -1,0 +1,92 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.PaletteView"
+             x:DataType="vm:PaletteViewModel">
+  <StackPanel Spacing="24">
+    <TextBlock Text="Palette" />
+
+    <!-- Surfaces -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="Surfaces" />
+      <WrapPanel>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Surface.Canvas}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1">
+          <TextBlock Text="Canvas" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Surface.Panel}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1">
+          <TextBlock Text="Panel" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Surface.Raised}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1">
+          <TextBlock Text="Raised" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1">
+          <TextBlock Text="Overlay" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+      </WrapPanel>
+    </StackPanel>
+
+    <!-- Accent -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="Accent" />
+      <WrapPanel>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Accent}">
+          <TextBlock Text="Accent" Foreground="{DynamicResource Ink.Brush.Accent.Content}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Accent.Hover}">
+          <TextBlock Text="Hover" Foreground="{DynamicResource Ink.Brush.Accent.Content}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Accent.Subtle}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1">
+          <TextBlock Text="Subtle" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+      </WrapPanel>
+    </StackPanel>
+
+    <!-- Danger -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="Danger" />
+      <WrapPanel>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Danger}">
+          <TextBlock Text="Danger" Foreground="{DynamicResource Ink.Brush.Danger.Content}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Danger.Hover}">
+          <TextBlock Text="Hover" Foreground="{DynamicResource Ink.Brush.Danger.Content}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Width="80" Height="48" Margin="0,0,8,8" CornerRadius="6"
+                Background="{DynamicResource Ink.Brush.Danger.Subtle}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1">
+          <TextBlock Text="Subtle" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+      </WrapPanel>
+    </StackPanel>
+
+    <!-- Content -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="Content" />
+      <StackPanel Spacing="4">
+        <TextBlock Text="Primary" Foreground="{DynamicResource Ink.Brush.Content.Primary}" />
+        <TextBlock Text="Secondary" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+        <TextBlock Text="Muted" Foreground="{DynamicResource Ink.Brush.Content.Muted}" />
+        <TextBlock Text="Disabled" Foreground="{DynamicResource Ink.Brush.Content.Disabled}" />
+      </StackPanel>
+    </StackPanel>
+
+  </StackPanel>
+</UserControl>

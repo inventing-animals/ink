@@ -11,63 +11,26 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <ScrollViewer>
-    <StackPanel Spacing="24" Margin="16">
+  <Grid ColumnDefinitions="160,*">
 
-      <!-- Greeting -->
-      <TextBlock Text="{Binding Greeting}" />
-
-      <!-- Buttons -->
-      <StackPanel Spacing="8">
-        <TextBlock Text="Buttons" />
-        <WrapPanel>
-          <Button Margin="0,0,8,8">Secondary (default)</Button>
-          <Button ink:ButtonAssist.Variant="Primary" Margin="0,0,8,8">Primary</Button>
-          <Button ink:ButtonAssist.Variant="Ghost" Margin="0,0,8,8" IsEnabled="False">Ghost (WIP)</Button>
-          <Button ink:ButtonAssist.Variant="Danger" Margin="0,0,8,8">Danger</Button>
-          <Button IsEnabled="False" Margin="0,0,8,8">Disabled</Button>
-        </WrapPanel>
+    <!-- Nav sidebar -->
+    <Border Grid.Column="0"
+            Background="{DynamicResource Ink.Brush.Surface.Panel}"
+            BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
+            BorderThickness="0,0,1,0">
+      <StackPanel Spacing="4" Margin="8">
+        <TextBlock Text="Ink UI"
+                   Margin="8,12,8,12" />
+        <Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</Button>
+        <Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</Button>
+        <Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</Button>
       </StackPanel>
+    </Border>
 
-      <!-- Router -->
-      <StackPanel Spacing="8">
-        <TextBlock Text="Router" />
+    <!-- Page content -->
+    <ScrollViewer Grid.Column="1">
+      <ContentControl Content="{Binding CurrentPage}" Margin="24" />
+    </ScrollViewer>
 
-        <!-- Current location -->
-        <StackPanel Spacing="4">
-          <TextBlock Text="{Binding CurrentPath, StringFormat='Path: {0}'}" />
-          <TextBlock Text="{Binding CurrentSegments, StringFormat='Segments: {0}'}" />
-          <TextBlock Text="{Binding CurrentQuery, StringFormat='Query: {0}'}" IsVisible="{Binding CurrentQuery, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
-          <TextBlock Text="{Binding CurrentFragment, StringFormat='Fragment: {0}'}" IsVisible="{Binding CurrentFragment, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
-        </StackPanel>
-
-        <!-- Navigate -->
-        <WrapPanel>
-          <Button Margin="0,0,8,8"
-                  Command="{Binding NavigateToCommand}" CommandParameter="/">
-            /
-          </Button>
-          <Button Margin="0,0,8,8"
-                  Command="{Binding NavigateToCommand}" CommandParameter="/reports">
-            /reports
-          </Button>
-          <Button Margin="0,0,8,8"
-                  Command="{Binding NavigateToCommand}" CommandParameter="/reports/123">
-            /reports/123
-          </Button>
-          <Button Margin="0,0,8,8"
-                  Command="{Binding NavigateToCommand}" CommandParameter="/reports/123?sort=asc&amp;page=2#summary">
-            /reports/123?sort=asc&amp;page=2#summary
-          </Button>
-        </WrapPanel>
-
-        <!-- Back / Forward -->
-        <StackPanel Orientation="Horizontal" Spacing="8">
-          <Button Command="{Binding BackCommand}">Back</Button>
-          <Button Command="{Binding ForwardCommand}">Forward</Button>
-        </StackPanel>
-      </StackPanel>
-
-    </StackPanel>
-  </ScrollViewer>
+  </Grid>
 </UserControl>

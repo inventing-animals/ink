@@ -16,5 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ink.Demo\Ink.Demo.csproj" />
+    <ProjectReference Include="..\Ink.Platform.Browser\Ink.Platform.Browser.csproj" />
   </ItemGroup>
 </Project>

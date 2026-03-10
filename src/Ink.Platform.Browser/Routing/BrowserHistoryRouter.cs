@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices.JavaScript;
+using System.Runtime.Versioning;
 using Ink.Platform.Routing;
 
 namespace Ink.Platform.Browser.Routing;
@@ -22,7 +23,7 @@ public partial class BrowserHistoryRouter : IRouter, IDisposable
         }
 
         _instance = this;
-        RegisterPopState();
+        RegisterPopState(() => _instance?.LocationChanged?.Invoke(_instance, _instance.Current));
     }
 
     /// <inheritdoc/>
@@ -57,28 +58,21 @@ public partial class BrowserHistoryRouter : IRouter, IDisposable
         _instance = null;
     }
 
-    /// <summary>Called by JS when the user navigates with browser back/forward buttons.</summary>
-    [JSExport]
-    internal static void OnPopState()
-    {
-        _instance?.LocationChanged?.Invoke(_instance, _instance.Current);
-    }
-
-    [JSImport("ink.router.getCurrentUrl")]
+    [JSImport("globalThis.ink.router.getCurrentUrl")]
     private static partial string GetCurrentUrl();
 
-    [JSImport("ink.router.pushState")]
+    [JSImport("globalThis.ink.router.pushState")]
     private static partial void PushState(string path);
 
-    [JSImport("ink.router.replaceState")]
+    [JSImport("globalThis.ink.router.replaceState")]
     private static partial void ReplaceState(string path);
 
-    [JSImport("ink.router.back")]
+    [JSImport("globalThis.ink.router.back")]
     private static partial void HistoryBack();
 
-    [JSImport("ink.router.forward")]
+    [JSImport("globalThis.ink.router.forward")]
     private static partial void HistoryForward();
 
-    [JSImport("ink.router.registerPopState")]
-    private static partial void RegisterPopState();
+    [JSImport("globalThis.ink.router.registerPopState")]
+    private static partial void RegisterPopState([JSMarshalAs<JSType.Function>] Action callback);
 }

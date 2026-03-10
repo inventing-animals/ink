@@ -1,0 +1,55 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.RouterDemoView"
+             x:DataType="vm:RouterDemoViewModel">
+  <StackPanel Spacing="24">
+    <TextBlock Text="Router" />
+
+    <!-- Current location -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="Current location" />
+      <StackPanel Spacing="4">
+        <TextBlock Text="{Binding CurrentPath, StringFormat='Path: {0}'}" />
+        <TextBlock Text="{Binding CurrentSegments, StringFormat='Segments: {0}'}" />
+        <TextBlock Text="{Binding CurrentQuery, StringFormat='Query: {0}'}"
+                   IsVisible="{Binding CurrentQuery, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+        <TextBlock Text="{Binding CurrentFragment, StringFormat='Fragment: {0}'}"
+                   IsVisible="{Binding CurrentFragment, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+      </StackPanel>
+    </StackPanel>
+
+    <!-- Navigate -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="Navigate" />
+      <WrapPanel>
+        <Button Margin="0,0,8,8"
+                Command="{Binding NavigateToCommand}" CommandParameter="/router">
+          /router
+        </Button>
+        <Button Margin="0,0,8,8"
+                Command="{Binding NavigateToCommand}" CommandParameter="/router/reports">
+          /router/reports
+        </Button>
+        <Button Margin="0,0,8,8"
+                Command="{Binding NavigateToCommand}" CommandParameter="/router/reports/123">
+          /router/reports/123
+        </Button>
+        <Button Margin="0,0,8,8"
+                Command="{Binding NavigateToCommand}" CommandParameter="/router/reports/123?sort=asc&amp;page=2#summary">
+          /router/reports/123?sort=asc&amp;page=2#summary
+        </Button>
+      </WrapPanel>
+    </StackPanel>
+
+    <!-- History -->
+    <StackPanel Spacing="8">
+      <TextBlock Text="History" />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <Button Command="{Binding BackCommand}">Back</Button>
+        <Button Command="{Binding ForwardCommand}">Forward</Button>
+      </StackPanel>
+    </StackPanel>
+
+  </StackPanel>
+</UserControl>

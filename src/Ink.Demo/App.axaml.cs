@@ -6,12 +6,19 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Ink.Demo.ViewModels;
 using Ink.Demo.Views;
+using Ink.Platform.Routing;
 using Ink.UI.Controls;
 
 namespace Ink.Demo;
 
 public partial class App : Application
 {
+    /// <summary>
+    /// Set by the platform entry point before the app starts to provide the correct <see cref="IRouter"/> implementation.
+    /// Defaults to <see cref="InMemoryRouter"/> if not set.
+    /// </summary>
+    public static Func<IRouter> RouterFactory { get; set; } = () => new InMemoryRouter("/buttons");
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -19,19 +26,21 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        var appState = new AppState(RouterFactory());
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
+            // Avoid duplicate validations from both Avalonia and the CommunityToolkit.
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(appState)
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            var content = new MainView { DataContext = new MainViewModel() };
+            var content = new MainView { DataContext = new MainViewModel(appState) };
 
             singleViewPlatform.MainView = OperatingSystem.IsBrowser()
                 ? new WebWindow { Content = content }
