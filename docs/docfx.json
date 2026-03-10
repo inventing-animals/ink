@@ -34,7 +34,7 @@
         "files": ["images/**"]
       }
     ],
-    "output": "_site",
+    "output": "_site/docs",
     "globalMetadata": {
       "_appTitle": "Ink UI",
       "_appName": "Ink UI",

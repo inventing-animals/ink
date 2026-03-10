@@ -90,13 +90,12 @@ jobs:
       - name: Publish WASM demo
         run: dotnet publish src/Ink.Demo.Browser/Ink.Demo.Browser.csproj -c Release -o ./wasm-out
 
-      - name: Copy WASM demo into docs site
+      - name: Assemble GitHub Pages site
         run: |
           mkdir -p ./docs/_site/demo
           cp -r ./wasm-out/wwwroot/. ./docs/_site/demo/
-
-      - name: Add .nojekyll
-        run: touch ./docs/_site/.nojekyll
+          cp ./docs/404.html ./docs/_site/404.html
+          touch ./docs/_site/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
