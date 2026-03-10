@@ -12,6 +12,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Ink.UI\Ink.UI.csproj" />
+    <ProjectReference Include="..\Ink.Platform\Ink.Platform.csproj" />
     </ItemGroup>
     
   <ItemGroup>

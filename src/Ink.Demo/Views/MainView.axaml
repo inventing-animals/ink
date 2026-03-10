@@ -8,17 +8,66 @@
              x:Class="Ink.Demo.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
-    
-  <StackPanel Spacing="8" Margin="16">
+
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="16">
+
+      <!-- Greeting -->
       <TextBlock Text="{Binding Greeting}" />
-      <Button>Secondary (default)</Button>
-      <Button ink:ButtonAssist.Variant="Primary">Primary</Button>
-      <Button ink:ButtonAssist.Variant="Ghost">Ghost</Button>
-      <Button ink:ButtonAssist.Variant="Danger">Danger</Button>
-      <Button IsEnabled="False">Disabled</Button>
-  </StackPanel>
+
+      <!-- Buttons -->
+      <StackPanel Spacing="8">
+        <TextBlock Text="Buttons" />
+        <WrapPanel>
+          <Button Margin="0,0,8,8">Secondary (default)</Button>
+          <Button ink:ButtonAssist.Variant="Primary" Margin="0,0,8,8">Primary</Button>
+          <Button ink:ButtonAssist.Variant="Ghost" Margin="0,0,8,8" IsEnabled="False">Ghost (WIP)</Button>
+          <Button ink:ButtonAssist.Variant="Danger" Margin="0,0,8,8">Danger</Button>
+          <Button IsEnabled="False" Margin="0,0,8,8">Disabled</Button>
+        </WrapPanel>
+      </StackPanel>
+
+      <!-- Router -->
+      <StackPanel Spacing="8">
+        <TextBlock Text="Router" />
+
+        <!-- Current location -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="{Binding CurrentPath, StringFormat='Path: {0}'}" />
+          <TextBlock Text="{Binding CurrentSegments, StringFormat='Segments: {0}'}" />
+          <TextBlock Text="{Binding CurrentQuery, StringFormat='Query: {0}'}" IsVisible="{Binding CurrentQuery, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+          <TextBlock Text="{Binding CurrentFragment, StringFormat='Fragment: {0}'}" IsVisible="{Binding CurrentFragment, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+        </StackPanel>
+
+        <!-- Navigate -->
+        <WrapPanel>
+          <Button Margin="0,0,8,8"
+                  Command="{Binding NavigateToCommand}" CommandParameter="/">
+            /
+          </Button>
+          <Button Margin="0,0,8,8"
+                  Command="{Binding NavigateToCommand}" CommandParameter="/reports">
+            /reports
+          </Button>
+          <Button Margin="0,0,8,8"
+                  Command="{Binding NavigateToCommand}" CommandParameter="/reports/123">
+            /reports/123
+          </Button>
+          <Button Margin="0,0,8,8"
+                  Command="{Binding NavigateToCommand}" CommandParameter="/reports/123?sort=asc&amp;page=2#summary">
+            /reports/123?sort=asc&amp;page=2#summary
+          </Button>
+        </WrapPanel>
+
+        <!-- Back / Forward -->
+        <StackPanel Orientation="Horizontal" Spacing="8">
+          <Button Command="{Binding BackCommand}">Back</Button>
+          <Button Command="{Binding ForwardCommand}">Forward</Button>
+        </StackPanel>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
 </UserControl>
