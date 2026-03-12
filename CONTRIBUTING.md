@@ -17,3 +17,18 @@ Ink is the foundation of [Octopus](https://inventing-animals.com/octopus), our c
 **Security is non-negotiable.** Any change that introduces a security concern will be rejected outright. If you find a security issue, please disclose it responsibly by emailing us directly rather than opening a public issue.
 
 Everything else is fair game. If you are unsure whether something fits, just ask.
+
+## Publishing a new release
+
+1. Increment the version in `src/Ink.UI/Ink.UI.csproj`:
+   ```xml
+   <Version>x.y.z</Version>
+   ```
+
+2. Commit the version bump, then tag and push:
+   ```bash
+   git tag vx.y.z
+   git push origin vx.y.z
+   ```
+
+The CI pipeline picks up the tag and publishes the NuGet package automatically.
