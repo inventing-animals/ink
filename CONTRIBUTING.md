@@ -20,10 +20,11 @@ Everything else is fair game. If you are unsure whether something fits, just ask
 
 ## Publishing a new release
 
-1. Increment the version in `src/Ink.UI/Ink.UI.csproj`:
+1. Increment the version in `Directory.Build.props` at the repo root:
    ```xml
    <Version>x.y.z</Version>
    ```
+   This applies to all published packages (`InventingAnimals.Ink`, `InventingAnimals.Ink.Platform`, `InventingAnimals.Ink.Platform.Browser`).
 
 2. Commit the version bump, then tag and push:
    ```bash
