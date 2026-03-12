@@ -22,6 +22,12 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications.
 - `LocalStorageSettingsService` — settings backed by browser `localStorage`
 - `BrowserHistoryRouter` — routing via the History API (`pushState` / `popstate`)
 
+**`InventingAnimals.Ink.Localization`** — localization (no Avalonia dependency)
+- `ILocalizationService` / `LocalizationService` — client-side string lookup backed by `ResourceManager`
+- `IApiLocalizationService` / `ApiLocalizationService` — server-side variant with explicit `CultureInfo` per call
+- `Loc` — static ambient accessor for use in ViewModels (`Loc.Get("key")`, `Loc.Plural(...)`)
+- CLDR plural rules via `PluralSelector`; trim and NativeAOT safe
+
 ## Packages
 
 | Package | Version | Description |
@@ -29,6 +35,7 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications.
 | [`InventingAnimals.Ink`](https://www.nuget.org/packages/InventingAnimals.Ink) | [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink)](https://www.nuget.org/packages/InventingAnimals.Ink) | UI components and themes |
 | [`InventingAnimals.Ink.Platform`](https://www.nuget.org/packages/InventingAnimals.Ink.Platform) | [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Platform)](https://www.nuget.org/packages/InventingAnimals.Ink.Platform) | Cross-platform service abstractions |
 | [`InventingAnimals.Ink.Platform.Browser`](https://www.nuget.org/packages/InventingAnimals.Ink.Platform.Browser) | [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Platform.Browser)](https://www.nuget.org/packages/InventingAnimals.Ink.Platform.Browser) | Browser/WASM implementations |
+| [`InventingAnimals.Ink.Localization`](https://www.nuget.org/packages/InventingAnimals.Ink.Localization) | [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Localization)](https://www.nuget.org/packages/InventingAnimals.Ink.Localization) | Localization abstractions and implementations |
 
 ## Installation
 
@@ -41,6 +48,7 @@ For platform services:
 ```
 dotnet add package InventingAnimals.Ink.Platform
 dotnet add package InventingAnimals.Ink.Platform.Browser  # WASM projects only
+dotnet add package InventingAnimals.Ink.Localization
 ```
 
 ## License
