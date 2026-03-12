@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <PackageId>InventingAnimals.Ink</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Authors>Inventing Animals</Authors>
     <Company>Inventing Animals s.r.o.</Company>
     <Description>Ink UI component library for Avalonia applications.</Description>
