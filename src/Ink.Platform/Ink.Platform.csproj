@@ -8,8 +8,7 @@
 
   <PropertyGroup>
     <PackageId>InventingAnimals.Ink.Platform</PackageId>
-    <Version>0.1.0</Version>
-    <Authors>Inventing Animals</Authors>
+<Authors>Inventing Animals</Authors>
     <Company>Inventing Animals s.r.o.</Company>
     <Description>Cross-platform service abstractions and default implementations for Ink UI applications.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

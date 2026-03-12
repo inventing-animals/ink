@@ -18,11 +18,20 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Install WASM workload
+        run: dotnet workload install wasm-tools
+
       - name: Restore
-        run: dotnet restore src/Ink.UI/Ink.UI.csproj
+        run: |
+          dotnet restore src/Ink.Platform/Ink.Platform.csproj
+          dotnet restore src/Ink.Platform.Browser/Ink.Platform.Browser.csproj
+          dotnet restore src/Ink.UI/Ink.UI.csproj
 
       - name: Build
-        run: dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
+        run: |
+          dotnet build src/Ink.Platform/Ink.Platform.csproj --no-restore -c Release
+          dotnet build src/Ink.Platform.Browser/Ink.Platform.Browser.csproj --no-restore -c Release
+          dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
 
       - name: Test
         run: |
@@ -45,14 +54,26 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Install WASM workload
+        run: dotnet workload install wasm-tools
+
       - name: Restore
-        run: dotnet restore src/Ink.UI/Ink.UI.csproj
+        run: |
+          dotnet restore src/Ink.Platform/Ink.Platform.csproj
+          dotnet restore src/Ink.Platform.Browser/Ink.Platform.Browser.csproj
+          dotnet restore src/Ink.UI/Ink.UI.csproj
 
       - name: Build
-        run: dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
+        run: |
+          dotnet build src/Ink.Platform/Ink.Platform.csproj --no-restore -c Release
+          dotnet build src/Ink.Platform.Browser/Ink.Platform.Browser.csproj --no-restore -c Release
+          dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
 
       - name: Pack
-        run: dotnet pack src/Ink.UI/Ink.UI.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
+        run: |
+          dotnet pack src/Ink.Platform/Ink.Platform.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
+          dotnet pack src/Ink.Platform.Browser/Ink.Platform.Browser.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
+          dotnet pack src/Ink.UI/Ink.UI.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
 
       - name: Push to NuGet
         run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
