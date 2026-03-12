@@ -17,6 +17,7 @@ public class ViewLocator : IDataTemplate
         [typeof(ButtonsViewModel)] = () => new ButtonsView(),
         [typeof(PaletteViewModel)] = () => new PaletteView(),
         [typeof(RouterDemoViewModel)] = () => new RouterDemoView(),
+        [typeof(WindowsDemoViewModel)] = () => new WindowsDemoView(),
     };
 
     public Control? Build(object? param)

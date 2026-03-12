@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             x:Class="Ink.Demo.Views.SecondaryWindowView"
+             x:DataType="vm:SecondaryWindowViewModel">
+  <StackPanel Spacing="16" Margin="24">
+    <TextBlock Text="Detail View" FontSize="18" FontWeight="SemiBold" />
+    <TextBlock Text="This content was opened via IWindowService."
+               Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+    <TextBlock Text="On desktop it runs in a new DesktopWindow. On mobile it appears as a bottom-sheet drawer. On web it opened as a new tab with a fresh app instance."
+               Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+               TextWrapping="Wrap" />
+    <Button ink:ButtonAssist.Variant="Secondary"
+            Command="{Binding CloseCommand}"
+            Margin="0,8,0,0">
+      Close
+    </Button>
+  </StackPanel>
+</UserControl>

@@ -2,6 +2,7 @@
 <Styles
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Ink.UI.Controls"
     x:Class="Ink.UI.Themes.InkTheme">
 
     <!-- Always-loaded token dictionaries -->
@@ -41,6 +42,12 @@
 
     <!-- Base element defaults -->
     <Style Selector="Window">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+    </Style>
+    <Style Selector="controls|WebWindow">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+    </Style>
+    <Style Selector="controls|MobileWindow">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
     </Style>
     <Style Selector="TextBlock">

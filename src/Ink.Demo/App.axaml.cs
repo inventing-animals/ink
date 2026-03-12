@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
@@ -8,6 +9,7 @@ using Ink.Demo.ViewModels;
 using Ink.Demo.Views;
 using Ink.Platform.Routing;
 using Ink.UI.Controls;
+using Ink.UI.Platform;
 
 namespace Ink.Demo;
 
@@ -19,6 +21,13 @@ public partial class App : Application
     /// </summary>
     public static Func<IRouter> RouterFactory { get; set; } = () => new InMemoryRouter("/buttons");
 
+    /// <summary>
+    /// Optionally set by the platform entry point to override the default <see cref="IWindowService"/>.
+    /// When null the app selects an appropriate default: <see cref="DesktopWindowService"/> on desktop,
+    /// <see cref="DrawerWindowService"/> on mobile/web.
+    /// </summary>
+    public static Func<IWindowService>? WindowServiceFactory { get; set; }
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -26,13 +35,13 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        var appState = new AppState(RouterFactory());
-
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit.
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
+
+            var appState = new AppState(RouterFactory(), new DesktopWindowService());
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainViewModel(appState)
@@ -40,11 +49,21 @@ public partial class App : Application
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            var content = new MainView { DataContext = new MainViewModel(appState) };
+            MainView? view = null;
+
+            // Browser: use the factory (BrowserWindowService opens a new tab).
+            // Mobile: DrawerWindowService shows a bottom-sheet overlay.
+            IWindowService windowService = OperatingSystem.IsBrowser()
+                ? (WindowServiceFactory?.Invoke()
+                    ?? new DrawerWindowService(() => view is not null ? TopLevel.GetTopLevel(view) : null))
+                : new DrawerWindowService(() => view is not null ? TopLevel.GetTopLevel(view) : null);
+
+            var appState = new AppState(RouterFactory(), windowService);
+            view = new MainView { DataContext = new MainViewModel(appState) };
 
             singleViewPlatform.MainView = OperatingSystem.IsBrowser()
-                ? new WebWindow { Content = content }
-                : new MobileWindow { Content = content };
+                ? new WebWindow   { Content = view }
+                : new MobileWindow { Content = view };
         }
 
         base.OnFrameworkInitializationCompleted();

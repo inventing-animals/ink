@@ -30,7 +30,8 @@ public partial class MainViewModel : ViewModelBase
         {
             "buttons" => new ButtonsViewModel(),
             "palette" => new PaletteViewModel(),
-            "router" => new RouterDemoViewModel(_appState.Router),
+            "router"  => new RouterDemoViewModel(_appState.Router),
+            "windows" => new WindowsDemoViewModel(_appState.Windows),
             _ => new ButtonsViewModel(),
         };
     }

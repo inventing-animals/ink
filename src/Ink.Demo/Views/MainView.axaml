@@ -24,6 +24,7 @@
         <Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</Button>
         <Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</Button>
         <Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</Button>
+        <Button Command="{Binding NavigateCommand}" CommandParameter="/windows">Windows</Button>
       </StackPanel>
     </Border>
 

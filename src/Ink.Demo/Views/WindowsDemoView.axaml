@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             x:Class="Ink.Demo.Views.WindowsDemoView"
+             x:DataType="vm:WindowsDemoViewModel">
+  <StackPanel Spacing="24">
+    <TextBlock Text="Window Service" />
+
+    <StackPanel Spacing="8">
+      <TextBlock Text="Open a secondary surface"
+                 Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+      <TextBlock Text="Desktop: new DesktopWindow  ·  Mobile: bottom-sheet drawer  ·  Web: new tab"
+                 Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                 FontSize="12" />
+      <WrapPanel Margin="0,4,0,0">
+        <Button ink:ButtonAssist.Variant="Primary"
+                Command="{Binding OpenWindowCommand}"
+                Margin="0,0,8,0">
+          Open Window
+        </Button>
+        <Border VerticalAlignment="Center"
+                Padding="8,4"
+                CornerRadius="4"
+                Background="{DynamicResource Ink.Brush.Surface.Raised}"
+                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
+                BorderThickness="1"
+                IsVisible="{Binding IsWindowOpen}">
+          <TextBlock Text="Window is open"
+                     Foreground="{DynamicResource Ink.Brush.Content.Secondary}"
+                     FontSize="12" />
+        </Border>
+      </WrapPanel>
+    </StackPanel>
+
+  </StackPanel>
+</UserControl>
