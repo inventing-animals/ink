@@ -10,6 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Metrics.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Typography.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Colors.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
@@ -36,6 +37,16 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Style.Resources>
+    </Style>
+
+    <!-- Base element defaults -->
+    <Style Selector="Window">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+    </Style>
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
     </Style>
 
     <!-- Controls -->
