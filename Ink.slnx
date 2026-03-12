@@ -1,5 +1,6 @@
 ﻿<Solution>
   <Project Path="src/Ink.UI/Ink.UI.csproj" />
+  <Project Path="src/Ink.Localization/Ink.Localization.csproj" />
   <Project Path="src/Ink.Platform/Ink.Platform.csproj" />
   <Project Path="src/Ink.Platform.Browser/Ink.Platform.Browser.csproj" />
   <Project Path="src/Ink.Demo/Ink.Demo.csproj" />
