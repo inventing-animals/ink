@@ -51,6 +51,11 @@ dotnet add package InventingAnimals.Ink.Platform.Browser  # WASM projects only
 dotnet add package InventingAnimals.Ink.Localization
 ```
 
+## Contact
+
+- Security isssues: security@inventing-animals.com
+- Talk to us at: hello@inventing-animals.com
+
 ## License
 
 MIT
