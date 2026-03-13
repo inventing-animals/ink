@@ -22,11 +22,12 @@ dotnet add package InventingAnimals.Ink.Platform.Browser
 
 ### Behaviour per platform
 
-| Platform | What opens | Content |
-|----------|-----------|---------|
-| Desktop | New `DesktopWindow` | `Func<Control>` factory |
-| Mobile | Bottom-sheet drawer via `OverlayLayer` | `Func<Control>` factory |
-| Web | New browser tab (`window.open`) | Fresh app instance at `WindowOptions.Url` |
+| Platform | `OpenAsync` | `OpenTabAsync` |
+|----------|-------------|----------------|
+| Desktop (`DesktopWindowService`) | New `DesktopWindow` | *(falls back to new window)* |
+| Desktop tabbed (`DesktopTabbedWindowService`) | New `DesktopWindow` | Tab inside the existing `DesktopTabbedWindow` |
+| Mobile (`DrawerWindowService`) | Bottom-sheet drawer | *(falls back to drawer)* |
+| Web (`BrowserWindowService`) | New browser tab | *(falls back to new tab)* |
 
 ### Design constraint: always non-modal
 
@@ -34,15 +35,16 @@ Windows are **always non-modal** by design. This is a deliberate choice driven b
 
 Rather than expose different behaviour per platform, `IWindowService` enforces the most constrained option everywhere:
 
-- `OpenAsync` returns immediately with an `IWindowHandle`
+- `OpenAsync` and `OpenTabAsync` return immediately with an `IWindowHandle`
 - The app remains fully interactive while a secondary surface is open
 - No return values, no shared state through the service itself
 
-Cross-window communication must go through an external channel — a shared backend, `BroadcastChannel` on web, or an in-process event bus on desktop/mobile. A platform-uniform abstraction for this is planned.
+Cross-window communication must go through an external channel — a shared backend, `BroadcastChannel` on web, or an in-process event bus on desktop/mobile.
 
 ### Usage
 
 ```csharp
+// Open a new window (or platform equivalent)
 var handle = await _windows.OpenAsync(
     () => new DetailView { DataContext = new DetailViewModel() },
     new WindowOptions
@@ -53,6 +55,11 @@ var handle = await _windows.OpenAsync(
         Url    = "/detail",   // used by the web platform
     });
 
+// Open as a tab when the platform supports it; falls back to OpenAsync otherwise
+var handle = await _windows.OpenTabAsync(
+    () => new DetailView { DataContext = new DetailViewModel() },
+    new WindowOptions { Title = "Detail", Url = "/detail" });
+
 // Optionally wait for the surface to be dismissed
 await handle.WaitForCloseAsync();
 
@@ -60,18 +67,39 @@ await handle.WaitForCloseAsync();
 handle.Close();
 ```
 
-### Implementations
+### Desktop tabbed window
 
-The appropriate implementation is wired up automatically in `App.axaml.cs`. To override the browser implementation, set `App.WindowServiceFactory` before the app starts:
+Use `DesktopTabbedWindow` as your main window and `DesktopTabbedWindowService` as `IWindowService` to have secondary surfaces open as tabs rather than new OS windows.
+
+**`MainWindow.axaml.cs`**
 
 ```csharp
-// Ink.Demo.Browser / Program.cs
-App.WindowServiceFactory = () => new BrowserWindowService();
+public partial class MainWindow : DesktopTabbedWindow
+{
+    public MainWindow() => InitializeComponent();
+}
 ```
+
+**`App.axaml.cs`** (desktop branch)
+
+```csharp
+var mainWindow = new MainWindow();
+var appState   = new AppState(
+    RouterFactory(),
+    new DesktopTabbedWindowService(mainWindow),
+    new ThemeService());
+
+mainWindow.MainContent = new MainView { DataContext = new MainViewModel(appState) };
+desktop.MainWindow = mainWindow;
+```
+
+When a tab is opened, the tab strip appears at the top of the window. The first entry in the strip is always the main window (non-closeable); subsequent entries are the tabs opened via `OpenTabAsync`. When all secondary tabs are closed the strip hides and the main content is restored.
 
 ### `WindowOptions.Url` on web
 
 On the web platform, `Url` is the router path the new tab navigates to. The new tab is a fully independent app instance — it will start at that path via `BrowserHistoryRouter`. If `Url` is not set, the tab opens at `/`.
+
+The URL is resolved against the app's base path automatically — see [Base URL / sub-path hosting](#base-url--sub-path-hosting) below.
 
 ---
 
@@ -149,30 +177,136 @@ location.Fragment          // "notes"
 ```csharp
 IRouter router = new InMemoryRouter("/");
 
+// Listen for navigation
 router.LocationChanged += (_, location) =>
 {
     Console.WriteLine(location.Path);
 };
 
+// Push a new history entry
 router.Navigate("/reports/123");
 router.Navigate("/reports/123?sort=asc#summary");
+
+// History traversal
 router.Back();
 router.Forward();
+
+// Replace current entry without adding to history
 router.Replace("/reports/456");
+```
+
+### Route matching
+
+Use `ILocation.Segments` to dispatch to pages or view models. The first segment is the top-level route; subsequent segments carry IDs or sub-routes.
+
+```csharp
+// Single-level routing
+private ViewModelBase Resolve(ILocation location) =>
+    location.Segments.FirstOrDefault() switch
+    {
+        "dashboard"  => new DashboardViewModel(),
+        "reports"    => new ReportsViewModel(_router),
+        "settings"   => new SettingsViewModel(),
+        _            => new DashboardViewModel(),
+    };
+
+// Multi-segment routing — e.g. /reports/123/summary
+private ViewModelBase ResolveReports(ILocation location) =>
+    (location.Segments.ElementAtOrDefault(1),
+     location.Segments.ElementAtOrDefault(2)) switch
+    {
+        (string id, "summary") => new ReportSummaryViewModel(id),
+        (string id, _)         => new ReportDetailViewModel(id),
+        _                      => new ReportListViewModel(),
+    };
+
+// Query parameters — e.g. /reports?page=2&sort=asc
+var page = int.TryParse(location.QueryParameters.GetValueOrDefault("page"), out var p) ? p : 1;
+var sort = location.QueryParameters.GetValueOrDefault("sort", "desc");
+
+// Fragment — e.g. /reports/123#notes
+var section = location.Fragment;  // "notes"
+```
+
+### Wiring the router to a view model
+
+```csharp
+public class MainViewModel
+{
+    private readonly IRouter _router;
+
+    public MainViewModel(IRouter router)
+    {
+        _router = router;
+        _router.LocationChanged += (_, location) => UpdatePage(location);
+        UpdatePage(_router.Current);
+    }
+
+    private void UpdatePage(ILocation location)
+    {
+        CurrentPage = Resolve(location);
+    }
+}
 ```
 
 ### Browser setup
 
-Register `BrowserHistoryRouter` in your DI container:
+`BrowserHistoryRouter` requires a JavaScript helper object to be present at `globalThis.ink.router` before the WASM runtime starts. Add the following to your `main.js` (the module that boots the .NET runtime):
+
+```javascript
+globalThis.ink = {
+    router: {
+        getBaseUrl:       () => document.querySelector('base')?.href ?? '',
+        getCurrentUrl:    () => window.location.href,
+        pushState:        (path) => window.history.pushState(null, '', path),
+        replaceState:     (path) => window.history.replaceState(null, '', path),
+        back:             () => window.history.back(),
+        forward:          () => window.history.forward(),
+        registerPopState: (callback) => {
+            window.addEventListener('popstate', () => callback());
+        }
+    }
+};
+```
+
+Then set the factory before the app starts:
 
 ```csharp
-services.AddSingleton<IRouter, BrowserHistoryRouter>();
+// Program.cs
+App.RouterFactory = () => new BrowserHistoryRouter();
 ```
 
-Include the JS helper in your WASM host page to wire up `popstate`:
+### Base URL / sub-path hosting
+
+When the app is served from a sub-path (e.g. `https://example.com/myapp/`), add a `<base>` element to `index.html`:
 
 ```html
-<script type="module" src="_content/InventingAnimals.Ink.Platform.Browser/router.js"></script>
+<head>
+    <base href="/myapp/" />
+    ...
+</head>
 ```
 
-Your Azure App Service needs a URL rewrite rule to serve `index.html` for all paths so that deep links and browser refreshes work correctly.
+`BrowserHistoryRouter` reads `document.baseURI` at startup via `getBaseUrl` and automatically:
+
+- **Strips** the base path from `Current` — the app always sees root-relative paths like `/reports/123`, never `/myapp/reports/123`
+- **Prepends** the base path when pushing history entries via `Navigate` or `Replace`
+
+`BrowserWindowService` also prepends the base path when opening new tabs, so `OpenAsync(..., new WindowOptions { Url = "/detail" })` correctly opens `https://example.com/myapp/detail`.
+
+With no `<base>` tag (or `href="/"`), the router behaves as if hosted at root — nothing changes.
+
+#### Setting BaseHref at publish time
+
+For the Ink demo and similar CI deployments, the base href can be injected at publish time via an MSBuild property rather than hard-coded in `index.html`:
+
+```bash
+dotnet publish src/Ink.Demo.Browser -p:BaseHref=/ink-demo/
+```
+
+`index.html` ships with `<base href="/" />` as its default. The `SetBaseHref` MSBuild target rewrites the published copy when `BaseHref` differs from `/`. No manual file editing or server-side rendering is required.
+
+See the deployment guides for platform-specific URL rewriting rules:
+- [Azure App Service](deployment/azure-app-service.md)
+- [GitHub Pages](deployment/github-pages.md)
+- [nginx](deployment/nginx.md)

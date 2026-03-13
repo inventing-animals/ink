@@ -6,11 +6,12 @@ if (!is_browser) throw new Error(`Expected to be running in a browser`);
 // Ink router helpers — must be set up before the .NET runtime starts
 globalThis.ink = {
     router: {
-        getCurrentUrl: () => window.location.href,
-        pushState: (path) => window.history.pushState(null, '', path),
-        replaceState: (path) => window.history.replaceState(null, '', path),
-        back: () => window.history.back(),
-        forward: () => window.history.forward(),
+        getBaseUrl:      () => document.querySelector('base')?.href ?? '',
+        getCurrentUrl:   () => window.location.href,
+        pushState:       (path) => window.history.pushState(null, '', path),
+        replaceState:    (path) => window.history.replaceState(null, '', path),
+        back:            () => window.history.back(),
+        forward:         () => window.history.forward(),
         registerPopState: (callback) => {
             window.addEventListener('popstate', () => callback());
         }
