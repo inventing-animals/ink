@@ -18,7 +18,12 @@
     <RepositoryUrl>https://github.com/inventing-animals/ink</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>avalonia;platform;browser;wasm;settings</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ink.Platform\Ink.Platform.csproj" />

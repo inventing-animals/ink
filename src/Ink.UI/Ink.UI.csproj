@@ -17,7 +17,12 @@
     <RepositoryUrl>https://github.com/inventing-animals/ink</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>avalonia;ui;components;design-system</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
   
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
