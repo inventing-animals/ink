@@ -3,7 +3,8 @@
              xmlns:vm="using:Ink.Demo.ViewModels"
              x:Class="Ink.Demo.Views.PaletteView"
              x:DataType="vm:PaletteViewModel">
-  <StackPanel Spacing="32">
+  <ScrollViewer>
+  <StackPanel Spacing="32" Margin="24">
     <TextBlock Text="Palette" />
 
     <!-- Surfaces -->
@@ -89,8 +90,16 @@
     </StackPanel>
 
     <!-- Named Colors -->
-    <StackPanel Spacing="16">
+    <StackPanel Spacing="24">
       <TextBlock Text="Named Colors" />
+
+      <!-- Relative (theme-aware) -->
+      <StackPanel Spacing="16">
+        <StackPanel Spacing="2">
+          <TextBlock Text="Ink.Color.*" />
+          <TextBlock Text="Theme-aware: scale inverts in dark mode so shade numbers preserve visual weight."
+                     Foreground="{DynamicResource Ink.Brush.Content.Muted}" FontSize="11" />
+        </StackPanel>
 
       <!-- Gray -->
       <StackPanel Spacing="4">
@@ -532,7 +541,460 @@
         </StackPanel>
       </StackPanel>
 
+      </StackPanel><!-- end Ink.Color.* -->
+
+      <!-- Fixed (absolute) -->
+      <StackPanel Spacing="16">
+        <StackPanel Spacing="2">
+          <TextBlock Text="Ink.Color.Fixed.*" />
+          <TextBlock Text="Absolute: always the same hex regardless of theme."
+                     Foreground="{DynamicResource Ink.Brush.Content.Muted}" FontSize="11" />
+        </StackPanel>
+
+        <!-- Gray -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Gray" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Gray.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Blue -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Blue" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Blue.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Blue.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Green -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Green" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Green.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Green.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Yellow -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Yellow" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Yellow.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Yellow.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Red -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Red" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Red.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Red.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Orange -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Orange" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Orange.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Orange.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Lime -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Lime" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Lime.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Lime.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Teal -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Teal" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Teal.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Teal.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Sky -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Sky" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Sky.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Sky.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Rose -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Rose" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Rose.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Rose.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Purple -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Purple" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+          <StackPanel Orientation="Horizontal" Spacing="3">
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.50}">
+              <TextBlock Text="50"  FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.100}">
+              <TextBlock Text="100" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.200}">
+              <TextBlock Text="200" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.300}">
+              <TextBlock Text="300" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.400}">
+              <TextBlock Text="400" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.500}">
+              <TextBlock Text="500" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.600}">
+              <TextBlock Text="600" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.700}">
+              <TextBlock Text="700" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.800}">
+              <TextBlock Text="800" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.900}">
+              <TextBlock Text="900" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground.Subtle}" />
+            </Border>
+            <Border Width="52" Height="52" CornerRadius="4" Background="{DynamicResource Ink.Color.Fixed.Purple.950}">
+              <TextBlock Text="950" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource Ink.Color.Fixed.Purple.Foreground.Subtle}" />
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+      </StackPanel><!-- end Ink.Color.Fixed.* -->
+
     </StackPanel>
 
   </StackPanel>
+  </ScrollViewer>
 </UserControl>

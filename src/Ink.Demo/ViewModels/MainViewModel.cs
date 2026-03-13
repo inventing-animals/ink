@@ -17,12 +17,19 @@ public partial class MainViewModel : ViewModelBase
     public MainViewModel(AppState appState)
     {
         _appState = appState;
+        _appState.Theme.ThemeChanged += (_, _) => OnPropertyChanged(nameof(ThemeLabel));
         _appState.Router.LocationChanged += (_, location) => UpdatePage(location);
         UpdatePage(_appState.Router.Current);
     }
 
+    public string ThemeLabel =>
+        _appState.Theme.Current == Avalonia.Styling.ThemeVariant.Dark ? "Light mode" : "Dark mode";
+
     [RelayCommand]
     private void Navigate(string path) => _appState.Router.Navigate(path);
+
+    [RelayCommand]
+    private void ToggleTheme() => _appState.Theme.Toggle();
 
     private void UpdatePage(ILocation location)
     {

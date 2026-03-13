@@ -5,7 +5,7 @@
     xmlns:controls="clr-namespace:Ink.UI.Controls"
     x:Class="Ink.UI.Themes.InkTheme">
 
-    <!-- Always-loaded token dictionaries -->
+    <!-- Token dictionaries -->
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,32 +13,24 @@
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Typography.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Colors.axaml" />
             </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Light.axaml" />
+                        <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Light.axaml" />
+                        <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Relative.Light.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Dark.axaml" />
+                        <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Dark.axaml" />
+                        <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Relative.Dark.axaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
-
-    <!-- Light -->
-    <Style Selector=":is(Styles).Light">
-        <Style.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Light.axaml" />
-                    <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Light.axaml" />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Style.Resources>
-    </Style>
-
-    <!-- Dark -->
-    <Style Selector=":is(Styles).Dark">
-        <Style.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Dark.axaml" />
-                    <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Dark.axaml" />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Style.Resources>
-    </Style>
 
     <!-- Base element defaults -->
     <Style Selector="Window">

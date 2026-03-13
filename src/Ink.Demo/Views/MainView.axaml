@@ -18,20 +18,26 @@
             Background="{DynamicResource Ink.Brush.Surface.Panel}"
             BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
             BorderThickness="0,0,1,0">
-      <StackPanel Spacing="4" Margin="8">
-        <TextBlock Text="Ink UI"
-                   Margin="8,12,8,12" />
-        <Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</Button>
-        <Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</Button>
-        <Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</Button>
-        <Button Command="{Binding NavigateCommand}" CommandParameter="/windows">Windows</Button>
-      </StackPanel>
+      <DockPanel Margin="8">
+        <!-- Theme toggle pinned to bottom -->
+        <Button DockPanel.Dock="Bottom"
+                Command="{Binding ToggleThemeCommand}"
+                Content="{Binding ThemeLabel}"
+                Margin="0,4,0,8" />
+        <!-- Nav links -->
+        <StackPanel Spacing="4">
+          <TextBlock Text="Ink UI"
+                     Margin="8,12,8,12" />
+          <Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</Button>
+          <Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</Button>
+          <Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</Button>
+          <Button Command="{Binding NavigateCommand}" CommandParameter="/windows">Windows</Button>
+        </StackPanel>
+      </DockPanel>
     </Border>
 
     <!-- Page content -->
-    <ScrollViewer Grid.Column="1">
-      <ContentControl Content="{Binding CurrentPage}" Margin="24" />
-    </ScrollViewer>
+    <ContentControl Grid.Column="1" Content="{Binding CurrentPage}" />
 
   </Grid>
 </UserControl>
