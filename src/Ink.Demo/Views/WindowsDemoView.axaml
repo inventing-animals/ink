@@ -11,27 +11,27 @@
     <StackPanel Spacing="8">
       <TextBlock Text="Open a secondary surface"
                  Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
-      <TextBlock Text="Desktop: new DesktopWindow  ·  Mobile: bottom-sheet drawer  ·  Web: new tab"
+      <TextBlock Text="Window — new OS window on desktop · drawer on mobile · browser tab on web"
                  Foreground="{DynamicResource Ink.Brush.Content.Muted}"
                  FontSize="12" />
-      <WrapPanel Margin="0,4,0,0">
-        <Button ink:ButtonAssist.Variant="Primary"
-                Command="{Binding OpenWindowCommand}"
-                Margin="0,0,8,0">
-          Open Window
-        </Button>
-        <Border VerticalAlignment="Center"
-                Padding="8,4"
-                CornerRadius="4"
-                Background="{DynamicResource Ink.Brush.Surface.Raised}"
-                BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
-                BorderThickness="1"
-                IsVisible="{Binding IsWindowOpen}">
-          <TextBlock Text="Window is open"
-                     Foreground="{DynamicResource Ink.Brush.Content.Secondary}"
-                     FontSize="12" />
-        </Border>
-      </WrapPanel>
+      <Button ink:ButtonAssist.Variant="Primary"
+              Command="{Binding OpenWindowCommand}"
+              Margin="0,4,0,0">
+        Open Window
+      </Button>
+    </StackPanel>
+
+    <StackPanel Spacing="8">
+      <TextBlock Text="Open as a tab"
+                 Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+      <TextBlock Text="Tab — tab in current window on desktop · drawer on mobile · browser tab on web"
+                 Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                 FontSize="12" />
+      <Button ink:ButtonAssist.Variant="Secondary"
+              Command="{Binding OpenTabCommand}"
+              Margin="0,4,0,0">
+        Open Tab
+      </Button>
     </StackPanel>
 
   </StackPanel>

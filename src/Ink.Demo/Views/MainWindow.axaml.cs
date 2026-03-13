@@ -2,7 +2,7 @@ using Ink.UI.Controls;
 
 namespace Ink.Demo.Views;
 
-public partial class MainWindow : DesktopWindow
+public partial class MainWindow : DesktopTabbedWindow
 {
     public MainWindow()
     {
