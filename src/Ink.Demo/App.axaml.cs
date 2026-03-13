@@ -41,11 +41,12 @@ public partial class App : Application
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
 
-            var appState = new AppState(RouterFactory(), new DesktopWindowService(), new ThemeService());
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainViewModel(appState)
-            };
+            var mainWindow = new MainWindow();
+            var appState   = new AppState(RouterFactory(), new DesktopTabbedWindowService(mainWindow), new ThemeService());
+            var mainView    = new MainView { DataContext = new MainViewModel(appState) };
+
+            mainWindow.MainContent = mainView;
+            desktop.MainWindow = mainWindow;
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
@@ -62,7 +63,7 @@ public partial class App : Application
             view = new MainView { DataContext = new MainViewModel(appState) };
 
             singleViewPlatform.MainView = OperatingSystem.IsBrowser()
-                ? new WebWindow   { Content = view }
+                ? new WebWindow    { Content = view }
                 : new MobileWindow { Content = view };
         }
 
