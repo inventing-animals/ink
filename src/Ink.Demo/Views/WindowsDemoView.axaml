@@ -4,7 +4,8 @@
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.WindowsDemoView"
              x:DataType="vm:WindowsDemoViewModel">
-  <StackPanel Spacing="24">
+  <ScrollViewer>
+  <StackPanel Spacing="24" Margin="24">
     <TextBlock Text="Window Service" />
 
     <StackPanel Spacing="8">
@@ -34,4 +35,5 @@
     </StackPanel>
 
   </StackPanel>
+  </ScrollViewer>
 </UserControl>

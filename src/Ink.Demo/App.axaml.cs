@@ -41,7 +41,7 @@ public partial class App : Application
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
 
-            var appState = new AppState(RouterFactory(), new DesktopWindowService());
+            var appState = new AppState(RouterFactory(), new DesktopWindowService(), new ThemeService());
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainViewModel(appState)
@@ -58,7 +58,7 @@ public partial class App : Application
                     ?? new DrawerWindowService(() => view is not null ? TopLevel.GetTopLevel(view) : null))
                 : new DrawerWindowService(() => view is not null ? TopLevel.GetTopLevel(view) : null);
 
-            var appState = new AppState(RouterFactory(), windowService);
+            var appState = new AppState(RouterFactory(), windowService, new ThemeService());
             view = new MainView { DataContext = new MainViewModel(appState) };
 
             singleViewPlatform.MainView = OperatingSystem.IsBrowser()

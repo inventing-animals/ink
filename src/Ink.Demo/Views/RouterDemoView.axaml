@@ -3,7 +3,8 @@
              xmlns:vm="using:Ink.Demo.ViewModels"
              x:Class="Ink.Demo.Views.RouterDemoView"
              x:DataType="vm:RouterDemoViewModel">
-  <StackPanel Spacing="24">
+  <ScrollViewer>
+  <StackPanel Spacing="24" Margin="24">
     <TextBlock Text="Router" />
 
     <!-- Current location -->
@@ -52,4 +53,5 @@
     </StackPanel>
 
   </StackPanel>
+  </ScrollViewer>
 </UserControl>

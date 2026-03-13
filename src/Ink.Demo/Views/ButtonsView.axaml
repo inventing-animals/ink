@@ -4,7 +4,8 @@
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.ButtonsView"
              x:DataType="vm:ButtonsViewModel">
-  <StackPanel Spacing="24">
+  <ScrollViewer>
+  <StackPanel Spacing="24" Margin="24">
     <TextBlock Text="Buttons" />
 
     <StackPanel Spacing="8">
@@ -26,4 +27,5 @@
       </WrapPanel>
     </StackPanel>
   </StackPanel>
+  </ScrollViewer>
 </UserControl>

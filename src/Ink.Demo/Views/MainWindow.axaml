@@ -8,6 +8,8 @@
                   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
                   x:Class="Ink.Demo.Views.MainWindow"
                   Icon="/Assets/avalonia-logo.ico"
-                  Title="Ink.UI">
+                  Title="Ink.UI"
+                  Width="1024" Height="768"
+                  MinWidth="480" MinHeight="320">
     <views:MainView />
 </ink:DesktopWindow>
