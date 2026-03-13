@@ -41,7 +41,7 @@
   -->
   <Target Name="SetBaseHref" AfterTargets="Publish" Condition="'$(BaseHref)' != '/'">
     <ItemGroup>
-      <_IndexHtml Include="$(PublishDir)**\index.html" />
+      <_IndexHtml Include="$(PublishDir)**/index.html" />
     </ItemGroup>
     <ReplaceInFile
       FilePath="%(_IndexHtml.Identity)"
