@@ -40,6 +40,17 @@ Because the restore script is a regular `<script>` tag (not a module), it runs s
 
 For a production B2B application, a platform with native URL rewriting such as [Azure App Service](azure-app-service.md) or [nginx](nginx.md) is still preferred.
 
+## Sub-path hosting
+
+GitHub Pages repositories are served at `https://<user>.github.io/<repo>/`, so the app's base path is `/<repo>/`. Set `<base href="/<repo>/" />` in `index.html` or inject it at publish time:
+
+```yaml
+# .github/workflows/deploy.yml (publish step)
+- run: dotnet publish src/Ink.Demo.Browser -p:BaseHref=/<repo>/
+```
+
+`BrowserHistoryRouter` reads the base href automatically and strips it from all paths — the app always sees `/buttons`, not `/<repo>/buttons`. The `404.html` redirect must also preserve the base prefix; the script above already encodes the full path including the prefix, so no changes are needed there.
+
 ## The Ink demo
 
 The live Ink demo is hosted on GitHub Pages using `BrowserHistoryRouter` with the `404.html` path-restoration workaround described above.

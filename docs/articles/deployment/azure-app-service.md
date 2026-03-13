@@ -30,6 +30,18 @@ This rule rewrites all requests that do not match an existing file to `index.htm
 > [!NOTE]
 > The URL Rewrite module must be installed on the App Service instance. It is available by default on most App Service plans.
 
+## Sub-path hosting
+
+If the app is served under a sub-path (e.g. the WASM files are served by an ASP.NET Core API at `/app/`), update the rewrite rule to match only that prefix and set `<base href="/app/" />` in `index.html`.
+
+The base href can also be injected at publish time rather than hard-coded:
+
+```bash
+dotnet publish src/MyApp.Browser -p:BaseHref=/app/
+```
+
+`BrowserHistoryRouter` reads the base href at startup and strips it from all paths automatically — no changes to view model routing logic are required. See [Base URL / sub-path hosting](../platform.md#base-url--sub-path-hosting) for details.
+
 ## Linux App Service
 
 If you are running on a Linux App Service (Nginx), see the [nginx deployment guide](nginx.md) instead.

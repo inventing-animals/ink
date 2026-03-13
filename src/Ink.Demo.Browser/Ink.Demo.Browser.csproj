@@ -4,7 +4,51 @@
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
+    <!--
+      Override at publish time to set the app's base path when hosted under a sub-path.
+      Example: dotnet publish -p:BaseHref=/myapp/
+      Must begin and end with a slash.  Defaults to / (root hosting).
+    -->
+    <BaseHref Condition="'$(BaseHref)' == ''">/</BaseHref>
   </PropertyGroup>
+
+  <!--
+    Inline task: rewrites a single text token in a file.
+    Used by the SetBaseHref target below.
+  -->
+  <UsingTask
+    TaskName="ReplaceInFile"
+    TaskFactory="RoslynCodeTaskFactory"
+    AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <FilePath  ParameterType="System.String" Required="true" />
+      <OldValue  ParameterType="System.String" Required="true" />
+      <NewValue  ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.IO" />
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+          File.WriteAllText(FilePath, File.ReadAllText(FilePath).Replace(OldValue, NewValue));
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <!--
+    After publish, rewrite <base href="/"> in the published index.html.
+    Skipped when BaseHref is already "/" to avoid a no-op in local builds.
+  -->
+  <Target Name="SetBaseHref" AfterTargets="Publish" Condition="'$(BaseHref)' != '/'">
+    <ItemGroup>
+      <_IndexHtml Include="$(PublishDir)**\index.html" />
+    </ItemGroup>
+    <ReplaceInFile
+      FilePath="%(_IndexHtml.Identity)"
+      OldValue='&lt;base href="/" /&gt;'
+      NewValue='&lt;base href="$(BaseHref)" /&gt;' />
+    <Message Importance="high" Text="Base href set to $(BaseHref) in %(_IndexHtml.Identity)" />
+  </Target>
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Browser" />
