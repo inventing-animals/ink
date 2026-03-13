@@ -114,7 +114,7 @@ jobs:
         run: dotnet workload install wasm-tools
 
       - name: Publish WASM demo
-        run: dotnet publish src/Ink.Demo.Browser/Ink.Demo.Browser.csproj -c Release -o ./wasm-out
+        run: dotnet publish src/Ink.Demo.Browser/Ink.Demo.Browser.csproj -c Release -o ./wasm-out -p:BaseHref=/ink/demo/
 
       - name: Assemble GitHub Pages site
         run: |
