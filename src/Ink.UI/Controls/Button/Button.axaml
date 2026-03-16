@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Styles
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:ink="clr-namespace:Ink.UI.Controls">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Base Button style -->
-    <Style Selector="Button">
+    <!-- ================================ -->
+    <!-- Base theme for all Buttons       -->
+    <!-- :is(Button) matches subclasses   -->
+    <!-- ================================ -->
+    <Style Selector=":is(Button)">
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
         <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
@@ -16,9 +18,9 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Cursor" Value="Hand" />
-
-        <!-- Default attached variant so style classes are set on load -->
-        <Setter Property="(ink:ButtonAssist.Variant)" Value="Secondary" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Strong}" />
 
         <Setter Property="Template">
             <ControlTemplate>
@@ -36,77 +38,63 @@
             </ControlTemplate>
         </Setter>
     </Style>
-
-    <!-- ================================ -->
-    <!-- Secondary (default)              -->
-    <!-- ================================ -->
-    <Style Selector="Button.ink-secondary">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Strong}" />
-    </Style>
-    <Style Selector="Button.ink-secondary:pointerover">
+    <Style Selector=":is(Button):pointerover">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
     </Style>
-    <Style Selector="Button.ink-secondary:pressed">
+    <Style Selector=":is(Button):pressed">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
+    </Style>
+    <Style Selector=":is(Button):disabled">
+        <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+        <Setter Property="Cursor" Value="Arrow" />
     </Style>
 
     <!-- ================================ -->
-    <!-- Primary                          -->
+    <!-- ink:Button variant overrides     -->
+    <!-- Classes set by ink:Button only   -->
     <!-- ================================ -->
-    <Style Selector="Button.ink-primary">
+
+    <!-- Primary -->
+    <Style Selector=":is(Button).ink-primary">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
     </Style>
-    <Style Selector="Button.ink-primary:pointerover">
+    <Style Selector=":is(Button).ink-primary:pointerover">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
     </Style>
-    <Style Selector="Button.ink-primary:pressed">
+    <Style Selector=":is(Button).ink-primary:pressed">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Pressed}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent.Pressed}" />
     </Style>
 
-    <!-- ================================ -->
-    <!-- Ghost                            -->
-    <!-- ================================ -->
-    <Style Selector="Button.ink-ghost">
+    <!-- Ghost -->
+    <Style Selector=":is(Button).ink-ghost">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="BorderBrush" Value="Transparent" />
     </Style>
-    <Style Selector="Button.ink-ghost:pointerover">
+    <Style Selector=":is(Button).ink-ghost:pointerover">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
     </Style>
-    <Style Selector="Button.ink-ghost:pressed">
+    <Style Selector=":is(Button).ink-ghost:pressed">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
     </Style>
 
-    <!-- ================================ -->
-    <!-- Danger                           -->
-    <!-- ================================ -->
-    <Style Selector="Button.ink-danger">
+    <!-- Danger -->
+    <Style Selector=":is(Button).ink-danger">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger}" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger}" />
     </Style>
-    <Style Selector="Button.ink-danger:pointerover">
+    <Style Selector=":is(Button).ink-danger:pointerover">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
     </Style>
-    <Style Selector="Button.ink-danger:pressed">
+    <Style Selector=":is(Button).ink-danger:pressed">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
-    </Style>
-
-    <!-- ================================ -->
-    <!-- Disabled (all variants)          -->
-    <!-- ================================ -->
-    <Style Selector="Button:disabled">
-        <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
-        <Setter Property="Cursor" Value="Arrow" />
     </Style>
 
 </Styles>

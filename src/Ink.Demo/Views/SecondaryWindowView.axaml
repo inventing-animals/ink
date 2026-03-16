@@ -11,10 +11,9 @@
     <TextBlock Text="On desktop it runs in a new DesktopWindow. On mobile it appears as a bottom-sheet drawer. On web it opened as a new tab with a fresh app instance."
                Foreground="{DynamicResource Ink.Brush.Content.Muted}"
                TextWrapping="Wrap" />
-    <Button ink:ButtonAssist.Variant="Secondary"
-            Command="{Binding CloseCommand}"
-            Margin="0,8,0,0">
+    <ink:Button Command="{Binding CloseCommand}"
+               Margin="0,8,0,0">
       Close
-    </Button>
+    </ink:Button>
   </StackPanel>
 </UserControl>

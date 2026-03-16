@@ -9,21 +9,32 @@
     <TextBlock Text="Buttons" />
 
     <StackPanel Spacing="8">
-      <TextBlock Text="Variants" />
+      <TextBlock Text="ink:Button - Variants" />
       <WrapPanel>
-        <Button Margin="0,0,8,8">Secondary</Button>
-        <Button ink:ButtonAssist.Variant="Primary" Margin="0,0,8,8">Primary</Button>
-        <Button ink:ButtonAssist.Variant="Danger" Margin="0,0,8,8">Danger</Button>
-        <Button ink:ButtonAssist.Variant="Ghost" Margin="0,0,8,8" IsEnabled="False">Ghost (WIP)</Button>
+        <ink:Button Margin="0,0,8,8">Secondary</ink:Button>
+        <ink:Button Variant="Primary" Margin="0,0,8,8">Primary</ink:Button>
+        <ink:Button Variant="Danger" Margin="0,0,8,8">Danger</ink:Button>
+        <ink:Button Variant="Ghost" Margin="0,0,8,8" IsEnabled="False">Ghost (WIP)</ink:Button>
       </WrapPanel>
     </StackPanel>
 
     <StackPanel Spacing="8">
-      <TextBlock Text="Disabled" />
+      <TextBlock Text="ink:Button - Disabled" />
       <WrapPanel>
-        <Button IsEnabled="False" Margin="0,0,8,8">Secondary</Button>
-        <Button ink:ButtonAssist.Variant="Primary" IsEnabled="False" Margin="0,0,8,8">Primary</Button>
-        <Button ink:ButtonAssist.Variant="Danger" IsEnabled="False" Margin="0,0,8,8">Danger</Button>
+        <ink:Button IsEnabled="False" Margin="0,0,8,8">Secondary</ink:Button>
+        <ink:Button Variant="Primary" IsEnabled="False" Margin="0,0,8,8">Primary</ink:Button>
+        <ink:Button Variant="Danger" IsEnabled="False" Margin="0,0,8,8">Danger</ink:Button>
+      </WrapPanel>
+    </StackPanel>
+
+    <StackPanel Spacing="8">
+      <TextBlock Text="Avalonia Button (themed)" />
+      <TextBlock Text="Plain Avalonia Button with Ink base theme applied - no variant system."
+                 Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                 FontSize="12" />
+      <WrapPanel>
+        <Button Margin="0,0,8,8">Default</Button>
+        <Button IsEnabled="False" Margin="0,0,8,8">Disabled</Button>
       </WrapPanel>
     </StackPanel>
   </StackPanel>
