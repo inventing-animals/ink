@@ -19,10 +19,10 @@
                    Color="{DynamicResource Ink.Palette.Neutral.3}" />
 
   <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Subtle"
-                   Color="{DynamicResource Ink.Palette.Neutral.3}" />
+                   Color="{DynamicResource Ink.Palette.Neutral.4}" />
 
   <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger"
-                   Color="{DynamicResource Ink.Palette.Neutral.4}" />
+                   Color="{DynamicResource Ink.Palette.Neutral.5}" />
 
   <!-- ========================= -->
   <!-- Content (text/icons)      -->
