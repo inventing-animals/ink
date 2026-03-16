@@ -15,7 +15,7 @@ namespace Ink.Data.Queries;
 /// <param name="Filter">The root filter node, or <c>null</c> for no filtering.</param>
 /// <param name="Page">One-based page number.</param>
 /// <param name="PageSize">Number of items per page.</param>
-public sealed record DataGridQuery(
+public sealed record DataQuery(
     IReadOnlyList<string>? Columns,
     IReadOnlyList<SortDescriptor> Sort,
     FilterNode? Filter,
@@ -23,5 +23,5 @@ public sealed record DataGridQuery(
     int PageSize)
 {
     /// <summary>Gets a default query for page 1 with 25 items, no filter, no sort.</summary>
-    public static DataGridQuery Default => new(null, [], null, 1, 25);
+    public static DataQuery Default => new(null, [], null, 1, 25);
 }

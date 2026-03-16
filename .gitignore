@@ -455,5 +455,6 @@ $RECYCLE.BIN/
 
 .claude
 
-# DocFX generated site
+# DocFX generated output
 docs/_site/
+docs/api/

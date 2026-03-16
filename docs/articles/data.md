@@ -35,12 +35,12 @@ Ink.DataGrid / Ink.Charts  (UI layer, future)
 
 ---
 
-## DataGridQuery
+## DataQuery
 
-`DataGridQuery` is the wire format sent from a DataGrid component to its data source.
+`DataQuery` is the wire format sent from a DataGrid component to its data source.
 
 ```csharp
-var query = new DataGridQuery(
+var query = new DataQuery(
     Columns: ["name", "email", "createdAt"],   // null means "all columns"
     Sort:    [new SortDescriptor("createdAt", SortDirection.Descending)],
     Filter:  new FilterCondition("active", FilterOp.Equal, [true]),
@@ -48,10 +48,10 @@ var query = new DataGridQuery(
     PageSize: 25);
 ```
 
-`DataGridQuery.Default` is a sensible starting point with no filter, no sort, page 1, page size 25:
+`DataQuery.Default` is a sensible starting point with no filter, no sort, page 1, page size 25:
 
 ```csharp
-var query = DataGridQuery.Default with
+var query = DataQuery.Default with
 {
     Sort = [new SortDescriptor("name", SortDirection.Ascending)],
 };
@@ -125,7 +125,7 @@ Custom operators must be registered on the translator (see below) before the que
 
 ## JSON
 
-`FilterNode` and `DataGridQuery` serialise to and from JSON out of the box using `System.Text.Json`. The `$type` discriminator identifies the node kind; `FilterOp` and `SortDirection` serialise as human-readable strings.
+`FilterNode` and `DataQuery` serialise to and from JSON out of the box using `System.Text.Json`. The `$type` discriminator identifies the node kind; `FilterOp` and `SortDirection` serialise as human-readable strings.
 
 ```json
 {
@@ -161,7 +161,7 @@ Console.WriteLine(filter.ToDebugString());
 
 ### Building queries from UI state
 
-A typical scenario: a view model that maintains current filter and sort state and builds a `DataGridQuery` to fetch the next page.
+A typical scenario: a view model that maintains current filter and sort state and builds a `DataQuery` to fetch the next page.
 
 ```csharp
 public class UserListViewModel
@@ -172,7 +172,7 @@ public class UserListViewModel
     private SortDirection _sortDirection = SortDirection.Ascending;
     private int _page = 1;
 
-    public DataGridQuery BuildQuery()
+    public DataQuery BuildQuery()
     {
         var conditions = new List<FilterNode>();
 
@@ -182,7 +182,7 @@ public class UserListViewModel
         if (_activeFilter.HasValue)
             conditions.Add(new FilterCondition("active", FilterOp.Equal, [_activeFilter.Value]));
 
-        return new DataGridQuery(
+        return new DataQuery(
             Columns: null,
             Sort: [new SortDescriptor(_sortField, _sortDirection)],
             Filter: conditions.And(),
@@ -229,7 +229,7 @@ new FilterOr([
 ### Multi-column sort
 
 ```csharp
-var query = DataGridQuery.Default with
+var query = DataQuery.Default with
 {
     Sort =
     [
@@ -244,7 +244,7 @@ var query = DataGridQuery.Default with
 When the server and client communicate over a narrow connection, request only the columns needed for the current view:
 
 ```csharp
-var query = DataGridQuery.Default with
+var query = DataQuery.Default with
 {
     Columns = ["name", "email", "createdAt"],
 };
@@ -256,7 +256,7 @@ The translator enforces that requested columns are registered; unregistered colu
 
 ## EFCoreQueryTranslator
 
-`EFCoreQueryTranslator<T>` is a configured, reusable object that applies a `DataGridQuery` to an `IQueryable<T>`. Configure it once as a singleton or static field.
+`EFCoreQueryTranslator<T>` is a configured, reusable object that applies a `DataQuery` to an `IQueryable<T>`. Configure it once as a singleton or static field.
 
 ### Setup
 
@@ -276,11 +276,11 @@ Column field names are derived automatically from the expression in camelCase - 
 
 ### Minimal API
 
-The simplest wiring: a single `MapPost` endpoint that accepts a `DataGridQuery` and returns a `DataPage<T>`.
+The simplest wiring: a single `MapPost` endpoint that accepts a `DataQuery` and returns a `DataPage<T>`.
 
 ```csharp
 app.MapPost("/api/users/query", async (
-    DataGridQuery query,
+    DataQuery query,
     AppDbContext db,
     EFCoreQueryTranslator<User> translator) =>
 {
@@ -311,7 +311,7 @@ public class UsersController : ControllerBase
 
     [HttpPost("query")]
     public async Task<ActionResult<DataPage<User>>> Query(
-        [FromBody] DataGridQuery query,
+        [FromBody] DataQuery query,
         CancellationToken ct)
     {
         var baseQuery = _db.Users
@@ -348,7 +348,7 @@ Only columns explicitly registered via `.Column(...)` can be referenced in filte
 
 ```csharp
 // UnauthorizedFieldException: 'passwordHash' is not registered
-var query = DataGridQuery.Default with
+var query = DataQuery.Default with
 {
     Filter = new FilterCondition("passwordHash", FilterOp.Equal, ["secret"]),
 };

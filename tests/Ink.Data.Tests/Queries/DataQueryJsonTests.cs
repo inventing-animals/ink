@@ -4,14 +4,14 @@ using Xunit;
 
 namespace Ink.Data.Tests.Queries;
 
-public class DataGridQueryJsonTests
+public class DataQueryJsonTests
 {
     [Fact]
     public void RoundTrip_DefaultQuery_Preserved()
     {
-        var query = DataGridQuery.Default;
+        var query = DataQuery.Default;
         var json = JsonSerializer.Serialize(query);
-        var restored = JsonSerializer.Deserialize<DataGridQuery>(json)!;
+        var restored = JsonSerializer.Deserialize<DataQuery>(json)!;
 
         Assert.Equal(query.Page, restored.Page);
         Assert.Equal(query.PageSize, restored.PageSize);
@@ -23,7 +23,7 @@ public class DataGridQueryJsonTests
     [Fact]
     public void RoundTrip_WithNestedFilter_PreservesTree()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterAnd([
                 new FilterCondition("name", FilterOp.Contains, ["alice"]),
@@ -35,7 +35,7 @@ public class DataGridQueryJsonTests
         };
 
         var json = JsonSerializer.Serialize(query);
-        var restored = JsonSerializer.Deserialize<DataGridQuery>(json)!;
+        var restored = JsonSerializer.Deserialize<DataQuery>(json)!;
 
         var and = Assert.IsType<FilterAnd>(restored.Filter);
         Assert.Equal(2, and.Children.Count);
@@ -45,7 +45,7 @@ public class DataGridQueryJsonTests
     [Fact]
     public void RoundTrip_WithSort_PreservesSortDescriptors()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Sort = [
                 new SortDescriptor("createdAt", SortDirection.Descending),
@@ -54,7 +54,7 @@ public class DataGridQueryJsonTests
         };
 
         var json = JsonSerializer.Serialize(query);
-        var restored = JsonSerializer.Deserialize<DataGridQuery>(json)!;
+        var restored = JsonSerializer.Deserialize<DataQuery>(json)!;
 
         Assert.Equal(2, restored.Sort.Count);
         Assert.Equal("createdAt", restored.Sort[0].Field);
@@ -65,10 +65,10 @@ public class DataGridQueryJsonTests
     [Fact]
     public void RoundTrip_WithColumns_PreservesColumnList()
     {
-        var query = DataGridQuery.Default with { Columns = ["name", "email", "createdAt"] };
+        var query = DataQuery.Default with { Columns = ["name", "email", "createdAt"] };
 
         var json = JsonSerializer.Serialize(query);
-        var restored = JsonSerializer.Deserialize<DataGridQuery>(json)!;
+        var restored = JsonSerializer.Deserialize<DataQuery>(json)!;
 
         Assert.Equal(3, restored.Columns!.Count);
         Assert.Contains("email", restored.Columns);
@@ -77,7 +77,7 @@ public class DataGridQueryJsonTests
     [Fact]
     public void Serialize_IsHumanReadable()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("name", FilterOp.Contains, ["alice"]),
             Sort = [new SortDescriptor("createdAt", SortDirection.Descending)],
@@ -96,7 +96,7 @@ public class DataGridQueryJsonTests
     [Fact]
     public void Serialize_FullQuery_MatchesDocument()
     {
-        var query = new DataGridQuery(
+        var query = new DataQuery(
             Columns: ["name", "age"],
             Sort: [new SortDescriptor("name", SortDirection.Ascending)],
             Filter: new FilterCondition("active", FilterOp.Equal, [true]),
@@ -117,7 +117,7 @@ public class DataGridQueryJsonTests
     public void RoundTrip_WithCustomFilterOp_PreservesOp()
     {
         var fts = new FilterOp("fts");
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("description", fts, ["search term"]),
         };
@@ -125,7 +125,7 @@ public class DataGridQueryJsonTests
         var json = JsonSerializer.Serialize(query);
         Assert.Contains("\"fts\"", json);
 
-        var restored = JsonSerializer.Deserialize<DataGridQuery>(json)!;
+        var restored = JsonSerializer.Deserialize<DataQuery>(json)!;
         var cond = Assert.IsType<FilterCondition>(restored.Filter);
         Assert.Equal(fts, cond.Op);
     }

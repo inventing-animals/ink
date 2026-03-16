@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Ink.Data.EFCore;
 
 /// <summary>
-/// Translates a <see cref="DataGridQuery"/> into EF Core <see cref="IQueryable{T}"/> operations,
+/// Translates a <see cref="DataQuery"/> into EF Core <see cref="IQueryable{T}"/> operations,
 /// fully automatically handling filtering, sorting, and pagination.
 /// </summary>
 /// <typeparam name="T">The entity type.</typeparam>
@@ -27,7 +27,7 @@ namespace Ink.Data.EFCore;
 ///     .Column(x => x.Status);
 ///
 /// // In an API endpoint
-/// app.MapPost("/api/users/query", (DataGridQuery query, AppDbContext db) =>
+/// app.MapPost("/api/users/query", (DataQuery query, AppDbContext db) =>
 ///     translator.ExecuteAsync(db.Users.Where(x => x.TenantId == tenantId), query));
 /// </code>
 /// </example>
@@ -93,7 +93,7 @@ public sealed class EFCoreQueryTranslator<T> where T : class
     /// <exception cref="UnauthorizedFieldException">
     /// Thrown when the query references a field not registered in this translator.
     /// </exception>
-    public IQueryable<T> Apply(IQueryable<T> source, DataGridQuery query)
+    public IQueryable<T> Apply(IQueryable<T> source, DataQuery query)
     {
         ValidateQuery(query);
 
@@ -118,7 +118,7 @@ public sealed class EFCoreQueryTranslator<T> where T : class
     /// <returns>A page of items and the total matching count.</returns>
     public async Task<DataPage<T>> ExecuteAsync(
         IQueryable<T> source,
-        DataGridQuery query,
+        DataQuery query,
         CancellationToken ct = default)
     {
         var q = Apply(source, query);
@@ -131,7 +131,7 @@ public sealed class EFCoreQueryTranslator<T> where T : class
         return new DataPage<T>(items, total);
     }
 
-    private void ValidateQuery(DataGridQuery query)
+    private void ValidateQuery(DataQuery query)
     {
         if (query.Filter is not null)
             ValidateNode(query.Filter);

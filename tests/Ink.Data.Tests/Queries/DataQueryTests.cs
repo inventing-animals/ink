@@ -3,12 +3,12 @@ using Xunit;
 
 namespace Ink.Data.Tests.Queries;
 
-public class DataGridQueryTests
+public class DataQueryTests
 {
     [Fact]
     public void Default_IsPageOneWithTwentyFiveItems()
     {
-        var q = DataGridQuery.Default;
+        var q = DataQuery.Default;
         Assert.Equal(1, q.Page);
         Assert.Equal(25, q.PageSize);
     }
@@ -16,7 +16,7 @@ public class DataGridQueryTests
     [Fact]
     public void Default_HasNoFilterOrSort()
     {
-        var q = DataGridQuery.Default;
+        var q = DataQuery.Default;
         Assert.Null(q.Filter);
         Assert.Empty(q.Sort);
     }
@@ -24,14 +24,14 @@ public class DataGridQueryTests
     [Fact]
     public void Default_HasNullColumns_MeaningAll()
     {
-        var q = DataGridQuery.Default;
+        var q = DataQuery.Default;
         Assert.Null(q.Columns);
     }
 
     [Fact]
     public void With_CanOverridePageSize()
     {
-        var q = DataGridQuery.Default with { PageSize = 50 };
+        var q = DataQuery.Default with { PageSize = 50 };
         Assert.Equal(50, q.PageSize);
         Assert.Equal(1, q.Page);
     }
@@ -40,7 +40,7 @@ public class DataGridQueryTests
     public void With_CanAttachFilter()
     {
         var filter = new FilterCondition("name", FilterOp.Contains, ["alice"]);
-        var q = DataGridQuery.Default with { Filter = filter };
+        var q = DataQuery.Default with { Filter = filter };
         Assert.NotNull(q.Filter);
         Assert.Equal(filter, q.Filter);
     }
@@ -49,7 +49,7 @@ public class DataGridQueryTests
     public void With_CanAttachSort()
     {
         var sort = new SortDescriptor("createdAt", SortDirection.Descending);
-        var q = DataGridQuery.Default with { Sort = [sort] };
+        var q = DataQuery.Default with { Sort = [sort] };
         Assert.Single(q.Sort);
         Assert.Equal("createdAt", q.Sort[0].Field);
         Assert.Equal(SortDirection.Descending, q.Sort[0].Direction);
