@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>InventingAnimals.Ink.DataGrid</PackageId>
+    <Authors>Inventing Animals</Authors>
+    <Company>Inventing Animals s.r.o.</Company>
+    <Description>DataGrid control for Avalonia applications. Columns and data source are defined in the view model via DataGridModel&lt;T&gt; and IDataSource&lt;T&gt; from Ink.Data - no XAML column configuration required.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/inventing-animals/ink</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/inventing-animals/ink</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>avalonia;datagrid;data;table;grid;ui</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ink.Data\Ink.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" />
+    <PackageReference Include="StyleCop.Analyzers" />
+    <PackageReference Include="Roslynator.Analyzers" />
+  </ItemGroup>
+</Project>

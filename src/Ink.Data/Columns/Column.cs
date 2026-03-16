@@ -11,9 +11,15 @@ namespace Ink.Data.Columns;
 /// so that query translators can work without knowing <c>TValue</c>.
 /// </summary>
 /// <typeparam name="TItem">The item type this column belongs to.</typeparam>
-public abstract class Column<TItem>
+public abstract class Column<TItem> : IColumn
 {
-    /// <summary>Gets the camelCase field name derived from the selector expression.</summary>
+    /// <inheritdoc/>
+    public string Header { get; init; } = string.Empty;
+
+    /// <inheritdoc/>
+    public string? Description { get; init; }
+
+    /// <inheritdoc/>
     public abstract string FieldName { get; }
 
     /// <summary>Gets the filter operations supported by this column.</summary>
@@ -24,6 +30,9 @@ public abstract class Column<TItem>
     /// The body is a member access on <c>TItem</c>.
     /// </summary>
     public abstract LambdaExpression SelectorExpression { get; }
+
+    /// <inheritdoc/>
+    public abstract object? GetValue(object item);
 }
 
 /// <summary>
@@ -34,12 +43,14 @@ public abstract class Column<TItem>
 /// <typeparam name="TValue">The column value type.</typeparam>
 /// <example>
 /// <code>
-/// var nameColumn = new Column&lt;User, string&gt;(x => x.Name);
-/// var createdColumn = new Column&lt;User, DateTimeOffset&gt;(x => x.CreatedAt);
+/// var nameColumn = new Column&lt;User, string&gt;(x => x.Name) { Header = "Name" };
+/// var createdColumn = new Column&lt;User, DateTimeOffset&gt;(x => x.CreatedAt) { Header = "Created" };
 /// </code>
 /// </example>
 public class Column<TItem, TValue> : Column<TItem>
 {
+    private Func<TItem, TValue>? _compiled;
+
     /// <summary>
     /// Initializes a new <see cref="Column{TItem,TValue}"/>.
     /// </summary>
@@ -65,4 +76,11 @@ public class Column<TItem, TValue> : Column<TItem>
 
     /// <inheritdoc/>
     public override LambdaExpression SelectorExpression => Selector;
+
+    /// <inheritdoc/>
+    public override object? GetValue(object item)
+    {
+        _compiled ??= Selector.Compile();
+        return _compiled((TItem)item);
+    }
 }

@@ -10,7 +10,7 @@ public partial class MainViewModel : ViewModelBase
     private readonly AppState _appState;
 
     [ObservableProperty]
-    private ViewModelBase? _currentPage;
+    private object? _currentPage;
 
     public IRouter Router => _appState.Router;
 
@@ -35,10 +35,11 @@ public partial class MainViewModel : ViewModelBase
     {
         CurrentPage = location.Segments.FirstOrDefault() switch
         {
-            "buttons" => new ButtonsViewModel(),
-            "palette" => new PaletteViewModel(),
-            "router"  => new RouterDemoViewModel(_appState.Router),
-            "windows" => new WindowsDemoViewModel(_appState.Windows),
+            "buttons"  => new ButtonsViewModel(),
+            "palette"  => new PaletteViewModel(),
+            "router"   => new RouterDemoViewModel(_appState.Router),
+            "windows"  => new WindowsDemoViewModel(_appState.Windows),
+            "datagrid" => new DataGridDemoViewModel(),
             _ => new ButtonsViewModel(),
         };
     }

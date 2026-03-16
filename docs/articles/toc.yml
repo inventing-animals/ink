@@ -2,6 +2,8 @@
   href: intro.md
 - name: Platform Services
   href: platform.md
+- name: DataGrid
+  href: datagrid.md
 - name: Data - Filtering, Sorting and Pagination
   href: data.md
 - name: Deployment
