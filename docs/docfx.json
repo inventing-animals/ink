@@ -12,7 +12,11 @@
         },
         {
           "files": ["**/*.csproj"],
-          "src": "../src/Ink.Platform.Browser"
+          "src": "../src/Ink.Data"
+        },
+        {
+          "files": ["**/*.csproj"],
+          "src": "../src/Ink.Data.EFCore"
         }
       ],
       "dest": "api",

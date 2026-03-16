@@ -1,4 +1,10 @@
 ﻿<Solution>
+  <Project Path="src/Ink.Data/Ink.Data.csproj" />
+  <Folder Name="/Ink.Tests/">
+    <Project Path="tests/Ink.Data.EFCore.Tests/Ink.Data.EFCore.Tests.csproj" />
+    <Project Path="tests/Ink.Data.Tests/Ink.Data.Tests.csproj" />
+  </Folder>
+  <Project Path="src/Ink.Data.EFCore/Ink.Data.EFCore.csproj" />
   <Project Path="src/Ink.UI/Ink.UI.csproj" />
   <Project Path="src/Ink.Localization/Ink.Localization.csproj" />
   <Project Path="src/Ink.Platform/Ink.Platform.csproj" />

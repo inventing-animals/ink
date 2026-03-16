@@ -9,8 +9,45 @@ dotnet_diagnostic.SA1600.severity = none
 # SA1601: Partial elements must be documented - same as above
 dotnet_diagnostic.SA1601.severity = none
 
+# SA1611: Parameter documentation missing - suppressed with SA1600
+dotnet_diagnostic.SA1611.severity = none
+
+# SA1615: Return value documentation missing - suppressed with SA1600
+dotnet_diagnostic.SA1615.severity = none
+
+# SA1618: Type parameter documentation missing - suppressed with SA1600
+dotnet_diagnostic.SA1618.severity = none
+
+# SA1642: Constructor summary format - not our style
+dotnet_diagnostic.SA1642.severity = none
+
 # SA1633: File must have header - we don't use file headers
 dotnet_diagnostic.SA1633.severity = none
+
+# SA0001: XML comment analysis disabled - test projects don't have GenerateDocumentationFile
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1514: Element documentation header should be preceded by blank line - too strict for grouped constants
+dotnet_diagnostic.SA1514.severity = none
+
+# SA1502: Element should not be on a single line - we allow single-line enums in test helpers
+dotnet_diagnostic.SA1502.severity = none
+
+# SA1515: Single-line comment should be preceded by blank line - too strict for inline comments
+dotnet_diagnostic.SA1515.severity = none
+
+# SA1512: Single-line comment should not be followed by blank line - we use // Section comments in tests
+dotnet_diagnostic.SA1512.severity = none
+
+# SA1136: Enum values should be on separate lines - not required for small test enums
+dotnet_diagnostic.SA1136.severity = none
+
+# SA1402: File may only contain a single type - we intentionally group small related types
+# (e.g. FilterNode hierarchy, Column base + typed subclass, enums with companion records)
+dotnet_diagnostic.SA1402.severity = none
+
+# RCS1194: Implement standard exception constructors - not required for internal exception types
+dotnet_diagnostic.RCS1194.severity = none
 
 # -- Naming -------------------------------------------------------------------
 # SA1101: Prefix local calls with 'this.' - not our style

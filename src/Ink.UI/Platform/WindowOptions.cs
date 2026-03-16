@@ -8,7 +8,7 @@ public sealed class WindowOptions
 
     /// <summary>
     /// Router path for platforms that open a new app instance (e.g. browser tabs).
-    /// Desktop and mobile ignore this — they use the <c>Func&lt;Control&gt;</c> content factory.
+    /// Desktop and mobile ignore this - they use the <c>Func&lt;Control&gt;</c> content factory.
     /// </summary>
     public string? Url { get; init; }
 }

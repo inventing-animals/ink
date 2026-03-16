@@ -1,0 +1,612 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.UI.Platform.ThemeService
+  commentId: T:Ink.UI.Platform.ThemeService
+  id: ThemeService
+  parent: Ink.UI.Platform
+  children:
+  - Ink.UI.Platform.ThemeService.Current
+  - Ink.UI.Platform.ThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  - Ink.UI.Platform.ThemeService.ThemeChanged
+  - Ink.UI.Platform.ThemeService.Toggle
+  langs:
+  - csharp
+  - vb
+  name: ThemeService
+  nameWithType: ThemeService
+  fullName: Ink.UI.Platform.ThemeService
+  type: Class
+  source:
+    remote:
+      path: src/Ink.UI/Platform/ThemeService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: ThemeService
+    path: ../src/Ink.UI/Platform/ThemeService.cs
+    startLine: 10
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: >-
+    Default implementation: reads and writes <xref href="Avalonia.Application.RequestedThemeVariant" data-throw-if-not-resolved="false"></xref>
+
+    on the current Avalonia application instance.
+  example: []
+  syntax:
+    content: 'public sealed class ThemeService : IThemeService'
+    content.vb: Public NotInheritable Class ThemeService Implements IThemeService
+  inheritance:
+  - System.Object
+  implements:
+  - Ink.UI.Platform.IThemeService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Ink.UI.Platform.ThemeService.Current
+  commentId: P:Ink.UI.Platform.ThemeService.Current
+  id: Current
+  parent: Ink.UI.Platform.ThemeService
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: ThemeService.Current
+  fullName: Ink.UI.Platform.ThemeService.Current
+  type: Property
+  source:
+    remote:
+      path: src/Ink.UI/Platform/ThemeService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Current
+    path: ../src/Ink.UI/Platform/ThemeService.cs
+    startLine: 13
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: Gets the currently active theme variant.
+  example: []
+  syntax:
+    content: public ThemeVariant Current { get; }
+    parameters: []
+    return:
+      type: Avalonia.Styling.ThemeVariant
+    content.vb: Public ReadOnly Property Current As ThemeVariant
+  overload: Ink.UI.Platform.ThemeService.Current*
+  implements:
+  - Ink.UI.Platform.IThemeService.Current
+- uid: Ink.UI.Platform.ThemeService.ThemeChanged
+  commentId: E:Ink.UI.Platform.ThemeService.ThemeChanged
+  id: ThemeChanged
+  parent: Ink.UI.Platform.ThemeService
+  langs:
+  - csharp
+  - vb
+  name: ThemeChanged
+  nameWithType: ThemeService.ThemeChanged
+  fullName: Ink.UI.Platform.ThemeService.ThemeChanged
+  type: Event
+  source:
+    remote:
+      path: src/Ink.UI/Platform/ThemeService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: ThemeChanged
+    path: ../src/Ink.UI/Platform/ThemeService.cs
+    startLine: 16
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: Raised whenever <xref href="Ink.UI.Platform.IThemeService.Current" data-throw-if-not-resolved="false"></xref> changes.
+  example: []
+  syntax:
+    content: public event EventHandler<ThemeVariant>? ThemeChanged
+    return:
+      type: System.EventHandler{Avalonia.Styling.ThemeVariant}
+    content.vb: Public Event ThemeChanged As EventHandler(Of ThemeVariant)
+  implements:
+  - Ink.UI.Platform.IThemeService.ThemeChanged
+- uid: Ink.UI.Platform.ThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  commentId: M:Ink.UI.Platform.ThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  id: SetTheme(Avalonia.Styling.ThemeVariant)
+  parent: Ink.UI.Platform.ThemeService
+  langs:
+  - csharp
+  - vb
+  name: SetTheme(ThemeVariant)
+  nameWithType: ThemeService.SetTheme(ThemeVariant)
+  fullName: Ink.UI.Platform.ThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.UI/Platform/ThemeService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: SetTheme
+    path: ../src/Ink.UI/Platform/ThemeService.cs
+    startLine: 19
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: Switches to the given theme variant.
+  example: []
+  syntax:
+    content: public void SetTheme(ThemeVariant variant)
+    parameters:
+    - id: variant
+      type: Avalonia.Styling.ThemeVariant
+      description: The theme variant to apply.
+    content.vb: Public Sub SetTheme([variant] As ThemeVariant)
+  overload: Ink.UI.Platform.ThemeService.SetTheme*
+  implements:
+  - Ink.UI.Platform.IThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+- uid: Ink.UI.Platform.ThemeService.Toggle
+  commentId: M:Ink.UI.Platform.ThemeService.Toggle
+  id: Toggle
+  parent: Ink.UI.Platform.ThemeService
+  langs:
+  - csharp
+  - vb
+  name: Toggle()
+  nameWithType: ThemeService.Toggle()
+  fullName: Ink.UI.Platform.ThemeService.Toggle()
+  type: Method
+  source:
+    remote:
+      path: src/Ink.UI/Platform/ThemeService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Toggle
+    path: ../src/Ink.UI/Platform/ThemeService.cs
+    startLine: 27
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: Toggles between <xref href="Avalonia.Styling.ThemeVariant.Light" data-throw-if-not-resolved="false"></xref> and <xref href="Avalonia.Styling.ThemeVariant.Dark" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public void Toggle()
+    content.vb: Public Sub Toggle()
+  overload: Ink.UI.Platform.ThemeService.Toggle*
+  implements:
+  - Ink.UI.Platform.IThemeService.Toggle
+references:
+- uid: Avalonia.Application.RequestedThemeVariant
+  commentId: P:Avalonia.Application.RequestedThemeVariant
+  isExternal: true
+  name: RequestedThemeVariant
+  nameWithType: Application.RequestedThemeVariant
+  fullName: Avalonia.Application.RequestedThemeVariant
+- uid: Ink.UI.Platform
+  commentId: N:Ink.UI.Platform
+  href: Ink.html
+  name: Ink.UI.Platform
+  nameWithType: Ink.UI.Platform
+  fullName: Ink.UI.Platform
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Ink.UI.Platform.IThemeService
+  commentId: T:Ink.UI.Platform.IThemeService
+  parent: Ink.UI.Platform
+  href: Ink.UI.Platform.IThemeService.html
+  name: IThemeService
+  nameWithType: IThemeService
+  fullName: Ink.UI.Platform.IThemeService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Ink.UI.Platform.ThemeService.Current*
+  commentId: Overload:Ink.UI.Platform.ThemeService.Current
+  href: Ink.UI.Platform.ThemeService.html#Ink_UI_Platform_ThemeService_Current
+  name: Current
+  nameWithType: ThemeService.Current
+  fullName: Ink.UI.Platform.ThemeService.Current
+- uid: Ink.UI.Platform.IThemeService.Current
+  commentId: P:Ink.UI.Platform.IThemeService.Current
+  parent: Ink.UI.Platform.IThemeService
+  href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_Current
+  name: Current
+  nameWithType: IThemeService.Current
+  fullName: Ink.UI.Platform.IThemeService.Current
+- uid: Avalonia.Styling.ThemeVariant
+  commentId: T:Avalonia.Styling.ThemeVariant
+  parent: Avalonia.Styling
+  isExternal: true
+  name: ThemeVariant
+  nameWithType: ThemeVariant
+  fullName: Avalonia.Styling.ThemeVariant
+- uid: Avalonia.Styling
+  commentId: N:Avalonia.Styling
+  isExternal: true
+  name: Avalonia.Styling
+  nameWithType: Avalonia.Styling
+  fullName: Avalonia.Styling
+  spec.csharp:
+  - uid: Avalonia
+    name: Avalonia
+    isExternal: true
+  - name: .
+  - uid: Avalonia.Styling
+    name: Styling
+    isExternal: true
+  spec.vb:
+  - uid: Avalonia
+    name: Avalonia
+    isExternal: true
+  - name: .
+  - uid: Avalonia.Styling
+    name: Styling
+    isExternal: true
+- uid: Ink.UI.Platform.IThemeService.ThemeChanged
+  commentId: E:Ink.UI.Platform.IThemeService.ThemeChanged
+  parent: Ink.UI.Platform.IThemeService
+  href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_ThemeChanged
+  name: ThemeChanged
+  nameWithType: IThemeService.ThemeChanged
+  fullName: Ink.UI.Platform.IThemeService.ThemeChanged
+- uid: System.EventHandler{Avalonia.Styling.ThemeVariant}
+  commentId: T:System.EventHandler{Avalonia.Styling.ThemeVariant}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<ThemeVariant>
+  nameWithType: EventHandler<ThemeVariant>
+  fullName: System.EventHandler<Avalonia.Styling.ThemeVariant>
+  nameWithType.vb: EventHandler(Of ThemeVariant)
+  fullName.vb: System.EventHandler(Of Avalonia.Styling.ThemeVariant)
+  name.vb: EventHandler(Of ThemeVariant)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: Avalonia.Styling.ThemeVariant
+    name: ThemeVariant
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Avalonia.Styling.ThemeVariant
+    name: ThemeVariant
+    isExternal: true
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )
+- uid: Ink.UI.Platform.ThemeService.SetTheme*
+  commentId: Overload:Ink.UI.Platform.ThemeService.SetTheme
+  href: Ink.UI.Platform.ThemeService.html#Ink_UI_Platform_ThemeService_SetTheme_Avalonia_Styling_ThemeVariant_
+  name: SetTheme
+  nameWithType: ThemeService.SetTheme
+  fullName: Ink.UI.Platform.ThemeService.SetTheme
+- uid: Ink.UI.Platform.IThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  commentId: M:Ink.UI.Platform.IThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  parent: Ink.UI.Platform.IThemeService
+  isExternal: true
+  href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_SetTheme_Avalonia_Styling_ThemeVariant_
+  name: SetTheme(ThemeVariant)
+  nameWithType: IThemeService.SetTheme(ThemeVariant)
+  fullName: Ink.UI.Platform.IThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+  spec.csharp:
+  - uid: Ink.UI.Platform.IThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+    name: SetTheme
+    href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_SetTheme_Avalonia_Styling_ThemeVariant_
+  - name: (
+  - uid: Avalonia.Styling.ThemeVariant
+    name: ThemeVariant
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Ink.UI.Platform.IThemeService.SetTheme(Avalonia.Styling.ThemeVariant)
+    name: SetTheme
+    href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_SetTheme_Avalonia_Styling_ThemeVariant_
+  - name: (
+  - uid: Avalonia.Styling.ThemeVariant
+    name: ThemeVariant
+    isExternal: true
+  - name: )
+- uid: Avalonia.Styling.ThemeVariant.Light
+  commentId: P:Avalonia.Styling.ThemeVariant.Light
+  isExternal: true
+  name: Light
+  nameWithType: ThemeVariant.Light
+  fullName: Avalonia.Styling.ThemeVariant.Light
+- uid: Avalonia.Styling.ThemeVariant.Dark
+  commentId: P:Avalonia.Styling.ThemeVariant.Dark
+  isExternal: true
+  name: Dark
+  nameWithType: ThemeVariant.Dark
+  fullName: Avalonia.Styling.ThemeVariant.Dark
+- uid: Ink.UI.Platform.ThemeService.Toggle*
+  commentId: Overload:Ink.UI.Platform.ThemeService.Toggle
+  href: Ink.UI.Platform.ThemeService.html#Ink_UI_Platform_ThemeService_Toggle
+  name: Toggle
+  nameWithType: ThemeService.Toggle
+  fullName: Ink.UI.Platform.ThemeService.Toggle
+- uid: Ink.UI.Platform.IThemeService.Toggle
+  commentId: M:Ink.UI.Platform.IThemeService.Toggle
+  parent: Ink.UI.Platform.IThemeService
+  href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_Toggle
+  name: Toggle()
+  nameWithType: IThemeService.Toggle()
+  fullName: Ink.UI.Platform.IThemeService.Toggle()
+  spec.csharp:
+  - uid: Ink.UI.Platform.IThemeService.Toggle
+    name: Toggle
+    href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_Toggle
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Ink.UI.Platform.IThemeService.Toggle
+    name: Toggle
+    href: Ink.UI.Platform.IThemeService.html#Ink_UI_Platform_IThemeService_Toggle
+  - name: (
+  - name: )

@@ -1,0 +1,351 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Sources.IDataGridSource`1
+  commentId: T:Ink.Data.Sources.IDataGridSource`1
+  id: IDataGridSource`1
+  parent: Ink.Data.Sources
+  children:
+  - Ink.Data.Sources.IDataGridSource`1.Invalidated
+  - Ink.Data.Sources.IDataGridSource`1.QueryAsync(Ink.Data.Queries.DataGridQuery,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDataGridSource<T>
+  nameWithType: IDataGridSource<T>
+  fullName: Ink.Data.Sources.IDataGridSource<T>
+  type: Interface
+  source:
+    remote:
+      path: src/Ink.Data/Sources/IDataGridSource.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: IDataGridSource
+    path: ../src/Ink.Data/Sources/IDataGridSource.cs
+    startLine: 14
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Sources
+  summary: >-
+    Provides paginated, filtered, and sorted data for a data grid.
+
+    Implement this interface to connect a grid to any data source -
+
+    in-memory collections, HTTP APIs, databases, or real-time streams.
+  example: []
+  syntax:
+    content: public interface IDataGridSource<T>
+    typeParameters:
+    - id: T
+      description: The item type.
+    content.vb: Public Interface IDataGridSource(Of T)
+  nameWithType.vb: IDataGridSource(Of T)
+  fullName.vb: Ink.Data.Sources.IDataGridSource(Of T)
+  name.vb: IDataGridSource(Of T)
+- uid: Ink.Data.Sources.IDataGridSource`1.QueryAsync(Ink.Data.Queries.DataGridQuery,System.Threading.CancellationToken)
+  commentId: M:Ink.Data.Sources.IDataGridSource`1.QueryAsync(Ink.Data.Queries.DataGridQuery,System.Threading.CancellationToken)
+  id: QueryAsync(Ink.Data.Queries.DataGridQuery,System.Threading.CancellationToken)
+  parent: Ink.Data.Sources.IDataGridSource`1
+  langs:
+  - csharp
+  - vb
+  name: QueryAsync(DataGridQuery, CancellationToken)
+  nameWithType: IDataGridSource<T>.QueryAsync(DataGridQuery, CancellationToken)
+  fullName: Ink.Data.Sources.IDataGridSource<T>.QueryAsync(Ink.Data.Queries.DataGridQuery, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.Data/Sources/IDataGridSource.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: QueryAsync
+    path: ../src/Ink.Data/Sources/IDataGridSource.cs
+    startLine: 20
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Sources
+  summary: Executes the query and returns a single page of results.
+  example: []
+  syntax:
+    content: Task<DataPage<T>> QueryAsync(DataGridQuery query, CancellationToken ct = default)
+    parameters:
+    - id: query
+      type: Ink.Data.Queries.DataGridQuery
+      description: The query describing sort, filter, pagination, and requested columns.
+    - id: ct
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task{Ink.Data.Results.DataPage{{T}}}
+      description: A page of matching items and the total count across all pages.
+    content.vb: Function QueryAsync(query As DataGridQuery, ct As CancellationToken = Nothing) As Task(Of DataPage(Of T))
+  overload: Ink.Data.Sources.IDataGridSource`1.QueryAsync*
+  nameWithType.vb: IDataGridSource(Of T).QueryAsync(DataGridQuery, CancellationToken)
+  fullName.vb: Ink.Data.Sources.IDataGridSource(Of T).QueryAsync(Ink.Data.Queries.DataGridQuery, System.Threading.CancellationToken)
+- uid: Ink.Data.Sources.IDataGridSource`1.Invalidated
+  commentId: E:Ink.Data.Sources.IDataGridSource`1.Invalidated
+  id: Invalidated
+  parent: Ink.Data.Sources.IDataGridSource`1
+  langs:
+  - csharp
+  - vb
+  name: Invalidated
+  nameWithType: IDataGridSource<T>.Invalidated
+  fullName: Ink.Data.Sources.IDataGridSource<T>.Invalidated
+  type: Event
+  source:
+    remote:
+      path: src/Ink.Data/Sources/IDataGridSource.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Invalidated
+    path: ../src/Ink.Data/Sources/IDataGridSource.cs
+    startLine: 27
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Sources
+  summary: >-
+    Raised when the underlying data has changed and the grid should re-query.
+
+    The default implementation is a no-op; sources that support real-time updates
+
+    should override this with a backing field and fire it when data changes.
+  example: []
+  syntax:
+    content: event Action? Invalidated
+    return:
+      type: System.Action
+    content.vb: Event Invalidated As Action
+  nameWithType.vb: IDataGridSource(Of T).Invalidated
+  fullName.vb: Ink.Data.Sources.IDataGridSource(Of T).Invalidated
+references:
+- uid: Ink.Data.Sources
+  commentId: N:Ink.Data.Sources
+  href: Ink.html
+  name: Ink.Data.Sources
+  nameWithType: Ink.Data.Sources
+  fullName: Ink.Data.Sources
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Sources
+    name: Sources
+    href: Ink.Data.Sources.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Sources
+    name: Sources
+    href: Ink.Data.Sources.html
+- uid: Ink.Data.Sources.IDataGridSource`1.QueryAsync*
+  commentId: Overload:Ink.Data.Sources.IDataGridSource`1.QueryAsync
+  href: Ink.Data.Sources.IDataGridSource-1.html#Ink_Data_Sources_IDataGridSource_1_QueryAsync_Ink_Data_Queries_DataGridQuery_System_Threading_CancellationToken_
+  name: QueryAsync
+  nameWithType: IDataGridSource<T>.QueryAsync
+  fullName: Ink.Data.Sources.IDataGridSource<T>.QueryAsync
+  nameWithType.vb: IDataGridSource(Of T).QueryAsync
+  fullName.vb: Ink.Data.Sources.IDataGridSource(Of T).QueryAsync
+- uid: Ink.Data.Queries.DataGridQuery
+  commentId: T:Ink.Data.Queries.DataGridQuery
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.DataGridQuery.html
+  name: DataGridQuery
+  nameWithType: DataGridQuery
+  fullName: Ink.Data.Queries.DataGridQuery
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Ink.Data.Results.DataPage{{T}}}
+  commentId: T:System.Threading.Tasks.Task{Ink.Data.Results.DataPage{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<DataPage<T>>
+  nameWithType: Task<DataPage<T>>
+  fullName: System.Threading.Tasks.Task<Ink.Data.Results.DataPage<T>>
+  nameWithType.vb: Task(Of DataPage(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of Ink.Data.Results.DataPage(Of T))
+  name.vb: Task(Of DataPage(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Ink.Data.Results.DataPage`1
+    name: DataPage
+    href: Ink.Data.Results.DataPage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.Data.Results.DataPage`1
+    name: DataPage
+    href: Ink.Data.Results.DataPage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: Ink.Data.Queries
+  commentId: N:Ink.Data.Queries
+  href: Ink.html
+  name: Ink.Data.Queries
+  nameWithType: Ink.Data.Queries
+  fullName: Ink.Data.Queries
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

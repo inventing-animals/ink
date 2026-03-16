@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>InventingAnimals.Ink.Data.EFCore</PackageId>
+    <Authors>Inventing Animals</Authors>
+    <Company>Inventing Animals s.r.o.</Company>
+    <Description>Entity Framework Core query translator for Ink.Data. Automatically translates DataGridQuery filter trees and sort descriptors into IQueryable operations against any EF Core provider.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/inventing-animals/ink</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/inventing-animals/ink</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>efcore;entityframework;datagrid;filter;sort;query;avalonia</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ink.Data\Ink.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" />
+    <PackageReference Include="StyleCop.Analyzers" />
+    <PackageReference Include="Roslynator.Analyzers" />
+  </ItemGroup>
+</Project>

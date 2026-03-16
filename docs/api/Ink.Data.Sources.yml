@@ -1,0 +1,49 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Sources
+  commentId: N:Ink.Data.Sources
+  id: Ink.Data.Sources
+  children:
+  - Ink.Data.Sources.IChartSource
+  - Ink.Data.Sources.IDataGridSource`1
+  langs:
+  - csharp
+  - vb
+  name: Ink.Data.Sources
+  nameWithType: Ink.Data.Sources
+  fullName: Ink.Data.Sources
+  type: Namespace
+  assemblies:
+  - Ink.Data
+references:
+- uid: Ink.Data.Sources.IChartSource
+  commentId: T:Ink.Data.Sources.IChartSource
+  href: Ink.Data.Sources.IChartSource.html
+  name: IChartSource
+  nameWithType: IChartSource
+  fullName: Ink.Data.Sources.IChartSource
+- uid: Ink.Data.Sources.IDataGridSource`1
+  commentId: T:Ink.Data.Sources.IDataGridSource`1
+  href: Ink.Data.Sources.IDataGridSource-1.html
+  name: IDataGridSource<T>
+  nameWithType: IDataGridSource<T>
+  fullName: Ink.Data.Sources.IDataGridSource<T>
+  nameWithType.vb: IDataGridSource(Of T)
+  fullName.vb: Ink.Data.Sources.IDataGridSource(Of T)
+  name.vb: IDataGridSource(Of T)
+  spec.csharp:
+  - uid: Ink.Data.Sources.IDataGridSource`1
+    name: IDataGridSource
+    href: Ink.Data.Sources.IDataGridSource-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Ink.Data.Sources.IDataGridSource`1
+    name: IDataGridSource
+    href: Ink.Data.Sources.IDataGridSource-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
