@@ -5,7 +5,7 @@
 
 UI component library for [Avalonia](https://avaloniaui.net/) applications, supporting Desktop (Windows, Linux, macOS), Mobile (iOS, Android), and WASM.
 
-**[Documentation](https://inventing-animals.github.io/ink/)** | **[Live demo](https://inventing-animals.github.io/ink/demo/)**
+**[Documentation](https://inventing-animals.github.io/ink/docs/)** | **[Live demo](https://inventing-animals.github.io/ink/demo/)**
 
 ## What's included
 
@@ -13,7 +13,7 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications, suppo
 
 [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink)](https://www.nuget.org/packages/InventingAnimals.Ink)
 
-`InventingAnimals.Ink` - UI components and theming for Avalonia applications. [Documentation](https://inventing-animals.github.io/ink/articles/intro.html)
+`InventingAnimals.Ink` - UI components and theming for Avalonia applications. [Documentation](https://inventing-animals.github.io/ink/docs/articles/intro.html)
 
 - InkTheme with a built-in color palette, typography, and metric tokens
 - Dark and light theme support out of the box
@@ -22,7 +22,7 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications, suppo
 
 [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Platform)](https://www.nuget.org/packages/InventingAnimals.Ink.Platform)
 
-`InventingAnimals.Ink.Platform` - cross-platform service abstractions. [Documentation](https://inventing-animals.github.io/ink/articles/platform.html)
+`InventingAnimals.Ink.Platform` - cross-platform service abstractions. [Documentation](https://inventing-animals.github.io/ink/docs/articles/platform.html)
 
 - `IWindowService` - opens a new window on Desktop/Mobile and a new browser tab on Web (always non-modal)
 - `ISettingsService` / `FileSettingsService` - persistent key-value storage backed by a JSON file; trim and NativeAOT safe
@@ -52,20 +52,20 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications, suppo
 
 [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Data)](https://www.nuget.org/packages/InventingAnimals.Ink.Data)
 
-`InventingAnimals.Ink.Data` - shared query model for DataGrid and Charts with no Avalonia or database dependency. [Documentation](https://inventing-animals.github.io/ink/articles/data.html)
+`InventingAnimals.Ink.Data` - shared query model for DataGrid with no Avalonia or database dependency. [Documentation](https://inventing-animals.github.io/ink/docs/articles/data.html)
 
-- `DataGridQuery` with composable filter trees (`FilterAnd`, `FilterOr`, `FilterNot`, `FilterCondition`)
+- `DataQuery` with composable filter trees (`FilterAnd`, `FilterOr`, `FilterNot`, `FilterCondition`)
 - `FilterOp` - extensible operators; built-in set covers equality, comparison, range, null, in/not-in, and string ops
-- `SortDescriptor`, `DataPage<T>`, `IDataGridSource<T>`, `IChartSource`
+- `SortDescriptor`, `DataPage<T>`, `IDataSource<T>`
 - Full JSON round-trip via `System.Text.Json`; WASM-safe
 
 ### Ink.Data.EFCore
 
 [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Data.EFCore)](https://www.nuget.org/packages/InventingAnimals.Ink.Data.EFCore)
 
-`InventingAnimals.Ink.Data.EFCore` - server-side EF Core query translator. [Documentation](https://inventing-animals.github.io/ink/articles/data.html)
+`InventingAnimals.Ink.Data.EFCore` - server-side EF Core query translator. [Documentation](https://inventing-animals.github.io/ink/docs/articles/data.html)
 
-- `EFCoreQueryTranslator<T>` - translates `DataGridQuery` into `IQueryable<T>` filter, sort, and pagination
+- `EFCoreQueryTranslator<T>` - translates `DataQuery` into `IQueryable<T>` filter, sort, and pagination
 - Type-safe column registration via expressions (`x => x.Name`); unregistered fields throw `UnauthorizedFieldException`
 - Extensible with custom operators via `HandleOp`
 

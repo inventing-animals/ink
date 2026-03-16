@@ -12,13 +12,13 @@ namespace Ink.Data.Sources;
 /// in-memory collections, HTTP APIs, databases, or real-time streams.
 /// </summary>
 /// <typeparam name="T">The item type.</typeparam>
-public interface IDataGridSource<T>
+public interface IDataSource<T>
 {
     /// <summary>Executes the query and returns a single page of results.</summary>
     /// <param name="query">The query describing sort, filter, pagination, and requested columns.</param>
     /// <param name="ct">Cancellation token.</param>
     /// <returns>A page of matching items and the total count across all pages.</returns>
-    Task<DataPage<T>> QueryAsync(DataGridQuery query, CancellationToken ct = default);
+    Task<DataPage<T>> QueryAsync(DataQuery query, CancellationToken ct = default);
 
     /// <summary>
     /// Raised when the underlying data has changed and the grid should re-query.

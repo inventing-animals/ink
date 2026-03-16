@@ -81,7 +81,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_Contains_ReturnsMatchingRows()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("name", FilterOp.Contains, ["li"]),
         };
@@ -96,7 +96,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_GreaterThan_ReturnsMatchingRows()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("age", FilterOp.GreaterThan, [28]),
         };
@@ -110,7 +110,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_Between_ReturnsRowsInRange()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("age", FilterOp.Between, [25, 30]),
         };
@@ -124,7 +124,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_Equal_Bool_ReturnsMatchingRows()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("active", FilterOp.Equal, [true]),
         };
@@ -138,7 +138,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_IsNull_ReturnsNullRows()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("email", FilterOp.IsNull, []),
         };
@@ -152,7 +152,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_In_ReturnsMatchingRows()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("name", FilterOp.In, ["Alice", "Eve"]),
         };
@@ -167,7 +167,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_And_CombinesConditions()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterAnd([
                 new FilterCondition("active", FilterOp.Equal, [true]),
@@ -184,7 +184,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_Or_ExpandsResults()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterOr([
                 new FilterCondition("name", FilterOp.Equal, ["Alice"]),
@@ -200,7 +200,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Filter_Not_InvertsCondition()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterNot(new FilterCondition("active", FilterOp.Equal, [true])),
         };
@@ -216,7 +216,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Sort_ByNameAscending_ReturnsAlphabetical()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Sort = [new SortDescriptor("name", SortDirection.Ascending)],
         };
@@ -230,7 +230,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Sort_ByAgeDescending_ReturnsSortedByAge()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Sort = [new SortDescriptor("age", SortDirection.Descending)],
         };
@@ -244,7 +244,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Sort_MultiColumn_AppliesInOrder()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Sort = [
                 new SortDescriptor("active", SortDirection.Descending),
@@ -264,7 +264,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Paginate_ReturnsCorrectPage()
     {
-        var query = new DataGridQuery(null, [new SortDescriptor("name", SortDirection.Ascending)], null, Page: 2, PageSize: 2);
+        var query = new DataQuery(null, [new SortDescriptor("name", SortDirection.Ascending)], null, Page: 2, PageSize: 2);
 
         var result = await _translator.ExecuteAsync(_db.Users, query);
 
@@ -277,7 +277,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public async Task Paginate_LastPage_ReturnsRemainingItems()
     {
-        var query = new DataGridQuery(null, [new SortDescriptor("name", SortDirection.Ascending)], null, Page: 3, PageSize: 2);
+        var query = new DataQuery(null, [new SortDescriptor("name", SortDirection.Ascending)], null, Page: 3, PageSize: 2);
 
         var result = await _translator.ExecuteAsync(_db.Users, query);
 
@@ -291,7 +291,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public void UnregisteredField_InFilter_ThrowsUnauthorizedFieldException()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("passwordHash", FilterOp.Equal, ["secret"]),
         };
@@ -302,7 +302,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public void UnregisteredField_InSort_ThrowsUnauthorizedFieldException()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Sort = [new SortDescriptor("passwordHash", SortDirection.Ascending)],
         };
@@ -327,7 +327,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
                 return Expression.Not(Expression.Call(member, method, value));
             });
 
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("name", notContains, ["li"]),
         };
@@ -342,7 +342,7 @@ public class EFCoreQueryTranslatorTests : IDisposable
     [Fact]
     public void HandleOp_UnknownBuiltInOp_AndNoCustomHandler_Throws()
     {
-        var query = DataGridQuery.Default with
+        var query = DataQuery.Default with
         {
             Filter = new FilterCondition("name", new FilterOp("unknownOp"), ["x"]),
         };
