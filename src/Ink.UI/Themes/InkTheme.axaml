@@ -49,6 +49,42 @@
     </Style>
 
     <!-- Controls -->
+    <StyleInclude Source="avares://Ink.UI/Controls/TextBox/TextBox.axaml" />
     <StyleInclude Source="avares://Ink.UI/Controls/Button/Button.axaml" />
+
+    <!-- Popup host: transparent so rounded corners on FlyoutPresenter are not clipped -->
+    <Style Selector="PopupRoot">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!-- Flyout -->
+    <Style Selector="FlyoutPresenter">
+        <Setter Property="Background"      Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="BorderBrush"     Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius"    Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="Padding"         Value="0" />
+        <Setter Property="Margin"          Value="8" />
+
+        <!-- Own template so CornerRadius/BoxShadow are actually applied -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    ClipToBounds="True"
+                    BoxShadow="0 4 24 0 #3C000000">
+                    <ContentPresenter
+                        Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+    </Style>
 
 </Styles>

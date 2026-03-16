@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="using:Avalonia.Data.Converters">
+
+    <!-- ================================ -->
+    <!-- TextBox                          -->
+    <!-- ================================ -->
+    <Style Selector=":is(TextBox)">
+        <Setter Property="Background"    Value="{DynamicResource Ink.Brush.Input.Background}" />
+        <Setter Property="BorderBrush"   Value="{DynamicResource Ink.Brush.Input.Border}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius"  Value="{DynamicResource Ink.CornerRadius.S}" />
+        <Setter Property="Padding"       Value="{DynamicResource Ink.Padding.Control.S}" />
+        <Setter Property="Foreground"    Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="FontFamily"    Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize"      Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource Ink.Brush.Accent.Subtle}" />
+        <Setter Property="CaretBrush"    Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="MinHeight"     Value="{DynamicResource Ink.ControlHeight.S}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor"        Value="IBeam" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+                    <ScrollViewer
+                        Name="PART_ScrollViewer"
+                        HorizontalScrollBarVisibility="Hidden"
+                        VerticalScrollBarVisibility="Hidden"
+                        AllowAutoHide="False"
+                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}">
+                        <Panel Margin="{TemplateBinding Padding}">
+                            <TextBlock
+                                Text="{TemplateBinding Watermark}"
+                                Foreground="{DynamicResource Ink.Brush.Input.Placeholder}"
+                                FontFamily="{TemplateBinding FontFamily}"
+                                FontSize="{TemplateBinding FontSize}"
+                                IsVisible="{TemplateBinding Text, Converter={x:Static conv:StringConverters.IsNullOrEmpty}}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            <TextPresenter
+                                Name="PART_TextPresenter"
+                                Text="{TemplateBinding Text, Mode=TwoWay}"
+                                CaretBrush="{TemplateBinding CaretBrush}"
+                                SelectionBrush="{TemplateBinding SelectionBrush}"
+                                PasswordChar="{TemplateBinding PasswordChar}"
+                                RevealPassword="{TemplateBinding RevealPassword}"
+                                TextAlignment="{TemplateBinding TextAlignment}"
+                                TextWrapping="{TemplateBinding TextWrapping}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Panel>
+                    </ScrollViewer>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector=":is(TextBox):pointerover">
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Hover}" />
+    </Style>
+
+    <Style Selector=":is(TextBox):focus-within">
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Focused}" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- CheckBox                         -->
+    <!-- ================================ -->
+    <Style Selector=":is(CheckBox)">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize"   Value="{DynamicResource Ink.FontSize.S}" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- ComboBox                         -->
+    <!-- ================================ -->
+    <Style Selector=":is(ComboBox)">
+        <Setter Property="Background"    Value="{DynamicResource Ink.Brush.Input.Background}" />
+        <Setter Property="BorderBrush"   Value="{DynamicResource Ink.Brush.Input.Border}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius"  Value="{DynamicResource Ink.CornerRadius.S}" />
+        <Setter Property="Padding"       Value="{DynamicResource Ink.Padding.Control.S}" />
+        <Setter Property="Foreground"    Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="FontFamily"    Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize"      Value="{DynamicResource Ink.FontSize.S}" />
+    </Style>
+
+</Styles>

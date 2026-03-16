@@ -85,4 +85,49 @@
         <Setter Property="TextTrimming" Value="CharacterEllipsis" />
     </Style>
 
+    <!-- ================================ -->
+    <!-- Interactive header cell          -->
+    <!-- ================================ -->
+    <Style Selector="controls|DataGrid Border.ink-datagrid-header-cell-interactive">
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style Selector="controls|DataGrid TextBlock.ink-datagrid-sort-indicator">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.XS}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- ================================ -->
+    <!-- Column header popup              -->
+    <!-- ================================ -->
+    <Style Selector="Border.ink-datagrid-popup-title">
+        <Setter Property="Padding" Value="12,10,12,10" />
+    </Style>
+
+    <Style Selector="TextBlock.ink-datagrid-popup-title-text">
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+    </Style>
+
+    <Style Selector="Border.ink-datagrid-popup-separator">
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+    </Style>
+
+    <Style Selector="Button.ink-datagrid-popup-item">
+        <Setter Property="Padding" Value="12,8,12,8" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="MinHeight" Value="0" />
+    </Style>
+
+    <Style Selector="Border.ink-datagrid-popup-filter">
+        <Setter Property="Padding" Value="12,10,12,10" />
+    </Style>
+
+    <Style Selector="StackPanel.ink-datagrid-popup-footer">
+        <Setter Property="Margin" Value="12,8,12,10" />
+    </Style>
+
 </Styles>
