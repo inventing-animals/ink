@@ -1,0 +1,732 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Queries.ChartQuery
+  commentId: T:Ink.Data.Queries.ChartQuery
+  id: ChartQuery
+  parent: Ink.Data.Queries
+  children:
+  - Ink.Data.Queries.ChartQuery.#ctor(System.DateTimeOffset,System.DateTimeOffset,Ink.Data.Queries.ChartGranularity,Ink.Data.Queries.FilterNode,System.Collections.Generic.IReadOnlyList{System.String})
+  - Ink.Data.Queries.ChartQuery.Fields
+  - Ink.Data.Queries.ChartQuery.Filter
+  - Ink.Data.Queries.ChartQuery.From
+  - Ink.Data.Queries.ChartQuery.Granularity
+  - Ink.Data.Queries.ChartQuery.To
+  langs:
+  - csharp
+  - vb
+  name: ChartQuery
+  nameWithType: ChartQuery
+  fullName: Ink.Data.Queries.ChartQuery
+  type: Class
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: ChartQuery
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: >-
+    Describes a time-windowed aggregation query for chart data.
+
+    Shares the same <xref href="Ink.Data.Queries.FilterNode" data-throw-if-not-resolved="false"></xref> model as <xref href="Ink.Data.Queries.DataGridQuery" data-throw-if-not-resolved="false"></xref>
+
+    so the same filter UI can drive both grids and charts.
+  example: []
+  syntax:
+    content: 'public sealed record ChartQuery : IEquatable<ChartQuery>'
+    content.vb: Public NotInheritable Class ChartQuery Implements IEquatable(Of ChartQuery)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{Ink.Data.Queries.ChartQuery}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Ink.Data.Queries.ChartQuery.#ctor(System.DateTimeOffset,System.DateTimeOffset,Ink.Data.Queries.ChartGranularity,Ink.Data.Queries.FilterNode,System.Collections.Generic.IReadOnlyList{System.String})
+  commentId: M:Ink.Data.Queries.ChartQuery.#ctor(System.DateTimeOffset,System.DateTimeOffset,Ink.Data.Queries.ChartGranularity,Ink.Data.Queries.FilterNode,System.Collections.Generic.IReadOnlyList{System.String})
+  id: '#ctor(System.DateTimeOffset,System.DateTimeOffset,Ink.Data.Queries.ChartGranularity,Ink.Data.Queries.FilterNode,System.Collections.Generic.IReadOnlyList{System.String})'
+  parent: Ink.Data.Queries.ChartQuery
+  langs:
+  - csharp
+  - vb
+  name: ChartQuery(DateTimeOffset, DateTimeOffset, ChartGranularity, FilterNode?, IReadOnlyList<string>?)
+  nameWithType: ChartQuery.ChartQuery(DateTimeOffset, DateTimeOffset, ChartGranularity, FilterNode?, IReadOnlyList<string>?)
+  fullName: Ink.Data.Queries.ChartQuery.ChartQuery(System.DateTimeOffset, System.DateTimeOffset, Ink.Data.Queries.ChartGranularity, Ink.Data.Queries.FilterNode?, System.Collections.Generic.IReadOnlyList<string>?)
+  type: Constructor
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: .ctor
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: >-
+    Describes a time-windowed aggregation query for chart data.
+
+    Shares the same <xref href="Ink.Data.Queries.FilterNode" data-throw-if-not-resolved="false"></xref> model as <xref href="Ink.Data.Queries.DataGridQuery" data-throw-if-not-resolved="false"></xref>
+
+    so the same filter UI can drive both grids and charts.
+  example: []
+  syntax:
+    content: public ChartQuery(DateTimeOffset From, DateTimeOffset To, ChartGranularity Granularity, FilterNode? Filter = null, IReadOnlyList<string>? Fields = null)
+    parameters:
+    - id: From
+      type: System.DateTimeOffset
+      description: Start of the time window (inclusive).
+    - id: To
+      type: System.DateTimeOffset
+      description: End of the time window (inclusive).
+    - id: Granularity
+      type: Ink.Data.Queries.ChartGranularity
+      description: How to bucket data points within the window.
+    - id: Filter
+      type: Ink.Data.Queries.FilterNode
+      description: Optional filter applied before aggregation.
+    - id: Fields
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+      description: Series field names to include, or <code>null</code> for all.
+    content.vb: Public Sub New(From As DateTimeOffset, [To] As DateTimeOffset, Granularity As ChartGranularity, Filter As FilterNode = Nothing, Fields As IReadOnlyList(Of String) = Nothing)
+  overload: Ink.Data.Queries.ChartQuery.#ctor*
+  nameWithType.vb: ChartQuery.New(DateTimeOffset, DateTimeOffset, ChartGranularity, FilterNode, IReadOnlyList(Of String))
+  fullName.vb: Ink.Data.Queries.ChartQuery.New(System.DateTimeOffset, System.DateTimeOffset, Ink.Data.Queries.ChartGranularity, Ink.Data.Queries.FilterNode, System.Collections.Generic.IReadOnlyList(Of String))
+  name.vb: New(DateTimeOffset, DateTimeOffset, ChartGranularity, FilterNode, IReadOnlyList(Of String))
+- uid: Ink.Data.Queries.ChartQuery.From
+  commentId: P:Ink.Data.Queries.ChartQuery.From
+  id: From
+  parent: Ink.Data.Queries.ChartQuery
+  langs:
+  - csharp
+  - vb
+  name: From
+  nameWithType: ChartQuery.From
+  fullName: Ink.Data.Queries.ChartQuery.From
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: From
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 16
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Start of the time window (inclusive).
+  example: []
+  syntax:
+    content: public DateTimeOffset From { get; init; }
+    parameters: []
+    return:
+      type: System.DateTimeOffset
+    content.vb: Public Property From As DateTimeOffset
+  overload: Ink.Data.Queries.ChartQuery.From*
+- uid: Ink.Data.Queries.ChartQuery.To
+  commentId: P:Ink.Data.Queries.ChartQuery.To
+  id: To
+  parent: Ink.Data.Queries.ChartQuery
+  langs:
+  - csharp
+  - vb
+  name: To
+  nameWithType: ChartQuery.To
+  fullName: Ink.Data.Queries.ChartQuery.To
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: To
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 17
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: End of the time window (inclusive).
+  example: []
+  syntax:
+    content: public DateTimeOffset To { get; init; }
+    parameters: []
+    return:
+      type: System.DateTimeOffset
+    content.vb: Public Property [To] As DateTimeOffset
+  overload: Ink.Data.Queries.ChartQuery.To*
+- uid: Ink.Data.Queries.ChartQuery.Granularity
+  commentId: P:Ink.Data.Queries.ChartQuery.Granularity
+  id: Granularity
+  parent: Ink.Data.Queries.ChartQuery
+  langs:
+  - csharp
+  - vb
+  name: Granularity
+  nameWithType: ChartQuery.Granularity
+  fullName: Ink.Data.Queries.ChartQuery.Granularity
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Granularity
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 18
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: How to bucket data points within the window.
+  example: []
+  syntax:
+    content: public ChartGranularity Granularity { get; init; }
+    parameters: []
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+    content.vb: Public Property Granularity As ChartGranularity
+  overload: Ink.Data.Queries.ChartQuery.Granularity*
+- uid: Ink.Data.Queries.ChartQuery.Filter
+  commentId: P:Ink.Data.Queries.ChartQuery.Filter
+  id: Filter
+  parent: Ink.Data.Queries.ChartQuery
+  langs:
+  - csharp
+  - vb
+  name: Filter
+  nameWithType: ChartQuery.Filter
+  fullName: Ink.Data.Queries.ChartQuery.Filter
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Filter
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 19
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Optional filter applied before aggregation.
+  example: []
+  syntax:
+    content: public FilterNode? Filter { get; init; }
+    parameters: []
+    return:
+      type: Ink.Data.Queries.FilterNode
+    content.vb: Public Property Filter As FilterNode
+  overload: Ink.Data.Queries.ChartQuery.Filter*
+- uid: Ink.Data.Queries.ChartQuery.Fields
+  commentId: P:Ink.Data.Queries.ChartQuery.Fields
+  id: Fields
+  parent: Ink.Data.Queries.ChartQuery
+  langs:
+  - csharp
+  - vb
+  name: Fields
+  nameWithType: ChartQuery.Fields
+  fullName: Ink.Data.Queries.ChartQuery.Fields
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartQuery.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Fields
+    path: ../src/Ink.Data/Queries/ChartQuery.cs
+    startLine: 20
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Series field names to include, or <code>null</code> for all.
+  example: []
+  syntax:
+    content: public IReadOnlyList<string>? Fields { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+    content.vb: Public Property Fields As IReadOnlyList(Of String)
+  overload: Ink.Data.Queries.ChartQuery.Fields*
+references:
+- uid: Ink.Data.Queries.FilterNode
+  commentId: T:Ink.Data.Queries.FilterNode
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.FilterNode.html
+  name: FilterNode
+  nameWithType: FilterNode
+  fullName: Ink.Data.Queries.FilterNode
+- uid: Ink.Data.Queries.DataGridQuery
+  commentId: T:Ink.Data.Queries.DataGridQuery
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.DataGridQuery.html
+  name: DataGridQuery
+  nameWithType: DataGridQuery
+  fullName: Ink.Data.Queries.DataGridQuery
+- uid: Ink.Data.Queries
+  commentId: N:Ink.Data.Queries
+  href: Ink.html
+  name: Ink.Data.Queries
+  nameWithType: Ink.Data.Queries
+  fullName: Ink.Data.Queries
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{Ink.Data.Queries.ChartQuery}
+  commentId: T:System.IEquatable{Ink.Data.Queries.ChartQuery}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<ChartQuery>
+  nameWithType: IEquatable<ChartQuery>
+  fullName: System.IEquatable<Ink.Data.Queries.ChartQuery>
+  nameWithType.vb: IEquatable(Of ChartQuery)
+  fullName.vb: System.IEquatable(Of Ink.Data.Queries.ChartQuery)
+  name.vb: IEquatable(Of ChartQuery)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Ink.Data.Queries.ChartQuery
+    name: ChartQuery
+    href: Ink.Data.Queries.ChartQuery.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.Data.Queries.ChartQuery
+    name: ChartQuery
+    href: Ink.Data.Queries.ChartQuery.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Ink.Data.Queries.ChartQuery.#ctor*
+  commentId: Overload:Ink.Data.Queries.ChartQuery.#ctor
+  href: Ink.Data.Queries.ChartQuery.html#Ink_Data_Queries_ChartQuery__ctor_System_DateTimeOffset_System_DateTimeOffset_Ink_Data_Queries_ChartGranularity_Ink_Data_Queries_FilterNode_System_Collections_Generic_IReadOnlyList_System_String__
+  name: ChartQuery
+  nameWithType: ChartQuery.ChartQuery
+  fullName: Ink.Data.Queries.ChartQuery.ChartQuery
+  nameWithType.vb: ChartQuery.New
+  fullName.vb: Ink.Data.Queries.ChartQuery.New
+  name.vb: New
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: Ink.Data.Queries.ChartGranularity
+  commentId: T:Ink.Data.Queries.ChartGranularity
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.ChartGranularity.html
+  name: ChartGranularity
+  nameWithType: ChartGranularity
+  fullName: Ink.Data.Queries.ChartGranularity
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<string>
+  nameWithType: IReadOnlyList<string>
+  fullName: System.Collections.Generic.IReadOnlyList<string>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Ink.Data.Queries.ChartQuery.From*
+  commentId: Overload:Ink.Data.Queries.ChartQuery.From
+  href: Ink.Data.Queries.ChartQuery.html#Ink_Data_Queries_ChartQuery_From
+  name: From
+  nameWithType: ChartQuery.From
+  fullName: Ink.Data.Queries.ChartQuery.From
+- uid: Ink.Data.Queries.ChartQuery.To*
+  commentId: Overload:Ink.Data.Queries.ChartQuery.To
+  href: Ink.Data.Queries.ChartQuery.html#Ink_Data_Queries_ChartQuery_To
+  name: To
+  nameWithType: ChartQuery.To
+  fullName: Ink.Data.Queries.ChartQuery.To
+- uid: Ink.Data.Queries.ChartQuery.Granularity*
+  commentId: Overload:Ink.Data.Queries.ChartQuery.Granularity
+  href: Ink.Data.Queries.ChartQuery.html#Ink_Data_Queries_ChartQuery_Granularity
+  name: Granularity
+  nameWithType: ChartQuery.Granularity
+  fullName: Ink.Data.Queries.ChartQuery.Granularity
+- uid: Ink.Data.Queries.ChartQuery.Filter*
+  commentId: Overload:Ink.Data.Queries.ChartQuery.Filter
+  href: Ink.Data.Queries.ChartQuery.html#Ink_Data_Queries_ChartQuery_Filter
+  name: Filter
+  nameWithType: ChartQuery.Filter
+  fullName: Ink.Data.Queries.ChartQuery.Filter
+- uid: Ink.Data.Queries.ChartQuery.Fields*
+  commentId: Overload:Ink.Data.Queries.ChartQuery.Fields
+  href: Ink.Data.Queries.ChartQuery.html#Ink_Data_Queries_ChartQuery_Fields
+  name: Fields
+  nameWithType: ChartQuery.Fields
+  fullName: Ink.Data.Queries.ChartQuery.Fields

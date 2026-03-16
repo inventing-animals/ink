@@ -8,8 +8,8 @@ namespace Ink.UI.Platform;
 /// <summary>
 /// Desktop implementation that combines window and tab support.
 /// <list type="bullet">
-///   <item><see cref="OpenAsync"/> — spawns a new OS window, identical to <see cref="DesktopWindowService"/>.</item>
-///   <item><see cref="OpenTabAsync"/> — opens content as a tab inside the provided <see cref="DesktopTabbedWindow"/>.</item>
+///   <item><see cref="OpenAsync"/> - spawns a new OS window, identical to <see cref="DesktopWindowService"/>.</item>
+///   <item><see cref="OpenTabAsync"/> - opens content as a tab inside the provided <see cref="DesktopTabbedWindow"/>.</item>
 /// </list>
 /// Pair this service with a <see cref="DesktopTabbedWindow"/> that the application owns
 /// and shows as its main window. The window's lifecycle is managed by the caller.

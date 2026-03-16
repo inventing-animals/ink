@@ -1,0 +1,492 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.UI.Platform.WindowOptions
+  commentId: T:Ink.UI.Platform.WindowOptions
+  id: WindowOptions
+  parent: Ink.UI.Platform
+  children:
+  - Ink.UI.Platform.WindowOptions.Height
+  - Ink.UI.Platform.WindowOptions.Title
+  - Ink.UI.Platform.WindowOptions.Url
+  - Ink.UI.Platform.WindowOptions.Width
+  langs:
+  - csharp
+  - vb
+  name: WindowOptions
+  nameWithType: WindowOptions
+  fullName: Ink.UI.Platform.WindowOptions
+  type: Class
+  source:
+    remote:
+      path: src/Ink.UI/Platform/WindowOptions.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: WindowOptions
+    path: ../src/Ink.UI/Platform/WindowOptions.cs
+    startLine: 2
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  syntax:
+    content: public sealed class WindowOptions
+    content.vb: Public NotInheritable Class WindowOptions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Ink.UI.Platform.WindowOptions.Title
+  commentId: P:Ink.UI.Platform.WindowOptions.Title
+  id: Title
+  parent: Ink.UI.Platform.WindowOptions
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: WindowOptions.Title
+  fullName: Ink.UI.Platform.WindowOptions.Title
+  type: Property
+  source:
+    remote:
+      path: src/Ink.UI/Platform/WindowOptions.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Title
+    path: ../src/Ink.UI/Platform/WindowOptions.cs
+    startLine: 4
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  syntax:
+    content: public string? Title { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Title As String
+  overload: Ink.UI.Platform.WindowOptions.Title*
+- uid: Ink.UI.Platform.WindowOptions.Width
+  commentId: P:Ink.UI.Platform.WindowOptions.Width
+  id: Width
+  parent: Ink.UI.Platform.WindowOptions
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: WindowOptions.Width
+  fullName: Ink.UI.Platform.WindowOptions.Width
+  type: Property
+  source:
+    remote:
+      path: src/Ink.UI/Platform/WindowOptions.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Width
+    path: ../src/Ink.UI/Platform/WindowOptions.cs
+    startLine: 5
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  syntax:
+    content: public double? Width { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Width As Double?
+  overload: Ink.UI.Platform.WindowOptions.Width*
+- uid: Ink.UI.Platform.WindowOptions.Height
+  commentId: P:Ink.UI.Platform.WindowOptions.Height
+  id: Height
+  parent: Ink.UI.Platform.WindowOptions
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: WindowOptions.Height
+  fullName: Ink.UI.Platform.WindowOptions.Height
+  type: Property
+  source:
+    remote:
+      path: src/Ink.UI/Platform/WindowOptions.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Height
+    path: ../src/Ink.UI/Platform/WindowOptions.cs
+    startLine: 6
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  syntax:
+    content: public double? Height { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Height As Double?
+  overload: Ink.UI.Platform.WindowOptions.Height*
+- uid: Ink.UI.Platform.WindowOptions.Url
+  commentId: P:Ink.UI.Platform.WindowOptions.Url
+  id: Url
+  parent: Ink.UI.Platform.WindowOptions
+  langs:
+  - csharp
+  - vb
+  name: Url
+  nameWithType: WindowOptions.Url
+  fullName: Ink.UI.Platform.WindowOptions.Url
+  type: Property
+  source:
+    remote:
+      path: src/Ink.UI/Platform/WindowOptions.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Url
+    path: ../src/Ink.UI/Platform/WindowOptions.cs
+    startLine: 12
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: >-
+    Router path for platforms that open a new app instance (e.g. browser tabs).
+
+    Desktop and mobile ignore this - they use the <code>Func&lt;Control&gt;</code> content factory.
+  example: []
+  syntax:
+    content: public string? Url { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Url As String
+  overload: Ink.UI.Platform.WindowOptions.Url*
+references:
+- uid: Ink.UI.Platform
+  commentId: N:Ink.UI.Platform
+  href: Ink.html
+  name: Ink.UI.Platform
+  nameWithType: Ink.UI.Platform
+  fullName: Ink.UI.Platform
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Ink.UI.Platform.WindowOptions.Title*
+  commentId: Overload:Ink.UI.Platform.WindowOptions.Title
+  href: Ink.UI.Platform.WindowOptions.html#Ink_UI_Platform_WindowOptions_Title
+  name: Title
+  nameWithType: WindowOptions.Title
+  fullName: Ink.UI.Platform.WindowOptions.Title
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Ink.UI.Platform.WindowOptions.Width*
+  commentId: Overload:Ink.UI.Platform.WindowOptions.Width
+  href: Ink.UI.Platform.WindowOptions.html#Ink_UI_Platform_WindowOptions_Width
+  name: Width
+  nameWithType: WindowOptions.Width
+  fullName: Ink.UI.Platform.WindowOptions.Width
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double?
+  nameWithType: double?
+  fullName: double?
+  nameWithType.vb: Double?
+  fullName.vb: Double?
+  name.vb: Double?
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Ink.UI.Platform.WindowOptions.Height*
+  commentId: Overload:Ink.UI.Platform.WindowOptions.Height
+  href: Ink.UI.Platform.WindowOptions.html#Ink_UI_Platform_WindowOptions_Height
+  name: Height
+  nameWithType: WindowOptions.Height
+  fullName: Ink.UI.Platform.WindowOptions.Height
+- uid: Ink.UI.Platform.WindowOptions.Url*
+  commentId: Overload:Ink.UI.Platform.WindowOptions.Url
+  href: Ink.UI.Platform.WindowOptions.html#Ink_UI_Platform_WindowOptions_Url
+  name: Url
+  nameWithType: WindowOptions.Url
+  fullName: Ink.UI.Platform.WindowOptions.Url

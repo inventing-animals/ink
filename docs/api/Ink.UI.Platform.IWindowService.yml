@@ -1,0 +1,454 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.UI.Platform.IWindowService
+  commentId: T:Ink.UI.Platform.IWindowService
+  id: IWindowService
+  parent: Ink.UI.Platform
+  children:
+  - Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  - Ink.UI.Platform.IWindowService.OpenTabAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  langs:
+  - csharp
+  - vb
+  name: IWindowService
+  nameWithType: IWindowService
+  fullName: Ink.UI.Platform.IWindowService
+  type: Interface
+  source:
+    remote:
+      path: src/Ink.UI/Platform/IWindowService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: IWindowService
+    path: ../src/Ink.UI/Platform/IWindowService.cs
+    startLine: 19
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: >-
+    Spawns secondary UI surfaces in a platform-appropriate way.
+
+    <ul><li>Desktop - new <xref href="Ink.UI.Controls.DesktopWindow" data-throw-if-not-resolved="false"></xref></li><li>Desktop (tabbed) - tab inside the existing <xref href="Ink.UI.Controls.DesktopTabbedWindow" data-throw-if-not-resolved="false"></xref></li><li>Mobile  - bottom-sheet drawer via <code>OverlayLayer</code></li><li>Web     - new browser tab loaded at <xref href="Ink.UI.Platform.WindowOptions.Url" data-throw-if-not-resolved="false"></xref></li></ul>
+
+    Surfaces are always <b>non-modal</b>: the caller is never blocked, and the app
+
+    remains fully interactive while a secondary surface is open. This is a deliberate
+
+    constraint driven by the web platform, where true modal behaviour across tabs is
+
+    not possible.
+  example: []
+  syntax:
+    content: public interface IWindowService
+    content.vb: Public Interface IWindowService
+- uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  commentId: M:Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  id: OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  parent: Ink.UI.Platform.IWindowService
+  langs:
+  - csharp
+  - vb
+  name: OpenAsync(Func<Control>, WindowOptions?)
+  nameWithType: IWindowService.OpenAsync(Func<Control>, WindowOptions?)
+  fullName: Ink.UI.Platform.IWindowService.OpenAsync(System.Func<Avalonia.Controls.Control>, Ink.UI.Platform.WindowOptions?)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.UI/Platform/IWindowService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: OpenAsync
+    path: ../src/Ink.UI/Platform/IWindowService.cs
+    startLine: 27
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: Opens content in a new window (or the platform equivalent).
+  example: []
+  syntax:
+    content: Task<IWindowHandle> OpenAsync(Func<Control> content, WindowOptions? options = null)
+    parameters:
+    - id: content
+      type: System.Func{Avalonia.Controls.Control}
+      description: Factory that builds the content control (desktop and mobile only).
+    - id: options
+      type: Ink.UI.Platform.WindowOptions
+      description: Optional title, size hints, and URL for the web platform.
+    return:
+      type: System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+      description: A handle that lets the caller close the surface or await its dismissal.
+    content.vb: Function OpenAsync(content As Func(Of Control), options As WindowOptions = Nothing) As Task(Of IWindowHandle)
+  overload: Ink.UI.Platform.IWindowService.OpenAsync*
+  nameWithType.vb: IWindowService.OpenAsync(Func(Of Control), WindowOptions)
+  fullName.vb: Ink.UI.Platform.IWindowService.OpenAsync(System.Func(Of Avalonia.Controls.Control), Ink.UI.Platform.WindowOptions)
+  name.vb: OpenAsync(Func(Of Control), WindowOptions)
+- uid: Ink.UI.Platform.IWindowService.OpenTabAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  commentId: M:Ink.UI.Platform.IWindowService.OpenTabAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  id: OpenTabAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  parent: Ink.UI.Platform.IWindowService
+  langs:
+  - csharp
+  - vb
+  name: OpenTabAsync(Func<Control>, WindowOptions?)
+  nameWithType: IWindowService.OpenTabAsync(Func<Control>, WindowOptions?)
+  fullName: Ink.UI.Platform.IWindowService.OpenTabAsync(System.Func<Avalonia.Controls.Control>, Ink.UI.Platform.WindowOptions?)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.UI/Platform/IWindowService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: OpenTabAsync
+    path: ../src/Ink.UI/Platform/IWindowService.cs
+    startLine: 36
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: >-
+    Opens content as a tab when the platform supports it; falls back to
+
+    <xref href="Ink.UI.Platform.IWindowService.OpenAsync(System.Func%7bAvalonia.Controls.Control%7d%2cInk.UI.Platform.WindowOptions)" data-throw-if-not-resolved="false"></xref> otherwise.
+  example: []
+  syntax:
+    content: Task<IWindowHandle> OpenTabAsync(Func<Control> content, WindowOptions? options = null)
+    parameters:
+    - id: content
+      type: System.Func{Avalonia.Controls.Control}
+      description: Factory that builds the content control (desktop and mobile only).
+    - id: options
+      type: Ink.UI.Platform.WindowOptions
+      description: Optional title, size hints, and URL for the web platform.
+    return:
+      type: System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+      description: A handle that lets the caller close the surface or await its dismissal.
+    content.vb: Function OpenTabAsync(content As Func(Of Control), options As WindowOptions = Nothing) As Task(Of IWindowHandle)
+  overload: Ink.UI.Platform.IWindowService.OpenTabAsync*
+  nameWithType.vb: IWindowService.OpenTabAsync(Func(Of Control), WindowOptions)
+  fullName.vb: Ink.UI.Platform.IWindowService.OpenTabAsync(System.Func(Of Avalonia.Controls.Control), Ink.UI.Platform.WindowOptions)
+  name.vb: OpenTabAsync(Func(Of Control), WindowOptions)
+references:
+- uid: Ink.UI.Controls.DesktopWindow
+  commentId: T:Ink.UI.Controls.DesktopWindow
+  parent: Ink.UI.Controls
+  href: Ink.UI.Controls.DesktopWindow.html
+  name: DesktopWindow
+  nameWithType: DesktopWindow
+  fullName: Ink.UI.Controls.DesktopWindow
+- uid: Ink.UI.Controls.DesktopTabbedWindow
+  commentId: T:Ink.UI.Controls.DesktopTabbedWindow
+  parent: Ink.UI.Controls
+  href: Ink.UI.Controls.DesktopTabbedWindow.html
+  name: DesktopTabbedWindow
+  nameWithType: DesktopTabbedWindow
+  fullName: Ink.UI.Controls.DesktopTabbedWindow
+- uid: Ink.UI.Platform.WindowOptions.Url
+  commentId: P:Ink.UI.Platform.WindowOptions.Url
+  href: Ink.UI.Platform.WindowOptions.html#Ink_UI_Platform_WindowOptions_Url
+  name: Url
+  nameWithType: WindowOptions.Url
+  fullName: Ink.UI.Platform.WindowOptions.Url
+- uid: Ink.UI.Platform
+  commentId: N:Ink.UI.Platform
+  href: Ink.html
+  name: Ink.UI.Platform
+  nameWithType: Ink.UI.Platform
+  fullName: Ink.UI.Platform
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+- uid: Ink.UI.Controls
+  commentId: N:Ink.UI.Controls
+  href: Ink.html
+  name: Ink.UI.Controls
+  nameWithType: Ink.UI.Controls
+  fullName: Ink.UI.Controls
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Controls
+    name: Controls
+    href: Ink.UI.Controls.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Controls
+    name: Controls
+    href: Ink.UI.Controls.html
+- uid: Ink.UI.Platform.IWindowService.OpenAsync*
+  commentId: Overload:Ink.UI.Platform.IWindowService.OpenAsync
+  href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  name: OpenAsync
+  nameWithType: IWindowService.OpenAsync
+  fullName: Ink.UI.Platform.IWindowService.OpenAsync
+- uid: System.Func{Avalonia.Controls.Control}
+  commentId: T:System.Func{Avalonia.Controls.Control}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Control>
+  nameWithType: Func<Control>
+  fullName: System.Func<Avalonia.Controls.Control>
+  nameWithType.vb: Func(Of Control)
+  fullName.vb: System.Func(Of Avalonia.Controls.Control)
+  name.vb: Func(Of Control)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: )
+- uid: Ink.UI.Platform.WindowOptions
+  commentId: T:Ink.UI.Platform.WindowOptions
+  parent: Ink.UI.Platform
+  href: Ink.UI.Platform.WindowOptions.html
+  name: WindowOptions
+  nameWithType: WindowOptions
+  fullName: Ink.UI.Platform.WindowOptions
+- uid: System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+  commentId: T:System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IWindowHandle>
+  nameWithType: Task<IWindowHandle>
+  fullName: System.Threading.Tasks.Task<Ink.UI.Platform.IWindowHandle>
+  nameWithType.vb: Task(Of IWindowHandle)
+  fullName.vb: System.Threading.Tasks.Task(Of Ink.UI.Platform.IWindowHandle)
+  name.vb: Task(Of IWindowHandle)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Ink.UI.Platform.IWindowHandle
+    name: IWindowHandle
+    href: Ink.UI.Platform.IWindowHandle.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.UI.Platform.IWindowHandle
+    name: IWindowHandle
+    href: Ink.UI.Platform.IWindowHandle.html
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  commentId: M:Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  parent: Ink.UI.Platform.IWindowService
+  isExternal: true
+  href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  name: OpenAsync(Func<Control>, WindowOptions)
+  nameWithType: IWindowService.OpenAsync(Func<Control>, WindowOptions)
+  fullName: Ink.UI.Platform.IWindowService.OpenAsync(System.Func<Avalonia.Controls.Control>, Ink.UI.Platform.WindowOptions)
+  nameWithType.vb: IWindowService.OpenAsync(Func(Of Control), WindowOptions)
+  fullName.vb: Ink.UI.Platform.IWindowService.OpenAsync(System.Func(Of Avalonia.Controls.Control), Ink.UI.Platform.WindowOptions)
+  name.vb: OpenAsync(Func(Of Control), WindowOptions)
+  spec.csharp:
+  - uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+    name: OpenAsync
+    href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: Ink.UI.Platform.WindowOptions
+    name: WindowOptions
+    href: Ink.UI.Platform.WindowOptions.html
+  - name: )
+  spec.vb:
+  - uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+    name: OpenAsync
+    href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Ink.UI.Platform.WindowOptions
+    name: WindowOptions
+    href: Ink.UI.Platform.WindowOptions.html
+  - name: )
+- uid: Ink.UI.Platform.IWindowService.OpenTabAsync*
+  commentId: Overload:Ink.UI.Platform.IWindowService.OpenTabAsync
+  href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenTabAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  name: OpenTabAsync
+  nameWithType: IWindowService.OpenTabAsync
+  fullName: Ink.UI.Platform.IWindowService.OpenTabAsync
+- uid: Ink.UI.Platform.IWindowService
+  commentId: T:Ink.UI.Platform.IWindowService
+  parent: Ink.UI.Platform
+  href: Ink.UI.Platform.IWindowService.html
+  name: IWindowService
+  nameWithType: IWindowService
+  fullName: Ink.UI.Platform.IWindowService

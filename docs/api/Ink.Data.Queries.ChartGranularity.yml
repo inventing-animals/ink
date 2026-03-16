@@ -1,0 +1,242 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Queries.ChartGranularity
+  commentId: T:Ink.Data.Queries.ChartGranularity
+  id: ChartGranularity
+  parent: Ink.Data.Queries
+  children:
+  - Ink.Data.Queries.ChartGranularity.Day
+  - Ink.Data.Queries.ChartGranularity.Hour
+  - Ink.Data.Queries.ChartGranularity.Minute
+  - Ink.Data.Queries.ChartGranularity.Month
+  - Ink.Data.Queries.ChartGranularity.Week
+  - Ink.Data.Queries.ChartGranularity.Year
+  langs:
+  - csharp
+  - vb
+  name: ChartGranularity
+  nameWithType: ChartGranularity
+  fullName: Ink.Data.Queries.ChartGranularity
+  type: Enum
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: ChartGranularity
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 3
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Time granularity for chart data aggregation.
+  example: []
+  syntax:
+    content: public enum ChartGranularity
+    content.vb: Public Enum ChartGranularity
+- uid: Ink.Data.Queries.ChartGranularity.Minute
+  commentId: F:Ink.Data.Queries.ChartGranularity.Minute
+  id: Minute
+  parent: Ink.Data.Queries.ChartGranularity
+  langs:
+  - csharp
+  - vb
+  name: Minute
+  nameWithType: ChartGranularity.Minute
+  fullName: Ink.Data.Queries.ChartGranularity.Minute
+  type: Field
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Minute
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 6
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Aggregate by minute.
+  example: []
+  syntax:
+    content: Minute = 0
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+- uid: Ink.Data.Queries.ChartGranularity.Hour
+  commentId: F:Ink.Data.Queries.ChartGranularity.Hour
+  id: Hour
+  parent: Ink.Data.Queries.ChartGranularity
+  langs:
+  - csharp
+  - vb
+  name: Hour
+  nameWithType: ChartGranularity.Hour
+  fullName: Ink.Data.Queries.ChartGranularity.Hour
+  type: Field
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Hour
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 9
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Aggregate by hour.
+  example: []
+  syntax:
+    content: Hour = 1
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+- uid: Ink.Data.Queries.ChartGranularity.Day
+  commentId: F:Ink.Data.Queries.ChartGranularity.Day
+  id: Day
+  parent: Ink.Data.Queries.ChartGranularity
+  langs:
+  - csharp
+  - vb
+  name: Day
+  nameWithType: ChartGranularity.Day
+  fullName: Ink.Data.Queries.ChartGranularity.Day
+  type: Field
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Day
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 12
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Aggregate by day.
+  example: []
+  syntax:
+    content: Day = 2
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+- uid: Ink.Data.Queries.ChartGranularity.Week
+  commentId: F:Ink.Data.Queries.ChartGranularity.Week
+  id: Week
+  parent: Ink.Data.Queries.ChartGranularity
+  langs:
+  - csharp
+  - vb
+  name: Week
+  nameWithType: ChartGranularity.Week
+  fullName: Ink.Data.Queries.ChartGranularity.Week
+  type: Field
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Week
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Aggregate by week.
+  example: []
+  syntax:
+    content: Week = 3
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+- uid: Ink.Data.Queries.ChartGranularity.Month
+  commentId: F:Ink.Data.Queries.ChartGranularity.Month
+  id: Month
+  parent: Ink.Data.Queries.ChartGranularity
+  langs:
+  - csharp
+  - vb
+  name: Month
+  nameWithType: ChartGranularity.Month
+  fullName: Ink.Data.Queries.ChartGranularity.Month
+  type: Field
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Month
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 18
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Aggregate by month.
+  example: []
+  syntax:
+    content: Month = 4
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+- uid: Ink.Data.Queries.ChartGranularity.Year
+  commentId: F:Ink.Data.Queries.ChartGranularity.Year
+  id: Year
+  parent: Ink.Data.Queries.ChartGranularity
+  langs:
+  - csharp
+  - vb
+  name: Year
+  nameWithType: ChartGranularity.Year
+  fullName: Ink.Data.Queries.ChartGranularity.Year
+  type: Field
+  source:
+    remote:
+      path: src/Ink.Data/Queries/ChartGranularity.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Year
+    path: ../src/Ink.Data/Queries/ChartGranularity.cs
+    startLine: 21
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: Aggregate by year.
+  example: []
+  syntax:
+    content: Year = 5
+    return:
+      type: Ink.Data.Queries.ChartGranularity
+references:
+- uid: Ink.Data.Queries
+  commentId: N:Ink.Data.Queries
+  href: Ink.html
+  name: Ink.Data.Queries
+  nameWithType: Ink.Data.Queries
+  fullName: Ink.Data.Queries
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+- uid: Ink.Data.Queries.ChartGranularity
+  commentId: T:Ink.Data.Queries.ChartGranularity
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.ChartGranularity.html
+  name: ChartGranularity
+  nameWithType: ChartGranularity
+  fullName: Ink.Data.Queries.ChartGranularity

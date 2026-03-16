@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.UI.Controls.ButtonVariant
+  commentId: T:Ink.UI.Controls.ButtonVariant
+  id: ButtonVariant
+  parent: Ink.UI.Controls
+  children:
+  - Ink.UI.Controls.ButtonVariant.Danger
+  - Ink.UI.Controls.ButtonVariant.Ghost
+  - Ink.UI.Controls.ButtonVariant.Primary
+  - Ink.UI.Controls.ButtonVariant.Secondary
+  langs:
+  - csharp
+  - vb
+  name: ButtonVariant
+  nameWithType: ButtonVariant
+  fullName: Ink.UI.Controls.ButtonVariant
+  type: Enum
+  source:
+    remote:
+      path: src/Ink.UI/Controls/Button/ButtonVariant.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: ButtonVariant
+    path: ../src/Ink.UI/Controls/Button/ButtonVariant.cs
+    startLine: 2
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Controls
+  syntax:
+    content: public enum ButtonVariant
+    content.vb: Public Enum ButtonVariant
+- uid: Ink.UI.Controls.ButtonVariant.Primary
+  commentId: F:Ink.UI.Controls.ButtonVariant.Primary
+  id: Primary
+  parent: Ink.UI.Controls.ButtonVariant
+  langs:
+  - csharp
+  - vb
+  name: Primary
+  nameWithType: ButtonVariant.Primary
+  fullName: Ink.UI.Controls.ButtonVariant.Primary
+  type: Field
+  source:
+    remote:
+      path: src/Ink.UI/Controls/Button/ButtonVariant.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Primary
+    path: ../src/Ink.UI/Controls/Button/ButtonVariant.cs
+    startLine: 4
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Controls
+  syntax:
+    content: Primary = 0
+    return:
+      type: Ink.UI.Controls.ButtonVariant
+- uid: Ink.UI.Controls.ButtonVariant.Secondary
+  commentId: F:Ink.UI.Controls.ButtonVariant.Secondary
+  id: Secondary
+  parent: Ink.UI.Controls.ButtonVariant
+  langs:
+  - csharp
+  - vb
+  name: Secondary
+  nameWithType: ButtonVariant.Secondary
+  fullName: Ink.UI.Controls.ButtonVariant.Secondary
+  type: Field
+  source:
+    remote:
+      path: src/Ink.UI/Controls/Button/ButtonVariant.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Secondary
+    path: ../src/Ink.UI/Controls/Button/ButtonVariant.cs
+    startLine: 5
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Controls
+  syntax:
+    content: Secondary = 1
+    return:
+      type: Ink.UI.Controls.ButtonVariant
+- uid: Ink.UI.Controls.ButtonVariant.Ghost
+  commentId: F:Ink.UI.Controls.ButtonVariant.Ghost
+  id: Ghost
+  parent: Ink.UI.Controls.ButtonVariant
+  langs:
+  - csharp
+  - vb
+  name: Ghost
+  nameWithType: ButtonVariant.Ghost
+  fullName: Ink.UI.Controls.ButtonVariant.Ghost
+  type: Field
+  source:
+    remote:
+      path: src/Ink.UI/Controls/Button/ButtonVariant.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Ghost
+    path: ../src/Ink.UI/Controls/Button/ButtonVariant.cs
+    startLine: 6
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Controls
+  syntax:
+    content: Ghost = 2
+    return:
+      type: Ink.UI.Controls.ButtonVariant
+- uid: Ink.UI.Controls.ButtonVariant.Danger
+  commentId: F:Ink.UI.Controls.ButtonVariant.Danger
+  id: Danger
+  parent: Ink.UI.Controls.ButtonVariant
+  langs:
+  - csharp
+  - vb
+  name: Danger
+  nameWithType: ButtonVariant.Danger
+  fullName: Ink.UI.Controls.ButtonVariant.Danger
+  type: Field
+  source:
+    remote:
+      path: src/Ink.UI/Controls/Button/ButtonVariant.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Danger
+    path: ../src/Ink.UI/Controls/Button/ButtonVariant.cs
+    startLine: 7
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Controls
+  syntax:
+    content: Danger = 3
+    return:
+      type: Ink.UI.Controls.ButtonVariant
+references:
+- uid: Ink.UI.Controls
+  commentId: N:Ink.UI.Controls
+  href: Ink.html
+  name: Ink.UI.Controls
+  nameWithType: Ink.UI.Controls
+  fullName: Ink.UI.Controls
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Controls
+    name: Controls
+    href: Ink.UI.Controls.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Controls
+    name: Controls
+    href: Ink.UI.Controls.html
+- uid: Ink.UI.Controls.ButtonVariant
+  commentId: T:Ink.UI.Controls.ButtonVariant
+  parent: Ink.UI.Controls
+  href: Ink.UI.Controls.ButtonVariant.html
+  name: ButtonVariant
+  nameWithType: ButtonVariant
+  fullName: Ink.UI.Controls.ButtonVariant

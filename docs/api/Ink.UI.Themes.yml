@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.UI.Themes
+  commentId: N:Ink.UI.Themes
+  id: Ink.UI.Themes
+  children:
+  - Ink.UI.Themes.InkTheme
+  langs:
+  - csharp
+  - vb
+  name: Ink.UI.Themes
+  nameWithType: Ink.UI.Themes
+  fullName: Ink.UI.Themes
+  type: Namespace
+  assemblies:
+  - Ink.UI
+references:
+- uid: Ink.UI.Themes.InkTheme
+  commentId: T:Ink.UI.Themes.InkTheme
+  href: Ink.UI.Themes.InkTheme.html
+  name: InkTheme
+  nameWithType: InkTheme
+  fullName: Ink.UI.Themes.InkTheme

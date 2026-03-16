@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.EFCore
+  commentId: N:Ink.Data.EFCore
+  id: Ink.Data.EFCore
+  children:
+  - Ink.Data.EFCore.EFCoreQueryTranslator`1
+  - Ink.Data.EFCore.UnauthorizedFieldException
+  langs:
+  - csharp
+  - vb
+  name: Ink.Data.EFCore
+  nameWithType: Ink.Data.EFCore
+  fullName: Ink.Data.EFCore
+  type: Namespace
+  assemblies:
+  - Ink.Data.EFCore
+references:
+- uid: Ink.Data.EFCore.EFCoreQueryTranslator`1
+  commentId: T:Ink.Data.EFCore.EFCoreQueryTranslator`1
+  parent: Ink.Data.EFCore
+  href: Ink.Data.EFCore.EFCoreQueryTranslator-1.html
+  name: EFCoreQueryTranslator<T>
+  nameWithType: EFCoreQueryTranslator<T>
+  fullName: Ink.Data.EFCore.EFCoreQueryTranslator<T>
+  nameWithType.vb: EFCoreQueryTranslator(Of T)
+  fullName.vb: Ink.Data.EFCore.EFCoreQueryTranslator(Of T)
+  name.vb: EFCoreQueryTranslator(Of T)
+  spec.csharp:
+  - uid: Ink.Data.EFCore.EFCoreQueryTranslator`1
+    name: EFCoreQueryTranslator
+    href: Ink.Data.EFCore.EFCoreQueryTranslator-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Ink.Data.EFCore.EFCoreQueryTranslator`1
+    name: EFCoreQueryTranslator
+    href: Ink.Data.EFCore.EFCoreQueryTranslator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Ink.Data.EFCore.UnauthorizedFieldException
+  commentId: T:Ink.Data.EFCore.UnauthorizedFieldException
+  href: Ink.Data.EFCore.UnauthorizedFieldException.html
+  name: UnauthorizedFieldException
+  nameWithType: UnauthorizedFieldException
+  fullName: Ink.Data.EFCore.UnauthorizedFieldException
+- uid: Ink.Data.EFCore
+  commentId: N:Ink.Data.EFCore
+  href: Ink.html
+  name: Ink.Data.EFCore
+  nameWithType: Ink.Data.EFCore
+  fullName: Ink.Data.EFCore
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.EFCore
+    name: EFCore
+    href: Ink.Data.EFCore.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.EFCore
+    name: EFCore
+    href: Ink.Data.EFCore.html

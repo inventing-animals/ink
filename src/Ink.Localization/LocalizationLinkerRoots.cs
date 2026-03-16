@@ -14,7 +14,7 @@ internal static class LocalizationLinkerRoots
     [DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof(ResourceSet))]
     internal static void Preserve()
     {
-        // Never called — exists solely to carry [DynamicDependency] annotations
+        // Never called - exists solely to carry [DynamicDependency] annotations
         // so the trimmer roots these types regardless of call-graph analysis.
     }
 }

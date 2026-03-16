@@ -1,0 +1,679 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.UI.Platform.DrawerWindowService
+  commentId: T:Ink.UI.Platform.DrawerWindowService
+  id: DrawerWindowService
+  parent: Ink.UI.Platform
+  children:
+  - Ink.UI.Platform.DrawerWindowService.#ctor(System.Func{Avalonia.Controls.TopLevel})
+  - Ink.UI.Platform.DrawerWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  langs:
+  - csharp
+  - vb
+  name: DrawerWindowService
+  nameWithType: DrawerWindowService
+  fullName: Ink.UI.Platform.DrawerWindowService
+  type: Class
+  source:
+    remote:
+      path: src/Ink.UI/Platform/DrawerWindowService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: DrawerWindowService
+    path: ../src/Ink.UI/Platform/DrawerWindowService.cs
+    startLine: 15
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: >-
+    Mobile / web implementation: displays content as a bottom-sheet drawer
+
+    using Avalonia's <xref href="Avalonia.Controls.Primitives.OverlayLayer" data-throw-if-not-resolved="false"></xref>, without spawning a new OS window.
+  example: []
+  syntax:
+    content: 'public sealed class DrawerWindowService : IWindowService'
+    content.vb: Public NotInheritable Class DrawerWindowService Implements IWindowService
+  inheritance:
+  - System.Object
+  implements:
+  - Ink.UI.Platform.IWindowService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Ink.UI.Platform.DrawerWindowService.#ctor(System.Func{Avalonia.Controls.TopLevel})
+  commentId: M:Ink.UI.Platform.DrawerWindowService.#ctor(System.Func{Avalonia.Controls.TopLevel})
+  id: '#ctor(System.Func{Avalonia.Controls.TopLevel})'
+  parent: Ink.UI.Platform.DrawerWindowService
+  langs:
+  - csharp
+  - vb
+  name: DrawerWindowService(Func<TopLevel?>)
+  nameWithType: DrawerWindowService.DrawerWindowService(Func<TopLevel?>)
+  fullName: Ink.UI.Platform.DrawerWindowService.DrawerWindowService(System.Func<Avalonia.Controls.TopLevel?>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Ink.UI/Platform/DrawerWindowService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: .ctor
+    path: ../src/Ink.UI/Platform/DrawerWindowService.cs
+    startLine: 23
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  example: []
+  syntax:
+    content: public DrawerWindowService(Func<TopLevel?> topLevelProvider)
+    parameters:
+    - id: topLevelProvider
+      type: System.Func{Avalonia.Controls.TopLevel}
+      description: >-
+        Resolves the current <xref href="Avalonia.Controls.TopLevel" data-throw-if-not-resolved="false"></xref> at call time.
+
+        Typically: <code>() =&gt; TopLevel.GetTopLevel(rootView)</code>
+    content.vb: Public Sub New(topLevelProvider As Func(Of TopLevel))
+  overload: Ink.UI.Platform.DrawerWindowService.#ctor*
+  nameWithType.vb: DrawerWindowService.New(Func(Of TopLevel))
+  fullName.vb: Ink.UI.Platform.DrawerWindowService.New(System.Func(Of Avalonia.Controls.TopLevel))
+  name.vb: New(Func(Of TopLevel))
+- uid: Ink.UI.Platform.DrawerWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  commentId: M:Ink.UI.Platform.DrawerWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  id: OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  parent: Ink.UI.Platform.DrawerWindowService
+  langs:
+  - csharp
+  - vb
+  name: OpenAsync(Func<Control>, WindowOptions?)
+  nameWithType: DrawerWindowService.OpenAsync(Func<Control>, WindowOptions?)
+  fullName: Ink.UI.Platform.DrawerWindowService.OpenAsync(System.Func<Avalonia.Controls.Control>, Ink.UI.Platform.WindowOptions?)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.UI/Platform/DrawerWindowService.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: OpenAsync
+    path: ../src/Ink.UI/Platform/DrawerWindowService.cs
+    startLine: 28
+  assemblies:
+  - Ink.UI
+  namespace: Ink.UI.Platform
+  summary: Opens content in a new window (or the platform equivalent).
+  example: []
+  syntax:
+    content: public Task<IWindowHandle> OpenAsync(Func<Control> content, WindowOptions? options = null)
+    parameters:
+    - id: content
+      type: System.Func{Avalonia.Controls.Control}
+      description: Factory that builds the content control (desktop and mobile only).
+    - id: options
+      type: Ink.UI.Platform.WindowOptions
+      description: Optional title, size hints, and URL for the web platform.
+    return:
+      type: System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+      description: A handle that lets the caller close the surface or await its dismissal.
+    content.vb: Public Function OpenAsync(content As Func(Of Control), options As WindowOptions = Nothing) As Task(Of IWindowHandle)
+  overload: Ink.UI.Platform.DrawerWindowService.OpenAsync*
+  implements:
+  - Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  nameWithType.vb: DrawerWindowService.OpenAsync(Func(Of Control), WindowOptions)
+  fullName.vb: Ink.UI.Platform.DrawerWindowService.OpenAsync(System.Func(Of Avalonia.Controls.Control), Ink.UI.Platform.WindowOptions)
+  name.vb: OpenAsync(Func(Of Control), WindowOptions)
+references:
+- uid: Avalonia.Controls.Primitives.OverlayLayer
+  commentId: T:Avalonia.Controls.Primitives.OverlayLayer
+  isExternal: true
+  name: OverlayLayer
+  nameWithType: OverlayLayer
+  fullName: Avalonia.Controls.Primitives.OverlayLayer
+- uid: Ink.UI.Platform
+  commentId: N:Ink.UI.Platform
+  href: Ink.html
+  name: Ink.UI.Platform
+  nameWithType: Ink.UI.Platform
+  fullName: Ink.UI.Platform
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.UI
+    name: UI
+    href: Ink.UI.html
+  - name: .
+  - uid: Ink.UI.Platform
+    name: Platform
+    href: Ink.UI.Platform.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Ink.UI.Platform.IWindowService
+  commentId: T:Ink.UI.Platform.IWindowService
+  parent: Ink.UI.Platform
+  href: Ink.UI.Platform.IWindowService.html
+  name: IWindowService
+  nameWithType: IWindowService
+  fullName: Ink.UI.Platform.IWindowService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Avalonia.Controls.TopLevel
+  commentId: T:Avalonia.Controls.TopLevel
+  parent: Avalonia.Controls
+  isExternal: true
+  name: TopLevel
+  nameWithType: TopLevel
+  fullName: Avalonia.Controls.TopLevel
+- uid: Ink.UI.Platform.DrawerWindowService.#ctor*
+  commentId: Overload:Ink.UI.Platform.DrawerWindowService.#ctor
+  href: Ink.UI.Platform.DrawerWindowService.html#Ink_UI_Platform_DrawerWindowService__ctor_System_Func_Avalonia_Controls_TopLevel__
+  name: DrawerWindowService
+  nameWithType: DrawerWindowService.DrawerWindowService
+  fullName: Ink.UI.Platform.DrawerWindowService.DrawerWindowService
+  nameWithType.vb: DrawerWindowService.New
+  fullName.vb: Ink.UI.Platform.DrawerWindowService.New
+  name.vb: New
+- uid: System.Func{Avalonia.Controls.TopLevel}
+  commentId: T:System.Func{Avalonia.Controls.TopLevel}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TopLevel>
+  nameWithType: Func<TopLevel>
+  fullName: System.Func<Avalonia.Controls.TopLevel>
+  nameWithType.vb: Func(Of TopLevel)
+  fullName.vb: System.Func(Of Avalonia.Controls.TopLevel)
+  name.vb: Func(Of TopLevel)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: Avalonia.Controls.TopLevel
+    name: TopLevel
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Avalonia.Controls.TopLevel
+    name: TopLevel
+    isExternal: true
+  - name: )
+- uid: Avalonia.Controls
+  commentId: N:Avalonia.Controls
+  isExternal: true
+  name: Avalonia.Controls
+  nameWithType: Avalonia.Controls
+  fullName: Avalonia.Controls
+  spec.csharp:
+  - uid: Avalonia
+    name: Avalonia
+    isExternal: true
+  - name: .
+  - uid: Avalonia.Controls
+    name: Controls
+    isExternal: true
+  spec.vb:
+  - uid: Avalonia
+    name: Avalonia
+    isExternal: true
+  - name: .
+  - uid: Avalonia.Controls
+    name: Controls
+    isExternal: true
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Ink.UI.Platform.DrawerWindowService.OpenAsync*
+  commentId: Overload:Ink.UI.Platform.DrawerWindowService.OpenAsync
+  href: Ink.UI.Platform.DrawerWindowService.html#Ink_UI_Platform_DrawerWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  name: OpenAsync
+  nameWithType: DrawerWindowService.OpenAsync
+  fullName: Ink.UI.Platform.DrawerWindowService.OpenAsync
+- uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  commentId: M:Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+  parent: Ink.UI.Platform.IWindowService
+  isExternal: true
+  href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  name: OpenAsync(Func<Control>, WindowOptions)
+  nameWithType: IWindowService.OpenAsync(Func<Control>, WindowOptions)
+  fullName: Ink.UI.Platform.IWindowService.OpenAsync(System.Func<Avalonia.Controls.Control>, Ink.UI.Platform.WindowOptions)
+  nameWithType.vb: IWindowService.OpenAsync(Func(Of Control), WindowOptions)
+  fullName.vb: Ink.UI.Platform.IWindowService.OpenAsync(System.Func(Of Avalonia.Controls.Control), Ink.UI.Platform.WindowOptions)
+  name.vb: OpenAsync(Func(Of Control), WindowOptions)
+  spec.csharp:
+  - uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+    name: OpenAsync
+    href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: Ink.UI.Platform.WindowOptions
+    name: WindowOptions
+    href: Ink.UI.Platform.WindowOptions.html
+  - name: )
+  spec.vb:
+  - uid: Ink.UI.Platform.IWindowService.OpenAsync(System.Func{Avalonia.Controls.Control},Ink.UI.Platform.WindowOptions)
+    name: OpenAsync
+    href: Ink.UI.Platform.IWindowService.html#Ink_UI_Platform_IWindowService_OpenAsync_System_Func_Avalonia_Controls_Control__Ink_UI_Platform_WindowOptions_
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Ink.UI.Platform.WindowOptions
+    name: WindowOptions
+    href: Ink.UI.Platform.WindowOptions.html
+  - name: )
+- uid: System.Func{Avalonia.Controls.Control}
+  commentId: T:System.Func{Avalonia.Controls.Control}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Control>
+  nameWithType: Func<Control>
+  fullName: System.Func<Avalonia.Controls.Control>
+  nameWithType.vb: Func(Of Control)
+  fullName.vb: System.Func(Of Avalonia.Controls.Control)
+  name.vb: Func(Of Control)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Avalonia.Controls.Control
+    name: Control
+    isExternal: true
+  - name: )
+- uid: Ink.UI.Platform.WindowOptions
+  commentId: T:Ink.UI.Platform.WindowOptions
+  parent: Ink.UI.Platform
+  href: Ink.UI.Platform.WindowOptions.html
+  name: WindowOptions
+  nameWithType: WindowOptions
+  fullName: Ink.UI.Platform.WindowOptions
+- uid: System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+  commentId: T:System.Threading.Tasks.Task{Ink.UI.Platform.IWindowHandle}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IWindowHandle>
+  nameWithType: Task<IWindowHandle>
+  fullName: System.Threading.Tasks.Task<Ink.UI.Platform.IWindowHandle>
+  nameWithType.vb: Task(Of IWindowHandle)
+  fullName.vb: System.Threading.Tasks.Task(Of Ink.UI.Platform.IWindowHandle)
+  name.vb: Task(Of IWindowHandle)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Ink.UI.Platform.IWindowHandle
+    name: IWindowHandle
+    href: Ink.UI.Platform.IWindowHandle.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.UI.Platform.IWindowHandle
+    name: IWindowHandle
+    href: Ink.UI.Platform.IWindowHandle.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

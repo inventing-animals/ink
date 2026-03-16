@@ -1,0 +1,367 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Platform.Routing.IRouter
+  commentId: T:Ink.Platform.Routing.IRouter
+  id: IRouter
+  parent: Ink.Platform.Routing
+  children:
+  - Ink.Platform.Routing.IRouter.Back
+  - Ink.Platform.Routing.IRouter.Current
+  - Ink.Platform.Routing.IRouter.Forward
+  - Ink.Platform.Routing.IRouter.LocationChanged
+  - Ink.Platform.Routing.IRouter.Navigate(System.String)
+  - Ink.Platform.Routing.IRouter.Replace(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IRouter
+  nameWithType: IRouter
+  fullName: Ink.Platform.Routing.IRouter
+  type: Interface
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: IRouter
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 7
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Manages application navigation state.
+  example: []
+  syntax:
+    content: public interface IRouter
+    content.vb: Public Interface IRouter
+- uid: Ink.Platform.Routing.IRouter.Current
+  commentId: P:Ink.Platform.Routing.IRouter.Current
+  id: Current
+  parent: Ink.Platform.Routing.IRouter
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: IRouter.Current
+  fullName: Ink.Platform.Routing.IRouter.Current
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Current
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 10
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Gets the current location.
+  example: []
+  syntax:
+    content: ILocation Current { get; }
+    parameters: []
+    return:
+      type: Ink.Platform.Routing.ILocation
+    content.vb: ReadOnly Property Current As ILocation
+  overload: Ink.Platform.Routing.IRouter.Current*
+- uid: Ink.Platform.Routing.IRouter.Navigate(System.String)
+  commentId: M:Ink.Platform.Routing.IRouter.Navigate(System.String)
+  id: Navigate(System.String)
+  parent: Ink.Platform.Routing.IRouter
+  langs:
+  - csharp
+  - vb
+  name: Navigate(string)
+  nameWithType: IRouter.Navigate(string)
+  fullName: Ink.Platform.Routing.IRouter.Navigate(string)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Navigate
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 13
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Navigates to the specified path, pushing a new entry onto the history stack.
+  example: []
+  syntax:
+    content: void Navigate(string path)
+    parameters:
+    - id: path
+      type: System.String
+    content.vb: Sub Navigate(path As String)
+  overload: Ink.Platform.Routing.IRouter.Navigate*
+  nameWithType.vb: IRouter.Navigate(String)
+  fullName.vb: Ink.Platform.Routing.IRouter.Navigate(String)
+  name.vb: Navigate(String)
+- uid: Ink.Platform.Routing.IRouter.Replace(System.String)
+  commentId: M:Ink.Platform.Routing.IRouter.Replace(System.String)
+  id: Replace(System.String)
+  parent: Ink.Platform.Routing.IRouter
+  langs:
+  - csharp
+  - vb
+  name: Replace(string)
+  nameWithType: IRouter.Replace(string)
+  fullName: Ink.Platform.Routing.IRouter.Replace(string)
+  type: Method
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Replace
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 16
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Navigates to the specified path, replacing the current history entry.
+  example: []
+  syntax:
+    content: void Replace(string path)
+    parameters:
+    - id: path
+      type: System.String
+    content.vb: Sub Replace(path As String)
+  overload: Ink.Platform.Routing.IRouter.Replace*
+  nameWithType.vb: IRouter.Replace(String)
+  fullName.vb: Ink.Platform.Routing.IRouter.Replace(String)
+  name.vb: Replace(String)
+- uid: Ink.Platform.Routing.IRouter.Back
+  commentId: M:Ink.Platform.Routing.IRouter.Back
+  id: Back
+  parent: Ink.Platform.Routing.IRouter
+  langs:
+  - csharp
+  - vb
+  name: Back()
+  nameWithType: IRouter.Back()
+  fullName: Ink.Platform.Routing.IRouter.Back()
+  type: Method
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Back
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 19
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Moves back one entry in the history stack.
+  example: []
+  syntax:
+    content: void Back()
+    content.vb: Sub Back()
+  overload: Ink.Platform.Routing.IRouter.Back*
+- uid: Ink.Platform.Routing.IRouter.Forward
+  commentId: M:Ink.Platform.Routing.IRouter.Forward
+  id: Forward
+  parent: Ink.Platform.Routing.IRouter
+  langs:
+  - csharp
+  - vb
+  name: Forward()
+  nameWithType: IRouter.Forward()
+  fullName: Ink.Platform.Routing.IRouter.Forward()
+  type: Method
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Forward
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 22
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Moves forward one entry in the history stack.
+  example: []
+  syntax:
+    content: void Forward()
+    content.vb: Sub Forward()
+  overload: Ink.Platform.Routing.IRouter.Forward*
+- uid: Ink.Platform.Routing.IRouter.LocationChanged
+  commentId: E:Ink.Platform.Routing.IRouter.LocationChanged
+  id: LocationChanged
+  parent: Ink.Platform.Routing.IRouter
+  langs:
+  - csharp
+  - vb
+  name: LocationChanged
+  nameWithType: IRouter.LocationChanged
+  fullName: Ink.Platform.Routing.IRouter.LocationChanged
+  type: Event
+  source:
+    remote:
+      path: src/Ink.Platform/Routing/IRouter.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: LocationChanged
+    path: ../src/Ink.Platform/Routing/IRouter.cs
+    startLine: 25
+  assemblies:
+  - Ink.Platform
+  namespace: Ink.Platform.Routing
+  summary: Raised when the current location changes.
+  example: []
+  syntax:
+    content: event EventHandler<ILocation>? LocationChanged
+    return:
+      type: System.EventHandler{Ink.Platform.Routing.ILocation}
+    content.vb: Event LocationChanged As EventHandler(Of ILocation)
+references:
+- uid: Ink.Platform.Routing
+  commentId: N:Ink.Platform.Routing
+  href: Ink.html
+  name: Ink.Platform.Routing
+  nameWithType: Ink.Platform.Routing
+  fullName: Ink.Platform.Routing
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Platform
+    name: Platform
+    href: Ink.Platform.html
+  - name: .
+  - uid: Ink.Platform.Routing
+    name: Routing
+    href: Ink.Platform.Routing.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Platform
+    name: Platform
+    href: Ink.Platform.html
+  - name: .
+  - uid: Ink.Platform.Routing
+    name: Routing
+    href: Ink.Platform.Routing.html
+- uid: Ink.Platform.Routing.IRouter.Current*
+  commentId: Overload:Ink.Platform.Routing.IRouter.Current
+  href: Ink.Platform.Routing.IRouter.html#Ink_Platform_Routing_IRouter_Current
+  name: Current
+  nameWithType: IRouter.Current
+  fullName: Ink.Platform.Routing.IRouter.Current
+- uid: Ink.Platform.Routing.ILocation
+  commentId: T:Ink.Platform.Routing.ILocation
+  parent: Ink.Platform.Routing
+  href: Ink.Platform.Routing.ILocation.html
+  name: ILocation
+  nameWithType: ILocation
+  fullName: Ink.Platform.Routing.ILocation
+- uid: Ink.Platform.Routing.IRouter.Navigate*
+  commentId: Overload:Ink.Platform.Routing.IRouter.Navigate
+  href: Ink.Platform.Routing.IRouter.html#Ink_Platform_Routing_IRouter_Navigate_System_String_
+  name: Navigate
+  nameWithType: IRouter.Navigate
+  fullName: Ink.Platform.Routing.IRouter.Navigate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Ink.Platform.Routing.IRouter.Replace*
+  commentId: Overload:Ink.Platform.Routing.IRouter.Replace
+  href: Ink.Platform.Routing.IRouter.html#Ink_Platform_Routing_IRouter_Replace_System_String_
+  name: Replace
+  nameWithType: IRouter.Replace
+  fullName: Ink.Platform.Routing.IRouter.Replace
+- uid: Ink.Platform.Routing.IRouter.Back*
+  commentId: Overload:Ink.Platform.Routing.IRouter.Back
+  href: Ink.Platform.Routing.IRouter.html#Ink_Platform_Routing_IRouter_Back
+  name: Back
+  nameWithType: IRouter.Back
+  fullName: Ink.Platform.Routing.IRouter.Back
+- uid: Ink.Platform.Routing.IRouter.Forward*
+  commentId: Overload:Ink.Platform.Routing.IRouter.Forward
+  href: Ink.Platform.Routing.IRouter.html#Ink_Platform_Routing_IRouter_Forward
+  name: Forward
+  nameWithType: IRouter.Forward
+  fullName: Ink.Platform.Routing.IRouter.Forward
+- uid: System.EventHandler{Ink.Platform.Routing.ILocation}
+  commentId: T:System.EventHandler{Ink.Platform.Routing.ILocation}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<ILocation>
+  nameWithType: EventHandler<ILocation>
+  fullName: System.EventHandler<Ink.Platform.Routing.ILocation>
+  nameWithType.vb: EventHandler(Of ILocation)
+  fullName.vb: System.EventHandler(Of Ink.Platform.Routing.ILocation)
+  name.vb: EventHandler(Of ILocation)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: Ink.Platform.Routing.ILocation
+    name: ILocation
+    href: Ink.Platform.Routing.ILocation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.Platform.Routing.ILocation
+    name: ILocation
+    href: Ink.Platform.Routing.ILocation.html
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )

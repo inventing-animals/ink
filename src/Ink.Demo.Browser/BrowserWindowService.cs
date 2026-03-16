@@ -8,7 +8,7 @@ namespace Ink.Demo.Browser;
 
 /// <summary>
 /// Browser implementation of <see cref="IWindowService"/>.
-/// Opens a new tab via <c>window.open(url, "_blank")</c> — the tab loads a fresh
+/// Opens a new tab via <c>window.open(url, "_blank")</c> - the tab loads a fresh
 /// app instance which navigates to <see cref="WindowOptions.Url"/>.
 /// The <c>Func&lt;Control&gt;</c> content factory is ignored; content is determined
 /// entirely by the URL and the app's router.
@@ -19,7 +19,7 @@ internal sealed partial class BrowserWindowService : IWindowService
     {
         Open(ResolveUrl(options?.Url ?? "/"), "_blank");
 
-        // A browser tab is a separate process — we cannot track its lifecycle.
+        // A browser tab is a separate process - we cannot track its lifecycle.
         // WaitForCloseAsync completes immediately; Close() is a no-op.
         return Task.FromResult<IWindowHandle>(new ImmediateHandle());
     }

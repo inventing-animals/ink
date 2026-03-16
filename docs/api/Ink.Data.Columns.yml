@@ -1,0 +1,88 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Columns
+  commentId: N:Ink.Data.Columns
+  id: Ink.Data.Columns
+  children:
+  - Ink.Data.Columns.Column`1
+  - Ink.Data.Columns.Column`2
+  - Ink.Data.Columns.DefaultOps
+  - Ink.Data.Columns.ExpressionHelper
+  langs:
+  - csharp
+  - vb
+  name: Ink.Data.Columns
+  nameWithType: Ink.Data.Columns
+  fullName: Ink.Data.Columns
+  type: Namespace
+  assemblies:
+  - Ink.Data
+references:
+- uid: Ink.Data.Columns.Column`1
+  commentId: T:Ink.Data.Columns.Column`1
+  href: Ink.Data.Columns.Column-1.html
+  name: Column<TItem>
+  nameWithType: Column<TItem>
+  fullName: Ink.Data.Columns.Column<TItem>
+  nameWithType.vb: Column(Of TItem)
+  fullName.vb: Ink.Data.Columns.Column(Of TItem)
+  name.vb: Column(Of TItem)
+  spec.csharp:
+  - uid: Ink.Data.Columns.Column`1
+    name: Column
+    href: Ink.Data.Columns.Column-1.html
+  - name: <
+  - name: TItem
+  - name: '>'
+  spec.vb:
+  - uid: Ink.Data.Columns.Column`1
+    name: Column
+    href: Ink.Data.Columns.Column-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+- uid: Ink.Data.Columns.Column`2
+  commentId: T:Ink.Data.Columns.Column`2
+  href: Ink.Data.Columns.Column-2.html
+  name: Column<TItem, TValue>
+  nameWithType: Column<TItem, TValue>
+  fullName: Ink.Data.Columns.Column<TItem, TValue>
+  nameWithType.vb: Column(Of TItem, TValue)
+  fullName.vb: Ink.Data.Columns.Column(Of TItem, TValue)
+  name.vb: Column(Of TItem, TValue)
+  spec.csharp:
+  - uid: Ink.Data.Columns.Column`2
+    name: Column
+    href: Ink.Data.Columns.Column-2.html
+  - name: <
+  - name: TItem
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: Ink.Data.Columns.Column`2
+    name: Column
+    href: Ink.Data.Columns.Column-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: Ink.Data.Columns.DefaultOps
+  commentId: T:Ink.Data.Columns.DefaultOps
+  href: Ink.Data.Columns.DefaultOps.html
+  name: DefaultOps
+  nameWithType: DefaultOps
+  fullName: Ink.Data.Columns.DefaultOps
+- uid: Ink.Data.Columns.ExpressionHelper
+  commentId: T:Ink.Data.Columns.ExpressionHelper
+  href: Ink.Data.Columns.ExpressionHelper.html
+  name: ExpressionHelper
+  nameWithType: ExpressionHelper
+  fullName: Ink.Data.Columns.ExpressionHelper

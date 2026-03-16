@@ -7,10 +7,10 @@ namespace Ink.UI.Platform;
 /// <summary>
 /// Spawns secondary UI surfaces in a platform-appropriate way.
 /// <list type="bullet">
-///   <item>Desktop — new <see cref="Ink.UI.Controls.DesktopWindow"/></item>
-///   <item>Desktop (tabbed) — tab inside the existing <see cref="Ink.UI.Controls.DesktopTabbedWindow"/></item>
-///   <item>Mobile  — bottom-sheet drawer via <c>OverlayLayer</c></item>
-///   <item>Web     — new browser tab loaded at <see cref="WindowOptions.Url"/></item>
+///   <item>Desktop - new <see cref="Ink.UI.Controls.DesktopWindow"/></item>
+///   <item>Desktop (tabbed) - tab inside the existing <see cref="Ink.UI.Controls.DesktopTabbedWindow"/></item>
+///   <item>Mobile  - bottom-sheet drawer via <c>OverlayLayer</c></item>
+///   <item>Web     - new browser tab loaded at <see cref="WindowOptions.Url"/></item>
 /// </list>
 /// Surfaces are always <b>non-modal</b>: the caller is never blocked, and the app
 /// remains fully interactive while a secondary surface is open. This is a deliberate

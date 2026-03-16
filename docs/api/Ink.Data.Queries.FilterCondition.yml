@@ -1,0 +1,790 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Queries.FilterCondition
+  commentId: T:Ink.Data.Queries.FilterCondition
+  id: FilterCondition
+  parent: Ink.Data.Queries
+  children:
+  - Ink.Data.Queries.FilterCondition.#ctor(System.String,Ink.Data.Queries.FilterOp,System.Collections.Generic.IReadOnlyList{System.Object})
+  - Ink.Data.Queries.FilterCondition.Field
+  - Ink.Data.Queries.FilterCondition.Op
+  - Ink.Data.Queries.FilterCondition.Values
+  langs:
+  - csharp
+  - vb
+  name: FilterCondition
+  nameWithType: FilterCondition
+  fullName: Ink.Data.Queries.FilterCondition
+  type: Class
+  source:
+    remote:
+      path: src/Ink.Data/Queries/FilterNode.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: FilterCondition
+    path: ../src/Ink.Data/Queries/FilterNode.cs
+    startLine: 48
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: >-
+    A leaf condition comparing a column field against one or more values.
+
+    <p>
+
+    <code class="paramref">Values</code> interpretation by operator:
+
+    <ul><li><xref href="Ink.Data.Queries.FilterOp.IsNull" data-throw-if-not-resolved="false"></xref> / <xref href="Ink.Data.Queries.FilterOp.IsNotNull" data-throw-if-not-resolved="false"></xref> - empty list.</li><li>Most operators - single value at index 0.</li><li><xref href="Ink.Data.Queries.FilterOp.Between" data-throw-if-not-resolved="false"></xref> - two values: min at index 0, max at index 1.</li><li><xref href="Ink.Data.Queries.FilterOp.In" data-throw-if-not-resolved="false"></xref> / <xref href="Ink.Data.Queries.FilterOp.NotIn" data-throw-if-not-resolved="false"></xref> - one or more values.</li></ul>
+
+    </p>
+
+    <p>
+
+    <code class="paramref">Field</code> is matched case-insensitively against registered columns.
+
+    </p>
+  example: []
+  syntax:
+    content: 'public sealed record FilterCondition : FilterNode, IEquatable<FilterNode>, IEquatable<FilterCondition>'
+    content.vb: Public NotInheritable Class FilterCondition Inherits FilterNode Implements IEquatable(Of FilterNode), IEquatable(Of FilterCondition)
+  inheritance:
+  - System.Object
+  - Ink.Data.Queries.FilterNode
+  implements:
+  - System.IEquatable{Ink.Data.Queries.FilterNode}
+  - System.IEquatable{Ink.Data.Queries.FilterCondition}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - Ink.Data.Queries.FilterNode.Ink.Data.Queries.FilterNodeExtensions.ToDebugString
+- uid: Ink.Data.Queries.FilterCondition.#ctor(System.String,Ink.Data.Queries.FilterOp,System.Collections.Generic.IReadOnlyList{System.Object})
+  commentId: M:Ink.Data.Queries.FilterCondition.#ctor(System.String,Ink.Data.Queries.FilterOp,System.Collections.Generic.IReadOnlyList{System.Object})
+  id: '#ctor(System.String,Ink.Data.Queries.FilterOp,System.Collections.Generic.IReadOnlyList{System.Object})'
+  parent: Ink.Data.Queries.FilterCondition
+  langs:
+  - csharp
+  - vb
+  name: FilterCondition(string, FilterOp, IReadOnlyList<object?>)
+  nameWithType: FilterCondition.FilterCondition(string, FilterOp, IReadOnlyList<object?>)
+  fullName: Ink.Data.Queries.FilterCondition.FilterCondition(string, Ink.Data.Queries.FilterOp, System.Collections.Generic.IReadOnlyList<object?>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Ink.Data/Queries/FilterNode.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: .ctor
+    path: ../src/Ink.Data/Queries/FilterNode.cs
+    startLine: 48
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: >-
+    A leaf condition comparing a column field against one or more values.
+
+    <p>
+
+    <code class="paramref">Values</code> interpretation by operator:
+
+    <ul><li><xref href="Ink.Data.Queries.FilterOp.IsNull" data-throw-if-not-resolved="false"></xref> / <xref href="Ink.Data.Queries.FilterOp.IsNotNull" data-throw-if-not-resolved="false"></xref> - empty list.</li><li>Most operators - single value at index 0.</li><li><xref href="Ink.Data.Queries.FilterOp.Between" data-throw-if-not-resolved="false"></xref> - two values: min at index 0, max at index 1.</li><li><xref href="Ink.Data.Queries.FilterOp.In" data-throw-if-not-resolved="false"></xref> / <xref href="Ink.Data.Queries.FilterOp.NotIn" data-throw-if-not-resolved="false"></xref> - one or more values.</li></ul>
+
+    </p>
+
+    <p>
+
+    <code class="paramref">Field</code> is matched case-insensitively against registered columns.
+
+    </p>
+  example: []
+  syntax:
+    content: public FilterCondition(string Field, FilterOp Op, IReadOnlyList<object?> Values)
+    parameters:
+    - id: Field
+      type: System.String
+      description: The camelCase field name of the target column.
+    - id: Op
+      type: Ink.Data.Queries.FilterOp
+      description: The filter operator.
+    - id: Values
+      type: System.Collections.Generic.IReadOnlyList{System.Object}
+      description: The operand values.
+    content.vb: Public Sub New(Field As String, Op As FilterOp, Values As IReadOnlyList(Of Object))
+  overload: Ink.Data.Queries.FilterCondition.#ctor*
+  nameWithType.vb: FilterCondition.New(String, FilterOp, IReadOnlyList(Of Object))
+  fullName.vb: Ink.Data.Queries.FilterCondition.New(String, Ink.Data.Queries.FilterOp, System.Collections.Generic.IReadOnlyList(Of Object))
+  name.vb: New(String, FilterOp, IReadOnlyList(Of Object))
+- uid: Ink.Data.Queries.FilterCondition.Field
+  commentId: P:Ink.Data.Queries.FilterCondition.Field
+  id: Field
+  parent: Ink.Data.Queries.FilterCondition
+  langs:
+  - csharp
+  - vb
+  name: Field
+  nameWithType: FilterCondition.Field
+  fullName: Ink.Data.Queries.FilterCondition.Field
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/FilterNode.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Field
+    path: ../src/Ink.Data/Queries/FilterNode.cs
+    startLine: 49
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: The camelCase field name of the target column.
+  example: []
+  syntax:
+    content: public string Field { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Field As String
+  overload: Ink.Data.Queries.FilterCondition.Field*
+- uid: Ink.Data.Queries.FilterCondition.Op
+  commentId: P:Ink.Data.Queries.FilterCondition.Op
+  id: Op
+  parent: Ink.Data.Queries.FilterCondition
+  langs:
+  - csharp
+  - vb
+  name: Op
+  nameWithType: FilterCondition.Op
+  fullName: Ink.Data.Queries.FilterCondition.Op
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/FilterNode.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Op
+    path: ../src/Ink.Data/Queries/FilterNode.cs
+    startLine: 50
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: The filter operator.
+  example: []
+  syntax:
+    content: public FilterOp Op { get; init; }
+    parameters: []
+    return:
+      type: Ink.Data.Queries.FilterOp
+    content.vb: Public Property Op As FilterOp
+  overload: Ink.Data.Queries.FilterCondition.Op*
+- uid: Ink.Data.Queries.FilterCondition.Values
+  commentId: P:Ink.Data.Queries.FilterCondition.Values
+  id: Values
+  parent: Ink.Data.Queries.FilterCondition
+  langs:
+  - csharp
+  - vb
+  name: Values
+  nameWithType: FilterCondition.Values
+  fullName: Ink.Data.Queries.FilterCondition.Values
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Queries/FilterNode.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Values
+    path: ../src/Ink.Data/Queries/FilterNode.cs
+    startLine: 51
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Queries
+  summary: The operand values.
+  example: []
+  syntax:
+    content: public IReadOnlyList<object?> Values { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.Object}
+    content.vb: Public Property Values As IReadOnlyList(Of Object)
+  overload: Ink.Data.Queries.FilterCondition.Values*
+references:
+- uid: Ink.Data.Queries.FilterOp.IsNull
+  commentId: F:Ink.Data.Queries.FilterOp.IsNull
+  href: Ink.Data.Queries.FilterOp.html#Ink_Data_Queries_FilterOp_IsNull
+  name: IsNull
+  nameWithType: FilterOp.IsNull
+  fullName: Ink.Data.Queries.FilterOp.IsNull
+- uid: Ink.Data.Queries.FilterOp.IsNotNull
+  commentId: F:Ink.Data.Queries.FilterOp.IsNotNull
+  href: Ink.Data.Queries.FilterOp.html#Ink_Data_Queries_FilterOp_IsNotNull
+  name: IsNotNull
+  nameWithType: FilterOp.IsNotNull
+  fullName: Ink.Data.Queries.FilterOp.IsNotNull
+- uid: Ink.Data.Queries.FilterOp.Between
+  commentId: F:Ink.Data.Queries.FilterOp.Between
+  href: Ink.Data.Queries.FilterOp.html#Ink_Data_Queries_FilterOp_Between
+  name: Between
+  nameWithType: FilterOp.Between
+  fullName: Ink.Data.Queries.FilterOp.Between
+- uid: Ink.Data.Queries.FilterOp.In
+  commentId: F:Ink.Data.Queries.FilterOp.In
+  href: Ink.Data.Queries.FilterOp.html#Ink_Data_Queries_FilterOp_In
+  name: In
+  nameWithType: FilterOp.In
+  fullName: Ink.Data.Queries.FilterOp.In
+- uid: Ink.Data.Queries.FilterOp.NotIn
+  commentId: F:Ink.Data.Queries.FilterOp.NotIn
+  href: Ink.Data.Queries.FilterOp.html#Ink_Data_Queries_FilterOp_NotIn
+  name: NotIn
+  nameWithType: FilterOp.NotIn
+  fullName: Ink.Data.Queries.FilterOp.NotIn
+- uid: Ink.Data.Queries
+  commentId: N:Ink.Data.Queries
+  href: Ink.html
+  name: Ink.Data.Queries
+  nameWithType: Ink.Data.Queries
+  fullName: Ink.Data.Queries
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Queries
+    name: Queries
+    href: Ink.Data.Queries.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Ink.Data.Queries.FilterNode
+  commentId: T:Ink.Data.Queries.FilterNode
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.FilterNode.html
+  name: FilterNode
+  nameWithType: FilterNode
+  fullName: Ink.Data.Queries.FilterNode
+- uid: System.IEquatable{Ink.Data.Queries.FilterNode}
+  commentId: T:System.IEquatable{Ink.Data.Queries.FilterNode}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<FilterNode>
+  nameWithType: IEquatable<FilterNode>
+  fullName: System.IEquatable<Ink.Data.Queries.FilterNode>
+  nameWithType.vb: IEquatable(Of FilterNode)
+  fullName.vb: System.IEquatable(Of Ink.Data.Queries.FilterNode)
+  name.vb: IEquatable(Of FilterNode)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Ink.Data.Queries.FilterNode
+    name: FilterNode
+    href: Ink.Data.Queries.FilterNode.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.Data.Queries.FilterNode
+    name: FilterNode
+    href: Ink.Data.Queries.FilterNode.html
+  - name: )
+- uid: System.IEquatable{Ink.Data.Queries.FilterCondition}
+  commentId: T:System.IEquatable{Ink.Data.Queries.FilterCondition}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<FilterCondition>
+  nameWithType: IEquatable<FilterCondition>
+  fullName: System.IEquatable<Ink.Data.Queries.FilterCondition>
+  nameWithType.vb: IEquatable(Of FilterCondition)
+  fullName.vb: System.IEquatable(Of Ink.Data.Queries.FilterCondition)
+  name.vb: IEquatable(Of FilterCondition)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Ink.Data.Queries.FilterCondition
+    name: FilterCondition
+    href: Ink.Data.Queries.FilterCondition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.Data.Queries.FilterCondition
+    name: FilterCondition
+    href: Ink.Data.Queries.FilterCondition.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Ink.Data.Queries.FilterNode.Ink.Data.Queries.FilterNodeExtensions.ToDebugString
+  commentId: M:Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+  parent: Ink.Data.Queries.FilterNodeExtensions
+  definition: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+  href: Ink.Data.Queries.FilterNodeExtensions.html#Ink_Data_Queries_FilterNodeExtensions_ToDebugString_Ink_Data_Queries_FilterNode_
+  name: ToDebugString(FilterNode)
+  nameWithType: FilterNodeExtensions.ToDebugString(FilterNode)
+  fullName: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+  spec.csharp:
+  - uid: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+    name: ToDebugString
+    href: Ink.Data.Queries.FilterNodeExtensions.html#Ink_Data_Queries_FilterNodeExtensions_ToDebugString_Ink_Data_Queries_FilterNode_
+  - name: (
+  - uid: Ink.Data.Queries.FilterNode
+    name: FilterNode
+    href: Ink.Data.Queries.FilterNode.html
+  - name: )
+  spec.vb:
+  - uid: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+    name: ToDebugString
+    href: Ink.Data.Queries.FilterNodeExtensions.html#Ink_Data_Queries_FilterNodeExtensions_ToDebugString_Ink_Data_Queries_FilterNode_
+  - name: (
+  - uid: Ink.Data.Queries.FilterNode
+    name: FilterNode
+    href: Ink.Data.Queries.FilterNode.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+  commentId: M:Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+  href: Ink.Data.Queries.FilterNodeExtensions.html#Ink_Data_Queries_FilterNodeExtensions_ToDebugString_Ink_Data_Queries_FilterNode_
+  name: ToDebugString(FilterNode)
+  nameWithType: FilterNodeExtensions.ToDebugString(FilterNode)
+  fullName: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+  spec.csharp:
+  - uid: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+    name: ToDebugString
+    href: Ink.Data.Queries.FilterNodeExtensions.html#Ink_Data_Queries_FilterNodeExtensions_ToDebugString_Ink_Data_Queries_FilterNode_
+  - name: (
+  - uid: Ink.Data.Queries.FilterNode
+    name: FilterNode
+    href: Ink.Data.Queries.FilterNode.html
+  - name: )
+  spec.vb:
+  - uid: Ink.Data.Queries.FilterNodeExtensions.ToDebugString(Ink.Data.Queries.FilterNode)
+    name: ToDebugString
+    href: Ink.Data.Queries.FilterNodeExtensions.html#Ink_Data_Queries_FilterNodeExtensions_ToDebugString_Ink_Data_Queries_FilterNode_
+  - name: (
+  - uid: Ink.Data.Queries.FilterNode
+    name: FilterNode
+    href: Ink.Data.Queries.FilterNode.html
+  - name: )
+- uid: Ink.Data.Queries.FilterNodeExtensions
+  commentId: T:Ink.Data.Queries.FilterNodeExtensions
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.FilterNodeExtensions.html
+  name: FilterNodeExtensions
+  nameWithType: FilterNodeExtensions
+  fullName: Ink.Data.Queries.FilterNodeExtensions
+- uid: Ink.Data.Queries.FilterCondition.#ctor*
+  commentId: Overload:Ink.Data.Queries.FilterCondition.#ctor
+  href: Ink.Data.Queries.FilterCondition.html#Ink_Data_Queries_FilterCondition__ctor_System_String_Ink_Data_Queries_FilterOp_System_Collections_Generic_IReadOnlyList_System_Object__
+  name: FilterCondition
+  nameWithType: FilterCondition.FilterCondition
+  fullName: Ink.Data.Queries.FilterCondition.FilterCondition
+  nameWithType.vb: FilterCondition.New
+  fullName.vb: Ink.Data.Queries.FilterCondition.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Ink.Data.Queries.FilterOp
+  commentId: T:Ink.Data.Queries.FilterOp
+  parent: Ink.Data.Queries
+  href: Ink.Data.Queries.FilterOp.html
+  name: FilterOp
+  nameWithType: FilterOp
+  fullName: Ink.Data.Queries.FilterOp
+- uid: System.Collections.Generic.IReadOnlyList{System.Object}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<object>
+  nameWithType: IReadOnlyList<object>
+  fullName: System.Collections.Generic.IReadOnlyList<object>
+  nameWithType.vb: IReadOnlyList(Of Object)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Object)
+  name.vb: IReadOnlyList(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Ink.Data.Queries.FilterCondition.Field*
+  commentId: Overload:Ink.Data.Queries.FilterCondition.Field
+  href: Ink.Data.Queries.FilterCondition.html#Ink_Data_Queries_FilterCondition_Field
+  name: Field
+  nameWithType: FilterCondition.Field
+  fullName: Ink.Data.Queries.FilterCondition.Field
+- uid: Ink.Data.Queries.FilterCondition.Op*
+  commentId: Overload:Ink.Data.Queries.FilterCondition.Op
+  href: Ink.Data.Queries.FilterCondition.html#Ink_Data_Queries_FilterCondition_Op
+  name: Op
+  nameWithType: FilterCondition.Op
+  fullName: Ink.Data.Queries.FilterCondition.Op
+- uid: Ink.Data.Queries.FilterCondition.Values*
+  commentId: Overload:Ink.Data.Queries.FilterCondition.Values
+  href: Ink.Data.Queries.FilterCondition.html#Ink_Data_Queries_FilterCondition_Values
+  name: Values
+  nameWithType: FilterCondition.Values
+  fullName: Ink.Data.Queries.FilterCondition.Values

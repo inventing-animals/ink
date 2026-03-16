@@ -1,0 +1,578 @@
+### YamlMime:ManagedReference
+items:
+- uid: Ink.Data.Changes.DataChange`1
+  commentId: T:Ink.Data.Changes.DataChange`1
+  id: DataChange`1
+  parent: Ink.Data.Changes
+  children:
+  - Ink.Data.Changes.DataChange`1.#ctor(Ink.Data.Changes.ChangeType,`0,System.Object)
+  - Ink.Data.Changes.DataChange`1.Item
+  - Ink.Data.Changes.DataChange`1.Key
+  - Ink.Data.Changes.DataChange`1.Type
+  langs:
+  - csharp
+  - vb
+  name: DataChange<T>
+  nameWithType: DataChange<T>
+  fullName: Ink.Data.Changes.DataChange<T>
+  type: Class
+  source:
+    remote:
+      path: src/Ink.Data/Changes/DataChange.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: DataChange
+    path: ../src/Ink.Data/Changes/DataChange.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Changes
+  summary: >-
+    Describes a single change to a data item, typically received from a SignalR hub
+
+    or other real-time channel.
+  example: []
+  syntax:
+    content: 'public sealed record DataChange<T> : IEquatable<DataChange<T>>'
+    typeParameters:
+    - id: T
+      description: The item type.
+    content.vb: Public NotInheritable Class DataChange(Of T) Implements IEquatable(Of DataChange(Of T))
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{Ink.Data.Changes.DataChange`1}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: DataChange(Of T)
+  fullName.vb: Ink.Data.Changes.DataChange(Of T)
+  name.vb: DataChange(Of T)
+- uid: Ink.Data.Changes.DataChange`1.#ctor(Ink.Data.Changes.ChangeType,`0,System.Object)
+  commentId: M:Ink.Data.Changes.DataChange`1.#ctor(Ink.Data.Changes.ChangeType,`0,System.Object)
+  id: '#ctor(Ink.Data.Changes.ChangeType,`0,System.Object)'
+  parent: Ink.Data.Changes.DataChange`1
+  langs:
+  - csharp
+  - vb
+  name: DataChange(ChangeType, T?, object?)
+  nameWithType: DataChange<T>.DataChange(ChangeType, T?, object?)
+  fullName: Ink.Data.Changes.DataChange<T>.DataChange(Ink.Data.Changes.ChangeType, T?, object?)
+  type: Constructor
+  source:
+    remote:
+      path: src/Ink.Data/Changes/DataChange.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: .ctor
+    path: ../src/Ink.Data/Changes/DataChange.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Changes
+  summary: >-
+    Describes a single change to a data item, typically received from a SignalR hub
+
+    or other real-time channel.
+  example: []
+  syntax:
+    content: public DataChange(ChangeType Type, T? Item, object? Key)
+    parameters:
+    - id: Type
+      type: Ink.Data.Changes.ChangeType
+      description: The kind of change.
+    - id: Item
+      type: '{T}'
+      description: >-
+        The affected item. <code>null</code> when <xref href="Ink.Data.Changes.ChangeType" data-throw-if-not-resolved="false"></xref> is <xref href="Ink.Data.Changes.ChangeType.Removed" data-throw-if-not-resolved="false"></xref>
+
+        or <xref href="Ink.Data.Changes.ChangeType.Invalidated" data-throw-if-not-resolved="false"></xref>.
+    - id: Key
+      type: System.Object
+      description: The primary key of the affected item. Always present, even when <code class="paramref">Item</code> is <code>null</code>.
+    content.vb: Public Sub New(Type As ChangeType, Item As T, Key As Object)
+  overload: Ink.Data.Changes.DataChange`1.#ctor*
+  nameWithType.vb: DataChange(Of T).New(ChangeType, T, Object)
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).New(Ink.Data.Changes.ChangeType, T, Object)
+  name.vb: New(ChangeType, T, Object)
+- uid: Ink.Data.Changes.DataChange`1.Type
+  commentId: P:Ink.Data.Changes.DataChange`1.Type
+  id: Type
+  parent: Ink.Data.Changes.DataChange`1
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: DataChange<T>.Type
+  fullName: Ink.Data.Changes.DataChange<T>.Type
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Changes/DataChange.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Type
+    path: ../src/Ink.Data/Changes/DataChange.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Changes
+  summary: The kind of change.
+  example: []
+  syntax:
+    content: public ChangeType Type { get; init; }
+    parameters: []
+    return:
+      type: Ink.Data.Changes.ChangeType
+    content.vb: Public Property Type As ChangeType
+  overload: Ink.Data.Changes.DataChange`1.Type*
+  nameWithType.vb: DataChange(Of T).Type
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).Type
+- uid: Ink.Data.Changes.DataChange`1.Item
+  commentId: P:Ink.Data.Changes.DataChange`1.Item
+  id: Item
+  parent: Ink.Data.Changes.DataChange`1
+  langs:
+  - csharp
+  - vb
+  name: Item
+  nameWithType: DataChange<T>.Item
+  fullName: Ink.Data.Changes.DataChange<T>.Item
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Changes/DataChange.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Item
+    path: ../src/Ink.Data/Changes/DataChange.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Changes
+  summary: >-
+    The affected item. <code>null</code> when <xref href="Ink.Data.Changes.ChangeType" data-throw-if-not-resolved="false"></xref> is <xref href="Ink.Data.Changes.ChangeType.Removed" data-throw-if-not-resolved="false"></xref>
+
+    or <xref href="Ink.Data.Changes.ChangeType.Invalidated" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public T? Item { get; init; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property Item As T
+  overload: Ink.Data.Changes.DataChange`1.Item*
+  nameWithType.vb: DataChange(Of T).Item
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).Item
+- uid: Ink.Data.Changes.DataChange`1.Key
+  commentId: P:Ink.Data.Changes.DataChange`1.Key
+  id: Key
+  parent: Ink.Data.Changes.DataChange`1
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: DataChange<T>.Key
+  fullName: Ink.Data.Changes.DataChange<T>.Key
+  type: Property
+  source:
+    remote:
+      path: src/Ink.Data/Changes/DataChange.cs
+      branch: main
+      repo: https://github.com/inventing-animals/ink.git
+    id: Key
+    path: ../src/Ink.Data/Changes/DataChange.cs
+    startLine: 15
+  assemblies:
+  - Ink.Data
+  namespace: Ink.Data.Changes
+  summary: The primary key of the affected item. Always present, even when <code class="paramref">Item</code> is <code>null</code>.
+  example: []
+  syntax:
+    content: public object? Key { get; init; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Property Key As Object
+  overload: Ink.Data.Changes.DataChange`1.Key*
+  nameWithType.vb: DataChange(Of T).Key
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).Key
+references:
+- uid: Ink.Data.Changes.ChangeType
+  commentId: T:Ink.Data.Changes.ChangeType
+  parent: Ink.Data.Changes
+  href: Ink.Data.Changes.ChangeType.html
+  name: ChangeType
+  nameWithType: ChangeType
+  fullName: Ink.Data.Changes.ChangeType
+- uid: Ink.Data.Changes.ChangeType.Removed
+  commentId: F:Ink.Data.Changes.ChangeType.Removed
+  href: Ink.Data.Changes.ChangeType.html#Ink_Data_Changes_ChangeType_Removed
+  name: Removed
+  nameWithType: ChangeType.Removed
+  fullName: Ink.Data.Changes.ChangeType.Removed
+- uid: Ink.Data.Changes.ChangeType.Invalidated
+  commentId: F:Ink.Data.Changes.ChangeType.Invalidated
+  href: Ink.Data.Changes.ChangeType.html#Ink_Data_Changes_ChangeType_Invalidated
+  name: Invalidated
+  nameWithType: ChangeType.Invalidated
+  fullName: Ink.Data.Changes.ChangeType.Invalidated
+- uid: Ink.Data.Changes
+  commentId: N:Ink.Data.Changes
+  href: Ink.html
+  name: Ink.Data.Changes
+  nameWithType: Ink.Data.Changes
+  fullName: Ink.Data.Changes
+  spec.csharp:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Changes
+    name: Changes
+    href: Ink.Data.Changes.html
+  spec.vb:
+  - uid: Ink
+    name: Ink
+    href: Ink.html
+  - name: .
+  - uid: Ink.Data
+    name: Data
+    href: Ink.Data.html
+  - name: .
+  - uid: Ink.Data.Changes
+    name: Changes
+    href: Ink.Data.Changes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{Ink.Data.Changes.DataChange`1}
+  commentId: T:System.IEquatable{Ink.Data.Changes.DataChange`1}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<DataChange<T>>
+  nameWithType: IEquatable<DataChange<T>>
+  fullName: System.IEquatable<Ink.Data.Changes.DataChange<T>>
+  nameWithType.vb: IEquatable(Of DataChange(Of T))
+  fullName.vb: System.IEquatable(Of Ink.Data.Changes.DataChange(Of T))
+  name.vb: IEquatable(Of DataChange(Of T))
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Ink.Data.Changes.DataChange`1
+    name: DataChange
+    href: Ink.Data.Changes.DataChange-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Ink.Data.Changes.DataChange`1
+    name: DataChange
+    href: Ink.Data.Changes.DataChange-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Ink.Data.Changes.DataChange`1.#ctor*
+  commentId: Overload:Ink.Data.Changes.DataChange`1.#ctor
+  href: Ink.Data.Changes.DataChange-1.html#Ink_Data_Changes_DataChange_1__ctor_Ink_Data_Changes_ChangeType__0_System_Object_
+  name: DataChange
+  nameWithType: DataChange<T>.DataChange
+  fullName: Ink.Data.Changes.DataChange<T>.DataChange
+  nameWithType.vb: DataChange(Of T).New
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).New
+  name.vb: New
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Ink.Data.Changes.DataChange`1.Type*
+  commentId: Overload:Ink.Data.Changes.DataChange`1.Type
+  href: Ink.Data.Changes.DataChange-1.html#Ink_Data_Changes_DataChange_1_Type
+  name: Type
+  nameWithType: DataChange<T>.Type
+  fullName: Ink.Data.Changes.DataChange<T>.Type
+  nameWithType.vb: DataChange(Of T).Type
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).Type
+- uid: Ink.Data.Changes.DataChange`1.Item*
+  commentId: Overload:Ink.Data.Changes.DataChange`1.Item
+  href: Ink.Data.Changes.DataChange-1.html#Ink_Data_Changes_DataChange_1_Item
+  name: Item
+  nameWithType: DataChange<T>.Item
+  fullName: Ink.Data.Changes.DataChange<T>.Item
+  nameWithType.vb: DataChange(Of T).Item
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).Item
+- uid: Ink.Data.Changes.DataChange`1.Key*
+  commentId: Overload:Ink.Data.Changes.DataChange`1.Key
+  href: Ink.Data.Changes.DataChange-1.html#Ink_Data_Changes_DataChange_1_Key
+  name: Key
+  nameWithType: DataChange<T>.Key
+  fullName: Ink.Data.Changes.DataChange<T>.Key
+  nameWithType.vb: DataChange(Of T).Key
+  fullName.vb: Ink.Data.Changes.DataChange(Of T).Key
