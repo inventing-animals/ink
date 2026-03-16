@@ -29,6 +29,7 @@ jobs:
           dotnet restore src/Ink.UI/Ink.UI.csproj
           dotnet restore src/Ink.Data/Ink.Data.csproj
           dotnet restore src/Ink.Data.EFCore/Ink.Data.EFCore.csproj
+          dotnet restore src/Ink.DataGrid/Ink.DataGrid.csproj
 
       - name: Build
         run: |
@@ -38,6 +39,7 @@ jobs:
           dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
           dotnet build src/Ink.Data/Ink.Data.csproj --no-restore -c Release
           dotnet build src/Ink.Data.EFCore/Ink.Data.EFCore.csproj --no-restore -c Release
+          dotnet build src/Ink.DataGrid/Ink.DataGrid.csproj --no-restore -c Release
 
       - name: Test
         run: |
@@ -67,6 +69,7 @@ jobs:
           dotnet restore src/Ink.UI/Ink.UI.csproj
           dotnet restore src/Ink.Data/Ink.Data.csproj
           dotnet restore src/Ink.Data.EFCore/Ink.Data.EFCore.csproj
+          dotnet restore src/Ink.DataGrid/Ink.DataGrid.csproj
 
       - name: Build
         run: |
@@ -76,6 +79,7 @@ jobs:
           dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
           dotnet build src/Ink.Data/Ink.Data.csproj --no-restore -c Release
           dotnet build src/Ink.Data.EFCore/Ink.Data.EFCore.csproj --no-restore -c Release
+          dotnet build src/Ink.DataGrid/Ink.DataGrid.csproj --no-restore -c Release
 
       - name: Pack
         run: |
@@ -85,6 +89,7 @@ jobs:
           dotnet pack src/Ink.UI/Ink.UI.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.Data/Ink.Data.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.Data.EFCore/Ink.Data.EFCore.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
+          dotnet pack src/Ink.DataGrid/Ink.DataGrid.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
 
       - name: Push to NuGet
         run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

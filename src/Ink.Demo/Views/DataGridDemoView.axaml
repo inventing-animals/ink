@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:datagrid="clr-namespace:Ink.DataGrid.Controls;assembly=Ink.DataGrid"
+             x:Class="Ink.Demo.Views.DataGridDemoView"
+             x:DataType="vm:DataGridDemoViewModel">
+  <ScrollViewer>
+  <StackPanel Spacing="24" Margin="24">
+    <TextBlock Text="DataGrid" />
+
+    <datagrid:DataGrid Model="{Binding}" />
+
+  </StackPanel>
+  </ScrollViewer>
+</UserControl>

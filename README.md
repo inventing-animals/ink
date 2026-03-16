@@ -59,6 +59,16 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications, suppo
 - `SortDescriptor`, `DataPage<T>`, `IDataSource<T>`
 - Full JSON round-trip via `System.Text.Json`; WASM-safe
 
+### Ink.DataGrid
+
+[![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.DataGrid)](https://www.nuget.org/packages/InventingAnimals.Ink.DataGrid)
+
+`InventingAnimals.Ink.DataGrid` - DataGrid control for Avalonia applications. [Documentation](https://inventing-animals.github.io/ink/docs/articles/datagrid.html)
+
+- Columns and data source defined entirely in the view model - no XAML column configuration required
+- `DataGridModel<T>` base class wires an `IDataSource<T>` to the grid; inherit it in your view model
+- `ListDataSource<T>` in `Ink.Data` for in-memory collections; plug in any `IDataSource<T>` for remote or database-backed data
+
 ### Ink.Data.EFCore
 
 [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Data.EFCore)](https://www.nuget.org/packages/InventingAnimals.Ink.Data.EFCore)
@@ -83,10 +93,16 @@ dotnet add package InventingAnimals.Ink.Platform.Browser  # WASM projects only
 dotnet add package InventingAnimals.Ink.Localization
 ```
 
-For DataGrid and Charts data layer:
+For the DataGrid control:
 
 ```
-dotnet add package InventingAnimals.Ink.Data                 # client and server
+dotnet add package InventingAnimals.Ink.DataGrid
+dotnet add package InventingAnimals.Ink.Data                 # included transitively, but useful standalone
+```
+
+For the server-side EF Core translator:
+
+```
 dotnet add package InventingAnimals.Ink.Data.EFCore          # server only
 ```
 
