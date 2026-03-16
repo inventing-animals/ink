@@ -20,7 +20,7 @@
             BorderThickness="0,0,1,0">
       <DockPanel Margin="8">
         <!-- Theme toggle pinned to bottom -->
-        <Button DockPanel.Dock="Bottom"
+        <ink:Button DockPanel.Dock="Bottom"
                 Command="{Binding ToggleThemeCommand}"
                 Content="{Binding ThemeLabel}"
                 Margin="0,4,0,8" />
@@ -28,11 +28,11 @@
         <StackPanel Spacing="4">
           <TextBlock Text="Ink UI"
                      Margin="8,12,8,12" />
-          <Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</Button>
-          <Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</Button>
-          <Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</Button>
-          <Button Command="{Binding NavigateCommand}" CommandParameter="/windows">Windows</Button>
-          <Button Command="{Binding NavigateCommand}" CommandParameter="/datagrid">DataGrid</Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/windows">Windows</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/datagrid">DataGrid</ink:Button>
         </StackPanel>
       </DockPanel>
     </Border>

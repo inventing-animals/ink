@@ -1,5 +1,7 @@
 - name: Introduction
   href: intro.md
+- name: Design Philosophy
+  href: design.md
 - name: Platform Services
   href: platform.md
 - name: DataGrid

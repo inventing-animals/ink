@@ -14,11 +14,11 @@
       <TextBlock Text="Window — new OS window on desktop · drawer on mobile · browser tab on web"
                  Foreground="{DynamicResource Ink.Brush.Content.Muted}"
                  FontSize="12" />
-      <Button ink:ButtonAssist.Variant="Primary"
-              Command="{Binding OpenWindowCommand}"
-              Margin="0,4,0,0">
+      <ink:Button Variant="Primary"
+                  Command="{Binding OpenWindowCommand}"
+                  Margin="0,4,0,0">
         Open Window
-      </Button>
+      </ink:Button>
     </StackPanel>
 
     <StackPanel Spacing="8">
@@ -27,11 +27,10 @@
       <TextBlock Text="Tab — tab in current window on desktop · drawer on mobile · browser tab on web"
                  Foreground="{DynamicResource Ink.Brush.Content.Muted}"
                  FontSize="12" />
-      <Button ink:ButtonAssist.Variant="Secondary"
-              Command="{Binding OpenTabCommand}"
-              Margin="0,4,0,0">
+      <ink:Button Command="{Binding OpenTabCommand}"
+                  Margin="0,4,0,0">
         Open Tab
-      </Button>
+      </ink:Button>
     </StackPanel>
 
   </StackPanel>
