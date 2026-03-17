@@ -11,6 +11,13 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
+  <Target Name="SetGitHash" BeforeTargets="GetAssemblyVersion" Condition="'$(SourceRevisionId)' == ''">
+    <Exec Command="git rev-parse --short=6 HEAD" ConsoleToMSBuild="true" IgnoreExitCode="true"
+          WorkingDirectory="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="ConsoleOutput" PropertyName="SourceRevisionId" />
+    </Exec>
+  </Target>
+
     <ItemGroup>
         <ProjectReference Include="..\Ink.UI\Ink.UI.csproj" />
         <ProjectReference Include="..\Ink.DataGrid\Ink.DataGrid.csproj" />

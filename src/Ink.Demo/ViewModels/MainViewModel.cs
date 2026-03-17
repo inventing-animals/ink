@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Reflection;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Ink.Platform.Routing;
@@ -21,6 +22,12 @@ public partial class MainViewModel : ViewModelBase
         _appState.Router.LocationChanged += (_, location) => UpdatePage(location);
         UpdatePage(_appState.Router.Current);
     }
+
+    public string GitRevision { get; } =
+        typeof(MainViewModel).Assembly
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion
+            .Split('+').LastOrDefault() ?? "unknown";
 
     public string ThemeLabel =>
         _appState.Theme.Current == Avalonia.Styling.ThemeVariant.Dark ? "Light mode" : "Dark mode";
