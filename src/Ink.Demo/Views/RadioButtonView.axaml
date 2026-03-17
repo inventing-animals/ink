@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.RadioButtonView"
+             x:DataType="vm:RadioButtonViewModel">
+  <!-- TODO: Subclass ink:RadioButton from Avalonia RadioButton and use it here instead -->
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <TextBlock Text="RadioButton" />
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Avalonia RadioButton (themed)" />
+        <TextBlock Text="Plain Avalonia RadioButton with Ink base theme applied - no subclass yet."
+                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                   FontSize="12" />
+        <StackPanel Spacing="4">
+          <RadioButton GroupName="Group1">Option A</RadioButton>
+          <RadioButton GroupName="Group1" IsChecked="True">Option B</RadioButton>
+          <RadioButton GroupName="Group1">Option C</RadioButton>
+          <RadioButton IsEnabled="False">Disabled</RadioButton>
+          <RadioButton IsEnabled="False" IsChecked="True">Disabled (selected)</RadioButton>
+        </StackPanel>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

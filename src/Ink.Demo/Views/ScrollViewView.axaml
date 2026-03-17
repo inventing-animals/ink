@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.ScrollViewView"
+             x:DataType="vm:ScrollViewViewModel">
+  <!-- TODO: Subclass ink:ScrollViewer from Avalonia ScrollViewer and use it here instead -->
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <TextBlock Text="ScrollViewer" />
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Avalonia ScrollViewer - Vertical (themed)" />
+        <TextBlock Text="Plain Avalonia ScrollViewer with Ink base theme applied - no subclass yet."
+                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                   FontSize="12" />
+        <Border Height="120" Width="240" HorizontalAlignment="Left">
+          <ScrollViewer>
+            <StackPanel Spacing="4">
+              <TextBlock Text="Item 1" />
+              <TextBlock Text="Item 2" />
+              <TextBlock Text="Item 3" />
+              <TextBlock Text="Item 4" />
+              <TextBlock Text="Item 5" />
+              <TextBlock Text="Item 6" />
+              <TextBlock Text="Item 7" />
+              <TextBlock Text="Item 8" />
+              <TextBlock Text="Item 9" />
+              <TextBlock Text="Item 10" />
+            </StackPanel>
+          </ScrollViewer>
+        </Border>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Avalonia ScrollViewer - Horizontal (themed)" />
+        <Border Width="240" HorizontalAlignment="Left">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+              <Border Background="{DynamicResource Ink.Brush.Surface.Panel}" Width="80" Height="60" />
+              <Border Background="{DynamicResource Ink.Brush.Surface.Panel}" Width="80" Height="60" />
+              <Border Background="{DynamicResource Ink.Brush.Surface.Panel}" Width="80" Height="60" />
+              <Border Background="{DynamicResource Ink.Brush.Surface.Panel}" Width="80" Height="60" />
+              <Border Background="{DynamicResource Ink.Brush.Surface.Panel}" Width="80" Height="60" />
+            </StackPanel>
+          </ScrollViewer>
+        </Border>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

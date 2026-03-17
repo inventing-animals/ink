@@ -19,6 +19,16 @@ public class ViewLocator : IDataTemplate
         [typeof(RouterDemoViewModel)] = () => new RouterDemoView(),
         [typeof(WindowsDemoViewModel)] = () => new WindowsDemoView(),
         [typeof(DataGridDemoViewModel)] = () => new DataGridDemoView(),
+        [typeof(CheckboxViewModel)] = () => new CheckboxView(),
+        [typeof(RadioButtonViewModel)] = () => new RadioButtonView(),
+        [typeof(CalendarViewModel)] = () => new CalendarView(),
+        [typeof(ComboBoxViewModel)] = () => new ComboBoxView(),
+        [typeof(ListBoxViewModel)] = () => new ListBoxView(),
+        [typeof(TextBoxViewModel)] = () => new TextBoxView(),
+        [typeof(ToggleViewModel)] = () => new ToggleView(),
+        [typeof(SliderViewModel)] = () => new SliderView(),
+        [typeof(ProgressBarViewModel)] = () => new ProgressBarView(),
+        [typeof(ScrollViewViewModel)] = () => new ScrollViewView(),
     };
 
     public Control? Build(object? param)
