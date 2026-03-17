@@ -29,6 +29,16 @@
           <TextBlock Text="Ink UI"
                      Margin="8,12,8,12" />
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/checkbox">Checkbox</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/radiobutton">RadioButton</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/calendar">Calendar</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/combobox">ComboBox</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/listbox">ListBox</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/textbox">TextBox</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/toggle">Toggle</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/slider">Slider</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/progressbar">ProgressBar</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/scrollview">ScrollViewer</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/router">Router</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/windows">Windows</ink:Button>

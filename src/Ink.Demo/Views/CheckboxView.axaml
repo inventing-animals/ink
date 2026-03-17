@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.CheckboxView"
+             x:DataType="vm:CheckboxViewModel">
+  <!-- TODO: Subclass ink:CheckBox from Avalonia CheckBox and use it here instead -->
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <TextBlock Text="Checkbox" />
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Avalonia CheckBox (themed)" />
+        <TextBlock Text="Plain Avalonia CheckBox with Ink base theme applied - no subclass yet."
+                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                   FontSize="12" />
+        <StackPanel Spacing="4">
+          <CheckBox>Unchecked</CheckBox>
+          <CheckBox IsChecked="True">Checked</CheckBox>
+          <CheckBox IsThreeState="True" IsChecked="{x:Null}">Indeterminate</CheckBox>
+          <CheckBox IsEnabled="False">Disabled (unchecked)</CheckBox>
+          <CheckBox IsEnabled="False" IsChecked="True">Disabled (checked)</CheckBox>
+        </StackPanel>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

@@ -35,11 +35,21 @@ public partial class MainViewModel : ViewModelBase
     {
         CurrentPage = location.Segments.FirstOrDefault() switch
         {
-            "buttons"  => new ButtonsViewModel(),
-            "palette"  => new PaletteViewModel(),
-            "router"   => new RouterDemoViewModel(_appState.Router),
-            "windows"  => new WindowsDemoViewModel(_appState.Windows),
-            "datagrid" => new DataGridDemoViewModel(),
+            "buttons"     => new ButtonsViewModel(),
+            "palette"     => new PaletteViewModel(),
+            "router"      => new RouterDemoViewModel(_appState.Router),
+            "windows"     => new WindowsDemoViewModel(_appState.Windows),
+            "datagrid"    => new DataGridDemoViewModel(),
+            "checkbox"    => new CheckboxViewModel(),
+            "radiobutton" => new RadioButtonViewModel(),
+            "calendar"    => new CalendarViewModel(),
+            "combobox"    => new ComboBoxViewModel(),
+            "listbox"     => new ListBoxViewModel(),
+            "textbox"     => new TextBoxViewModel(),
+            "toggle"      => new ToggleViewModel(),
+            "slider"      => new SliderViewModel(),
+            "progressbar" => new ProgressBarViewModel(),
+            "scrollview"  => new ScrollViewViewModel(),
             _ => new ButtonsViewModel(),
         };
     }

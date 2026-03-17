@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.ListBoxView"
+             x:DataType="vm:ListBoxViewModel">
+  <!-- TODO: Subclass ink:ListBox and ink:ListBoxItem from Avalonia equivalents and use them here instead -->
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <TextBlock Text="ListBox" />
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Avalonia ListBox / ListBoxItem" />
+        <TextBlock Text="Not yet themed - requires Ink template implementation."
+                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                   FontSize="12" />
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

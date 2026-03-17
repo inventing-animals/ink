@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             x:Class="Ink.Demo.Views.ProgressBarView"
+             x:DataType="vm:ProgressBarViewModel">
+  <!-- TODO: Subclass ink:ProgressBar from Avalonia ProgressBar and use it here instead -->
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <TextBlock Text="ProgressBar" />
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="Avalonia ProgressBar" />
+        <TextBlock Text="Not yet themed - requires Ink template implementation."
+                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                   FontSize="12" />
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>
