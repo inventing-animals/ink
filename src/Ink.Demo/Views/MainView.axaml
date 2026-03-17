@@ -19,11 +19,16 @@
             BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
             BorderThickness="0,0,1,0">
       <DockPanel Margin="8">
-        <!-- Theme toggle pinned to bottom -->
+        <!-- Theme toggle + revision pinned to bottom -->
         <ink:Button DockPanel.Dock="Bottom"
                 Command="{Binding ToggleThemeCommand}"
                 Content="{Binding ThemeLabel}"
                 Margin="0,4,0,8" />
+        <TextBlock DockPanel.Dock="Bottom"
+                   Text="{Binding GitRevision}"
+                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                   FontSize="11"
+                   Margin="8,0,8,4" />
         <!-- Nav links -->
         <StackPanel Spacing="4">
           <TextBlock Text="Ink UI"
