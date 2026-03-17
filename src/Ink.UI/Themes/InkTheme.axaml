@@ -13,6 +13,7 @@
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Typography.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Colors.axaml" />
             </ResourceDictionary.MergedDictionaries>
+
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light">
                     <ResourceDictionary.MergedDictionaries>
@@ -38,6 +39,19 @@
     </Style>
     <Style Selector="controls|WebWindow">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <VisualLayerManager>
+                    <ContentPresenter
+                        Name="PART_ContentPresenter"
+                        Background="{TemplateBinding Background}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </VisualLayerManager>
+            </ControlTemplate>
+        </Setter>
     </Style>
     <Style Selector="controls|MobileWindow">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
