@@ -114,3 +114,13 @@ dotnet add package InventingAnimals.Ink.Data.EFCore          # server only
 ## License
 
 MIT
+
+## Acknowledgements
+
+All third party licenses are listed in the [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES.md) file.
+
+| Project                                                       | Acknowledgement             | License |
+|---------------------------------------------------------------|-----------------------------|---------|
+| [avaloniaui/avalonia](https://github.com/avaloniaui/avalonia) | Built on top of             | MIT     |
+| [accntech/shad-ui](https://github.com/accntech/shad-ui)       | Code patterns borrowed from | MIT     |
+| [heroui-inc/heroui](https://github.com/heroui-inc/heroui)     | Visual design inspired by   | MIT     |
