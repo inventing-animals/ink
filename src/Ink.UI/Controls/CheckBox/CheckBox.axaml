@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="CheckBox" x:Key="Ink.CheckBoxStyle">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
+        <Setter Property="Padding" Value="6,0,0,0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel Background="Transparent" Orientation="Horizontal" Spacing="4">
+                    <Border
+                        Name="Container"
+                        Background="Transparent"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Height="18"
+                        Width="18"
+                        VerticalAlignment="Center">
+                        <Border.Transitions>
+                            <Transitions>
+                                <BrushTransition Duration="0:0:0.15" Property="Background" />
+                                <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                            </Transitions>
+                        </Border.Transitions>
+                        <Panel>
+                            <Path
+                                Name="CheckMark"
+                                Data="M 2 8 L 6 12 L 14 4"
+                                IsVisible="False"
+                                Stroke="{DynamicResource Ink.Brush.Accent.Content}"
+                                StrokeThickness="2"
+                                StrokeLineCap="Round"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                            <Path
+                                Name="IndeterminateMark"
+                                Data="M 3 8 L 13 8"
+                                IsVisible="False"
+                                Stroke="{DynamicResource Ink.Brush.Accent.Content}"
+                                StrokeThickness="2"
+                                StrokeLineCap="Round"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Panel>
+                    </Border>
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        IsVisible="{TemplateBinding Content, Converter={x:Static ObjectConverters.IsNotNull}}"
+                        Margin="{TemplateBinding Padding}"
+                        RecognizesAccessKey="True"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pointerover /template/ Border#Container">
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Hover}" />
+        </Style>
+        <Style Selector="^:checked /template/ Border#Container">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
+        </Style>
+        <Style Selector="^:checked /template/ Path#CheckMark">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="^:indeterminate /template/ Border#Container">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
+        </Style>
+        <Style Selector="^:indeterminate /template/ Path#IndeterminateMark">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
+
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.CheckBoxStyle}" TargetType="CheckBox" x:Key="{x:Type CheckBox}" />
+    <ControlTheme BasedOn="{StaticResource Ink.CheckBoxStyle}" TargetType="ink:CheckBox" x:Key="{x:Type ink:CheckBox}" />
+
+</ResourceDictionary>

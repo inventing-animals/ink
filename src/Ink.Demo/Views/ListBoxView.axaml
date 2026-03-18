@@ -6,13 +6,11 @@
   <!-- TODO: Subclass ink:ListBox and ink:ListBoxItem from Avalonia equivalents and use them here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="ListBox" />
+      <TextBlock Classes="h2" Text="ListBox" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia ListBox / ListBoxItem" />
-        <TextBlock Text="Not yet themed - requires Ink template implementation."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Avalonia ListBox / ListBoxItem" />
+        <TextBlock Classes="small muted" Text="Not yet themed - requires Ink template implementation." />
       </StackPanel>
 
     </StackPanel>

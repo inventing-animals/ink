@@ -16,169 +16,170 @@
           • shades 500–950  →  {DynamicResource Ink.Color.Fixed.X.Foreground.Subtle} (light text)
     -->
 
-    <!-- ── Gray ──────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.50"  Color="#FFF8FAFC" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.100" Color="#FFF1F5F9" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.200" Color="#FFE2E8F0" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.300" Color="#FFCBD5E1" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.400" Color="#FF94A3B8" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.500" Color="#FF64748B" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.600" Color="#FF475569" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.700" Color="#FF334155" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.800" Color="#FF1E293B" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.900" Color="#FF0F172A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.950" Color="#FF020617" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.Foreground"        Color="#FF020617" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Gray.Foreground.Subtle" Color="#FFF8FAFC" />
+    <!-- ── Gray (Zinc) ───────────────────────────────────────────── -->
+    <Color x:Key="Ink.Color.Fixed.White">#FFFFFFFF</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.50">#FFFAFAFA</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.100">#FFF4F4F5</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.200">#FFE4E4E7</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.300">#FFD4D4D8</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.400">#FFA1A1AA</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.500">#FF71717A</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.600">#FF52525B</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.700">#FF3F3F46</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.800">#FF27272A</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.900">#FF18181B</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.950">#FF000000</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.Foreground">#FF18181B</Color>
+    <Color x:Key="Ink.Color.Fixed.Gray.Foreground.Subtle">#FFFAFAFA</Color>
 
     <!-- ── Blue ──────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.50"  Color="#FFEFF6FF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.100" Color="#FFDBEAFE" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.200" Color="#FFBFDBFE" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.300" Color="#FF93C5FD" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.400" Color="#FF60A5FA" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.500" Color="#FF3B82F6" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.600" Color="#FF2563EB" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.700" Color="#FF1D4ED8" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.800" Color="#FF1E40AF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.900" Color="#FF1E3A8A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.950" Color="#FF172554" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.Foreground"        Color="#FF172554" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Blue.Foreground.Subtle" Color="#FFEFF6FF" />
+    <Color x:Key="Ink.Color.Fixed.Blue.50">#FFE6F1FE</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.100">#FFCCE3FD</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.200">#FF99C7FB</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.300">#FF66AAF9</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.400">#FF338EF7</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.500">#FF006FEE</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.600">#FF005BC4</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.700">#FF004493</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.800">#FF002E62</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.900">#FF001731</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.950">#FF000C19</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.Foreground">#FF000C19</Color>
+    <Color x:Key="Ink.Color.Fixed.Blue.Foreground.Subtle">#FFE6F1FE</Color>
 
     <!-- ── Green ─────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.50"  Color="#FFF0FDF4" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.100" Color="#FFDCFCE7" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.200" Color="#FFBBF7D0" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.300" Color="#FF86EFAC" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.400" Color="#FF4ADE80" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.500" Color="#FF22C55E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.600" Color="#FF16A34A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.700" Color="#FF15803D" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.800" Color="#FF166534" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.900" Color="#FF14532D" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.950" Color="#FF052E16" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.Foreground"        Color="#FF052E16" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Green.Foreground.Subtle" Color="#FFF0FDF4" />
+    <Color x:Key="Ink.Color.Fixed.Green.50">#FFF0FDF4</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.100">#FFDCFCE7</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.200">#FFBBF7D0</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.300">#FF86EFAC</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.400">#FF4ADE80</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.500">#FF22C55E</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.600">#FF16A34A</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.700">#FF15803D</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.800">#FF166534</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.900">#FF14532D</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.950">#FF052E16</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.Foreground">#FF052E16</Color>
+    <Color x:Key="Ink.Color.Fixed.Green.Foreground.Subtle">#FFF0FDF4</Color>
 
     <!-- ── Yellow ────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.50"  Color="#FFFEFCE8" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.100" Color="#FFFEF9C3" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.200" Color="#FFFEF08A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.300" Color="#FFFDE047" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.400" Color="#FFFACC15" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.500" Color="#FFEAB308" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.600" Color="#FFCA8A04" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.700" Color="#FFA16207" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.800" Color="#FF854D0E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.900" Color="#FF713F12" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.950" Color="#FF422006" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.Foreground"        Color="#FF422006" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Yellow.Foreground.Subtle" Color="#FFFEFCE8" />
+    <Color x:Key="Ink.Color.Fixed.Yellow.50">#FFFEFCE8</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.100">#FFFEF9C3</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.200">#FFFEF08A</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.300">#FFFDE047</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.400">#FFFACC15</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.500">#FFEAB308</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.600">#FFCA8A04</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.700">#FFA16207</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.800">#FF854D0E</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.900">#FF713F12</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.950">#FF422006</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.Foreground">#FF422006</Color>
+    <Color x:Key="Ink.Color.Fixed.Yellow.Foreground.Subtle">#FFFEFCE8</Color>
 
     <!-- ── Red ───────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.50"  Color="#FFFEF2F2" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.100" Color="#FFFEE2E2" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.200" Color="#FFFECACA" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.300" Color="#FFFCA5A5" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.400" Color="#FFF87171" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.500" Color="#FFEF4444" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.600" Color="#FFDC2626" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.700" Color="#FFB91C1C" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.800" Color="#FF991B1B" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.900" Color="#FF7F1D1D" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.950" Color="#FF450A0A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.Foreground"        Color="#FF450A0A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Red.Foreground.Subtle" Color="#FFFEF2F2" />
+    <Color x:Key="Ink.Color.Fixed.Red.50">#FFFEE7EF</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.100">#FFFDD0DF</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.200">#FFFAA0BF</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.300">#FFF871A0</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.400">#FFF54180</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.500">#FFF31260</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.600">#FFC20E4D</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.700">#FF920B3A</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.800">#FF610726</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.900">#FF310413</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.950">#FF19020A</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.Foreground">#FF19020A</Color>
+    <Color x:Key="Ink.Color.Fixed.Red.Foreground.Subtle">#FFFEE7EF</Color>
 
     <!-- ── Orange ────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.50"  Color="#FFFFF7ED" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.100" Color="#FFFFEDD5" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.200" Color="#FFFED7AA" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.300" Color="#FFFDBA74" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.400" Color="#FFFB923C" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.500" Color="#FFF97316" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.600" Color="#FFEA580C" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.700" Color="#FFC2410C" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.800" Color="#FF9A3412" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.900" Color="#FF7C2D12" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.950" Color="#FF431407" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.Foreground"        Color="#FF431407" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Orange.Foreground.Subtle" Color="#FFFFF7ED" />
+    <Color x:Key="Ink.Color.Fixed.Orange.50">#FFFFF7ED</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.100">#FFFFEDD5</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.200">#FFFED7AA</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.300">#FFFDBA74</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.400">#FFFB923C</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.500">#FFF97316</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.600">#FFEA580C</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.700">#FFC2410C</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.800">#FF9A3412</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.900">#FF7C2D12</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.950">#FF431407</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.Foreground">#FF431407</Color>
+    <Color x:Key="Ink.Color.Fixed.Orange.Foreground.Subtle">#FFFFF7ED</Color>
 
     <!-- ── Lime ──────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.50"  Color="#FFF7FEE7" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.100" Color="#FFECFCCB" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.200" Color="#FFD9F99D" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.300" Color="#FFBEF264" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.400" Color="#FFA3E635" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.500" Color="#FF84CC16" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.600" Color="#FF65A30D" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.700" Color="#FF4D7C0F" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.800" Color="#FF3F6212" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.900" Color="#FF365314" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.950" Color="#FF1A2E05" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.Foreground"        Color="#FF1A2E05" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Lime.Foreground.Subtle" Color="#FFF7FEE7" />
+    <Color x:Key="Ink.Color.Fixed.Lime.50">#FFF7FEE7</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.100">#FFECFCCB</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.200">#FFD9F99D</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.300">#FFBEF264</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.400">#FFA3E635</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.500">#FF84CC16</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.600">#FF65A30D</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.700">#FF4D7C0F</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.800">#FF3F6212</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.900">#FF365314</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.950">#FF1A2E05</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.Foreground">#FF1A2E05</Color>
+    <Color x:Key="Ink.Color.Fixed.Lime.Foreground.Subtle">#FFF7FEE7</Color>
 
     <!-- ── Teal ───────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.50"  Color="#FFF0FDFA" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.100" Color="#FFCCFBF1" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.200" Color="#FF99F6E4" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.300" Color="#FF5EEAD4" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.400" Color="#FF2DD4BF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.500" Color="#FF14B8A6" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.600" Color="#FF0D9488" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.700" Color="#FF0F766E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.800" Color="#FF115E59" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.900" Color="#FF134E4A" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.950" Color="#FF042F2E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.Foreground"        Color="#FF042F2E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Teal.Foreground.Subtle" Color="#FFF0FDFA" />
+    <Color x:Key="Ink.Color.Fixed.Teal.50">#FFF0FDFA</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.100">#FFCCFBF1</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.200">#FF99F6E4</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.300">#FF5EEAD4</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.400">#FF2DD4BF</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.500">#FF14B8A6</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.600">#FF0D9488</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.700">#FF0F766E</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.800">#FF115E59</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.900">#FF134E4A</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.950">#FF042F2E</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.Foreground">#FF042F2E</Color>
+    <Color x:Key="Ink.Color.Fixed.Teal.Foreground.Subtle">#FFF0FDFA</Color>
 
     <!-- ── Sky ───────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.50"  Color="#FFF0F9FF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.100" Color="#FFE0F2FE" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.200" Color="#FFBAE6FD" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.300" Color="#FF7DD3FC" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.400" Color="#FF38BDF8" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.500" Color="#FF0EA5E9" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.600" Color="#FF0284C7" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.700" Color="#FF0369A1" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.800" Color="#FF075985" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.900" Color="#FF0C4A6E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.950" Color="#FF082F49" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.Foreground"        Color="#FF082F49" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Sky.Foreground.Subtle" Color="#FFF0F9FF" />
+    <Color x:Key="Ink.Color.Fixed.Sky.50">#FFF0F9FF</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.100">#FFE0F2FE</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.200">#FFBAE6FD</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.300">#FF7DD3FC</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.400">#FF38BDF8</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.500">#FF0EA5E9</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.600">#FF0284C7</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.700">#FF0369A1</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.800">#FF075985</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.900">#FF0C4A6E</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.950">#FF082F49</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.Foreground">#FF082F49</Color>
+    <Color x:Key="Ink.Color.Fixed.Sky.Foreground.Subtle">#FFF0F9FF</Color>
 
     <!-- ── Rose ──────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.50"  Color="#FFFFF1F2" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.100" Color="#FFFFE4E6" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.200" Color="#FFFECDD3" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.300" Color="#FFFDA4AF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.400" Color="#FFFB7185" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.500" Color="#FFF43F5E" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.600" Color="#FFE11D48" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.700" Color="#FFBE123C" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.800" Color="#FF9F1239" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.900" Color="#FF881337" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.950" Color="#FF4C0519" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.Foreground"        Color="#FF4C0519" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Rose.Foreground.Subtle" Color="#FFFFF1F2" />
+    <Color x:Key="Ink.Color.Fixed.Rose.50">#FFFFF1F2</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.100">#FFFFE4E6</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.200">#FFFECDD3</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.300">#FFFDA4AF</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.400">#FFFB7185</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.500">#FFF43F5E</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.600">#FFE11D48</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.700">#FFBE123C</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.800">#FF9F1239</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.900">#FF881337</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.950">#FF4C0519</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.Foreground">#FF4C0519</Color>
+    <Color x:Key="Ink.Color.Fixed.Rose.Foreground.Subtle">#FFFFF1F2</Color>
 
     <!-- ── Purple ────────────────────────────────────────────────── -->
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.50"  Color="#FFFAF5FF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.100" Color="#FFF3E8FF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.200" Color="#FFE9D5FF" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.300" Color="#FFD8B4FE" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.400" Color="#FFC084FC" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.500" Color="#FFA855F7" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.600" Color="#FF9333EA" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.700" Color="#FF7E22CE" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.800" Color="#FF6B21A8" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.900" Color="#FF581C87" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.950" Color="#FF3B0764" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.Foreground"        Color="#FF3B0764" />
-    <SolidColorBrush x:Key="Ink.Color.Fixed.Purple.Foreground.Subtle" Color="#FFFAF5FF" />
+    <Color x:Key="Ink.Color.Fixed.Purple.50">#FFFAF5FF</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.100">#FFF3E8FF</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.200">#FFE9D5FF</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.300">#FFD8B4FE</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.400">#FFC084FC</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.500">#FFA855F7</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.600">#FF9333EA</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.700">#FF7E22CE</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.800">#FF6B21A8</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.900">#FF581C87</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.950">#FF3B0764</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.Foreground">#FF3B0764</Color>
+    <Color x:Key="Ink.Color.Fixed.Purple.Foreground.Subtle">#FFFAF5FF</Color>
 
 </ResourceDictionary>

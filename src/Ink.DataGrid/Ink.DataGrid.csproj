@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ink.Data\Ink.Data.csproj" />
+    <ProjectReference Include="..\Ink.UI\Ink.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

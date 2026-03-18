@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ProgressBar" x:Key="Ink.ProgressBarStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.Pill}" />
+        <Setter Property="Height" Value="8" />
+        <Setter Property="MinWidth" Value="80" />
+
+        <Style Selector="^:horizontal">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border
+                        Name="ProgressBarRoot"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Height="{TemplateBinding Height}"
+                        ClipToBounds="True">
+                        <Border
+                            Name="PART_Indicator"
+                            Background="{TemplateBinding Foreground}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalAlignment="Left">
+                            <Border.Transitions>
+                                <Transitions>
+                                    <DoubleTransition Duration="0:0:0.20" Property="Width" Easing="CubicEaseOut" />
+                                </Transitions>
+                            </Border.Transitions>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="^:vertical">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border
+                        Name="ProgressBarRoot"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Width="{TemplateBinding Height}"
+                        ClipToBounds="True">
+                        <Border
+                            Name="PART_Indicator"
+                            Background="{TemplateBinding Foreground}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            VerticalAlignment="Bottom">
+                            <Border.Transitions>
+                                <Transitions>
+                                    <DoubleTransition Duration="0:0:0.20" Property="Height" Easing="CubicEaseOut" />
+                                </Transitions>
+                            </Border.Transitions>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+        </Style>
+
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.ProgressBarStyle}" TargetType="ProgressBar" x:Key="{x:Type ProgressBar}" />
+    <ControlTheme BasedOn="{StaticResource Ink.ProgressBarStyle}" TargetType="ink:ProgressBar" x:Key="{x:Type ink:ProgressBar}" />
+
+</ResourceDictionary>

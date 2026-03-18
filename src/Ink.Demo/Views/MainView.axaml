@@ -38,6 +38,7 @@
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/radiobutton">RadioButton</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/calendar">Calendar</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/combobox">ComboBox</ink:Button>
+          <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/popups">Popups</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/listbox">ListBox</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/textbox">TextBox</ink:Button>
           <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/toggle">Toggle</ink:Button>

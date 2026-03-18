@@ -6,10 +6,10 @@
              x:DataType="vm:ButtonsViewModel">
   <ScrollViewer>
   <StackPanel Spacing="24" Margin="24">
-    <TextBlock Text="Buttons" />
+    <TextBlock Classes="h2" Text="Buttons" />
 
     <StackPanel Spacing="8">
-      <TextBlock Text="ink:Button - Variants" />
+      <TextBlock Classes="h4" Text="ink:Button - Variants" />
       <WrapPanel>
         <ink:Button Margin="0,0,8,8">Secondary</ink:Button>
         <ink:Button Variant="Primary" Margin="0,0,8,8">Primary</ink:Button>
@@ -19,7 +19,7 @@
     </StackPanel>
 
     <StackPanel Spacing="8">
-      <TextBlock Text="ink:Button - Disabled" />
+      <TextBlock Classes="h4" Text="ink:Button - Disabled" />
       <WrapPanel>
         <ink:Button IsEnabled="False" Margin="0,0,8,8">Secondary</ink:Button>
         <ink:Button Variant="Primary" IsEnabled="False" Margin="0,0,8,8">Primary</ink:Button>
@@ -28,10 +28,8 @@
     </StackPanel>
 
     <StackPanel Spacing="8">
-      <TextBlock Text="Avalonia Button (themed)" />
-      <TextBlock Text="Plain Avalonia Button with Ink base theme applied - no variant system."
-                 Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                 FontSize="12" />
+      <TextBlock Classes="h4" Text="Avalonia Button (themed)" />
+      <TextBlock Classes="small muted" Text="Plain Avalonia Button with Ink base theme applied - no variant system." />
       <WrapPanel>
         <Button Margin="0,0,8,8">Default</Button>
         <Button IsEnabled="False" Margin="0,0,8,8">Disabled</Button>

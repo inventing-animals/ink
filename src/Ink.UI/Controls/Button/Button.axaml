@@ -1,106 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Styles
+<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
 
-    <!-- ================================ -->
-    <!-- Base theme for all Buttons       -->
-    <!-- :is(Button) matches subclasses   -->
-    <!-- ================================ -->
-    <Style Selector=":is(Button)">
+    <ControlTheme TargetType="Button" x:Key="Ink.ButtonStyle">
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Regular}" />
         <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.M}" />
         <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
         <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Transitions">
-            <Transitions>
-                <BrushTransition Property="Background" Duration="0:0:0.15" Easing="CubicEaseOut" />
-                <BrushTransition Property="BorderBrush" Duration="0:0:0.15" Easing="CubicEaseOut" />
-            </Transitions>
-        </Setter>
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Strong}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
 
         <Setter Property="Template">
             <ControlTemplate>
-                <ContentPresenter
-                    x:Name="PART_ContentPresenter"
-                    Content="{TemplateBinding Content}"
-                    ContentTemplate="{TemplateBinding ContentTemplate}"
-                    Padding="{TemplateBinding Padding}"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                <Panel Name="RootPanel">
+                    <Panel.Transitions>
+                        <Transitions>
+                            <TransformOperationsTransition Duration="0:0:0.10" Property="RenderTransform" />
+                        </Transitions>
+                    </Panel.Transitions>
+                    <Border
+                        Name="BaseBackground"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <Border
+                        Name="HoverBackground"
+                        Background="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </Panel>
             </ControlTemplate>
         </Setter>
-    </Style>
-    <Style Selector=":is(Button):pointerover">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
-    </Style>
-    <Style Selector=":is(Button):pressed">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
-    </Style>
-    <Style Selector=":is(Button):disabled">
-        <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
-        <Setter Property="Cursor" Value="Arrow" />
-    </Style>
 
-    <!-- ================================ -->
-    <!-- ink:Button variant overrides     -->
-    <!-- Classes set by ink:Button only   -->
-    <!-- ================================ -->
+        <!-- Default: fade base to 80% on hover (opacity-hover pattern) -->
+        <Style Selector="^:pointerover /template/ Border#BaseBackground">
+            <Setter Property="Opacity" Value="0.8" />
+        </Style>
+        <Style Selector="^:pressed /template/ Panel#RootPanel">
+            <Setter Property="RenderTransform" Value="scale(0.97, 0.97)" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
 
-    <!-- Primary -->
-    <Style Selector=":is(Button).ink-primary">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
-    </Style>
-    <Style Selector=":is(Button).ink-primary:pointerover">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
-    </Style>
-    <Style Selector=":is(Button).ink-primary:pressed">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Pressed}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent.Pressed}" />
-    </Style>
+        <!-- Primary -->
+        <Style Selector="^.ink-primary">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
 
-    <!-- Ghost -->
-    <Style Selector=":is(Button).ink-ghost">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="BorderBrush" Value="Transparent" />
-    </Style>
-    <Style Selector=":is(Button).ink-ghost:pointerover">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
-    </Style>
-    <Style Selector=":is(Button).ink-ghost:pressed">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
-    </Style>
+        <!-- Ghost -->
+        <Style Selector="^.ink-ghost">
+            <Setter Property="Background" Value="Transparent" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
 
-    <!-- Danger -->
-    <Style Selector=":is(Button).ink-danger">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger}" />
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger}" />
-    </Style>
-    <Style Selector=":is(Button).ink-danger:pointerover">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
-    </Style>
-    <Style Selector=":is(Button).ink-danger:pressed">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
-    </Style>
+        <!-- Danger -->
+        <Style Selector="^.ink-danger">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
 
-</Styles>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.ButtonStyle}" TargetType="Button" x:Key="{x:Type Button}" />
+    <ControlTheme BasedOn="{StaticResource Ink.ButtonStyle}" TargetType="ink:Button" x:Key="{x:Type ink:Button}" />
+
+</ResourceDictionary>

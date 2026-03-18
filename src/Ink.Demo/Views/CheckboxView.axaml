@@ -6,13 +6,11 @@
   <!-- TODO: Subclass ink:CheckBox from Avalonia CheckBox and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="Checkbox" />
+      <TextBlock Classes="h2" Text="Checkbox" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia CheckBox (themed)" />
-        <TextBlock Text="Plain Avalonia CheckBox with Ink base theme applied - no subclass yet."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Avalonia CheckBox (themed)" />
+        <TextBlock Classes="small muted" Text="Plain Avalonia CheckBox with Ink base theme applied - no subclass yet." />
         <StackPanel Spacing="4">
           <CheckBox>Unchecked</CheckBox>
           <CheckBox IsChecked="True">Checked</CheckBox>

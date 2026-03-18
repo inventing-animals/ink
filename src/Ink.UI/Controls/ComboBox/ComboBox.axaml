@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ComboBox" x:Key="Ink.ComboBoxStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Input.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
+        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.S}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="PlaceholderForeground" Value="{DynamicResource Ink.Brush.Input.Placeholder}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.S}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="FocusAdorner" Value="{x:Null}" />
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <VirtualizingStackPanel Margin="4" />
+            </ItemsPanelTemplate>
+        </Setter>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Name="Border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    MinHeight="{TemplateBinding MinHeight}">
+                    <Border.Transitions>
+                        <Transitions>
+                            <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                        </Transitions>
+                    </Border.Transitions>
+                    <Grid ColumnDefinitions="* Auto" Margin="{TemplateBinding Padding}">
+                        <TextBlock
+                            Grid.Column="0"
+                            Foreground="{TemplateBinding PlaceholderForeground}"
+                            IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}"
+                            Text="{TemplateBinding PlaceholderText}"
+                            VerticalAlignment="Center" />
+                        <ContentControl
+                            Grid.Column="0"
+                            Content="{TemplateBinding SelectionBoxItem}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            FontFamily="{TemplateBinding FontFamily}"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}"
+                            Foreground="{TemplateBinding Foreground}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Path
+                            Grid.Column="1"
+                            Name="ChevronIcon"
+                            Data="M 3 6 L 8 11 L 13 6"
+                            Stroke="{DynamicResource Ink.Brush.Content.Muted}"
+                            StrokeThickness="1.5"
+                            StrokeLineCap="Round"
+                            StrokeJoin="Round"
+                            Width="16"
+                            Height="16"
+                            Stretch="None"
+                            Margin="8,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                        <Popup
+                            Grid.Column="0"
+                            Name="PART_Popup"
+                            IsLightDismissEnabled="True"
+                            IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+                            MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                            MinWidth="{CompiledBinding #Border.Bounds.Width}"
+                            PlacementTarget="{CompiledBinding #Border}"
+                            VerticalOffset="4">
+                            <LayoutTransformControl Name="PART_DropdownLTC" RenderTransformOrigin="50%,0%">
+                                <Border
+                                    Background="{DynamicResource Ink.Brush.Surface.Raised}"
+                                    BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
+                                    BorderThickness="{DynamicResource Ink.Stroke.Thin}"
+                                    BoxShadow="0 4 24 0 #3C000000"
+                                    CornerRadius="{DynamicResource Ink.CornerRadius.M}"
+                                    MinWidth="{CompiledBinding #Border.Bounds.Width}">
+                                    <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="Auto">
+                                        <ItemsPresenter
+                                            Name="PART_ItemsPresenter"
+                                            ItemsPanel="{TemplateBinding ItemsPanel}"
+                                            Margin="0,4" />
+                                    </ScrollViewer>
+                                </Border>
+                            </LayoutTransformControl>
+                        </Popup>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pointerover /template/ Border#Border">
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Hover}" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="^:focus /template/ Border#Border">
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Focused}" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+        </Style>
+
+        <Style Selector="^:dropdownopen /template/ LayoutTransformControl#PART_DropdownLTC">
+            <Style.Animations>
+                <Animation Duration="0:0:0.30" Easing="CubicEaseOut" FillMode="Forward">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="ScaleTransform.ScaleX" Value="0.8" />
+                        <Setter Property="ScaleTransform.ScaleY" Value="0.8" />
+                        <Setter Property="Opacity" Value="0" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="ScaleTransform.ScaleX" Value="1" />
+                        <Setter Property="ScaleTransform.ScaleY" Value="1" />
+                        <Setter Property="Opacity" Value="1" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.ComboBoxStyle}" TargetType="ComboBox" x:Key="{x:Type ComboBox}" />
+    <ControlTheme BasedOn="{StaticResource Ink.ComboBoxStyle}" TargetType="ink:ComboBox" x:Key="{x:Type ink:ComboBox}" />
+
+</ResourceDictionary>

@@ -454,7 +454,9 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 .claude
+CLAUDE.md
 
 # DocFX generated output
 docs/_site/
 docs/api/
+

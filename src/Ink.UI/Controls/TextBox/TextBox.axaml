@@ -1,55 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Styles
+<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:conv="using:Avalonia.Data.Converters">
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
 
-    <!-- ================================ -->
-    <!-- TextBox                          -->
-    <!-- ================================ -->
-    <Style Selector=":is(TextBox)">
-        <Setter Property="Background"    Value="{DynamicResource Ink.Brush.Input.Background}" />
-        <Setter Property="BorderBrush"   Value="{DynamicResource Ink.Brush.Input.Border}" />
+    <ControlTheme TargetType="TextBox" x:Key="Ink.TextBoxStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Input.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
         <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius"  Value="{DynamicResource Ink.CornerRadius.S}" />
-        <Setter Property="Padding"       Value="{DynamicResource Ink.Padding.Control.S}" />
-        <Setter Property="Foreground"    Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="FontFamily"    Value="{DynamicResource Ink.FontFamily.Base}" />
-        <Setter Property="FontSize"      Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
+        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.S}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
         <Setter Property="SelectionBrush" Value="{DynamicResource Ink.Brush.Accent.Subtle}" />
-        <Setter Property="CaretBrush"    Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="MinHeight"     Value="{DynamicResource Ink.ControlHeight.S}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.S}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Cursor"        Value="IBeam" />
+        <Setter Property="Cursor" Value="IBeam" />
+        <Setter Property="FocusAdorner" Value="{x:Null}" />
 
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
+                    Name="Border"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding CornerRadius}">
+                    <Border.Transitions>
+                        <Transitions>
+                            <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                        </Transitions>
+                    </Border.Transitions>
                     <ScrollViewer
                         Name="PART_ScrollViewer"
-                        HorizontalScrollBarVisibility="Hidden"
-                        VerticalScrollBarVisibility="Hidden"
                         AllowAutoHide="False"
-                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}">
+                        HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                        VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                         <Panel Margin="{TemplateBinding Padding}">
                             <TextBlock
-                                Text="{TemplateBinding Watermark}"
-                                Foreground="{DynamicResource Ink.Brush.Input.Placeholder}"
                                 FontFamily="{TemplateBinding FontFamily}"
                                 FontSize="{TemplateBinding FontSize}"
-                                IsVisible="{TemplateBinding Text, Converter={x:Static conv:StringConverters.IsNullOrEmpty}}"
+                                Foreground="{DynamicResource Ink.Brush.Input.Placeholder}"
+                                IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                                Text="{TemplateBinding Watermark}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                             <TextPresenter
                                 Name="PART_TextPresenter"
-                                Text="{TemplateBinding Text, Mode=TwoWay}"
                                 CaretBrush="{TemplateBinding CaretBrush}"
-                                SelectionBrush="{TemplateBinding SelectionBrush}"
+                                CaretIndex="{TemplateBinding CaretIndex}"
                                 PasswordChar="{TemplateBinding PasswordChar}"
                                 RevealPassword="{TemplateBinding RevealPassword}"
+                                SelectionBrush="{TemplateBinding SelectionBrush}"
+                                SelectionEnd="{TemplateBinding SelectionEnd}"
+                                SelectionStart="{TemplateBinding SelectionStart}"
+                                Text="{TemplateBinding Text, Mode=TwoWay}"
                                 TextAlignment="{TemplateBinding TextAlignment}"
                                 TextWrapping="{TemplateBinding TextWrapping}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
@@ -58,37 +65,21 @@
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
 
-    <Style Selector=":is(TextBox):pointerover">
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Hover}" />
-    </Style>
+        <Style Selector="^:pointerover /template/ Border#Border">
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Hover}" />
+        </Style>
+        <Style Selector="^:focus-within /template/ Border#Border">
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Focused}" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
 
-    <Style Selector=":is(TextBox):focus-within">
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Focused}" />
-    </Style>
+    </ControlTheme>
 
-    <!-- ================================ -->
-    <!-- CheckBox                         -->
-    <!-- ================================ -->
-    <Style Selector=":is(CheckBox)">
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
-        <Setter Property="FontSize"   Value="{DynamicResource Ink.FontSize.S}" />
-    </Style>
+    <ControlTheme BasedOn="{StaticResource Ink.TextBoxStyle}" TargetType="TextBox" x:Key="{x:Type TextBox}" />
+    <ControlTheme BasedOn="{StaticResource Ink.TextBoxStyle}" TargetType="ink:TextBox" x:Key="{x:Type ink:TextBox}" />
 
-    <!-- ================================ -->
-    <!-- ComboBox                         -->
-    <!-- ================================ -->
-    <Style Selector=":is(ComboBox)">
-        <Setter Property="Background"    Value="{DynamicResource Ink.Brush.Input.Background}" />
-        <Setter Property="BorderBrush"   Value="{DynamicResource Ink.Brush.Input.Border}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius"  Value="{DynamicResource Ink.CornerRadius.S}" />
-        <Setter Property="Padding"       Value="{DynamicResource Ink.Padding.Control.S}" />
-        <Setter Property="Foreground"    Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="FontFamily"    Value="{DynamicResource Ink.FontFamily.Base}" />
-        <Setter Property="FontSize"      Value="{DynamicResource Ink.FontSize.S}" />
-    </Style>
-
-</Styles>
+</ResourceDictionary>

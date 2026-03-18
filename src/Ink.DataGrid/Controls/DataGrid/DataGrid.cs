@@ -11,6 +11,7 @@ using Avalonia.Threading;
 using Ink.Data.Columns;
 using Ink.Data.Queries;
 using Ink.DataGrid.Columns;
+using InkFlyout = Ink.UI.Controls.Flyout;
 
 namespace Ink.DataGrid.Controls;
 
@@ -141,9 +142,9 @@ public class DataGrid : TemplatedControl
     // Column popup
     // -------------------------------------------------------------------------
 
-    private Flyout BuildColumnFlyout(IDataGridColumn col)
+    private InkFlyout BuildColumnFlyout(IDataGridColumn col)
     {
-        var flyout = new Flyout();
+        var flyout = new InkFlyout();
         var stack  = new StackPanel { Spacing = 0, MinWidth = 240 };
 
         // Title

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="Calendar" x:Key="Ink.CalendarStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel ClipToBounds="True" HorizontalAlignment="Center" Name="PART_Root">
+                    <CalendarItem
+                        Name="PART_CalendarItem"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}" />
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.CalendarStyle}" TargetType="Calendar" x:Key="{x:Type Calendar}" />
+    <ControlTheme BasedOn="{StaticResource Ink.CalendarStyle}" TargetType="ink:Calendar" x:Key="{x:Type ink:Calendar}" />
+
+</ResourceDictionary>

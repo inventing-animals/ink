@@ -57,6 +57,7 @@ public partial class MainViewModel : ViewModelBase
             "slider"      => new SliderViewModel(),
             "progressbar" => new ProgressBarViewModel(),
             "scrollview"  => new ScrollViewViewModel(),
+            "popups"      => new PopupsViewModel(),
             _ => new ButtonsViewModel(),
         };
     }
