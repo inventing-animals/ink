@@ -2,29 +2,47 @@
 <Styles
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Ink.UI.Controls"
-    x:Class="Ink.UI.Themes.InkTheme">
+    xmlns:controls="clr-namespace:Ink.UI.Controls">
+
+    <!-- Base Avalonia theme - provides default templates for all unstyled controls -->
+    <SimpleTheme />
 
     <!-- Token dictionaries -->
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- Tokens -->
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Metrics.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Typography.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Colors.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Effects.Default.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Motion.Default.axaml" />
+                <!-- Controls -->
+                <ResourceInclude Source="avares://Ink.UI/Controls/Button/Button.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/CheckBox/CheckBox.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/RadioButton/RadioButton.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/TextBox/TextBox.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ProgressBar/ProgressBar.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/Slider/Slider.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ListBox/ListBox.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ListBox/ListBoxItem.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/Calendar/Calendar.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/Calendar/CalendarItem.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/Calendar/CalendarDayButton.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/Calendar/CalendarButton.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ComboBox/ComboBox.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ComboBox/ComboBoxItem.axaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light">
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Light.axaml" />
                         <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Light.axaml" />
                         <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Relative.Light.axaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Dark">
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Dark.axaml" />
                         <ResourceInclude Source="avares://Ink.UI/Themes/Semantics/Colors.Dark.axaml" />
                         <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Palette.Relative.Dark.axaml" />
                     </ResourceDictionary.MergedDictionaries>
@@ -62,43 +80,44 @@
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
     </Style>
 
-    <!-- Controls -->
-    <StyleInclude Source="avares://Ink.UI/Controls/TextBox/TextBox.axaml" />
-    <StyleInclude Source="avares://Ink.UI/Controls/Button/Button.axaml" />
+    <!-- Controls (Styles-based - global selectors, no subclass) -->
+    <StyleInclude Source="avares://Ink.UI/Controls/ScrollBar/ScrollBar.axaml" />
+    <StyleInclude Source="avares://Ink.UI/Controls/Flyout/Flyout.axaml" />
 
-    <!-- Popup host: transparent so rounded corners on FlyoutPresenter are not clipped -->
-    <Style Selector="PopupRoot">
-        <Setter Property="Background" Value="Transparent" />
+    <!-- TextBlock typography classes (inline so the design-time analyzer resolves them) -->
+    <Style Selector="TextBlock.h1">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Display}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Bold}" />
     </Style>
-
-    <!-- Flyout -->
-    <Style Selector="FlyoutPresenter">
-        <Setter Property="Background"      Value="{DynamicResource Ink.Brush.Surface.Raised}" />
-        <Setter Property="BorderBrush"     Value="{DynamicResource Ink.Brush.Border.Subtle}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius"    Value="{DynamicResource Ink.CornerRadius.M}" />
-        <Setter Property="Padding"         Value="0" />
-        <Setter Property="Margin"          Value="8" />
-
-        <!-- Own template so CornerRadius/BoxShadow are actually applied -->
-        <Setter Property="Template">
-            <ControlTemplate>
-                <Border
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    ClipToBounds="True"
-                    BoxShadow="0 4 24 0 #3C000000">
-                    <ContentPresenter
-                        Name="PART_ContentPresenter"
-                        Content="{TemplateBinding Content}"
-                        ContentTemplate="{TemplateBinding ContentTemplate}"
-                        Padding="{TemplateBinding Padding}" />
-                </Border>
-            </ControlTemplate>
-        </Setter>
-
+    <Style Selector="TextBlock.h2">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="TextBlock.h3">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="TextBlock.h4">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="TextBlock.lead">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+    </Style>
+    <Style Selector="TextBlock.large">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="TextBlock.small">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+    </Style>
+    <Style Selector="TextBlock.muted">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+    </Style>
+    <Style Selector="TextBlock.mono">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Mono}" />
     </Style>
 
 </Styles>

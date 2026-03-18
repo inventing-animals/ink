@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ListBoxItem" x:Key="Ink.ListBoxItemStyle">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="Padding" Value="10,6" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel MinHeight="32">
+                    <Border
+                        Name="BaseBackground"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Opacity="1">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <Border
+                        Name="HoverBackground"
+                        Background="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <Border
+                        Name="SelectionBackground"
+                        Background="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <Grid ColumnDefinitions="* Auto" Margin="{TemplateBinding Padding}">
+                        <ContentPresenter
+                            Grid.Column="0"
+                            Background="Transparent"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Path
+                            Grid.Column="1"
+                            Name="CheckMark"
+                            Data="M 2 8 L 6 12 L 14 4"
+                            IsVisible="False"
+                            Stroke="{DynamicResource Ink.Brush.Content.Primary}"
+                            StrokeThickness="2"
+                            StrokeLineCap="Round"
+                            StrokeJoin="Round"
+                            Margin="8,0,0,0"
+                            Width="14"
+                            VerticalAlignment="Center" />
+                    </Grid>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^ /template/ Path#CheckMark">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="^:selected /template/ Path#CheckMark">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="^:selected:not(:pointerover) /template/ Border#SelectionBackground">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^:focus /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^:not(:focus):not(:pointerover) /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.ListBoxItemStyle}" TargetType="ListBoxItem" x:Key="{x:Type ListBoxItem}" />
+
+</ResourceDictionary>

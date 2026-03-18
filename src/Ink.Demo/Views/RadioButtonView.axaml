@@ -6,13 +6,11 @@
   <!-- TODO: Subclass ink:RadioButton from Avalonia RadioButton and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="RadioButton" />
+      <TextBlock Classes="h2" Text="RadioButton" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia RadioButton (themed)" />
-        <TextBlock Text="Plain Avalonia RadioButton with Ink base theme applied - no subclass yet."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Avalonia RadioButton (themed)" />
+        <TextBlock Classes="small muted" Text="Plain Avalonia RadioButton with Ink base theme applied - no subclass yet." />
         <StackPanel Spacing="4">
           <RadioButton GroupName="Group1">Option A</RadioButton>
           <RadioButton GroupName="Group1" IsChecked="True">Option B</RadioButton>

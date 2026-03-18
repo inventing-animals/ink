@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="RepeatButton" x:Key="Ink.SliderRepeatButton.Horizontal">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border Background="Transparent" Margin="0,-10" />
+                    <Border
+                        Name="TrackBackground"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Height="4"
+                        VerticalAlignment="Center" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme TargetType="RepeatButton" x:Key="Ink.SliderRepeatButton.Vertical">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border Background="Transparent" Margin="-10,0" />
+                    <Border
+                        Name="TrackBackground"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Width="4"
+                        HorizontalAlignment="Center" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme TargetType="Thumb" x:Key="Ink.SliderThumb">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{DynamicResource Ink.Brush.Accent.Content}"
+                    BorderBrush="{DynamicResource Ink.Brush.Accent}"
+                    BorderThickness="2"
+                    CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" />
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover">
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="^:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.90, 0.90)" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme TargetType="Slider" x:Key="Ink.SliderStyle">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent}" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+
+        <Style Selector="^:horizontal">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border>
+                        <Grid MinHeight="20" x:Name="HorizontalTemplate" RowDefinitions="*,Auto,*">
+                            <Track
+                                Grid.Row="1"
+                                IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                                Maximum="{TemplateBinding Maximum}"
+                                Minimum="{TemplateBinding Minimum}"
+                                Name="PART_Track"
+                                Orientation="Horizontal"
+                                Value="{TemplateBinding Value, Mode=TwoWay}">
+                                <Track.DecreaseButton>
+                                    <RepeatButton
+                                        Name="PART_DecreaseButton"
+                                        Background="{TemplateBinding Foreground}"
+                                        CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                                        Focusable="False"
+                                        Margin="0,0,-4,0"
+                                        Theme="{StaticResource Ink.SliderRepeatButton.Horizontal}" />
+                                </Track.DecreaseButton>
+                                <Track.IncreaseButton>
+                                    <RepeatButton
+                                        Name="PART_IncreaseButton"
+                                        Background="{TemplateBinding Background}"
+                                        CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                                        Focusable="False"
+                                        Margin="-4,0,0,0"
+                                        Theme="{StaticResource Ink.SliderRepeatButton.Horizontal}" />
+                                </Track.IncreaseButton>
+                                <Thumb
+                                    Height="16"
+                                    Width="16"
+                                    Padding="0"
+                                    Theme="{StaticResource Ink.SliderThumb}" />
+                            </Track>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="^:vertical">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border>
+                        <Grid MinWidth="20" x:Name="VerticalTemplate" ColumnDefinitions="*,Auto,*">
+                            <Track
+                                Grid.Column="1"
+                                IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                                Maximum="{TemplateBinding Maximum}"
+                                Minimum="{TemplateBinding Minimum}"
+                                Name="PART_Track"
+                                Orientation="Vertical"
+                                Value="{TemplateBinding Value, Mode=TwoWay}">
+                                <Track.DecreaseButton>
+                                    <RepeatButton
+                                        Name="PART_DecreaseButton"
+                                        Background="{TemplateBinding Foreground}"
+                                        CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                                        Focusable="False"
+                                        Margin="0,-4,0,0"
+                                        Theme="{StaticResource Ink.SliderRepeatButton.Vertical}" />
+                                </Track.DecreaseButton>
+                                <Track.IncreaseButton>
+                                    <RepeatButton
+                                        Name="PART_IncreaseButton"
+                                        Background="{TemplateBinding Background}"
+                                        CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                                        Focusable="False"
+                                        Margin="0,0,0,-4"
+                                        Theme="{StaticResource Ink.SliderRepeatButton.Vertical}" />
+                                </Track.IncreaseButton>
+                                <Thumb
+                                    Height="16"
+                                    Width="16"
+                                    Padding="0"
+                                    Theme="{StaticResource Ink.SliderThumb}" />
+                            </Track>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+        </Style>
+
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.SliderStyle}" TargetType="Slider" x:Key="{x:Type Slider}" />
+    <ControlTheme BasedOn="{StaticResource Ink.SliderStyle}" TargetType="ink:Slider" x:Key="{x:Type ink:Slider}" />
+
+</ResourceDictionary>

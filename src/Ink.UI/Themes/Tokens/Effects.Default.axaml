@@ -17,6 +17,6 @@
     <x:Double x:Key="Ink.FocusRing.OuterGlow">6</x:Double>
 
     <!-- Disabled appearance -->
-    <x:Double x:Key="Ink.Disabled.Opacity">0.55</x:Double>
+    <x:Double x:Key="Ink.Disabled.Opacity">0.5</x:Double>
 
 </ResourceDictionary>

@@ -6,13 +6,11 @@
   <!-- TODO: Subclass ink:TextBox from Avalonia TextBox and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="TextBox" />
+      <TextBlock Classes="h2" Text="TextBox" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia TextBox (themed)" />
-        <TextBlock Text="Plain Avalonia TextBox with Ink base theme applied - no subclass yet."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Avalonia TextBox (themed)" />
+        <TextBlock Classes="small muted" Text="Plain Avalonia TextBox with Ink base theme applied - no subclass yet." />
         <TextBox Width="240" HorizontalAlignment="Left" Watermark="Placeholder..." />
         <TextBox Width="240" HorizontalAlignment="Left" Text="Filled value" />
         <TextBox Width="240" HorizontalAlignment="Left" IsEnabled="False" Watermark="Disabled" />

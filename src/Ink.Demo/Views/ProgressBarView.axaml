@@ -3,16 +3,38 @@
              xmlns:vm="using:Ink.Demo.ViewModels"
              x:Class="Ink.Demo.Views.ProgressBarView"
              x:DataType="vm:ProgressBarViewModel">
-  <!-- TODO: Subclass ink:ProgressBar from Avalonia ProgressBar and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="ProgressBar" />
+      <TextBlock Classes="h2" Text="ProgressBar" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia ProgressBar" />
-        <TextBlock Text="Not yet themed - requires Ink template implementation."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="25%" />
+        <ProgressBar Value="25" Width="300" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="60%" />
+        <ProgressBar Value="60" Width="300" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="100%" />
+        <ProgressBar Value="100" Width="300" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Indeterminate" />
+        <ProgressBar IsIndeterminate="True" Width="300" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Vertical" />
+        <ProgressBar Value="60" Orientation="Vertical" Height="100" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Disabled" />
+        <ProgressBar Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
       </StackPanel>
 
     </StackPanel>

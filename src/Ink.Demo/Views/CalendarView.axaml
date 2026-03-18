@@ -3,16 +3,18 @@
              xmlns:vm="using:Ink.Demo.ViewModels"
              x:Class="Ink.Demo.Views.CalendarView"
              x:DataType="vm:CalendarViewModel">
-  <!-- TODO: Subclass ink:Calendar and ink:CalendarDatePicker from Avalonia equivalents and use them here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="Calendar" />
+      <TextBlock Classes="h2" Text="Calendar" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia Calendar / CalendarDatePicker" />
-        <TextBlock Text="Not yet themed - requires Ink template implementation."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Default" />
+        <Calendar />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Multi-select" />
+        <Calendar SelectionMode="MultipleRange" />
       </StackPanel>
 
     </StackPanel>

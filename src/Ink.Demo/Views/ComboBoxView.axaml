@@ -1,25 +1,45 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.ComboBoxView"
              x:DataType="vm:ComboBoxViewModel">
-  <!-- TODO: Subclass ink:ComboBox from Avalonia ComboBox and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="ComboBox" />
+      <TextBlock Classes="h2" Text="ComboBox" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia ComboBox (themed)" />
-        <TextBlock Text="Plain Avalonia ComboBox with Ink base theme applied - no subclass yet."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Default" />
+        <ink:ComboBox SelectedIndex="0" Width="200" HorizontalAlignment="Left">
+          <ComboBoxItem>Option A</ComboBoxItem>
+          <ComboBoxItem>Option B</ComboBoxItem>
+          <ComboBoxItem>Option C</ComboBoxItem>
+        </ink:ComboBox>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Placeholder" />
+        <ink:ComboBox Width="200" HorizontalAlignment="Left" PlaceholderText="Choose an option">
+          <ComboBoxItem>Option A</ComboBoxItem>
+          <ComboBoxItem>Option B</ComboBoxItem>
+          <ComboBoxItem>Option C</ComboBoxItem>
+        </ink:ComboBox>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Disabled" />
+        <ink:ComboBox SelectedIndex="0" Width="200" HorizontalAlignment="Left" IsEnabled="False">
+          <ComboBoxItem>Disabled</ComboBoxItem>
+        </ink:ComboBox>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Standard Avalonia ComboBox (styled, no overlay)" />
+        <TextBlock Classes="small muted" Text="Uses the Ink theme via auto-apply. Dropdown does not dim the window." />
         <ComboBox SelectedIndex="0" Width="200" HorizontalAlignment="Left">
           <ComboBoxItem>Option A</ComboBoxItem>
           <ComboBoxItem>Option B</ComboBoxItem>
           <ComboBoxItem>Option C</ComboBoxItem>
-        </ComboBox>
-        <ComboBox SelectedIndex="0" Width="200" HorizontalAlignment="Left" IsEnabled="False">
-          <ComboBoxItem>Disabled</ComboBoxItem>
         </ComboBox>
       </StackPanel>
 

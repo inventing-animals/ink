@@ -63,8 +63,8 @@ public partial class App : Application
             view = new MainView { DataContext = new MainViewModel(appState) };
 
             singleViewPlatform.MainView = OperatingSystem.IsBrowser()
-                ? new WebWindow    { Content = view }
-                : new MobileWindow { Content = view };
+                ? new WebWindow    { MainContent = view }
+                : new MobileWindow { MainContent = view };
         }
 
         base.OnFrameworkInitializationCompleted();

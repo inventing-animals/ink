@@ -3,16 +3,28 @@
              xmlns:vm="using:Ink.Demo.ViewModels"
              x:Class="Ink.Demo.Views.SliderView"
              x:DataType="vm:SliderViewModel">
-  <!-- TODO: Subclass ink:Slider from Avalonia Slider and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="Slider" />
+      <TextBlock Classes="h2" Text="Slider" />
 
       <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia Slider" />
-        <TextBlock Text="Not yet themed - requires Ink template implementation."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+        <TextBlock Classes="h4" Text="Default" />
+        <Slider Value="40" Width="300" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Reversed" />
+        <Slider Value="40" IsDirectionReversed="True" Width="300" HorizontalAlignment="Left" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Disabled" />
+        <Slider Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Vertical" />
+        <Slider Value="40" Orientation="Vertical" Height="120" HorizontalAlignment="Left" />
       </StackPanel>
 
     </StackPanel>

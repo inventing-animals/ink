@@ -44,7 +44,7 @@ public class DesktopTabbedWindow : DesktopWindow
     /// <see cref="Avalonia.Controls.ContentControl.Content"/> directly, as it is
     /// managed internally by this window.
     /// </summary>
-    public Control? MainContent
+    public new Control? MainContent
     {
         get => _mainContent;
         set
@@ -86,7 +86,7 @@ public class DesktopTabbedWindow : DesktopWindow
         grid.Children.Add(_tabStripContainer);
         grid.Children.Add(_contentArea);
 
-        Content = grid;
+        OverlayLayer.Content = grid;
     }
 
     private static IBrush GetThemeBrush(string key, IBrush fallback)

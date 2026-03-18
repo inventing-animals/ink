@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTheme TargetType="CalendarItem" x:Key="{x:Type CalendarItem}">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="Padding" Value="8,12,8,8" />
+
+        <Setter Property="DayTitleTemplate">
+            <Template x:DataType="x:String">
+                <TextBlock
+                    Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                    FontSize="{DynamicResource Ink.FontSize.S}"
+                    HorizontalAlignment="Center"
+                    Margin="0,4,0,4"
+                    Text="{CompiledBinding}"
+                    VerticalAlignment="Center" />
+            </Template>
+        </Setter>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+                    <Border CornerRadius="{TemplateBinding CornerRadius}" Margin="{TemplateBinding Padding}">
+                        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,*">
+                            <Button
+                                Name="PART_PreviousButton"
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Height="28"
+                                Width="28"
+                                Padding="0"
+                                HorizontalAlignment="Left"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center">
+                                <Path
+                                    Data="M 10 4 L 6 8 L 10 12"
+                                    Stroke="{DynamicResource Ink.Brush.Content.Secondary}"
+                                    StrokeThickness="1.5"
+                                    StrokeLineCap="Round"
+                                    StrokeJoin="Round"
+                                    Width="16"
+                                    Height="16"
+                                    Stretch="None"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+                            </Button>
+                            <Button
+                                Name="PART_HeaderButton"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                FontFamily="{DynamicResource Ink.FontFamily.Base}"
+                                FontSize="{DynamicResource Ink.FontSize.M}"
+                                FontWeight="{DynamicResource Ink.FontWeight.SemiBold}"
+                                Foreground="{DynamicResource Ink.Brush.Content.Primary}"
+                                HorizontalAlignment="Center"
+                                Padding="12,4"
+                                VerticalAlignment="Center" />
+                            <Button
+                                Name="PART_NextButton"
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Height="28"
+                                Width="28"
+                                Padding="0"
+                                HorizontalAlignment="Right"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center">
+                                <Path
+                                    Data="M 6 4 L 10 8 L 6 12"
+                                    Stroke="{DynamicResource Ink.Brush.Content.Secondary}"
+                                    StrokeThickness="1.5"
+                                    StrokeLineCap="Round"
+                                    StrokeJoin="Round"
+                                    Width="16"
+                                    Height="16"
+                                    Stretch="None"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+                            </Button>
+                            <Grid
+                                Name="PART_MonthView"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="3"
+                                Grid.Row="1"
+                                IsVisible="False"
+                                Margin="0,4,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                            <Grid
+                                Name="PART_YearView"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="3"
+                                Grid.Row="1"
+                                IsVisible="False"
+                                Margin="0,4,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

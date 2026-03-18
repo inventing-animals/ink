@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             x:Class="Ink.Demo.Views.PopupsView"
+             x:DataType="vm:PopupsViewModel">
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <TextBlock Classes="h2" Text="Popups" />
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="ComboBox" />
+        <TextBlock Classes="small muted" Text="Opening the dropdown dims the window behind it." />
+        <ink:ComboBox SelectedIndex="0" Width="240" HorizontalAlignment="Left"
+                      PlaceholderText="Choose an option">
+          <ComboBoxItem>Option A</ComboBoxItem>
+          <ComboBoxItem>Option B</ComboBoxItem>
+          <ComboBoxItem>Option C</ComboBoxItem>
+          <ComboBoxItem>Option D</ComboBoxItem>
+        </ink:ComboBox>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Multiple ComboBoxes" />
+        <TextBlock Classes="small muted" Text="Each independently triggers the overlay." />
+        <StackPanel Orientation="Horizontal" Spacing="12">
+          <ink:ComboBox SelectedIndex="0" Width="160" PlaceholderText="First">
+            <ComboBoxItem>Red</ComboBoxItem>
+            <ComboBoxItem>Green</ComboBoxItem>
+            <ComboBoxItem>Blue</ComboBoxItem>
+          </ink:ComboBox>
+          <ink:ComboBox SelectedIndex="0" Width="160" PlaceholderText="Second">
+            <ComboBoxItem>Small</ComboBoxItem>
+            <ComboBoxItem>Medium</ComboBoxItem>
+            <ComboBoxItem>Large</ComboBoxItem>
+          </ink:ComboBox>
+        </StackPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Flyout" />
+        <TextBlock Classes="small muted" Text="Opening a flyout dims the window." />
+        <ink:Button HorizontalAlignment="Left">
+          <ink:Button.Flyout>
+            <ink:Flyout>
+              <StackPanel Spacing="12" Margin="16">
+                <TextBlock Classes="large" Text="Flyout content" />
+                <TextBlock Classes="small muted" Text="This is a flyout panel." />
+                <ink:Button Content="Confirm" />
+              </StackPanel>
+            </ink:Flyout>
+          </ink:Button.Flyout>
+          Open Flyout
+        </ink:Button>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

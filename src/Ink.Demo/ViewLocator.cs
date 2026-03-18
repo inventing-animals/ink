@@ -29,6 +29,7 @@ public class ViewLocator : IDataTemplate
         [typeof(SliderViewModel)] = () => new SliderView(),
         [typeof(ProgressBarViewModel)] = () => new ProgressBarView(),
         [typeof(ScrollViewViewModel)] = () => new ScrollViewView(),
+        [typeof(PopupsViewModel)] = () => new PopupsView(),
     };
 
     public Control? Build(object? param)
