@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ScrollViewer" x:Key="Ink.ScrollViewerStyle">
+        <Setter Property="AllowAutoHide" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+                    <ScrollContentPresenter
+                        Name="PART_ContentPresenter"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Background="{TemplateBinding Background}"
+                        CanHorizontallyScroll="{Binding CanHorizontallyScroll, RelativeSource={RelativeSource TemplatedParent}}"
+                        CanVerticallyScroll="{Binding CanVerticallyScroll, RelativeSource={RelativeSource TemplatedParent}}"
+                        Content="{TemplateBinding Content}"
+                        Extent="{Binding Extent, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWayToSource}"
+                        HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
+                        HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
+                        Margin="{TemplateBinding Padding}"
+                        Offset="{TemplateBinding Offset, Mode=TwoWay}"
+                        ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}"
+                        VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
+                        VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}"
+                        Viewport="{Binding Viewport, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWayToSource}">
+                        <ScrollContentPresenter.GestureRecognizers>
+                            <ScrollGestureRecognizer
+                                CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+                                CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+                                IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}" />
+                        </ScrollContentPresenter.GestureRecognizers>
+                    </ScrollContentPresenter>
+
+                    <ScrollBar
+                        Name="PART_HorizontalScrollBar"
+                        Grid.Row="1"
+                        AllowAutoHide="{TemplateBinding AllowAutoHide}"
+                        Focusable="False"
+                        LargeChange="{Binding LargeChange.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        Maximum="{Binding ScrollBarMaximum.X, RelativeSource={RelativeSource TemplatedParent}}"
+                        Orientation="Horizontal"
+                        SmallChange="{Binding SmallChange.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        Value="{Binding Offset.X, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        ViewportSize="{Binding Viewport.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        Visibility="{TemplateBinding HorizontalScrollBarVisibility}" />
+
+                    <ScrollBar
+                        Name="PART_VerticalScrollBar"
+                        Grid.Column="1"
+                        AllowAutoHide="{TemplateBinding AllowAutoHide}"
+                        Focusable="False"
+                        LargeChange="{Binding LargeChange.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        Maximum="{Binding ScrollBarMaximum.Y, RelativeSource={RelativeSource TemplatedParent}}"
+                        Orientation="Vertical"
+                        SmallChange="{Binding SmallChange.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        Value="{Binding Offset.Y, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        ViewportSize="{Binding Viewport.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        Visibility="{TemplateBinding VerticalScrollBarVisibility}" />
+
+                    <Panel
+                        x:Name="PART_ScrollBarsSeparator"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Background="{TemplateBinding Background}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^[AllowAutoHide=True] /template/ ScrollContentPresenter#PART_ContentPresenter">
+            <Setter Property="Grid.ColumnSpan" Value="2" />
+            <Setter Property="Grid.RowSpan" Value="2" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.ScrollViewerStyle}" TargetType="ScrollViewer" x:Key="{x:Type ScrollViewer}" />
+    <ControlTheme BasedOn="{StaticResource Ink.ScrollViewerStyle}" TargetType="ink:ScrollViewer" x:Key="{x:Type ink:ScrollViewer}" />
+
+</ResourceDictionary>

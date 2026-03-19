@@ -4,9 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:Ink.UI.Controls">
 
-    <!-- Base Avalonia theme - provides default templates for all unstyled controls -->
-    <SimpleTheme />
-
     <!-- Token dictionaries -->
     <Styles.Resources>
         <ResourceDictionary>
@@ -24,6 +21,7 @@
                 <ResourceInclude Source="avares://Ink.UI/Controls/TextBox/TextBox.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/ProgressBar/ProgressBar.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/Slider/Slider.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ScrollView/ScrollViewer.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/ListBox/ListBox.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/ListBox/ListBoxItem.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/Calendar/Calendar.axaml" />
