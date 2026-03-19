@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:animation="clr-namespace:Avalonia.Animation;assembly=Avalonia.Base"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Ink.Demo.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -63,7 +64,13 @@
     </Border>
 
     <!-- Page content -->
-    <ContentControl Grid.Column="1" Content="{Binding CurrentPage}" />
+    <TransitioningContentControl Grid.Column="1"
+                                 ClipToBounds="True"
+                                 Content="{Binding CurrentPage}">
+      <TransitioningContentControl.PageTransition>
+        <animation:CrossFade Duration="{StaticResource Ink.Motion.Duration.Long}" />
+      </TransitioningContentControl.PageTransition>
+    </TransitioningContentControl>
 
   </Grid>
 </UserControl>
