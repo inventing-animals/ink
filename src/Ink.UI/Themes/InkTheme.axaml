@@ -16,6 +16,7 @@
                 <ResourceInclude Source="avares://Ink.UI/Themes/Tokens/Motion.Default.axaml" />
                 <!-- Controls -->
                 <ResourceInclude Source="avares://Ink.UI/Controls/Button/Button.axaml" />
+                <ResourceInclude Source="avares://Ink.UI/Controls/ToggleButton/ToggleButton.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/CheckBox/CheckBox.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/RadioButton/RadioButton.axaml" />
                 <ResourceInclude Source="avares://Ink.UI/Controls/TextBox/TextBox.axaml" />

@@ -10,35 +10,32 @@
       <demo:PageToolbar />
 
       <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
-        <TextBlock Classes="h4" Text="ink:Chip as toggle" />
-        <TextBlock Classes="small muted" Text="ink:Chip derives from ToggleButton and supports on/off state." />
+        <TextBlock Classes="h4" Text="ink:ToggleButton - Variants" />
+        <TextBlock Classes="small muted" Text="Stateful button with the same variant API as ink:Button." />
         <WrapPanel>
-          <ink:Chip Content="Off" Margin="0,0,8,8" />
-          <ink:Chip Content="On" IsChecked="True" Margin="0,0,8,8" />
-          <ink:Chip Content="Disabled" IsEnabled="False" Margin="0,0,8,8" />
+          <ink:ToggleButton Margin="0,0,8,8">Default</ink:ToggleButton>
+          <ink:ToggleButton IsChecked="True" Margin="0,0,8,8">Default</ink:ToggleButton>
+          <ink:ToggleButton Variant="Ghost" Margin="0,0,8,8">Ghost</ink:ToggleButton>
+          <ink:ToggleButton Variant="Ghost" IsChecked="True" Margin="0,0,8,8">Ghost</ink:ToggleButton>
         </WrapPanel>
-        <TextBlock Classes="h4" Text="ToggleSwitch" />
-        <TextBlock Classes="small muted" Text="Not yet subclassed - showing base Avalonia." />
-        <StackPanel Spacing="4">
-          <ToggleSwitch />
-          <ToggleSwitch IsChecked="True" />
-          <ToggleSwitch IsEnabled="False" />
-        </StackPanel>
+        <TextBlock Classes="h4" Text="ink:ToggleButton - Disabled" />
+        <WrapPanel>
+          <ink:ToggleButton IsEnabled="False" Margin="0,0,8,8">Disabled</ink:ToggleButton>
+          <ink:ToggleButton IsChecked="True" IsEnabled="False" Margin="0,0,8,8">Selected</ink:ToggleButton>
+          <ink:ToggleButton Variant="Ghost" IsChecked="True" IsEnabled="False" Margin="0,0,8,8">Ghost</ink:ToggleButton>
+        </WrapPanel>
       </StackPanel>
 
       <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
         <TextBlock Classes="h4" Text="Avalonia ToggleButton (themed)" />
+        <TextBlock Classes="small muted" Text="Plain Avalonia ToggleButton with the Ink toggle button theme applied." />
         <WrapPanel>
           <ToggleButton Margin="0,0,8,8">Off</ToggleButton>
           <ToggleButton IsChecked="True" Margin="0,0,8,8">On</ToggleButton>
           <ToggleButton IsEnabled="False" Margin="0,0,8,8">Disabled</ToggleButton>
         </WrapPanel>
-        <TextBlock Classes="h4" Text="Avalonia ToggleSwitch (themed)" />
-        <StackPanel Spacing="4">
-          <ToggleSwitch />
-          <ToggleSwitch IsChecked="True" />
-          <ToggleSwitch IsEnabled="False" />
-        </StackPanel>
+        <TextBlock Classes="h4" Text="Avalonia ToggleSwitch" />
+        <TextBlock Classes="small muted" Text="No ToggleSwitch theme is currently registered, so this sample is hidden to avoid template-part crashes." />
       </StackPanel>
 
     </StackPanel>
