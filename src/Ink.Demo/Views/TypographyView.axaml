@@ -1,0 +1,62 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             x:Class="Ink.Demo.Views.TypographyView"
+             x:DataType="vm:TypographyViewModel">
+    <!-- TODO: Subclass ink:ToggleSwitch from Avalonia ToggleSwitch and use it here instead -->
+    <ScrollViewer>
+        <StackPanel Spacing="24" Margin="24">
+            <demo:PageToolbar />
+        
+        <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Label}">
+            <Label Classes="h1" Content="Heading 1" />
+            <Label Classes="h2" Content="Heading 2" />
+            <Label Classes="h3" Content="Heading 3" />
+            <Label Classes="h4" Content="Heading 4" />
+            <Label Classes="large" Content="Large" />
+            <Label Classes="lead" Content="Lead" />
+            <Label Classes="small" Content="Small" />
+            <Label Classes="muted" Content="Muted" />
+            <Label Classes="mono" Content="Mono" />
+            <Label Content="Primary" Foreground="{DynamicResource Ink.Brush.Content.Primary}" />
+            <Label Content="Secondary" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+            <Label Content="Muted" Foreground="{DynamicResource Ink.Brush.Content.Muted}" />
+            <Label Content="Disabled" Foreground="{DynamicResource Ink.Brush.Content.Disabled}" />
+        </StackPanel>
+
+        <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=TextBlock}">
+            <TextBlock Classes="h1" Text="Heading 1" />
+            <TextBlock Classes="h2" Text="Heading 2" />
+            <TextBlock Classes="h3" Text="Heading 3" />
+            <TextBlock Classes="h4" Text="Heading 4" />
+            <TextBlock Classes="large" Text="Large" />
+            <TextBlock Classes="lead" Text="Lead" />
+            <TextBlock Classes="small" Text="Small" />
+            <TextBlock Classes="muted" Text="Muted" />
+            <TextBlock Classes="mono" Text="Mono" />
+            <TextBlock Text="Primary" Foreground="{DynamicResource Ink.Brush.Content.Primary}" />
+            <TextBlock Text="Secondary" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+            <TextBlock Text="Muted" Foreground="{DynamicResource Ink.Brush.Content.Muted}" />
+            <TextBlock Text="Disabled" Foreground="{DynamicResource Ink.Brush.Content.Disabled}" />
+        </StackPanel>
+        
+        <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=SelectableTextBlock}">
+            <SelectableTextBlock Classes="h1" Text="Heading 1" />
+            <SelectableTextBlock Classes="h2" Text="Heading 2" />
+            <SelectableTextBlock Classes="h3" Text="Heading 3" />
+            <SelectableTextBlock Classes="h4" Text="Heading 4" />
+            <SelectableTextBlock Classes="large" Text="Large" />
+            <SelectableTextBlock Classes="lead" Text="Lead" />
+            <SelectableTextBlock Classes="small" Text="Small" />
+            <SelectableTextBlock Classes="muted" Text="Muted" />
+            <SelectableTextBlock Classes="mono" Text="Mono" />
+            <SelectableTextBlock Text="Primary" Foreground="{DynamicResource Ink.Brush.Content.Primary}" />
+            <SelectableTextBlock Text="Secondary" Foreground="{DynamicResource Ink.Brush.Content.Secondary}" />
+            <SelectableTextBlock Text="Muted" Foreground="{DynamicResource Ink.Brush.Content.Muted}" />
+            <SelectableTextBlock Text="Disabled" Foreground="{DynamicResource Ink.Brush.Content.Disabled}" />
+        </StackPanel>
+        
+            </StackPanel>
+    </ScrollViewer>
+</UserControl>

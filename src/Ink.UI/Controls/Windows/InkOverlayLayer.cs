@@ -1,4 +1,5 @@
 using System;
+using Avalonia;
 using Avalonia.Animation;
 using Avalonia.Animation.Easings;
 using Avalonia.Controls;
@@ -48,9 +49,9 @@ internal sealed class InkOverlayLayer
             {
                 new DoubleTransition
                 {
-                    Property = Border.OpacityProperty,
-                    Duration = TimeSpan.FromMilliseconds(150),
-                    Easing = new CubicEaseInOut(),
+                    Property = Visual.OpacityProperty,
+                    Duration = TimeSpan.FromMilliseconds(200),
+                    Easing = new SineEaseInOut(),
                 },
             },
         };

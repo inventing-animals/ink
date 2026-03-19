@@ -97,22 +97,68 @@
                    Color="{DynamicResource Ink.Color.Fixed.White}" />
 
   <!-- ========================= -->
+  <!-- Status: Warning            -->
+  <!-- ========================= -->
+
+  <SolidColorBrush x:Key="Ink.Brush.Warning"
+                   Color="{DynamicResource Ink.Color.Fixed.Yellow.500}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Hover"
+                   Color="{DynamicResource Ink.Color.Fixed.Yellow.400}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Subtle"
+                   Color="{DynamicResource Ink.Color.Fixed.Yellow.900}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Content"
+                   Color="{DynamicResource Ink.Color.Fixed.White}" />
+
+  <!-- ========================= -->
+  <!-- Status: Success            -->
+  <!-- ========================= -->
+
+  <SolidColorBrush x:Key="Ink.Brush.Success"
+                   Color="{DynamicResource Ink.Color.Fixed.Green.500}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Success.Hover"
+                   Color="{DynamicResource Ink.Color.Fixed.Green.400}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Success.Subtle"
+                   Color="{DynamicResource Ink.Color.Fixed.Green.900}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Success.Content"
+                   Color="{DynamicResource Ink.Color.Fixed.White}" />
+
+  <!-- ========================= -->
   <!-- Inputs                    -->
   <!-- ========================= -->
 
   <SolidColorBrush x:Key="Ink.Brush.Input.Background"
                    Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
 
+  <!-- field-border: matches background for flat appearance -->
   <SolidColorBrush x:Key="Ink.Brush.Input.Border"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.700}" />
+                   Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
 
   <SolidColorBrush x:Key="Ink.Brush.Input.Border.Hover"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.600}" />
+                   Color="{DynamicResource Ink.Color.Fixed.Gray.800}" />
 
   <SolidColorBrush x:Key="Ink.Brush.Input.Border.Focused"
                    Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
 
   <SolidColorBrush x:Key="Ink.Brush.Input.Placeholder"
                    Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
+
+  <!-- ========================= -->
+  <!-- Shadows (dark mode)       -->
+  <!-- ========================= -->
+
+  <!-- Dark mode: no external shadows, rely on surface colors for depth -->
+  <BoxShadows x:Key="Ink.Shadow.Surface">0 0 0 0 Transparent</BoxShadows>
+  <BoxShadows x:Key="Ink.Shadow.Overlay">0 0 1 0 #30FFFFFF</BoxShadows>
+  <BoxShadows x:Key="Ink.Shadow.Small">0 0 0 0 Transparent</BoxShadows>
+  <BoxShadows x:Key="Ink.Shadow.Field">0 0 0 0 Transparent</BoxShadows>
+
+  <!-- Focus ring: slightly stronger in dark mode -->
+  <BoxShadows x:Key="Ink.Shadow.FocusRing">0 0 0 2 #A0006FEE, 0 0 20 0 #60006FEE</BoxShadows>
 
 </ResourceDictionary>

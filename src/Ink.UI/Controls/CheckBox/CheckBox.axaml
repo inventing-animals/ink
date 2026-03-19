@@ -31,8 +31,9 @@
                         VerticalAlignment="Center">
                         <Border.Transitions>
                             <Transitions>
-                                <BrushTransition Duration="0:0:0.15" Property="Background" />
-                                <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                                <BrushTransition Duration="0:0:0.20" Property="Background" />
+                                <BrushTransition Duration="0:0:0.20" Property="BorderBrush" />
+                                <TransformOperationsTransition Duration="0:0:0.10" Property="RenderTransform" Easing="CubicEaseOut" />
                             </Transitions>
                         </Border.Transitions>
                         <Panel>

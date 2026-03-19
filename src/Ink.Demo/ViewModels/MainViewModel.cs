@@ -40,7 +40,7 @@ public partial class MainViewModel : ViewModelBase
 
     private void UpdatePage(ILocation location)
     {
-        CurrentPage = location.Segments.FirstOrDefault() switch
+        object page = location.Segments.FirstOrDefault() switch
         {
             "buttons"     => new ButtonsViewModel(),
             "palette"     => new PaletteViewModel(),
@@ -54,11 +54,25 @@ public partial class MainViewModel : ViewModelBase
             "listbox"     => new ListBoxViewModel(),
             "textbox"     => new TextBoxViewModel(),
             "toggle"      => new ToggleViewModel(),
+            "tokens"      => new TokensViewModel(),
+            "typography"  => new TypographyViewModel(),
             "slider"      => new SliderViewModel(),
             "progressbar" => new ProgressBarViewModel(),
             "scrollview"  => new ScrollViewViewModel(),
             "popups"      => new PopupsViewModel(),
+            "card"        => new CardViewModel(),
+            "chip"        => new ChipViewModel(),
+            "tabstrip"    => new TabStripViewModel(),
             _ => new ButtonsViewModel(),
         };
+
+        if (page is DemoPageViewModel demoPage &&
+            demoPage.HasSubpages &&
+            string.IsNullOrEmpty(demoPage.SelectedSubpage))
+        {
+            demoPage.SelectedSubpage = demoPage.Subpages[0];
+        }
+
+        CurrentPage = page;
     }
 }

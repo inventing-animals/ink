@@ -1,39 +1,34 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.ProgressBarView"
              x:DataType="vm:ProgressBarViewModel">
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Classes="h2" Text="ProgressBar" />
+      <demo:PageToolbar />
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="25%" />
-        <ProgressBar Value="25" Width="300" HorizontalAlignment="Left" />
-      </StackPanel>
-
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="60%" />
-        <ProgressBar Value="60" Width="300" HorizontalAlignment="Left" />
-      </StackPanel>
-
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="100%" />
-        <ProgressBar Value="100" Width="300" HorizontalAlignment="Left" />
-      </StackPanel>
-
-      <StackPanel Spacing="8">
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+        <TextBlock Classes="h4" Text="ink:ProgressBar - Values" />
+        <ink:ProgressBar Value="25" Width="300" HorizontalAlignment="Left" />
+        <ink:ProgressBar Value="60" Width="300" HorizontalAlignment="Left" />
+        <ink:ProgressBar Value="100" Width="300" HorizontalAlignment="Left" />
         <TextBlock Classes="h4" Text="Indeterminate" />
-        <ProgressBar IsIndeterminate="True" Width="300" HorizontalAlignment="Left" />
-      </StackPanel>
-
-      <StackPanel Spacing="8">
+        <ink:ProgressBar IsIndeterminate="True" Width="300" HorizontalAlignment="Left" />
         <TextBlock Classes="h4" Text="Vertical" />
-        <ProgressBar Value="60" Orientation="Vertical" Height="100" HorizontalAlignment="Left" />
+        <ink:ProgressBar Value="60" Orientation="Vertical" Height="100" HorizontalAlignment="Left" />
+        <TextBlock Classes="h4" Text="Disabled" />
+        <ink:ProgressBar Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
       </StackPanel>
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Disabled" />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
+        <TextBlock Classes="h4" Text="Avalonia ProgressBar (themed)" />
+        <ProgressBar Value="25" Width="300" HorizontalAlignment="Left" />
+        <ProgressBar Value="60" Width="300" HorizontalAlignment="Left" />
+        <ProgressBar Value="100" Width="300" HorizontalAlignment="Left" />
+        <ProgressBar IsIndeterminate="True" Width="300" HorizontalAlignment="Left" />
+        <ProgressBar Value="60" Orientation="Vertical" Height="100" HorizontalAlignment="Left" />
         <ProgressBar Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
       </StackPanel>
 

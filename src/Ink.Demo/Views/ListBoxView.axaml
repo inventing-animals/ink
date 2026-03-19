@@ -1,16 +1,41 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.ListBoxView"
              x:DataType="vm:ListBoxViewModel">
-  <!-- TODO: Subclass ink:ListBox and ink:ListBoxItem from Avalonia equivalents and use them here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Classes="h2" Text="ListBox" />
+      <demo:PageToolbar />
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Avalonia ListBox / ListBoxItem" />
-        <TextBlock Classes="small muted" Text="Not yet themed - requires Ink template implementation." />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+        <TextBlock Classes="h4" Text="ink:ListBox - Single select" />
+        <ink:ListBox Width="240" HorizontalAlignment="Left" SelectedIndex="0">
+          <ink:ListBoxItem>Item one</ink:ListBoxItem>
+          <ink:ListBoxItem>Item two</ink:ListBoxItem>
+          <ink:ListBoxItem>Item three</ink:ListBoxItem>
+          <ink:ListBoxItem>Item four</ink:ListBoxItem>
+          <ink:ListBoxItem IsEnabled="False">Disabled item</ink:ListBoxItem>
+        </ink:ListBox>
+        <TextBlock Classes="h4" Text="ink:ListBox - Multi select" />
+        <ink:ListBox Width="240" HorizontalAlignment="Left" SelectionMode="Multiple">
+          <ink:ListBoxItem>Alpha</ink:ListBoxItem>
+          <ink:ListBoxItem IsSelected="True">Beta</ink:ListBoxItem>
+          <ink:ListBoxItem>Gamma</ink:ListBoxItem>
+          <ink:ListBoxItem IsSelected="True">Delta</ink:ListBoxItem>
+        </ink:ListBox>
+      </StackPanel>
+
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
+        <TextBlock Classes="h4" Text="Avalonia ListBox (themed)" />
+        <ListBox Width="240" HorizontalAlignment="Left" SelectedIndex="0">
+          <ListBoxItem>Item one</ListBoxItem>
+          <ListBoxItem>Item two</ListBoxItem>
+          <ListBoxItem>Item three</ListBoxItem>
+          <ListBoxItem>Item four</ListBoxItem>
+          <ListBoxItem IsEnabled="False">Disabled item</ListBoxItem>
+        </ListBox>
       </StackPanel>
 
     </StackPanel>

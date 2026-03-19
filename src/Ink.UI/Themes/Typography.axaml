@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="TextBlock.h1">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Display}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Bold}" />
+    </Style>
+    <Style Selector="Label.h1">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Display}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Bold}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.h1">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Display}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Bold}" />
+    </Style>
+
+    <Style Selector="TextBlock.h2">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="Label.h2">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.h2">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+
+    <Style Selector="TextBlock.h3">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="Label.h3">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.h3">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xxl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+
+    <Style Selector="TextBlock.h4">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="Label.h4">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.h4">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+
+    <Style Selector="TextBlock.lead">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+    </Style>
+    <Style Selector="Label.lead">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.lead">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+    </Style>
+
+    <Style Selector="TextBlock.large">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="Label.large">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.large">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+    </Style>
+
+    <Style Selector="TextBlock.small">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+    </Style>
+    <Style Selector="Label.small">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.small">
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+    </Style>
+
+    <Style Selector="TextBlock.muted">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+    </Style>
+    <Style Selector="Label.muted">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.muted">
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+    </Style>
+
+    <Style Selector="TextBlock.mono">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Mono}" />
+    </Style>
+    <Style Selector="Label.mono">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Mono}" />
+    </Style>
+    <Style Selector="SelectableTextBlock.mono">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Mono}" />
+    </Style>
+
+</Styles>

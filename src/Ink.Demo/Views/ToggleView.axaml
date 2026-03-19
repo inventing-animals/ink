@@ -1,27 +1,44 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.ToggleView"
              x:DataType="vm:ToggleViewModel">
-  <!-- TODO: Subclass ink:ToggleSwitch from Avalonia ToggleSwitch and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Text="Toggle" />
+      <demo:PageToolbar />
 
-      <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia ToggleSwitch" />
-        <TextBlock Text="Not yet themed - requires Ink template implementation."
-                   Foreground="{DynamicResource Ink.Brush.Content.Muted}"
-                   FontSize="12" />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+        <TextBlock Classes="h4" Text="ink:Chip as toggle" />
+        <TextBlock Classes="small muted" Text="ink:Chip derives from ToggleButton and supports on/off state." />
+        <WrapPanel>
+          <ink:Chip Content="Off" Margin="0,0,8,8" />
+          <ink:Chip Content="On" IsChecked="True" Margin="0,0,8,8" />
+          <ink:Chip Content="Disabled" IsEnabled="False" Margin="0,0,8,8" />
+        </WrapPanel>
+        <TextBlock Classes="h4" Text="ToggleSwitch" />
+        <TextBlock Classes="small muted" Text="Not yet subclassed - showing base Avalonia." />
+        <StackPanel Spacing="4">
+          <ToggleSwitch />
+          <ToggleSwitch IsChecked="True" />
+          <ToggleSwitch IsEnabled="False" />
+        </StackPanel>
       </StackPanel>
 
-      <StackPanel Spacing="8">
-        <TextBlock Text="Avalonia ToggleButton (themed)" />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
+        <TextBlock Classes="h4" Text="Avalonia ToggleButton (themed)" />
         <WrapPanel>
           <ToggleButton Margin="0,0,8,8">Off</ToggleButton>
           <ToggleButton IsChecked="True" Margin="0,0,8,8">On</ToggleButton>
           <ToggleButton IsEnabled="False" Margin="0,0,8,8">Disabled</ToggleButton>
         </WrapPanel>
+        <TextBlock Classes="h4" Text="Avalonia ToggleSwitch (themed)" />
+        <StackPanel Spacing="4">
+          <ToggleSwitch />
+          <ToggleSwitch IsChecked="True" />
+          <ToggleSwitch IsEnabled="False" />
+        </StackPanel>
       </StackPanel>
 
     </StackPanel>

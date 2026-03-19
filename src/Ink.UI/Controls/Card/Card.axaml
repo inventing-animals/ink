@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ContentControl" x:Key="Ink.CardStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.XL}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
+                    BorderThickness="{DynamicResource Ink.Stroke.Thin}"
+                    BoxShadow="{DynamicResource Ink.Shadow.Surface}"
+                    ClipToBounds="False"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+                    <ContentPresenter
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.CardStyle}" TargetType="ink:Card" x:Key="{x:Type ink:Card}" />
+
+</ResourceDictionary>

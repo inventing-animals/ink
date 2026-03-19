@@ -2,32 +2,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:demo="using:Ink.Demo.Views"
              x:Class="Ink.Demo.Views.ButtonsView"
              x:DataType="vm:ButtonsViewModel">
   <ScrollViewer>
   <StackPanel Spacing="24" Margin="24">
-    <TextBlock Classes="h2" Text="Buttons" />
-
-    <StackPanel Spacing="8">
+    <demo:PageToolbar />
+    
+    <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
       <TextBlock Classes="h4" Text="ink:Button - Variants" />
       <WrapPanel>
         <ink:Button Margin="0,0,8,8">Secondary</ink:Button>
         <ink:Button Variant="Primary" Margin="0,0,8,8">Primary</ink:Button>
         <ink:Button Variant="Danger" Margin="0,0,8,8">Danger</ink:Button>
-        <ink:Button Variant="Ghost" Margin="0,0,8,8" IsEnabled="False">Ghost (WIP)</ink:Button>
+        <ink:Button Variant="Warning" Margin="0,0,8,8">Warning</ink:Button>
+        <ink:Button Variant="Success" Margin="0,0,8,8">Success</ink:Button>
+        <ink:Button Variant="Ghost" Margin="0,0,8,8">Ghost</ink:Button>
       </WrapPanel>
     </StackPanel>
 
-    <StackPanel Spacing="8">
+    <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
       <TextBlock Classes="h4" Text="ink:Button - Disabled" />
       <WrapPanel>
         <ink:Button IsEnabled="False" Margin="0,0,8,8">Secondary</ink:Button>
         <ink:Button Variant="Primary" IsEnabled="False" Margin="0,0,8,8">Primary</ink:Button>
         <ink:Button Variant="Danger" IsEnabled="False" Margin="0,0,8,8">Danger</ink:Button>
+        <ink:Button Variant="Warning" IsEnabled="False" Margin="0,0,8,8">Warning</ink:Button>
+        <ink:Button Variant="Success" IsEnabled="False" Margin="0,0,8,8">Success</ink:Button>
+        <ink:Button Variant="Ghost" IsEnabled="False" Margin="0,0,8,8">Ghost</ink:Button>
       </WrapPanel>
     </StackPanel>
 
-    <StackPanel Spacing="8">
+    <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
       <TextBlock Classes="h4" Text="Avalonia Button (themed)" />
       <TextBlock Classes="small muted" Text="Plain Avalonia Button with Ink base theme applied - no variant system." />
       <WrapPanel>

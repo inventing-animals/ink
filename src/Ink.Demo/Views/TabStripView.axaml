@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:demo="using:Ink.Demo.Views"
+             x:Class="Ink.Demo.Views.TabStripView"
+             x:DataType="vm:TabStripViewModel">
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <demo:PageToolbar />
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Basic TabStrip" />
+        <TextBlock Classes="small muted"
+                   Text="TabStrip is a navigation primitive - a row of selectable tab headers. Pair with a ContentControl to display tab content." />
+        <ink:TabStrip SelectedIndex="0">
+          <ink:TabStripItem Content="Overview" />
+          <ink:TabStripItem Content="Details" />
+          <ink:TabStripItem Content="Activity" />
+          <ink:TabStripItem Content="Settings" />
+        </ink:TabStrip>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="With many items (scrollable)" />
+        <ink:TabStrip SelectedIndex="0">
+          <ink:TabStripItem Content="General" />
+          <ink:TabStripItem Content="Account" />
+          <ink:TabStripItem Content="Notifications" />
+          <ink:TabStripItem Content="Privacy" />
+          <ink:TabStripItem Content="Security" />
+          <ink:TabStripItem Content="Integrations" />
+          <ink:TabStripItem Content="Billing" />
+          <ink:TabStripItem Content="Advanced" />
+        </ink:TabStrip>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="With disabled item" />
+        <ink:TabStrip SelectedIndex="0">
+          <ink:TabStripItem Content="Active" />
+          <ink:TabStripItem Content="Preview" />
+          <ink:TabStripItem Content="Locked" IsEnabled="False" />
+        </ink:TabStrip>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

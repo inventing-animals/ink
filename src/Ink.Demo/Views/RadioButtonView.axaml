@@ -1,20 +1,32 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.RadioButtonView"
              x:DataType="vm:RadioButtonViewModel">
-  <!-- TODO: Subclass ink:RadioButton from Avalonia RadioButton and use it here instead -->
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Classes="h2" Text="RadioButton" />
+      <demo:PageToolbar />
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Avalonia RadioButton (themed)" />
-        <TextBlock Classes="small muted" Text="Plain Avalonia RadioButton with Ink base theme applied - no subclass yet." />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+        <TextBlock Classes="h4" Text="ink:RadioButton - States" />
         <StackPanel Spacing="4">
-          <RadioButton GroupName="Group1">Option A</RadioButton>
-          <RadioButton GroupName="Group1" IsChecked="True">Option B</RadioButton>
-          <RadioButton GroupName="Group1">Option C</RadioButton>
+          <ink:RadioButton GroupName="InkGroup1">Option A</ink:RadioButton>
+          <ink:RadioButton GroupName="InkGroup1" IsChecked="True">Option B</ink:RadioButton>
+          <ink:RadioButton GroupName="InkGroup1">Option C</ink:RadioButton>
+          <ink:RadioButton IsEnabled="False">Disabled</ink:RadioButton>
+          <ink:RadioButton IsEnabled="False" IsChecked="True">Disabled (selected)</ink:RadioButton>
+        </StackPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
+        <TextBlock Classes="h4" Text="Avalonia RadioButton (themed)" />
+        <TextBlock Classes="small muted" Text="Plain Avalonia RadioButton with Ink base theme applied." />
+        <StackPanel Spacing="4">
+          <RadioButton GroupName="AvGroup1">Option A</RadioButton>
+          <RadioButton GroupName="AvGroup1" IsChecked="True">Option B</RadioButton>
+          <RadioButton GroupName="AvGroup1">Option C</RadioButton>
           <RadioButton IsEnabled="False">Disabled</RadioButton>
           <RadioButton IsEnabled="False" IsChecked="True">Disabled (selected)</RadioButton>
         </StackPanel>

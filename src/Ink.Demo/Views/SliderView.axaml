@@ -1,29 +1,30 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.SliderView"
              x:DataType="vm:SliderViewModel">
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Classes="h2" Text="Slider" />
+      <demo:PageToolbar />
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Default" />
-        <Slider Value="40" Width="300" HorizontalAlignment="Left" />
-      </StackPanel>
-
-      <StackPanel Spacing="8">
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+        <TextBlock Classes="h4" Text="ink:Slider - Default" />
+        <ink:Slider Value="40" Width="300" HorizontalAlignment="Left" />
         <TextBlock Classes="h4" Text="Reversed" />
-        <Slider Value="40" IsDirectionReversed="True" Width="300" HorizontalAlignment="Left" />
-      </StackPanel>
-
-      <StackPanel Spacing="8">
+        <ink:Slider Value="40" IsDirectionReversed="True" Width="300" HorizontalAlignment="Left" />
         <TextBlock Classes="h4" Text="Disabled" />
-        <Slider Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
+        <ink:Slider Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
+        <TextBlock Classes="h4" Text="Vertical" />
+        <ink:Slider Value="40" Orientation="Vertical" Height="120" HorizontalAlignment="Left" />
       </StackPanel>
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Vertical" />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
+        <TextBlock Classes="h4" Text="Avalonia Slider (themed)" />
+        <Slider Value="40" Width="300" HorizontalAlignment="Left" />
+        <Slider Value="40" IsDirectionReversed="True" Width="300" HorizontalAlignment="Left" />
+        <Slider Value="40" Width="300" HorizontalAlignment="Left" IsEnabled="False" />
         <Slider Value="40" Orientation="Vertical" Height="120" HorizontalAlignment="Left" />
       </StackPanel>
 

@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:demo="using:Ink.Demo.Views"
+             x:Class="Ink.Demo.Views.ChipView"
+             x:DataType="vm:ChipViewModel">
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <demo:PageToolbar />
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Selectable chips" />
+        <TextBlock Classes="small muted" Text="Click to toggle selection. Chips derive from ToggleButton." />
+        <WrapPanel>
+          <ink:Chip Content="All" IsChecked="True" Margin="0,0,8,8" />
+          <ink:Chip Content="Design" Margin="0,0,8,8" />
+          <ink:Chip Content="Development" Margin="0,0,8,8" />
+          <ink:Chip Content="Marketing" Margin="0,0,8,8" />
+          <ink:Chip Content="Research" Margin="0,0,8,8" />
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Filter chips" />
+        <WrapPanel>
+          <ink:Chip Content="New" Margin="0,0,8,8" />
+          <ink:Chip Content="Trending" IsChecked="True" Margin="0,0,8,8" />
+          <ink:Chip Content="Popular" Margin="0,0,8,8" />
+          <ink:Chip Content="Featured" IsChecked="True" Margin="0,0,8,8" />
+          <ink:Chip Content="Archived" Margin="0,0,8,8" />
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Disabled" />
+        <WrapPanel>
+          <ink:Chip Content="Unavailable" IsEnabled="False" Margin="0,0,8,8" />
+          <ink:Chip Content="Selected + Disabled" IsChecked="True" IsEnabled="False" Margin="0,0,8,8" />
+        </WrapPanel>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

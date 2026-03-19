@@ -12,7 +12,7 @@
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
         <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.L}" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Margin" Value="8" />
         <Setter Property="Template">
@@ -21,8 +21,7 @@
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
-                    BoxShadow="0 4 24 0 #3C000000"
-                    ClipToBounds="True"
+                    BoxShadow="{DynamicResource Ink.Shadow.Overlay}"
                     CornerRadius="{TemplateBinding CornerRadius}">
                     <LayoutTransformControl Name="LayoutTransform" RenderTransformOrigin="50%,0%">
                         <ContentPresenter

@@ -43,5 +43,12 @@
     <Compile Update="Views\DataGridDemoView.axaml.cs">
       <DependentUpon>DataGridDemoView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\TabStripView.axaml.cs">
+      <DependentUpon>TabStripView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TypographyView.axaml.cs">
+      <DependentUpon>TypographyView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

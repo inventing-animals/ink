@@ -7,19 +7,20 @@
     <ControlTheme TargetType="ComboBox" x:Key="Ink.ComboBoxStyle">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Input.Background}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
-        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.S}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thick}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="Padding" Value="12,8" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="PlaceholderForeground" Value="{DynamicResource Ink.Brush.Input.Placeholder}" />
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
         <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
-        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.S}" />
+        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="FocusAdorner" Value="{x:Null}" />
+        <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="ItemsPanel">
             <ItemsPanelTemplate>
                 <VirtualizingStackPanel Margin="4" />
@@ -33,11 +34,14 @@
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
+                    BoxShadow="{DynamicResource Ink.Shadow.Field}"
                     CornerRadius="{TemplateBinding CornerRadius}"
-                    MinHeight="{TemplateBinding MinHeight}">
+                    MinHeight="{TemplateBinding MinHeight}"
+                    ClipToBounds="False">
                     <Border.Transitions>
                         <Transitions>
-                            <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                            <BrushTransition Duration="0:0:0.20" Property="BorderBrush" />
+                            <BoxShadowsTransition Duration="0:0:0.20" Property="BoxShadow" />
                         </Transitions>
                     </Border.Transitions>
                     <Grid ColumnDefinitions="* Auto" Margin="{TemplateBinding Padding}">
@@ -85,8 +89,8 @@
                                     Background="{DynamicResource Ink.Brush.Surface.Raised}"
                                     BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
                                     BorderThickness="{DynamicResource Ink.Stroke.Thin}"
-                                    BoxShadow="0 4 24 0 #3C000000"
-                                    CornerRadius="{DynamicResource Ink.CornerRadius.M}"
+                                    BoxShadow="{DynamicResource Ink.Shadow.Overlay}"
+                                    CornerRadius="{DynamicResource Ink.CornerRadius.L}"
                                     MinWidth="{CompiledBinding #Border.Bounds.Width}">
                                     <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="Auto">
                                         <ItemsPresenter
@@ -108,6 +112,7 @@
         </Style>
         <Style Selector="^:focus /template/ Border#Border">
             <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Focused}" />
+            <Setter Property="BoxShadow" Value="{DynamicResource Ink.Shadow.FocusRing}" />
         </Style>
         <Style Selector="^:disabled">
             <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
