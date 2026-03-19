@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             x:Class="Ink.Demo.Views.PageToolbar"
+             x:DataType="vm:DemoPageViewModel">
+  <StackPanel Orientation="Horizontal" Spacing="30" VerticalAlignment="Center">
+    <TextBlock Classes="h2" Text="{Binding Title}" />
+    <ink:TabStrip
+        SelectedIndex="0"
+        SelectedItem="{Binding SelectedSubpage, Mode=TwoWay}"
+        ItemsSource="{Binding Subpages}"
+        HorizontalAlignment="Center"
+        IsVisible="{Binding HasSubpages}" />
+  </StackPanel>
+</UserControl>

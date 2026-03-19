@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ToggleButton" x:Key="Ink.ChipStyle">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="Padding" Value="10,4" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.Pill}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel Name="RootPanel">
+                    <Panel.Transitions>
+                        <Transitions>
+                            <TransformOperationsTransition Duration="0:0:0.25" Property="RenderTransform" Easing="CubicEaseOut" />
+                        </Transitions>
+                    </Panel.Transitions>
+                    <Border
+                        Name="BaseBackground"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <Border
+                        Name="HoverBackground"
+                        Background="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pointerover /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^:pressed /template/ Panel#RootPanel">
+            <Setter Property="RenderTransform" Value="scale(0.95, 0.95)" />
+        </Style>
+        <Style Selector="^:checked">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Subtle}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent}" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.ChipStyle}" TargetType="ink:Chip" x:Key="{x:Type ink:Chip}" />
+
+</ResourceDictionary>

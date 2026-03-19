@@ -24,19 +24,22 @@
   <!-- Radius scale              -->
   <!-- ========================= -->
   <x:Double x:Key="Ink.Radius.S">6</x:Double>
-  <x:Double x:Key="Ink.Radius.M">8</x:Double>
-  <x:Double x:Key="Ink.Radius.L">12</x:Double>
+  <x:Double x:Key="Ink.Radius.M">12</x:Double>
+  <x:Double x:Key="Ink.Radius.L">16</x:Double>
+  <x:Double x:Key="Ink.Radius.XL">24</x:Double>
   <x:Double x:Key="Ink.Radius.Pill">999</x:Double>
 
   <!-- Convenient CornerRadius tokens -->
   <CornerRadius x:Key="Ink.CornerRadius.S">6</CornerRadius>
-  <CornerRadius x:Key="Ink.CornerRadius.M">8</CornerRadius>
-  <CornerRadius x:Key="Ink.CornerRadius.L">12</CornerRadius>
+  <CornerRadius x:Key="Ink.CornerRadius.M">12</CornerRadius>
+  <CornerRadius x:Key="Ink.CornerRadius.L">16</CornerRadius>
+  <CornerRadius x:Key="Ink.CornerRadius.XL">24</CornerRadius>
   <CornerRadius x:Key="Ink.CornerRadius.Pill">999</CornerRadius>
 
   <!-- ========================= -->
   <!-- Border / stroke           -->
   <!-- ========================= -->
+  <Thickness x:Key="Ink.Stroke.None">0</Thickness>
   <Thickness x:Key="Ink.Stroke.Thin">1</Thickness>
   <Thickness x:Key="Ink.Stroke.Thick">2</Thickness>
 

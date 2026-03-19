@@ -1,0 +1,470 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:demo="using:Ink.Demo.Views"
+             x:Class="Ink.Demo.Views.TokensView"
+             x:DataType="vm:TokensViewModel">
+    <UserControl.Styles>
+        <Style Selector="ink|Card.token-card">
+            <Setter Property="Padding" Value="18" />
+        </Style>
+
+        <Style Selector="Border.token-chip">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Panel}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+        <Style Selector="Border.preview-surface">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Panel}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+            <Setter Property="Padding" Value="12" />
+        </Style>
+
+        <Style Selector="Border.shadow-swatch">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Raised}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+            <Setter Property="BorderThickness" Value="{StaticResource Ink.Stroke.Thin}" />
+            <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.L}" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="96" />
+            <Setter Property="Padding" Value="12" />
+        </Style>
+
+        <Style Selector="Border.shadow-swatch.small">
+            <Setter Property="BoxShadow" Value="{DynamicResource Ink.Shadow.Small}" />
+        </Style>
+
+        <Style Selector="Border.shadow-swatch.surface">
+            <Setter Property="BoxShadow" Value="{DynamicResource Ink.Shadow.Surface}" />
+        </Style>
+
+        <Style Selector="Border.shadow-swatch.overlay">
+            <Setter Property="BoxShadow" Value="{DynamicResource Ink.Shadow.Overlay}" />
+        </Style>
+
+        <Style Selector="Border.motion-pill">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
+            <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.Pill}" />
+            <Setter Property="Height" Value="16" />
+            <Setter Property="Width" Value="56" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+
+        <Style Selector="Border.motion-pill.short">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Width" Duration="{StaticResource Ink.Motion.Duration.Short}" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <Style Selector="Border.motion-pill.medium">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Width" Duration="{StaticResource Ink.Motion.Duration.Medium}" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <Style Selector="Border.motion-pill.long">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Width" Duration="{StaticResource Ink.Motion.Duration.Long}" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <Style Selector="Border.motion-pill.short:pointerover">
+            <Setter Property="Width" Value="220" />
+        </Style>
+
+        <Style Selector="Border.motion-pill.medium:pointerover">
+            <Setter Property="Width" Value="220" />
+        </Style>
+
+        <Style Selector="Border.motion-pill.long:pointerover">
+            <Setter Property="Width" Value="220" />
+        </Style>
+
+        <Style Selector="TextBlock.token-name">
+            <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Mono}" />
+            <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+        </Style>
+
+        <Style Selector="TextBlock.token-value">
+            <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.Xl}" />
+            <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+        </Style>
+
+        <Style Selector="TextBlock.token-note">
+            <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+        </Style>
+    </UserControl.Styles>
+
+    <ScrollViewer>
+        <StackPanel Spacing="24" Margin="24">
+            <demo:PageToolbar />
+
+            <StackPanel Spacing="24"
+                        IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Metrics}">
+                <StackPanel Spacing="6">
+                    <TextBlock Classes="h3" Text="Spacing" />
+                    <TextBlock Classes="small muted" Text="The spacing scale is easiest to read as rhythm, so the preview stays visual and the number stays secondary." />
+                </StackPanel>
+                <WrapPanel Orientation="Horizontal">
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.0" /><TextBlock Classes="token-value" Text="0" /><Border Height="8" Width="0" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.1" /><TextBlock Classes="token-value" Text="4" /><Border Height="8" Width="{DynamicResource Ink.Space.1}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.2" /><TextBlock Classes="token-value" Text="8" /><Border Height="8" Width="{DynamicResource Ink.Space.2}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.3" /><TextBlock Classes="token-value" Text="12" /><Border Height="8" Width="{DynamicResource Ink.Space.3}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.4" /><TextBlock Classes="token-value" Text="16" /><Border Height="8" Width="{DynamicResource Ink.Space.4}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.5" /><TextBlock Classes="token-value" Text="24" /><Border Height="8" Width="{DynamicResource Ink.Space.5}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.6" /><TextBlock Classes="token-value" Text="32" /><Border Height="8" Width="{DynamicResource Ink.Space.6}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                    <ink:Card Classes="token-card" Width="152" Margin="0,0,12,12"><StackPanel Spacing="12"><TextBlock Classes="token-name" Text="Ink.Space.7" /><TextBlock Classes="token-value" Text="48" /><Border Height="8" Width="{DynamicResource Ink.Space.7}" Background="{DynamicResource Ink.Brush.Accent}" HorizontalAlignment="Left" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" /></StackPanel></ink:Card>
+                </WrapPanel>
+
+                <StackPanel Spacing="6">
+                    <TextBlock Classes="h3" Text="Padding" />
+                    <TextBlock Classes="small muted" Text="Padding reads better on real surfaces than in a plain table, so each token gets a small component shell." />
+                </StackPanel>
+                <WrapPanel Orientation="Horizontal">
+                    <ink:Card Classes="token-card" Width="280" Margin="0,0,12,12">
+                        <StackPanel Spacing="12">
+                            <TextBlock Classes="token-name" Text="Ink.Padding.Control.S" />
+                            <TextBlock Classes="token-value" Text="8,4" />
+                            <Border Classes="preview-surface" Padding="{DynamicResource Ink.Padding.Control.S}">
+                                <TextBlock Text="Compact control padding" HorizontalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+                    </ink:Card>
+                    <ink:Card Classes="token-card" Width="280" Margin="0,0,12,12">
+                        <StackPanel Spacing="12">
+                            <TextBlock Classes="token-name" Text="Ink.Padding.Control.M" />
+                            <TextBlock Classes="token-value" Text="12,6" />
+                            <Border Classes="preview-surface" Padding="{DynamicResource Ink.Padding.Control.M}">
+                                <TextBlock Text="Default control padding" HorizontalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+                    </ink:Card>
+                    <ink:Card Classes="token-card" Width="280" Margin="0,0,12,12">
+                        <StackPanel Spacing="12">
+                            <TextBlock Classes="token-name" Text="Ink.Padding.Control.L" />
+                            <TextBlock Classes="token-value" Text="16,8" />
+                            <Border Classes="preview-surface" Padding="{DynamicResource Ink.Padding.Control.L}">
+                                <TextBlock Text="Large control padding" HorizontalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+                    </ink:Card>
+                </WrapPanel>
+
+                <StackPanel Spacing="6">
+                    <TextBlock Classes="h3" Text="Borders and radius" />
+                    <TextBlock Classes="small muted" Text="This section now shows the tokens on actual shapes instead of just repeating the exported numbers." />
+                </StackPanel>
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                    <ink:Card Grid.Column="0" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <Grid ColumnDefinitions="140,*" ColumnSpacing="12">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="token-name" Text="Ink.Stroke.None" />
+                                    <TextBlock Classes="token-value" Text="0" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="56" BorderBrush="{DynamicResource Ink.Brush.Border.Strong}" BorderThickness="{StaticResource Ink.Stroke.None}">
+                                    <TextBlock Classes="token-note" Text="No outline" VerticalAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid ColumnDefinitions="140,*" ColumnSpacing="12">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="token-name" Text="Ink.Stroke.Thin" />
+                                    <TextBlock Classes="token-value" Text="1" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="56" BorderBrush="{DynamicResource Ink.Brush.Border.Strong}" BorderThickness="{StaticResource Ink.Stroke.Thin}">
+                                    <TextBlock Classes="token-note" Text="Standard outline" VerticalAlignment="Center" />
+                                </Border>
+                            </Grid>
+                            <Grid ColumnDefinitions="140,*" ColumnSpacing="12">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="token-name" Text="Ink.Stroke.Thick" />
+                                    <TextBlock Classes="token-value" Text="2" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="56" BorderBrush="{DynamicResource Ink.Brush.Border.Strong}" BorderThickness="{StaticResource Ink.Stroke.Thick}">
+                                    <TextBlock Classes="token-note" Text="Emphasized outline" VerticalAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </ink:Card>
+
+                    <ink:Card Grid.Column="1" Classes="token-card">
+                        <StackPanel Spacing="14">
+                            <Grid ColumnDefinitions="112,*" ColumnSpacing="12">
+                                <Border Width="96" Height="56" HorizontalAlignment="Left" Background="{DynamicResource Ink.Brush.Accent.Subtle}" BorderBrush="{DynamicResource Ink.Brush.Accent}" BorderThickness="{StaticResource Ink.Stroke.Thin}" CornerRadius="{DynamicResource Ink.CornerRadius.S}" />
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Radius.S / Ink.CornerRadius.S" />
+                                    <TextBlock Classes="token-value" Text="6" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="112,*" ColumnSpacing="12">
+                                <Border Width="96" Height="56" HorizontalAlignment="Left" Background="{DynamicResource Ink.Brush.Accent.Subtle}" BorderBrush="{DynamicResource Ink.Brush.Accent}" BorderThickness="{StaticResource Ink.Stroke.Thin}" CornerRadius="{DynamicResource Ink.CornerRadius.M}" />
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Radius.M / Ink.CornerRadius.M" />
+                                    <TextBlock Classes="token-value" Text="12" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="112,*" ColumnSpacing="12">
+                                <Border Width="96" Height="56" HorizontalAlignment="Left" Background="{DynamicResource Ink.Brush.Accent.Subtle}" BorderBrush="{DynamicResource Ink.Brush.Accent}" BorderThickness="{StaticResource Ink.Stroke.Thin}" CornerRadius="{DynamicResource Ink.CornerRadius.L}" />
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Radius.L / Ink.CornerRadius.L" />
+                                    <TextBlock Classes="token-value" Text="16" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="112,*" ColumnSpacing="12">
+                                <Border Width="96" Height="56" HorizontalAlignment="Left" Background="{DynamicResource Ink.Brush.Accent.Subtle}" BorderBrush="{DynamicResource Ink.Brush.Accent}" BorderThickness="{StaticResource Ink.Stroke.Thin}" CornerRadius="{DynamicResource Ink.CornerRadius.XL}" />
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Radius.XL / Ink.CornerRadius.XL" />
+                                    <TextBlock Classes="token-value" Text="24" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="112,*" ColumnSpacing="12">
+                                <Border Width="96" Height="40" HorizontalAlignment="Left" Background="{DynamicResource Ink.Brush.Accent.Subtle}" BorderBrush="{DynamicResource Ink.Brush.Accent}" BorderThickness="{StaticResource Ink.Stroke.Thin}" CornerRadius="{DynamicResource Ink.CornerRadius.Pill}" />
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Radius.Pill / Ink.CornerRadius.Pill" />
+                                    <TextBlock Classes="token-value" Text="999" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </ink:Card>
+                </Grid>
+
+                <StackPanel Spacing="6">
+                    <TextBlock Classes="h3" Text="Control and icon sizes" />
+                    <TextBlock Classes="small muted" Text="The token values stay listed, but the previews now show them in the context of a real control shell." />
+                </StackPanel>
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                    <ink:Card Grid.Column="0" Classes="token-card">
+                        <StackPanel Spacing="12">
+                            <TextBlock Classes="token-note" Text="Control height tokens on actual Ink buttons." />
+                            <ink:Button Height="{DynamicResource Ink.ControlHeight.S}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.S = 32</ink:Button>
+                            <ink:Button Height="{DynamicResource Ink.ControlHeight.M}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.M = 40</ink:Button>
+                            <ink:Button Height="{DynamicResource Ink.ControlHeight.L}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.L = 48</ink:Button>
+                        </StackPanel>
+                    </ink:Card>
+
+                    <ink:Card Grid.Column="1" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <TextBlock Classes="token-note" Text="Icon sizes shown inside a 40px control shell so they read as layout tokens, not isolated dots." />
+                            <Grid ColumnDefinitions="150,*" ColumnSpacing="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.IconSize.S" />
+                                    <TextBlock Classes="token-value" Text="14" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="{DynamicResource Ink.ControlHeight.M}">
+                                    <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                        <Border Width="{DynamicResource Ink.IconSize.S}" Height="{DynamicResource Ink.IconSize.S}" Background="{DynamicResource Ink.Brush.Accent}" CornerRadius="{DynamicResource Ink.CornerRadius.S}" />
+                                        <TextBlock Classes="token-note" Text="Compact leading icon" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            <Grid ColumnDefinitions="150,*" ColumnSpacing="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.IconSize.M" />
+                                    <TextBlock Classes="token-value" Text="16" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="{DynamicResource Ink.ControlHeight.M}">
+                                    <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                        <Border Width="{DynamicResource Ink.IconSize.M}" Height="{DynamicResource Ink.IconSize.M}" Background="{DynamicResource Ink.Brush.Accent}" CornerRadius="{DynamicResource Ink.CornerRadius.S}" />
+                                        <TextBlock Classes="token-note" Text="Default leading icon" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            <Grid ColumnDefinitions="150,*" ColumnSpacing="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.IconSize.L" />
+                                    <TextBlock Classes="token-value" Text="20" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="{DynamicResource Ink.ControlHeight.M}">
+                                    <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                        <Border Width="{DynamicResource Ink.IconSize.L}" Height="{DynamicResource Ink.IconSize.L}" Background="{DynamicResource Ink.Brush.Accent}" CornerRadius="{DynamicResource Ink.CornerRadius.S}" />
+                                        <TextBlock Classes="token-note" Text="Large emphasis icon" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </ink:Card>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Spacing="24"
+                        IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Motion}">
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                    <ink:Card Grid.Column="0" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <StackPanel Spacing="6">
+                                <TextBlock Classes="h3" Text="Duration feel" />
+                                <TextBlock Classes="token-note" Text="Hover each accent pill. They travel the same distance but use the short, medium, and long duration tokens." />
+                            </StackPanel>
+
+                            <Grid ColumnDefinitions="160,*" ColumnSpacing="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Motion.Duration.Short" />
+                                    <TextBlock Classes="token-value" Text="100ms" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="56" MinWidth="260">
+                                    <Border Classes="motion-pill short" />
+                                </Border>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="160,*" ColumnSpacing="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Motion.Duration.Medium" />
+                                    <TextBlock Classes="token-value" Text="200ms" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="56" MinWidth="260">
+                                    <Border Classes="motion-pill medium" />
+                                </Border>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="160,*" ColumnSpacing="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Classes="token-name" Text="Ink.Motion.Duration.Long" />
+                                    <TextBlock Classes="token-value" Text="300ms" />
+                                </StackPanel>
+                                <Border Grid.Column="1" Classes="preview-surface" Height="56" MinWidth="260">
+                                    <Border Classes="motion-pill long" />
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </ink:Card>
+
+                    <ink:Card Grid.Column="1" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <StackPanel Spacing="6">
+                                <TextBlock Classes="h3" Text="Motion exports" />
+                                <TextBlock Classes="token-note" Text="The motion page keeps the raw values nearby, but the page is driven by live previews first." />
+                            </StackPanel>
+
+                            <WrapPanel Orientation="Horizontal">
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Enabled" /><TextBlock Classes="token-value" Text="True" /></StackPanel></Border>
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Scale" /><TextBlock Classes="token-value" Text="1.0" /></StackPanel></Border>
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Stagger.SmallMs" /><TextBlock Classes="token-value" Text="20" /></StackPanel></Border>
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Stagger.Small" /><TextBlock Classes="token-value" Text="0:0:0.02" /></StackPanel></Border>
+                            </WrapPanel>
+
+                            <StackPanel Spacing="8">
+                                <TextBlock Classes="token-note" Text="Easing names are exported as semantic labels today." />
+                                <WrapPanel Orientation="Horizontal">
+                                    <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Easing.Standard" /><TextBlock Classes="token-value" Text="Standard" /></StackPanel></Border>
+                                    <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Easing.Emphasized" /><TextBlock Classes="token-value" Text="Emphasized" /></StackPanel></Border>
+                                    <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Motion.Easing.Linear" /><TextBlock Classes="token-value" Text="Linear" /></StackPanel></Border>
+                                </WrapPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </ink:Card>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Spacing="24"
+                        IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Effects}">
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                    <ink:Card Grid.Column="0" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <StackPanel Spacing="6">
+                                <TextBlock Classes="h3" Text="Shadows and switches" />
+                                <TextBlock Classes="token-note" Text="The booleans stay visible, but the page now shows the actual shadow resources you can see in components." />
+                            </StackPanel>
+
+                            <WrapPanel Orientation="Horizontal">
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Effects.ShadowsEnabled" /><TextBlock Classes="token-value" Text="True" /></StackPanel></Border>
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Effects.BlurEnabled" /><TextBlock Classes="token-value" Text="True" /></StackPanel></Border>
+                            </WrapPanel>
+
+                            <WrapPanel Orientation="Horizontal">
+                                <Border Classes="shadow-swatch small" Margin="0,0,12,12"><StackPanel VerticalAlignment="Bottom" Spacing="6"><TextBlock Classes="token-name" Text="Ink.Shadow.Small" /><TextBlock Classes="token-note" Text="Subtle lift" /></StackPanel></Border>
+                                <Border Classes="shadow-swatch surface" Margin="0,0,12,12"><StackPanel VerticalAlignment="Bottom" Spacing="6"><TextBlock Classes="token-name" Text="Ink.Shadow.Surface" /><TextBlock Classes="token-note" Text="Card and field lift" /></StackPanel></Border>
+                                <Border Classes="shadow-swatch overlay" Margin="0,0,12,12"><StackPanel VerticalAlignment="Bottom" Spacing="6"><TextBlock Classes="token-name" Text="Ink.Shadow.Overlay" /><TextBlock Classes="token-note" Text="Overlay depth" /></StackPanel></Border>
+                            </WrapPanel>
+                        </StackPanel>
+                    </ink:Card>
+
+                    <ink:Card Grid.Column="1" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <StackPanel Spacing="6">
+                                <TextBlock Classes="h3" Text="Disabled appearance" />
+                                <TextBlock Classes="token-note" Text="Showing the opacity token on live controls is more useful than just listing the number." />
+                            </StackPanel>
+
+                            <Border Classes="token-chip" HorizontalAlignment="Left">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="token-name" Text="Ink.Disabled.Opacity" />
+                                    <TextBlock Classes="token-value" Text="0.5" />
+                                </StackPanel>
+                            </Border>
+
+                            <StackPanel Spacing="12">
+                                <ink:Button Variant="Primary" HorizontalAlignment="Left">Enabled button</ink:Button>
+                                <ink:Button Variant="Primary" HorizontalAlignment="Left" IsEnabled="False">Disabled button</ink:Button>
+                                <ink:TextBox Width="240" HorizontalAlignment="Left" Watermark="Enabled field" />
+                                <ink:TextBox Width="240" HorizontalAlignment="Left" IsEnabled="False" Watermark="Disabled field" />
+                            </StackPanel>
+                        </StackPanel>
+                    </ink:Card>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                    <ink:Card Grid.Column="0" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <StackPanel Spacing="6">
+                                <TextBlock Classes="h3" Text="Elevation semantics" />
+                                <TextBlock Classes="token-note" Text="These exported levels are semantic integers today. They do not currently map themselves to specific shadow resources in the theme." />
+                            </StackPanel>
+
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Border Classes="token-chip"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Elevation.Level0" /><TextBlock Classes="token-value" Text="0" /></StackPanel></Border>
+                                <TextBlock Grid.Column="1" Classes="token-note" Text="Base surface with no lift." VerticalAlignment="Center" />
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Border Classes="token-chip"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Elevation.Level1" /><TextBlock Classes="token-value" Text="1" /></StackPanel></Border>
+                                <TextBlock Grid.Column="1" Classes="token-note" Text="Raised surface or card-level emphasis." VerticalAlignment="Center" />
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Border Classes="token-chip"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Elevation.Level2" /><TextBlock Classes="token-value" Text="2" /></StackPanel></Border>
+                                <TextBlock Grid.Column="1" Classes="token-note" Text="Floating panel or stronger separation." VerticalAlignment="Center" />
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Border Classes="token-chip"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.Elevation.Level3" /><TextBlock Classes="token-value" Text="3" /></StackPanel></Border>
+                                <TextBlock Grid.Column="1" Classes="token-note" Text="Overlay or modal layer." VerticalAlignment="Center" />
+                            </Grid>
+                        </StackPanel>
+                    </ink:Card>
+
+                    <ink:Card Grid.Column="1" Classes="token-card">
+                        <StackPanel Spacing="16">
+                            <StackPanel Spacing="6">
+                                <TextBlock Classes="h3" Text="Focus ring" />
+                                <TextBlock Classes="token-note" Text="Click into the field to see the focus ring in a real control instead of a custom border mock-up." />
+                            </StackPanel>
+
+                            <StackPanel Spacing="12">
+                                <ink:TextBox Width="240" HorizontalAlignment="Left" Watermark="Click here for focus" />
+                                <ink:Button HorizontalAlignment="Left">Then tab here</ink:Button>
+                            </StackPanel>
+
+                            <WrapPanel Orientation="Horizontal">
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.FocusRing.Thickness" /><TextBlock Classes="token-value" Text="2" /></StackPanel></Border>
+                                <Border Classes="token-chip" Margin="0,0,8,8"><StackPanel Spacing="6"><TextBlock Classes="token-name" Text="Ink.FocusRing.OuterGlow" /><TextBlock Classes="token-value" Text="6" /></StackPanel></Border>
+                            </WrapPanel>
+                        </StackPanel>
+                    </ink:Card>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

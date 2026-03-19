@@ -8,35 +8,33 @@
     <!-- DataGrid control                 -->
     <!-- ================================ -->
     <Style Selector="controls|DataGrid">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Panel}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.L}" />
 
         <Setter Property="Template">
             <ControlTemplate>
+                <!-- Outer shell: secondary background that peeks through as a frame -->
                 <Border
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}"
                     CornerRadius="{TemplateBinding CornerRadius}"
-                    ClipToBounds="True">
+                    BoxShadow="{DynamicResource Ink.Shadow.Surface}"
+                    ClipToBounds="False"
+                    Padding="6">
                     <DockPanel>
-                        <!-- Header row -->
-                        <Border
-                            DockPanel.Dock="Top"
-                            Background="{DynamicResource Ink.Brush.Surface.Panel}"
-                            BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
-                            BorderThickness="0,0,0,1">
-                            <Panel x:Name="PART_Header" />
-                        </Border>
+                        <!-- Header row: sits on the outer (lower) layer -->
+                        <Panel x:Name="PART_Header" DockPanel.Dock="Top" />
 
-                        <!-- Data rows -->
-                        <ScrollViewer
-                            HorizontalScrollBarVisibility="Disabled"
-                            VerticalScrollBarVisibility="Auto">
-                            <StackPanel x:Name="PART_Body" />
-                        </ScrollViewer>
+                        <!-- Inner content area: rows get their own rounded surface -->
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{DynamicResource Ink.CornerRadius.M}"
+                            ClipToBounds="True">
+                            <ScrollViewer
+                                HorizontalScrollBarVisibility="Disabled"
+                                VerticalScrollBarVisibility="Auto">
+                                <StackPanel x:Name="PART_Body" />
+                            </ScrollViewer>
+                        </Border>
                     </DockPanel>
                 </Border>
             </ControlTemplate>
@@ -47,15 +45,14 @@
     <!-- Header cells                     -->
     <!-- ================================ -->
     <Style Selector="controls|DataGrid Border.ink-datagrid-header-cell">
-        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.S}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
-        <Setter Property="BorderThickness" Value="0,0,1,0" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="BorderThickness" Value="0" />
     </Style>
 
     <Style Selector="controls|DataGrid TextBlock.ink-datagrid-header-text">
         <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
-        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Secondary}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.XS}" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
     </Style>
 
     <!-- ================================ -->
@@ -63,21 +60,30 @@
     <!-- ================================ -->
     <Style Selector="controls|DataGrid Border.ink-datagrid-row">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Divider}" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Duration="0:0:0.15" Property="Background" />
+            </Transitions>
+        </Setter>
     </Style>
 
     <Style Selector="controls|DataGrid Border.ink-datagrid-row:pointerover">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
     </Style>
 
+    <!-- Last row: remove bottom divider so it sits clean against the rounded inner border -->
+    <Style Selector="controls|DataGrid Border.ink-datagrid-row:nth-last-child(1)">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
     <!-- ================================ -->
     <!-- Data cells                       -->
     <!-- ================================ -->
     <Style Selector="controls|DataGrid Border.ink-datagrid-cell">
-        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.S}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
-        <Setter Property="BorderThickness" Value="0,0,1,0" />
+        <Setter Property="Padding" Value="16,14" />
+        <Setter Property="BorderThickness" Value="0" />
     </Style>
 
     <Style Selector="controls|DataGrid TextBlock.ink-datagrid-cell-text">
@@ -113,7 +119,7 @@
 
     <Style Selector="Border.ink-datagrid-popup-separator">
         <Setter Property="Height" Value="1" />
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Divider}" />
     </Style>
 
     <Style Selector="Button.ink-datagrid-popup-item">

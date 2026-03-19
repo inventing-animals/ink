@@ -8,14 +8,14 @@
     <x:Double x:Key="Ink.Motion.Scale">1.0</x:Double>
 
     <!-- Durations (ms) -->
-    <x:Int32 x:Key="Ink.Motion.Duration.ShortMs">90</x:Int32>
-    <x:Int32 x:Key="Ink.Motion.Duration.MediumMs">150</x:Int32>
-    <x:Int32 x:Key="Ink.Motion.Duration.LongMs">240</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.ShortMs">100</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.MediumMs">200</x:Int32>
+    <x:Int32 x:Key="Ink.Motion.Duration.LongMs">300</x:Int32>
 
     <!-- Durations (TimeSpan) - used by Avalonia transitions -->
-    <x:TimeSpan x:Key="Ink.Motion.Duration.Short">0:0:0.09</x:TimeSpan>
-    <x:TimeSpan x:Key="Ink.Motion.Duration.Medium">0:0:0.15</x:TimeSpan>
-    <x:TimeSpan x:Key="Ink.Motion.Duration.Long">0:0:0.24</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Short">0:0:0.10</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Medium">0:0:0.20</x:TimeSpan>
+    <x:TimeSpan x:Key="Ink.Motion.Duration.Long">0:0:0.30</x:TimeSpan>
 
     <!-- Small extras -->
     <x:Int32 x:Key="Ink.Motion.Stagger.SmallMs">20</x:Int32>

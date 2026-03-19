@@ -7,18 +7,19 @@
     <ControlTheme TargetType="TextBox" x:Key="Ink.TextBoxStyle">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Input.Background}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.S}" />
-        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.S}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thick}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="Padding" Value="12,8" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
         <Setter Property="SelectionBrush" Value="{DynamicResource Ink.Brush.Accent.Subtle}" />
         <Setter Property="CaretBrush" Value="{DynamicResource Ink.Brush.Content.Primary}" />
-        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.S}" />
+        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="FocusAdorner" Value="{x:Null}" />
+        <Setter Property="ClipToBounds" Value="False" />
 
         <Setter Property="Template">
             <ControlTemplate>
@@ -27,10 +28,13 @@
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{TemplateBinding CornerRadius}">
+                    BoxShadow="{DynamicResource Ink.Shadow.Field}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    ClipToBounds="False">
                     <Border.Transitions>
                         <Transitions>
-                            <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                            <BrushTransition Duration="0:0:0.20" Property="BorderBrush" />
+                            <BoxShadowsTransition Duration="0:0:0.20" Property="BoxShadow" />
                         </Transitions>
                     </Border.Transitions>
                     <ScrollViewer
@@ -71,6 +75,7 @@
         </Style>
         <Style Selector="^:focus-within /template/ Border#Border">
             <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border.Focused}" />
+            <Setter Property="BoxShadow" Value="{DynamicResource Ink.Shadow.FocusRing}" />
         </Style>
         <Style Selector="^:disabled">
             <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />

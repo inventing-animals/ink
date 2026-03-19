@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <!-- TabStripItem - pill segmented control item -->
+    <ControlTheme TargetType="TabStripItem" x:Key="Ink.TabStripItemStyle">
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
+        <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <!-- Selection pill background -->
+                    <Border
+                        Name="SelectionPill"
+                        Background="{DynamicResource Ink.Brush.Surface.Raised}"
+                        BoxShadow="{DynamicResource Ink.Shadow.Small}"
+                        ClipToBounds="False"
+                        CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                        Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.20" Property="Opacity" Easing="CubicEaseOut" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <!-- Hover overlay (only visible when not selected) -->
+                    <Border
+                        Name="HoverBackground"
+                        Background="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}"
+                        CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                        Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <!-- Hover: show subtle overlay when not selected -->
+        <Style Selector="^:not(:selected):pointerover /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="0.6" />
+        </Style>
+
+        <!-- Selected: show the pill + primary text -->
+        <Style Selector="^:selected">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        </Style>
+        <Style Selector="^:selected /template/ Border#SelectionPill">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.TabStripItemStyle}" TargetType="TabStripItem" x:Key="{x:Type TabStripItem}" />
+    <ControlTheme BasedOn="{StaticResource Ink.TabStripItemStyle}" TargetType="ink:TabStripItem" x:Key="{x:Type ink:TabStripItem}" />
+
+    <!-- TabStrip - pill container -->
+    <ControlTheme TargetType="TabStrip" x:Key="Ink.TabStripStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+        <Setter Property="ItemContainerTheme" Value="{StaticResource Ink.TabStripItemStyle}" />
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                    Padding="3">
+                    <ScrollViewer
+                        HorizontalScrollBarVisibility="Auto"
+                        VerticalScrollBarVisibility="Disabled">
+                        <ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}" />
+                    </ScrollViewer>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.TabStripStyle}" TargetType="TabStrip" x:Key="{x:Type TabStrip}" />
+    <ControlTheme BasedOn="{StaticResource Ink.TabStripStyle}" TargetType="ink:TabStrip" x:Key="{x:Type ink:TabStrip}" />
+
+</ResourceDictionary>

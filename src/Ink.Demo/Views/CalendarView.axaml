@@ -1,18 +1,24 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              x:Class="Ink.Demo.Views.CalendarView"
              x:DataType="vm:CalendarViewModel">
   <ScrollViewer>
     <StackPanel Spacing="24" Margin="24">
-      <TextBlock Classes="h2" Text="Calendar" />
+      <demo:PageToolbar />
 
-      <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Default" />
-        <Calendar />
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+        <TextBlock Classes="h4" Text="ink:Calendar - Default" />
+        <ink:Calendar />
+        <TextBlock Classes="h4" Text="ink:Calendar - Multi-select" />
+        <ink:Calendar SelectionMode="MultipleRange" />
       </StackPanel>
 
-      <StackPanel Spacing="8">
+      <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
+        <TextBlock Classes="h4" Text="Avalonia Calendar (themed)" />
+        <Calendar />
         <TextBlock Classes="h4" Text="Multi-select" />
         <Calendar SelectionMode="MultipleRange" />
       </StackPanel>

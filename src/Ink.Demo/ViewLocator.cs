@@ -26,10 +26,15 @@ public class ViewLocator : IDataTemplate
         [typeof(ListBoxViewModel)] = () => new ListBoxView(),
         [typeof(TextBoxViewModel)] = () => new TextBoxView(),
         [typeof(ToggleViewModel)] = () => new ToggleView(),
+        [typeof(TokensViewModel)] = () => new TokensView(),
+        [typeof(TypographyViewModel)] = () => new TypographyView(),
         [typeof(SliderViewModel)] = () => new SliderView(),
         [typeof(ProgressBarViewModel)] = () => new ProgressBarView(),
         [typeof(ScrollViewViewModel)] = () => new ScrollViewView(),
         [typeof(PopupsViewModel)] = () => new PopupsView(),
+        [typeof(CardViewModel)] = () => new CardView(),
+        [typeof(ChipViewModel)] = () => new ChipView(),
+        [typeof(TabStripViewModel)] = () => new TabStripView(),
     };
 
     public Control? Build(object? param)

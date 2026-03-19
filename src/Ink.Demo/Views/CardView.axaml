@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:demo="using:Ink.Demo.Views"
+             x:Class="Ink.Demo.Views.CardView"
+             x:DataType="vm:CardViewModel">
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <demo:PageToolbar />
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Basic Card" />
+        <ink:Card MaxWidth="360" HorizontalAlignment="Left">
+          <StackPanel Spacing="8">
+            <TextBlock Classes="h4" Text="Card Title" />
+            <TextBlock Classes="muted" TextWrapping="Wrap"
+                       Text="Cards are surface containers with a subtle border and elevated background. Use them to group related content." />
+          </StackPanel>
+        </ink:Card>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Cards in a grid" />
+        <WrapPanel>
+          <ink:Card Width="240" Margin="0,0,12,12">
+            <StackPanel Spacing="4">
+              <TextBlock Classes="h4" Text="Design" />
+              <TextBlock Classes="small muted" Text="Typography, color, spacing" />
+            </StackPanel>
+          </ink:Card>
+          <ink:Card Width="240" Margin="0,0,12,12">
+            <StackPanel Spacing="4">
+              <TextBlock Classes="h4" Text="Components" />
+              <TextBlock Classes="small muted" Text="Buttons, inputs, overlays" />
+            </StackPanel>
+          </ink:Card>
+          <ink:Card Width="240" Margin="0,0,12,12">
+            <StackPanel Spacing="4">
+              <TextBlock Classes="h4" Text="Patterns" />
+              <TextBlock Classes="small muted" Text="Forms, navigation, data" />
+            </StackPanel>
+          </ink:Card>
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Card with action" />
+        <ink:Card MaxWidth="360" HorizontalAlignment="Left">
+          <StackPanel Spacing="12">
+            <TextBlock Classes="h4" Text="Publish changes" />
+            <TextBlock Classes="muted" TextWrapping="Wrap"
+                       Text="Your draft has unsaved changes. Publish to make them visible." />
+            <ink:Button Variant="Primary" HorizontalAlignment="Left">Publish</ink:Button>
+          </StackPanel>
+        </ink:Card>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

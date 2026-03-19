@@ -7,10 +7,10 @@
     <ControlTheme TargetType="Button" x:Key="Ink.ButtonStyle">
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Regular}" />
-        <Setter Property="Padding" Value="{DynamicResource Ink.Padding.Control.M}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="Padding" Value="16,0" />
         <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.XL}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -24,7 +24,7 @@
                 <Panel Name="RootPanel">
                     <Panel.Transitions>
                         <Transitions>
-                            <TransformOperationsTransition Duration="0:0:0.10" Property="RenderTransform" />
+                            <TransformOperationsTransition Duration="0:0:0.25" Property="RenderTransform" Easing="CubicEaseOut" />
                         </Transitions>
                     </Panel.Transitions>
                     <Border
@@ -71,7 +71,7 @@
             <Setter Property="Opacity" Value="0.8" />
         </Style>
         <Style Selector="^:pressed /template/ Panel#RootPanel">
-            <Setter Property="RenderTransform" Value="scale(0.97, 0.97)" />
+            <Setter Property="RenderTransform" Value="scale(0.95, 0.95)" />
         </Style>
         <Style Selector="^:disabled">
             <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
@@ -113,6 +113,36 @@
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
             <Style Selector="^ /template/ Border#HoverBackground">
                 <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
+        
+        <!-- Warning -->
+        <Style Selector="^.ink-warning">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Warning.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
+        
+        <!-- Success -->
+        <Style Selector="^.ink-success">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Success.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success.Hover}" />
             </Style>
             <Style Selector="^:pointerover /template/ Border#BaseBackground">
                 <Setter Property="Opacity" Value="0" />
