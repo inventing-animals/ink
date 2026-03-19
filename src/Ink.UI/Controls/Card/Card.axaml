@@ -10,13 +10,13 @@
         <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.XL}" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="ClipToBounds" Value="False" />
 
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
                     Background="{TemplateBinding Background}"
-                    BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
-                    BorderThickness="{DynamicResource Ink.Stroke.Thin}"
+                    BorderThickness="{DynamicResource Ink.Stroke.None}"
                     BoxShadow="{DynamicResource Ink.Shadow.Surface}"
                     ClipToBounds="False"
                     CornerRadius="{TemplateBinding CornerRadius}"

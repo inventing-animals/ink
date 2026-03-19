@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:demo="using:Ink.Demo.Views"
              x:Class="Ink.Demo.Views.ScrollViewView"
@@ -13,20 +14,20 @@
         <Border Height="120" Width="240" HorizontalAlignment="Left"
                 BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1"
                 CornerRadius="{DynamicResource Ink.CornerRadius.M}">
-          <ScrollViewer>
+          <ink:ScrollViewer>
             <StackPanel Spacing="4" Margin="8">
               <TextBlock Text="Item 1" /><TextBlock Text="Item 2" /><TextBlock Text="Item 3" />
               <TextBlock Text="Item 4" /><TextBlock Text="Item 5" /><TextBlock Text="Item 6" />
               <TextBlock Text="Item 7" /><TextBlock Text="Item 8" /><TextBlock Text="Item 9" />
               <TextBlock Text="Item 10" />
             </StackPanel>
-          </ScrollViewer>
+          </ink:ScrollViewer>
         </Border>
         <TextBlock Classes="h4" Text="Horizontal scroll" />
         <Border Width="240" HorizontalAlignment="Left"
                 BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1"
                 CornerRadius="{DynamicResource Ink.CornerRadius.M}">
-          <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+          <ink:ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
               <Border Background="{DynamicResource Ink.Brush.Surface.Raised}" Width="80" Height="60" CornerRadius="6" />
               <Border Background="{DynamicResource Ink.Brush.Surface.Raised}" Width="80" Height="60" CornerRadius="6" />
@@ -34,13 +35,13 @@
               <Border Background="{DynamicResource Ink.Brush.Surface.Raised}" Width="80" Height="60" CornerRadius="6" />
               <Border Background="{DynamicResource Ink.Brush.Surface.Raised}" Width="80" Height="60" CornerRadius="6" />
             </StackPanel>
-          </ScrollViewer>
+          </ink:ScrollViewer>
         </Border>
       </StackPanel>
 
       <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
         <TextBlock Classes="h4" Text="Avalonia ScrollViewer (themed)" />
-        <TextBlock Classes="small muted" Text="ScrollViewer has no ink: subclass - same appearance." />
+        <TextBlock Classes="small muted" Text="Base ScrollViewer now uses Ink's local theme, so it no longer depends on SimpleTheme." />
         <Border Height="120" Width="240" HorizontalAlignment="Left"
                 BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}" BorderThickness="1"
                 CornerRadius="{DynamicResource Ink.CornerRadius.M}">
