@@ -10,33 +10,47 @@
       <demo:PageToolbar />
 
       <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Selectable chips" />
-        <TextBlock Classes="small muted" Text="Click to toggle selection. Chips derive from ToggleButton." />
+        <TextBlock Classes="h4" Text="Flat chips" />
+        <TextBlock Classes="small muted" Text="Flat chips use a neutral pill with role-colored text." />
         <WrapPanel>
-          <ink:Chip Content="All" IsChecked="True" Margin="0,0,8,8" />
-          <ink:Chip Content="Design" Margin="0,0,8,8" />
-          <ink:Chip Content="Development" Margin="0,0,8,8" />
-          <ink:Chip Content="Marketing" Margin="0,0,8,8" />
-          <ink:Chip Content="Research" Margin="0,0,8,8" />
+          <ink:Chip Content="Information" Margin="0,0,8,8" />
+          <ink:Chip Content="Completed" Role="Success" Margin="0,0,8,8" />
+          <ink:Chip Content="Pending" Role="Warning" Margin="0,0,8,8" />
+          <ink:Chip Content="Failed" Role="Danger" Margin="0,0,8,8" />
+          <ink:Chip Content="Label" Role="Primary" Margin="0,0,8,8" />
         </WrapPanel>
       </StackPanel>
 
       <StackPanel Spacing="8">
-        <TextBlock Classes="h4" Text="Filter chips" />
+        <TextBlock Classes="h4" Text="Filled chips" />
+        <TextBlock Classes="small muted" Text="Filled chips put the semantic role directly on the background." />
         <WrapPanel>
-          <ink:Chip Content="New" Margin="0,0,8,8" />
-          <ink:Chip Content="Trending" IsChecked="True" Margin="0,0,8,8" />
-          <ink:Chip Content="Popular" Margin="0,0,8,8" />
-          <ink:Chip Content="Featured" IsChecked="True" Margin="0,0,8,8" />
-          <ink:Chip Content="Archived" Margin="0,0,8,8" />
+          <ink:Chip Content="Default" Variant="Filled" Margin="0,0,8,8" />
+          <ink:Chip Content="Active" Variant="Filled" Role="Primary" Margin="0,0,8,8" />
+          <ink:Chip Content="Pending" Variant="Filled" Role="Warning" Margin="0,0,8,8" />
+          <ink:Chip Content="Inactive" Variant="Filled" Role="Danger" Margin="0,0,8,8" />
+          <ink:Chip Content="Available" Variant="Filled" Role="Success" Margin="0,0,8,8" />
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Outline chips" />
+        <TextBlock Classes="small muted" Text="Outline chips use a transparent fill and role-colored border." />
+        <WrapPanel>
+          <ink:Chip Content="New Feature" Variant="Outline" Margin="0,0,8,8" />
+          <ink:Chip Content="Beta" Variant="Outline" Role="Primary" Margin="0,0,8,8" />
+          <ink:Chip Content="Deprecated" Variant="Outline" Role="Danger" Margin="0,0,8,8" />
+          <ink:Chip Content="Review" Variant="Outline" Role="Warning" Margin="0,0,8,8" />
+          <ink:Chip Content="Available" Variant="Outline" Role="Success" Margin="0,0,8,8" />
         </WrapPanel>
       </StackPanel>
 
       <StackPanel Spacing="8">
         <TextBlock Classes="h4" Text="Disabled" />
         <WrapPanel>
-          <ink:Chip Content="Unavailable" IsEnabled="False" Margin="0,0,8,8" />
-          <ink:Chip Content="Selected + Disabled" IsChecked="True" IsEnabled="False" Margin="0,0,8,8" />
+          <ink:Chip Content="Default" IsEnabled="False" Margin="0,0,8,8" />
+          <ink:Chip Content="Active" Variant="Filled" Role="Primary" IsEnabled="False" Margin="0,0,8,8" />
+          <ink:Chip Content="Deprecated" Variant="Outline" Role="Danger" IsEnabled="False" Margin="0,0,8,8" />
         </WrapPanel>
       </StackPanel>
 
