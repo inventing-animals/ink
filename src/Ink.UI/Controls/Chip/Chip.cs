@@ -10,8 +10,16 @@ public class Chip : Avalonia.Controls.ContentControl
     public static readonly StyledProperty<ChipRole> RoleProperty =
         AvaloniaProperty.Register<Chip, ChipRole>(nameof(Role), ChipRole.Secondary);
 
+    // Structural variant classes (used for bg shape / outline border visibility)
     private static readonly string[] VariantClasses = ["ink-chip-flat", "ink-chip-filled", "ink-chip-outline"];
-    private static readonly string[] RoleClasses = ["ink-chip-primary", "ink-chip-secondary", "ink-chip-danger", "ink-chip-warning", "ink-chip-success"];
+
+    // Combined variant+role classes (used for color overrides; avoids compound selectors)
+    private static readonly string[] CombinedClasses =
+    [
+        "ink-chip-flat-secondary",  "ink-chip-flat-primary",  "ink-chip-flat-danger",  "ink-chip-flat-warning",  "ink-chip-flat-success",
+        "ink-chip-filled-secondary","ink-chip-filled-primary","ink-chip-filled-danger","ink-chip-filled-warning","ink-chip-filled-success",
+        "ink-chip-outline-secondary","ink-chip-outline-primary","ink-chip-outline-danger","ink-chip-outline-warning","ink-chip-outline-success",
+    ];
 
     static Chip()
     {
@@ -21,8 +29,7 @@ public class Chip : Avalonia.Controls.ContentControl
 
     public Chip()
     {
-        ApplyVariantClass(Variant);
-        ApplyRoleClass(Role);
+        ApplyClasses(Variant, Role);
     }
 
     public ChipVariant Variant
@@ -38,46 +45,35 @@ public class Chip : Avalonia.Controls.ContentControl
     }
 
     private static void OnVariantChanged(Chip chip, AvaloniaPropertyChangedEventArgs e)
-    {
-        chip.ApplyVariantClass(e.GetNewValue<ChipVariant>());
-    }
+        => chip.ApplyClasses(e.GetNewValue<ChipVariant>(), chip.Role);
 
     private static void OnRoleChanged(Chip chip, AvaloniaPropertyChangedEventArgs e)
-    {
-        chip.ApplyRoleClass(e.GetNewValue<ChipRole>());
-    }
+        => chip.ApplyClasses(chip.Variant, e.GetNewValue<ChipRole>());
 
-    private void ApplyVariantClass(ChipVariant variant)
+    private void ApplyClasses(ChipVariant variant, ChipRole role)
     {
-        foreach (var cls in VariantClasses)
-            Classes.Set(cls, false);
+        foreach (var cls in VariantClasses) Classes.Set(cls, false);
+        foreach (var cls in CombinedClasses) Classes.Set(cls, false);
 
-        var name = variant switch
+        var variantPart = variant switch
         {
-            ChipVariant.Flat => "ink-chip-flat",
-            ChipVariant.Filled => "ink-chip-filled",
-            ChipVariant.Outline => "ink-chip-outline",
-            _ => "ink-chip-flat",
+            ChipVariant.Flat    => "flat",
+            ChipVariant.Filled  => "filled",
+            ChipVariant.Outline => "outline",
+            _                   => "flat",
         };
 
-        Classes.Set(name, true);
-    }
-
-    private void ApplyRoleClass(ChipRole role)
-    {
-        foreach (var cls in RoleClasses)
-            Classes.Set(cls, false);
-
-        var name = role switch
+        var rolePart = role switch
         {
-            ChipRole.Primary => "ink-chip-primary",
-            ChipRole.Secondary => "ink-chip-secondary",
-            ChipRole.Danger => "ink-chip-danger",
-            ChipRole.Warning => "ink-chip-warning",
-            ChipRole.Success => "ink-chip-success",
-            _ => "ink-chip-secondary",
+            ChipRole.Primary   => "primary",
+            ChipRole.Secondary => "secondary",
+            ChipRole.Danger    => "danger",
+            ChipRole.Warning   => "warning",
+            ChipRole.Success   => "success",
+            _                  => "secondary",
         };
 
-        Classes.Set(name, true);
+        Classes.Set($"ink-chip-{variantPart}", true);
+        Classes.Set($"ink-chip-{variantPart}-{rolePart}", true);
     }
 }
