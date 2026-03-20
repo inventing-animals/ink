@@ -76,6 +76,9 @@
   <SolidColorBrush x:Key="Ink.Brush.Accent.Content"
                    Color="{DynamicResource Ink.Color.Fixed.White}" />
 
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Text"
+                   Color="{DynamicResource Ink.Color.Fixed.Blue.400}" />
+
   <!-- focus: same as accent -->
   <SolidColorBrush x:Key="Ink.Brush.FocusRing"
                    Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
@@ -96,6 +99,9 @@
   <SolidColorBrush x:Key="Ink.Brush.Danger.Content"
                    Color="{DynamicResource Ink.Color.Fixed.White}" />
 
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Text"
+                   Color="{DynamicResource Ink.Color.Fixed.Red.400}" />
+
   <!-- ========================= -->
   <!-- Status: Warning            -->
   <!-- ========================= -->
@@ -112,6 +118,9 @@
   <SolidColorBrush x:Key="Ink.Brush.Warning.Content"
                    Color="{DynamicResource Ink.Color.Fixed.White}" />
 
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Text"
+                   Color="{DynamicResource Ink.Color.Fixed.Yellow.400}" />
+
   <!-- ========================= -->
   <!-- Status: Success            -->
   <!-- ========================= -->
@@ -127,6 +136,9 @@
 
   <SolidColorBrush x:Key="Ink.Brush.Success.Content"
                    Color="{DynamicResource Ink.Color.Fixed.White}" />
+
+  <SolidColorBrush x:Key="Ink.Brush.Success.Text"
+                   Color="{DynamicResource Ink.Color.Fixed.Green.400}" />
 
   <!-- ========================= -->
   <!-- Inputs                    -->

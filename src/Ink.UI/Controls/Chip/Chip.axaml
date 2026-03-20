@@ -7,7 +7,7 @@
     <ControlTheme TargetType="ink:Chip" x:Key="Ink.ChipStyle">
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
         <Setter Property="Padding" Value="10,4" />
         <Setter Property="MinHeight" Value="28" />
         <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.Pill}" />
@@ -15,44 +15,34 @@
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="Focusable" Value="False" />
 
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+
         <Setter Property="Template">
             <ControlTemplate>
-                <Panel>
-                    <Border
-                        Name="BaseBackground"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="{TemplateBinding CornerRadius}">
-                        <Border.Transitions>
-                            <Transitions>
-                                <BrushTransition Duration="0:0:0.15" Property="Background" />
-                            </Transitions>
-                        </Border.Transitions>
-                    </Border>
-                    <Border
-                        Name="OutlineBorder"
-                        BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
-                        BorderThickness="{DynamicResource Ink.Stroke.Thin}"
-                        CornerRadius="{TemplateBinding CornerRadius}"
-                        Opacity="0">
-                        <Border.Transitions>
-                            <Transitions>
-                                <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
-                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
-                            </Transitions>
-                        </Border.Transitions>
-                    </Border>
-                    <ContentPresenter
-                        x:Name="PART_ContentPresenter"
-                        Content="{TemplateBinding Content}"
-                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                <Border
+                    Name="RootBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+                    <Border.Transitions>
+                        <Transitions>
+                            <BrushTransition Duration="0:0:0.15" Property="Background" />
+                            <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
+                        </Transitions>
+                    </Border.Transitions>
+                    <TextBlock
+                        Name="PART_Label"
+                        Text="{TemplateBinding Content}"
                         FontFamily="{TemplateBinding FontFamily}"
                         FontSize="{TemplateBinding FontSize}"
                         FontWeight="{TemplateBinding FontWeight}"
                         Foreground="{TemplateBinding Foreground}"
-                        Padding="{TemplateBinding Padding}"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center" />
-                </Panel>
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+                </Border>
             </ControlTemplate>
         </Setter>
 
@@ -60,78 +50,74 @@
             <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
         </Style>
 
-        <!-- Flat -->
+        <!-- ── Flat: structural ─────────────────────────────── -->
         <Style Selector="^.ink-chip-flat">
             <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         </Style>
-        <Style Selector="^.ink-chip-flat.ink-chip-primary">
-            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent}" />
+
+        <!-- Flat: role colors (combined class - avoids compound selectors) -->
+        <Style Selector="^.ink-chip-flat-primary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Text}" />
         </Style>
-        <Style Selector="^.ink-chip-flat.ink-chip-danger">
-            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger}" />
+        <Style Selector="^.ink-chip-flat-danger">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Text}" />
         </Style>
-        <Style Selector="^.ink-chip-flat.ink-chip-warning">
-            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Warning}" />
+        <Style Selector="^.ink-chip-flat-warning">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Warning.Text}" />
         </Style>
-        <Style Selector="^.ink-chip-flat.ink-chip-success">
-            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Success}" />
+        <Style Selector="^.ink-chip-flat-success">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Success.Text}" />
         </Style>
 
-        <!-- Filled -->
+        <!-- ── Filled: structural ────────────────────────────── -->
         <Style Selector="^.ink-chip-filled">
             <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         </Style>
-        <Style Selector="^.ink-chip-filled.ink-chip-primary">
+
+        <!-- Filled: role colors -->
+        <Style Selector="^.ink-chip-filled-primary">
             <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
         </Style>
-        <Style Selector="^.ink-chip-filled.ink-chip-danger">
+        <Style Selector="^.ink-chip-filled-danger">
             <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger}" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
         </Style>
-        <Style Selector="^.ink-chip-filled.ink-chip-warning">
+        <Style Selector="^.ink-chip-filled-warning">
             <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning}" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Warning.Content}" />
         </Style>
-        <Style Selector="^.ink-chip-filled.ink-chip-success">
+        <Style Selector="^.ink-chip-filled-success">
             <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success}" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Success.Content}" />
         </Style>
 
-        <!-- Outline -->
+        <!-- ── Outline: structural ───────────────────────────── -->
         <Style Selector="^.ink-chip-outline">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
-            <Style Selector="^ /template/ Border#OutlineBorder">
-                <Setter Property="Opacity" Value="1" />
-                <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
-            </Style>
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Border.Subtle}" />
+            <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thick}" />
         </Style>
-        <Style Selector="^.ink-chip-outline.ink-chip-primary">
+
+        <!-- Outline: role colors -->
+        <Style Selector="^.ink-chip-outline-primary">
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent}" />
-            <Style Selector="^ /template/ Border#OutlineBorder">
-                <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
-            </Style>
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Accent}" />
         </Style>
-        <Style Selector="^.ink-chip-outline.ink-chip-danger">
+        <Style Selector="^.ink-chip-outline-danger">
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger}" />
-            <Style Selector="^ /template/ Border#OutlineBorder">
-                <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger}" />
-            </Style>
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Danger}" />
         </Style>
-        <Style Selector="^.ink-chip-outline.ink-chip-warning">
+        <Style Selector="^.ink-chip-outline-warning">
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Warning}" />
-            <Style Selector="^ /template/ Border#OutlineBorder">
-                <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Warning}" />
-            </Style>
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Warning}" />
         </Style>
-        <Style Selector="^.ink-chip-outline.ink-chip-success">
+        <Style Selector="^.ink-chip-outline-success">
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Success}" />
-            <Style Selector="^ /template/ Border#OutlineBorder">
-                <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Success}" />
-            </Style>
+            <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Success}" />
         </Style>
     </ControlTheme>
 
