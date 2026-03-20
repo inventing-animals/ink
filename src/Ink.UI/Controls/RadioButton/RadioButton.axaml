@@ -7,7 +7,7 @@
     <ControlTheme TargetType="RadioButton" x:Key="Ink.RadioButtonStyle">
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
         <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thin}" />

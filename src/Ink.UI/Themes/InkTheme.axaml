@@ -56,9 +56,11 @@
     <!-- Base element defaults -->
     <Style Selector="Window">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
     </Style>
     <Style Selector="controls|WebWindow">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="Template">
             <ControlTemplate>
                 <VisualLayerManager>
@@ -75,9 +77,9 @@
     </Style>
     <Style Selector="controls|MobileWindow">
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Canvas}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
     </Style>
     <Style Selector="TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
     </Style>

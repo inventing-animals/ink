@@ -17,8 +17,11 @@
     <SolidColorBrush x:Key="Ink.Color.Gray.400" Color="{DynamicResource Ink.Color.Fixed.Gray.400}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.500" Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.600" Color="{DynamicResource Ink.Color.Fixed.Gray.600}" />
+    <SolidColorBrush x:Key="Ink.Color.Gray.650" Color="{DynamicResource Ink.Color.Fixed.Gray.650}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.700" Color="{DynamicResource Ink.Color.Fixed.Gray.700}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.800" Color="{DynamicResource Ink.Color.Fixed.Gray.800}" />
+    <SolidColorBrush x:Key="Ink.Color.Gray.850" Color="{DynamicResource Ink.Color.Fixed.Gray.850}" />
+    <SolidColorBrush x:Key="Ink.Color.Gray.870" Color="{DynamicResource Ink.Color.Fixed.Gray.870}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.900" Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.950" Color="{DynamicResource Ink.Color.Fixed.Gray.950}" />
     <SolidColorBrush x:Key="Ink.Color.Gray.Foreground"        Color="{DynamicResource Ink.Color.Fixed.Gray.Foreground}" />

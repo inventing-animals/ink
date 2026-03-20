@@ -3,184 +3,72 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <!-- ========================= -->
-  <!-- Surfaces                  -->
-  <!-- ========================= -->
+  <!-- Surfaces -->
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Canvas"          Color="{DynamicResource Ink.Color.Fixed.Gray.50}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Panel"           Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Raised"          Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Dialog"          Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Subtle"  Color="{DynamicResource Ink.Color.Fixed.Gray.100}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger" Color="{DynamicResource Ink.Color.Fixed.Gray.200}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Canvas"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.50}" />
+  <!-- Content -->
+  <SolidColorBrush x:Key="Ink.Brush.Content.Primary"   Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Secondary" Color="{DynamicResource Ink.Color.Fixed.Gray.400}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Muted"     Color="{DynamicResource Ink.Color.Fixed.Gray.300}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Inverse"   Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Disabled"  Color="{DynamicResource Ink.Color.Fixed.Gray.300}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Panel"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <!-- Borders -->
+  <SolidColorBrush x:Key="Ink.Brush.Border.Subtle" Color="{DynamicResource Ink.Color.Fixed.Gray.200}" />
+  <SolidColorBrush x:Key="Ink.Brush.Border.Strong" Color="{DynamicResource Ink.Color.Fixed.Gray.300}" />
+  <SolidColorBrush x:Key="Ink.Brush.Divider"       Color="{DynamicResource Ink.Color.Fixed.Gray.100}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Raised"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <!-- Accent -->
+  <SolidColorBrush x:Key="Ink.Brush.Accent"         Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Hover"   Color="{DynamicResource Ink.Color.Fixed.Blue.600}" />
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Pressed" Color="{DynamicResource Ink.Color.Fixed.Blue.700}" />
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Subtle"  Color="{DynamicResource Ink.Color.Fixed.Blue.100}" />
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Content" Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Accent.Text"    Color="{DynamicResource Ink.Color.Fixed.Blue.400}" />
+  <SolidColorBrush x:Key="Ink.Brush.FocusRing"      Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Dialog"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <!-- Danger -->
+  <SolidColorBrush x:Key="Ink.Brush.Danger"         Color="{DynamicResource Ink.Color.Fixed.Red.500}" />
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Hover"   Color="{DynamicResource Ink.Color.Fixed.Red.600}" />
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Subtle"  Color="{DynamicResource Ink.Color.Fixed.Red.100}" />
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Content" Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Danger.Text"    Color="{DynamicResource Ink.Color.Fixed.Red.500}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Subtle"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.100}" />
+  <!-- Warning -->
+  <SolidColorBrush x:Key="Ink.Brush.Warning"         Color="{DynamicResource Ink.Color.Fixed.Yellow.500}" />
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Hover"   Color="{DynamicResource Ink.Color.Fixed.Yellow.600}" />
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Subtle"  Color="{DynamicResource Ink.Color.Fixed.Yellow.100}" />
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Content" Color="{DynamicResource Ink.Color.Fixed.Yellow.Foreground}" />
+  <SolidColorBrush x:Key="Ink.Brush.Warning.Text"    Color="{DynamicResource Ink.Color.Fixed.Yellow.600}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.200}" />
+  <!-- Success -->
+  <SolidColorBrush x:Key="Ink.Brush.Success"         Color="{DynamicResource Ink.Color.Fixed.Green.500}" />
+  <SolidColorBrush x:Key="Ink.Brush.Success.Hover"   Color="{DynamicResource Ink.Color.Fixed.Green.600}" />
+  <SolidColorBrush x:Key="Ink.Brush.Success.Subtle"  Color="{DynamicResource Ink.Color.Fixed.Green.100}" />
+  <SolidColorBrush x:Key="Ink.Brush.Success.Content" Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Success.Text"    Color="{DynamicResource Ink.Color.Fixed.Green.500}" />
 
-  <!-- ========================= -->
-  <!-- Content (text/icons)      -->
-  <!-- ========================= -->
+  <!-- Inputs -->
+  <SolidColorBrush x:Key="Ink.Brush.Input.Background"     Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Input.Border"         Color="{DynamicResource Ink.Color.Fixed.White}" />
+  <SolidColorBrush x:Key="Ink.Brush.Input.Border.Hover"   Color="{DynamicResource Ink.Color.Fixed.Gray.100}" />
+  <SolidColorBrush x:Key="Ink.Brush.Input.Border.Focused" Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
+  <SolidColorBrush x:Key="Ink.Brush.Input.Placeholder"    Color="{DynamicResource Ink.Color.Fixed.Gray.400}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Content.Primary"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
+  <!-- TabStrip -->
+  <SolidColorBrush x:Key="Ink.Brush.TabStrip.Background" Color="{DynamicResource Ink.Color.Fixed.Gray.200}" />
+  <SolidColorBrush x:Key="Ink.Brush.TabStrip.Selected"   Color="{DynamicResource Ink.Color.Fixed.White}" />
 
-  <SolidColorBrush x:Key="Ink.Brush.Content.Secondary"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.600}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Content.Muted"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Content.Inverse"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Content.Disabled"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
-
-  <!-- ========================= -->
-  <!-- Borders / dividers        -->
-  <!-- ========================= -->
-
-  <SolidColorBrush x:Key="Ink.Brush.Border.Subtle"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.200}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Border.Strong"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.300}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Divider"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.100}" />
-
-  <!-- ========================= -->
-  <!-- Accent (primary)          -->
-  <!-- ========================= -->
-
-  <SolidColorBrush x:Key="Ink.Brush.Accent"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Accent.Hover"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.600}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Accent.Pressed"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.700}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Accent.Subtle"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.100}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Accent.Content"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Accent.Text"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.600}" />
-
-  <!-- focus: same as accent -->
-  <SolidColorBrush x:Key="Ink.Brush.FocusRing"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
-
-  <!-- ========================= -->
-  <!-- Status: Danger            -->
-  <!-- ========================= -->
-
-  <SolidColorBrush x:Key="Ink.Brush.Danger"
-                   Color="{DynamicResource Ink.Color.Fixed.Red.500}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Danger.Hover"
-                   Color="{DynamicResource Ink.Color.Fixed.Red.600}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Danger.Subtle"
-                   Color="{DynamicResource Ink.Color.Fixed.Red.100}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Danger.Content"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Danger.Text"
-                   Color="{DynamicResource Ink.Color.Fixed.Red.600}" />
-
-
-  <!-- ========================= -->
-  <!-- Status: Warning            -->
-  <!-- ========================= -->
-
-  <SolidColorBrush x:Key="Ink.Brush.Warning"
-                   Color="{DynamicResource Ink.Color.Fixed.Yellow.500}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Warning.Hover"
-                   Color="{DynamicResource Ink.Color.Fixed.Yellow.600}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Warning.Subtle"
-                   Color="{DynamicResource Ink.Color.Fixed.Yellow.100}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Warning.Content"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Warning.Text"
-                   Color="{DynamicResource Ink.Color.Fixed.Yellow.700}" />
-
-
-  <!-- ========================= -->
-  <!-- Status: Success            -->
-  <!-- ========================= -->
-
-  <SolidColorBrush x:Key="Ink.Brush.Success"
-                   Color="{DynamicResource Ink.Color.Fixed.Green.500}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Success.Hover"
-                   Color="{DynamicResource Ink.Color.Fixed.Green.600}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Success.Subtle"
-                   Color="{DynamicResource Ink.Color.Fixed.Green.100}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Success.Content"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Success.Text"
-                   Color="{DynamicResource Ink.Color.Fixed.Green.700}" />
-
-  <!-- ========================= -->
-  <!-- Inputs                    -->
-  <!-- ========================= -->
-
-  <SolidColorBrush x:Key="Ink.Brush.Input.Background"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <!-- field-border: invisible at rest, shadow defines the edge -->
-  <SolidColorBrush x:Key="Ink.Brush.Input.Border"
-                   Color="{DynamicResource Ink.Color.Fixed.White}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Input.Border.Hover"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.100}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Input.Border.Focused"
-                   Color="{DynamicResource Ink.Color.Fixed.Blue.500}" />
-
-  <SolidColorBrush x:Key="Ink.Brush.Input.Placeholder"
-                   Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
-
-  <!-- ========================= -->
-  <!-- Shadows (light mode)      -->
-  <!-- ========================= -->
-
-  <!-- Surface: cards and raised surfaces -->
-  <!-- HeroUI: 0 2px 4px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.06) -->
+  <!-- Shadows (light mode) -->
   <BoxShadows x:Key="Ink.Shadow.Surface">0 2 4 0 #0A000000, 0 1 2 0 #0F000000, 0 0 1 0 #0F000000</BoxShadows>
-
-  <!-- Overlay: popups, dropdowns, dialogs -->
-  <!-- HeroUI: 0 2px 8px rgba(0,0,0,0.06), 0 -6px 12px rgba(0,0,0,0.03), 0 14px 28px rgba(0,0,0,0.08) -->
   <BoxShadows x:Key="Ink.Shadow.Overlay">0 2 8 0 #0F000000, 0 -6 12 0 #08000000, 0 14 28 0 #14000000</BoxShadows>
-
-  <!-- Small: thumbs, pills -->
   <BoxShadows x:Key="Ink.Shadow.Small">0 1 2 0 #0F000000, 0 0 1 0 #0F000000</BoxShadows>
-
-  <!-- Field: inputs - same as surface per HeroUI -->
   <BoxShadows x:Key="Ink.Shadow.Field">0 2 4 0 #0A000000, 0 1 2 0 #0F000000, 0 0 1 0 #0F000000</BoxShadows>
-
-  <!-- Focus ring: solid 2px ring + wide glow -->
-  <BoxShadows x:Key="Ink.Shadow.FocusRing">0 0 0 2 #90006FEE, 0 0 16 0 #50006FEE</BoxShadows>
+  <BoxShadows x:Key="Ink.Shadow.FocusRing">0 0 0 2 #900485F7, 0 0 16 0 #500485F7</BoxShadows>
 
 </ResourceDictionary>
