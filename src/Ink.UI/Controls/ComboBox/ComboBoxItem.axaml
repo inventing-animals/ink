@@ -8,7 +8,7 @@
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
         <Setter Property="Padding" Value="10,6" />
         <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.M}" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />

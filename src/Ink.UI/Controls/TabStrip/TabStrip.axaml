@@ -8,7 +8,7 @@
     <ControlTheme TargetType="TabStripItem" x:Key="Ink.TabStripItemStyle">
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.S}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
         <Setter Property="Padding" Value="16,8" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Muted}" />
         <Setter Property="Background" Value="Transparent" />
@@ -20,7 +20,7 @@
                     <!-- Selection pill background -->
                     <Border
                         Name="SelectionPill"
-                        Background="{DynamicResource Ink.Brush.Surface.Raised}"
+                        Background="{DynamicResource Ink.Brush.TabStrip.Selected}"
                         BoxShadow="{DynamicResource Ink.Shadow.Small}"
                         ClipToBounds="False"
                         CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
@@ -79,7 +79,7 @@
 
     <!-- TabStrip - pill container -->
     <ControlTheme TargetType="TabStrip" x:Key="Ink.TabStripStyle">
-        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.TabStrip.Background}" />
         <Setter Property="ItemContainerTheme" Value="{StaticResource Ink.TabStripItemStyle}" />
         <Setter Property="ItemsPanel">
             <ItemsPanelTemplate>

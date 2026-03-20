@@ -14,7 +14,7 @@
         <Setter Property="PlaceholderForeground" Value="{DynamicResource Ink.Brush.Input.Placeholder}" />
         <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
-        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.Medium}" />
+        <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
         <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
