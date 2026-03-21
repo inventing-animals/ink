@@ -12,9 +12,9 @@
   <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger" Color="{DynamicResource Ink.Color.Fixed.Gray.200}" />
 
   <!-- Content -->
-  <SolidColorBrush x:Key="Ink.Brush.Content.Primary"   Color="{DynamicResource Ink.Color.Fixed.Gray.500}" />
-  <SolidColorBrush x:Key="Ink.Brush.Content.Secondary" Color="{DynamicResource Ink.Color.Fixed.Gray.400}" />
-  <SolidColorBrush x:Key="Ink.Brush.Content.Muted"     Color="{DynamicResource Ink.Color.Fixed.Gray.300}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Primary"   Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Secondary" Color="{DynamicResource Ink.Color.Fixed.Gray.600}" />
+  <SolidColorBrush x:Key="Ink.Brush.Content.Muted"     Color="{DynamicResource Ink.Color.Fixed.Gray.400}" />
   <SolidColorBrush x:Key="Ink.Brush.Content.Inverse"   Color="{DynamicResource Ink.Color.Fixed.White}" />
   <SolidColorBrush x:Key="Ink.Brush.Content.Disabled"  Color="{DynamicResource Ink.Color.Fixed.Gray.300}" />
 
