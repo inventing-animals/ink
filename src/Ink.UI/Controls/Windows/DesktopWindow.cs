@@ -1,3 +1,5 @@
+using System;
+using Avalonia;
 using Avalonia.Controls;
 
 namespace Ink.UI.Controls;
@@ -26,8 +28,8 @@ public class DesktopWindow : Window, IInkOverlayHost
     }
 
     /// <inheritdoc/>
-    public void ShowOverlay() => OverlayLayer.Show();
+    public void ShowOverlay(Visual registrant, Action onDismiss) => OverlayLayer.Show(registrant, onDismiss);
 
     /// <inheritdoc/>
-    public void HideOverlay() => OverlayLayer.Hide();
+    public void HideOverlay(Visual registrant) => OverlayLayer.Hide(registrant);
 }

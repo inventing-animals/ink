@@ -11,7 +11,7 @@ public class ComboBox : Avalonia.Controls.ComboBox
         if (change.Property == IsDropDownOpenProperty)
         {
             if (change.GetNewValue<bool>())
-                InkOverlay.Show(this);
+                InkOverlay.Show(this, () => IsDropDownOpen = false);
             else
                 InkOverlay.Hide(this);
         }

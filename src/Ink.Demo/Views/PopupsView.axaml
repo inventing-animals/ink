@@ -46,6 +46,24 @@
           </ink:Button.Flyout>
           Open Flyout
         </ink:Button>
+        <TextBlock Classes="h4" Text="Nested overlay dismissal" />
+        <TextBlock Classes="small muted" Text="Flyout contains a ComboBox. Clicking the overlay closes the ComboBox first, then a second click closes the flyout." />
+        <ink:Button HorizontalAlignment="Left">
+          <ink:Button.Flyout>
+            <ink:Flyout>
+              <StackPanel Spacing="12" Margin="16">
+                <TextBlock Classes="large" Text="Flyout with ComboBox" />
+                <TextBlock Classes="small muted" Text="Open the dropdown, then click the overlay." />
+                <ink:ComboBox SelectedIndex="0" Width="200" PlaceholderText="Pick one">
+                  <ComboBoxItem>Alpha</ComboBoxItem>
+                  <ComboBoxItem>Beta</ComboBoxItem>
+                  <ComboBoxItem>Gamma</ComboBoxItem>
+                </ink:ComboBox>
+              </StackPanel>
+            </ink:Flyout>
+          </ink:Button.Flyout>
+          Open Flyout
+        </ink:Button>
       </StackPanel>
 
       <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">

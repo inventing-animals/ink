@@ -12,12 +12,20 @@ public class Flyout : Avalonia.Controls.Flyout
     {
         base.OnOpened();
         if (Target is not null)
-            InkOverlay.Show(Target);
+        {
+            // Disable Avalonia's own light-dismiss so that clicking the overlay
+            // is handled exclusively by InkOverlayLayer (LIFO stack). Without this,
+            // Avalonia would close the flyout on any outside click regardless of
+            // whether a nested popup (e.g. a ComboBox dropdown) should absorb it first.
+            Popup.IsLightDismissEnabled = false;
+            InkOverlay.Show(Target, Hide);
+        }
     }
 
     protected override void OnClosed()
     {
         base.OnClosed();
+        Popup.IsLightDismissEnabled = true;
         if (Target is not null)
             InkOverlay.Hide(Target);
     }
