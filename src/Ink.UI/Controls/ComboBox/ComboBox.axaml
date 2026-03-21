@@ -92,12 +92,18 @@
                                     BoxShadow="{DynamicResource Ink.Shadow.Overlay}"
                                     CornerRadius="{DynamicResource Ink.CornerRadius.L}"
                                     MinWidth="{CompiledBinding #Border.Bounds.Width}">
-                                    <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="Auto">
-                                        <ItemsPresenter
-                                            Name="PART_ItemsPresenter"
-                                            ItemsPanel="{TemplateBinding ItemsPanel}"
-                                            Margin="0,4" />
-                                    </ScrollViewer>
+                                    <DockPanel>
+                                        <ContentPresenter
+                                            DockPanel.Dock="Top"
+                                            Content="{TemplateBinding (ink:ComboBox.PopupHeader)}"
+                                            IsVisible="{TemplateBinding (ink:ComboBox.PopupHeader), Converter={x:Static ObjectConverters.IsNotNull}}" />
+                                        <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="Auto">
+                                            <ItemsPresenter
+                                                Name="PART_ItemsPresenter"
+                                                ItemsPanel="{TemplateBinding ItemsPanel}"
+                                                Margin="0,4" />
+                                        </ScrollViewer>
+                                    </DockPanel>
                                 </Border>
                             </LayoutTransformControl>
                         </Popup>

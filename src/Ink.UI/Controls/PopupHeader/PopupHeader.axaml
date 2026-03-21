@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <ControlTheme TargetType="ink:PopupHeader" x:Key="Ink.PopupHeaderStyle">
+        <Setter Property="Padding" Value="16,12,12,12" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel>
+                    <Grid ColumnDefinitions="* Auto" Margin="{TemplateBinding Padding}">
+                        <StackPanel Grid.Column="0" Spacing="2" VerticalAlignment="Center">
+                            <TextBlock
+                                Text="{TemplateBinding Title}"
+                                IsVisible="{TemplateBinding Title, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                FontFamily="{DynamicResource Ink.FontFamily.Base}"
+                                FontSize="{DynamicResource Ink.FontSize.M}"
+                                FontWeight="{DynamicResource Ink.FontWeight.SemiBold}"
+                                Foreground="{DynamicResource Ink.Brush.Content.Primary}"
+                                TextWrapping="NoWrap"
+                                TextTrimming="CharacterEllipsis" />
+                            <TextBlock
+                                Text="{TemplateBinding Description}"
+                                IsVisible="{TemplateBinding Description, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                FontFamily="{DynamicResource Ink.FontFamily.Base}"
+                                FontSize="{DynamicResource Ink.FontSize.S}"
+                                Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                                TextWrapping="NoWrap"
+                                TextTrimming="CharacterEllipsis" />
+                        </StackPanel>
+
+                        <Button
+                            Grid.Column="1"
+                            Name="PART_CloseButton"
+                            Width="28"
+                            Height="28"
+                            Padding="0"
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            CornerRadius="{DynamicResource Ink.CornerRadius.S}"
+                            Cursor="Hand">
+                            <Path
+                                Data="M 4 4 L 12 12 M 12 4 L 4 12"
+                                Stroke="{DynamicResource Ink.Brush.Content.Muted}"
+                                StrokeThickness="1.5"
+                                StrokeLineCap="Round"
+                                Width="16"
+                                Height="16"
+                                Stretch="None" />
+                        </Button>
+                    </Grid>
+
+                    <Border
+                        Height="1"
+                        Background="{DynamicResource Ink.Brush.Border.Subtle}"
+                        Margin="0" />
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+
+        <!-- Close button hover -->
+        <Style Selector="^  /template/ Button#PART_CloseButton:pointerover Path">
+            <Setter Property="Stroke" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme BasedOn="{StaticResource Ink.PopupHeaderStyle}" TargetType="ink:PopupHeader" x:Key="{x:Type ink:PopupHeader}" />
+
+</ResourceDictionary>

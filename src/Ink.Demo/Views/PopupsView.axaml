@@ -64,6 +64,35 @@
           </ink:Button.Flyout>
           Open Flyout
         </ink:Button>
+        <TextBlock Classes="h4" Text="ink:PopupHeader in Flyout" />
+        <TextBlock Classes="small muted" Text="PopupHeader provides a title, description, and close button at the top of a flyout." />
+        <ink:Button HorizontalAlignment="Left">
+          <ink:Button.Flyout>
+            <ink:Flyout>
+              <StackPanel>
+                <ink:PopupHeader Title="Filter options" Description="Narrow down your results" />
+                <StackPanel Spacing="12" Margin="16">
+                  <ink:CheckBox Content="Show archived" />
+                  <ink:CheckBox Content="Show drafts" />
+                  <ink:CheckBox Content="Show deleted" />
+                  <ink:Button Content="Apply" Classes="ink-primary" />
+                </StackPanel>
+              </StackPanel>
+            </ink:Flyout>
+          </ink:Button.Flyout>
+          Open Flyout
+        </ink:Button>
+        <TextBlock Classes="h4" Text="ink:PopupHeader in ComboBox" />
+        <TextBlock Classes="small muted" Text="PopupHeader sits above the items list in the dropdown." />
+        <ink:ComboBox Width="240" HorizontalAlignment="Left" PlaceholderText="Choose a role">
+          <ink:ComboBox.PopupHeader>
+            <ink:PopupHeader Title="Select role" Description="Assigns permissions for this user" />
+          </ink:ComboBox.PopupHeader>
+          <ComboBoxItem>Viewer</ComboBoxItem>
+          <ComboBoxItem>Editor</ComboBoxItem>
+          <ComboBoxItem>Admin</ComboBoxItem>
+          <ComboBoxItem>Owner</ComboBoxItem>
+        </ink:ComboBox>
       </StackPanel>
 
       <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
