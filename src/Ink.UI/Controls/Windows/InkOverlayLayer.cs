@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Animation;
 using Avalonia.Animation.Easings;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Styling;
 
@@ -16,7 +18,9 @@ internal sealed class InkOverlayLayer
 {
     private readonly Border _overlay;
     private Control? _content;
-    private int _count;
+
+    // Stack of registered consumers. The last entry is the topmost (dismissed first on click).
+    private readonly List<(Visual Registrant, Action Dismiss)> _stack = new();
 
     public Panel Root { get; }
 
@@ -55,13 +59,16 @@ internal sealed class InkOverlayLayer
                 },
             },
         };
+        _overlay.PointerPressed += OnOverlayPointerPressed;
+
         Root = new Panel();
         Root.Children.Add(_overlay);
     }
 
-    public void Show()
+    public void Show(Visual registrant, Action onDismiss)
     {
-        if (++_count == 1)
+        _stack.Add((registrant, onDismiss));
+        if (_stack.Count == 1)
         {
             if (_content is not null) _content.Effect = ContentBlur;
             _overlay.IsHitTestVisible = true;
@@ -69,13 +76,36 @@ internal sealed class InkOverlayLayer
         }
     }
 
-    public void Hide()
+    public void Hide(Visual registrant)
     {
-        if (_count > 0 && --_count == 0)
-        {
-            if (_content is not null) _content.Effect = null;
-            _overlay.IsHitTestVisible = false;
-            _overlay.Opacity = 0;
-        }
+        var idx = _stack.FindLastIndex(x => x.Registrant == registrant);
+        if (idx < 0) return; // already removed (e.g. dismissed via overlay click)
+
+        _stack.RemoveAt(idx);
+        if (_stack.Count == 0)
+            SetOverlayHidden();
+    }
+
+    private void OnOverlayPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (_stack.Count == 0) return;
+
+        var last = _stack[^1];
+        _stack.RemoveAt(_stack.Count - 1);
+
+        if (_stack.Count == 0)
+            SetOverlayHidden();
+
+        // Signal the control to close itself. The dismiss action is idempotent — if Avalonia
+        // already closed the popup via its own light-dismiss, calling e.g. IsDropDownOpen=false
+        // or Hide() again is a safe no-op.
+        last.Dismiss();
+    }
+
+    private void SetOverlayHidden()
+    {
+        if (_content is not null) _content.Effect = null;
+        _overlay.IsHitTestVisible = false;
+        _overlay.Opacity = 0;
     }
 }

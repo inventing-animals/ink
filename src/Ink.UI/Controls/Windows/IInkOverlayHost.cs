@@ -1,3 +1,6 @@
+using System;
+using Avalonia;
+
 namespace Ink.UI.Controls;
 
 /// <summary>
@@ -6,9 +9,15 @@ namespace Ink.UI.Controls;
 /// </summary>
 public interface IInkOverlayHost
 {
-    /// <summary>Increment the overlay request count; shows the dim backdrop if it was hidden.</summary>
-    void ShowOverlay();
+    /// <summary>
+    /// Register a control as an overlay consumer. Shows the dim backdrop if it was hidden.
+    /// When the overlay is clicked, <paramref name="onDismiss"/> is invoked to close the control.
+    /// </summary>
+    void ShowOverlay(Visual registrant, Action onDismiss);
 
-    /// <summary>Decrement the overlay request count; hides the dim backdrop when it reaches zero.</summary>
-    void HideOverlay();
+    /// <summary>
+    /// Unregister a control. Hides the dim backdrop when no consumers remain.
+    /// Safe to call even if the registrant was already removed (e.g. dismissed by overlay click).
+    /// </summary>
+    void HideOverlay(Visual registrant);
 }
