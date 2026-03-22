@@ -1,0 +1,90 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:demo="using:Ink.Demo.Views"
+             xmlns:fa="using:Ink.FontAwesome"
+             x:Class="Ink.Demo.Views.IconsView"
+             x:DataType="vm:IconsViewModel">
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <demo:PageToolbar />
+
+      <StackPanel Spacing="8"
+                  IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Free Fonts}">
+        <TextBlock Classes="h4" Text="Classic Free faces" />
+        <TextBlock Classes="small muted"
+                   Text="The demo ships the free classic solid, free classic regular, and brands fonts. These examples should render normally." />
+        <WrapPanel ItemWidth="180">
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.House}" Face="ClassicSolid" FontSize="28" />
+            <TextBlock Text="House" />
+            <TextBlock Classes="small muted" Text="ClassicSolid" />
+          </StackPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.AddressBook}" Face="ClassicRegular" FontSize="28" />
+            <TextBlock Text="AddressBook" />
+            <TextBlock Classes="small muted" Text="ClassicRegular" />
+          </StackPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.Github}" Face="Brands" FontSize="28" />
+            <TextBlock Text="Github" />
+            <TextBlock Classes="small muted" Text="Brands" />
+          </StackPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.SquareFontAwesome}" Face="Brands" FontSize="28" />
+            <TextBlock Text="SquareFontAwesome" />
+            <TextBlock Classes="small muted" Text="Brands" />
+          </StackPanel>
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8"
+                  IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Free Fonts}">
+        <TextBlock Classes="h4" Text="Same icon, different mapped faces" />
+        <TextBlock Classes="small muted"
+                   Text="You can point different faces at different registered font files. Here the same icon is rendered through the free regular and free solid faces." />
+        <WrapPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.CircleUser}" Face="ClassicRegular" FontSize="32" />
+            <TextBlock Text="ClassicRegular" />
+          </StackPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.CircleUser}" Face="ClassicSolid" FontSize="32" />
+            <TextBlock Text="ClassicSolid" />
+          </StackPanel>
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8"
+                  IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Pro Faces}">
+        <TextBlock Classes="h4" Text="Unmapped Pro-only faces" />
+        <TextBlock Classes="small muted"
+                   Text="These requests use faces that are not registered in the demo. With only the free fonts configured, private-use glyphs typically render as a missing-glyph rectangle." />
+        <WrapPanel ItemWidth="180">
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.RectanglePro}" Face="ClassicThin" FontSize="28" />
+            <TextBlock Text="RectanglePro" />
+            <TextBlock Classes="small muted" Text="ClassicThin" />
+          </StackPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.House}" Face="DuotoneRegular" FontSize="28" />
+            <TextBlock Text="House" />
+            <TextBlock Classes="small muted" Text="DuotoneRegular" />
+          </StackPanel>
+          <StackPanel Margin="0,0,16,16" Spacing="6">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.AddressBook}" Face="ClassicLight" FontSize="28" />
+            <TextBlock Text="AddressBook" />
+            <TextBlock Classes="small muted" Text="ClassicLight" />
+          </StackPanel>
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8"
+                  IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Pro Faces}">
+        <TextBlock Classes="h4" Text="What the app is responsible for" />
+        <TextBlock Classes="small muted"
+                   Text="Ink.FontAwesome supplies identifiers and glyph metadata. The application decides which actual Font Awesome font files to include and which faces they should satisfy." />
+      </StackPanel>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

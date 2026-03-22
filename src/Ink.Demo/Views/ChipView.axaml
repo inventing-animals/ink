@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:fa="using:Ink.FontAwesome"
              xmlns:demo="using:Ink.Demo.Views"
              x:Class="Ink.Demo.Views.ChipView"
              x:DataType="vm:ChipViewModel">
@@ -42,6 +43,36 @@
           <ink:Chip Content="Deprecated" Variant="Outline" Role="Danger" Margin="0,0,8,8" />
           <ink:Chip Content="Review" Variant="Outline" Role="Warning" Margin="0,0,8,8" />
           <ink:Chip Content="Available" Variant="Outline" Role="Success" Margin="0,0,8,8" />
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="With icons" />
+        <WrapPanel>
+          <ink:Chip Margin="0,0,8,8">
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.CircleInfo}" Face="ClassicSolid" />
+              <TextBlock Text="Information" />
+            </StackPanel>
+          </ink:Chip>
+          <ink:Chip Variant="Filled" Role="Success" Margin="0,0,8,8">
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.CircleCheck}" Face="ClassicSolid" />
+              <TextBlock Text="Completed" />
+            </StackPanel>
+          </ink:Chip>
+          <ink:Chip Variant="Outline" Role="Warning" Margin="0,0,8,8">
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.TriangleExclamation}" Face="ClassicSolid" />
+              <TextBlock Text="Review" />
+            </StackPanel>
+          </ink:Chip>
+          <ink:Chip Variant="Outline" Role="Primary" Margin="0,0,8,8">
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.SquareGithub}" Face="Brands" />
+              <TextBlock Text="GitHub" />
+            </StackPanel>
+          </ink:Chip>
         </WrapPanel>
       </StackPanel>
 

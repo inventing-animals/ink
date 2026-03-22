@@ -24,7 +24,7 @@ Everything else is fair game. If you are unsure whether something fits, just ask
    ```xml
    <Version>x.y.z</Version>
    ```
-   This applies to all published packages (`InventingAnimals.Ink`, `InventingAnimals.Ink.Platform`, `InventingAnimals.Ink.Platform.Browser`).
+   This applies to all published packages (`InventingAnimals.Ink`, `InventingAnimals.Ink.Platform`, `InventingAnimals.Ink.Platform.Browser`, `InventingAnimals.Ink.FontAwesome`).
 
 2. Commit the version bump, then tag and push:
    ```bash

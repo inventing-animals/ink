@@ -38,6 +38,7 @@
             <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/tokens">Tokens</ink:Button>
             <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/palette">Palette</ink:Button>
             <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/typography">Typography</ink:Button>
+            <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/icons">Icons</ink:Button>
             <Separator/>
             
             <ink:Button Command="{Binding NavigateCommand}" CommandParameter="/buttons">Buttons</ink:Button>

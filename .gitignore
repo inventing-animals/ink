@@ -460,3 +460,12 @@ CLAUDE.md
 docs/_site/
 docs/api/
 
+# Font Awesome source material should never be committed as we are building the dictionary from Pro icons
+src/Ink.FontAwesome/**/*.json
+src/Ink.FontAwesome/**/*.svg
+src/Ink.FontAwesome/**/*.ttf
+src/Ink.FontAwesome/**/*.otf
+src/Ink.FontAwesome/**/*.woff
+src/Ink.FontAwesome/**/*.woff2
+src/Ink.FontAwesome/**/*.yml
+src/Ink.FontAwesome/**/*.yaml

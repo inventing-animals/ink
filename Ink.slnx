@@ -7,6 +7,7 @@
   <Project Path="src/Ink.Data.EFCore/Ink.Data.EFCore.csproj" />
   <Project Path="src/Ink.DataGrid/Ink.DataGrid.csproj" />
   <Project Path="src/Ink.UI/Ink.UI.csproj" />
+  <Project Path="src/Ink.FontAwesome/Ink.FontAwesome.csproj" />
   <Project Path="src/Ink.Localization/Ink.Localization.csproj" />
   <Project Path="src/Ink.Platform/Ink.Platform.csproj" />
   <Project Path="src/Ink.Platform.Browser/Ink.Platform.Browser.csproj" />

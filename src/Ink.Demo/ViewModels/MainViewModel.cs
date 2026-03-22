@@ -42,6 +42,7 @@ public partial class MainViewModel : ViewModelBase
     {
         object page = location.Segments.FirstOrDefault() switch
         {
+            "icons"       => new IconsViewModel(),
             "buttons"     => new ButtonsViewModel(),
             "palette"     => new PaletteViewModel(),
             "router"      => new RouterDemoViewModel(_appState.Router),

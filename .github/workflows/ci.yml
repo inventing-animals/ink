@@ -26,6 +26,7 @@ jobs:
           dotnet restore src/Ink.Localization/Ink.Localization.csproj
           dotnet restore src/Ink.Platform/Ink.Platform.csproj
           dotnet restore src/Ink.Platform.Browser/Ink.Platform.Browser.csproj
+          dotnet restore src/Ink.FontAwesome/Ink.FontAwesome.csproj
           dotnet restore src/Ink.UI/Ink.UI.csproj
           dotnet restore src/Ink.Data/Ink.Data.csproj
           dotnet restore src/Ink.Data.EFCore/Ink.Data.EFCore.csproj
@@ -36,6 +37,7 @@ jobs:
           dotnet build src/Ink.Localization/Ink.Localization.csproj --no-restore -c Release
           dotnet build src/Ink.Platform/Ink.Platform.csproj --no-restore -c Release
           dotnet build src/Ink.Platform.Browser/Ink.Platform.Browser.csproj --no-restore -c Release
+          dotnet build src/Ink.FontAwesome/Ink.FontAwesome.csproj --no-restore -c Release
           dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
           dotnet build src/Ink.Data/Ink.Data.csproj --no-restore -c Release
           dotnet build src/Ink.Data.EFCore/Ink.Data.EFCore.csproj --no-restore -c Release
@@ -66,6 +68,7 @@ jobs:
           dotnet restore src/Ink.Localization/Ink.Localization.csproj
           dotnet restore src/Ink.Platform/Ink.Platform.csproj
           dotnet restore src/Ink.Platform.Browser/Ink.Platform.Browser.csproj
+          dotnet restore src/Ink.FontAwesome/Ink.FontAwesome.csproj
           dotnet restore src/Ink.UI/Ink.UI.csproj
           dotnet restore src/Ink.Data/Ink.Data.csproj
           dotnet restore src/Ink.Data.EFCore/Ink.Data.EFCore.csproj
@@ -76,6 +79,7 @@ jobs:
           dotnet build src/Ink.Localization/Ink.Localization.csproj --no-restore -c Release
           dotnet build src/Ink.Platform/Ink.Platform.csproj --no-restore -c Release
           dotnet build src/Ink.Platform.Browser/Ink.Platform.Browser.csproj --no-restore -c Release
+          dotnet build src/Ink.FontAwesome/Ink.FontAwesome.csproj --no-restore -c Release
           dotnet build src/Ink.UI/Ink.UI.csproj --no-restore -c Release
           dotnet build src/Ink.Data/Ink.Data.csproj --no-restore -c Release
           dotnet build src/Ink.Data.EFCore/Ink.Data.EFCore.csproj --no-restore -c Release
@@ -86,6 +90,7 @@ jobs:
           dotnet pack src/Ink.Localization/Ink.Localization.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.Platform/Ink.Platform.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.Platform.Browser/Ink.Platform.Browser.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
+          dotnet pack src/Ink.FontAwesome/Ink.FontAwesome.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.UI/Ink.UI.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.Data/Ink.Data.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}
           dotnet pack src/Ink.Data.EFCore/Ink.Data.EFCore.csproj --no-build -c Release -o ./artifacts -p:Version=${GITHUB_REF_NAME#v}

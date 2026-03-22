@@ -14,6 +14,7 @@ public class ViewLocator : IDataTemplate
     private static readonly Dictionary<System.Type, System.Func<Control>> Map = new()
     {
         [typeof(MainViewModel)] = () => new MainView(),
+        [typeof(IconsViewModel)] = () => new IconsView(),
         [typeof(ButtonsViewModel)] = () => new ButtonsView(),
         [typeof(PaletteViewModel)] = () => new PaletteView(),
         [typeof(RouterDemoViewModel)] = () => new RouterDemoView(),

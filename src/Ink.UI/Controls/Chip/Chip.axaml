@@ -13,6 +13,8 @@
         <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.Pill}" />
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Focusable" Value="False" />
 
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -33,15 +35,16 @@
                             <BrushTransition Duration="0:0:0.15" Property="BorderBrush" />
                         </Transitions>
                     </Border.Transitions>
-                    <TextBlock
-                        Name="PART_Label"
-                        Text="{TemplateBinding Content}"
-                        FontFamily="{TemplateBinding FontFamily}"
-                        FontSize="{TemplateBinding FontSize}"
-                        FontWeight="{TemplateBinding FontWeight}"
-                        Foreground="{TemplateBinding Foreground}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center" />
+                    <ContentPresenter
+                        Name="PART_ContentPresenter"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        TextElement.FontFamily="{TemplateBinding FontFamily}"
+                        TextElement.FontSize="{TemplateBinding FontSize}"
+                        TextElement.FontWeight="{TemplateBinding FontWeight}"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
                 </Border>
             </ControlTemplate>
         </Setter>

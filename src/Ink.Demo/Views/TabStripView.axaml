@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:fa="using:Ink.FontAwesome"
              xmlns:demo="using:Ink.Demo.Views"
              x:Class="Ink.Demo.Views.TabStripView"
              x:DataType="vm:TabStripViewModel">
@@ -18,6 +19,60 @@
           <ink:TabStripItem Content="Details" />
           <ink:TabStripItem Content="Activity" />
           <ink:TabStripItem Content="Settings" />
+        </ink:TabStrip>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="With icons" />
+        <TextBlock Classes="small muted" Text="Tab labels can use rich content, which works well for app sections and tool panes." />
+        <ink:TabStrip SelectedIndex="0">
+          <ink:TabStripItem>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.House}" Face="ClassicSolid" />
+              <TextBlock Text="Overview" />
+            </StackPanel>
+          </ink:TabStripItem>
+          <ink:TabStripItem>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.ChartLine}" Face="ClassicSolid" />
+              <TextBlock Text="Reports" />
+            </StackPanel>
+          </ink:TabStripItem>
+          <ink:TabStripItem>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.UsersGear}" Face="ClassicSolid" />
+              <TextBlock Text="Team" />
+            </StackPanel>
+          </ink:TabStripItem>
+          <ink:TabStripItem>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.Gear}" Face="ClassicSolid" />
+              <TextBlock Text="Settings" />
+            </StackPanel>
+          </ink:TabStripItem>
+        </ink:TabStrip>
+        <TextBlock Classes="small muted" Text="Glyph-only tabs are useful when space is tight and the icons are already familiar." />
+        <ink:TabStrip SelectedIndex="0">
+          <ink:TabStripItem ToolTip.Tip="Overview">
+            <Grid Width="16" Height="16">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.House}" Face="ClassicSolid" />
+            </Grid>
+          </ink:TabStripItem>
+          <ink:TabStripItem ToolTip.Tip="Reports">
+            <Grid Width="16" Height="16">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.ChartLine}" Face="ClassicSolid" />
+            </Grid>
+          </ink:TabStripItem>
+          <ink:TabStripItem ToolTip.Tip="Team">
+            <Grid Width="16" Height="16">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.UsersGear}" Face="ClassicSolid" />
+            </Grid>
+          </ink:TabStripItem>
+          <ink:TabStripItem ToolTip.Tip="Settings">
+            <Grid Width="16" Height="16">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.Gear}" Face="ClassicSolid" />
+            </Grid>
+          </ink:TabStripItem>
         </ink:TabStrip>
       </StackPanel>
 

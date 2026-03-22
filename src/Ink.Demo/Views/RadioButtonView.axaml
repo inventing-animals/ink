@@ -3,6 +3,7 @@
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:demo="using:Ink.Demo.Views"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:fa="using:Ink.FontAwesome"
              x:Class="Ink.Demo.Views.RadioButtonView"
              x:DataType="vm:RadioButtonViewModel">
   <ScrollViewer>
@@ -17,6 +18,28 @@
           <ink:RadioButton GroupName="InkGroup1">Option C</ink:RadioButton>
           <ink:RadioButton IsEnabled="False">Disabled</ink:RadioButton>
           <ink:RadioButton IsEnabled="False" IsChecked="True">Disabled (selected)</ink:RadioButton>
+        </StackPanel>
+        <TextBlock Classes="h4" Text="ink:RadioButton - Rich labels" />
+        <TextBlock Classes="small muted" Text="Radio buttons also support richer labels, which is handy for mode pickers and destination choices." />
+        <StackPanel Spacing="6">
+          <ink:RadioButton GroupName="Destination" IsChecked="True">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.House}" Face="ClassicSolid" />
+              <TextBlock Text="Publish to internal dashboard" />
+            </StackPanel>
+          </ink:RadioButton>
+          <ink:RadioButton GroupName="Destination">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.SquareGithub}" Face="Brands" />
+              <TextBlock Text="Push to GitHub Pages" />
+            </StackPanel>
+          </ink:RadioButton>
+          <ink:RadioButton GroupName="Destination">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.Envelope}" Face="ClassicRegular" />
+              <TextBlock Text="Email a review link" />
+            </StackPanel>
+          </ink:RadioButton>
         </StackPanel>
       </StackPanel>
 
