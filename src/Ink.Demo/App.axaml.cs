@@ -5,8 +5,10 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
 using Ink.Demo.ViewModels;
 using Ink.Demo.Views;
+using Ink.FontAwesome;
 using Ink.Platform.Routing;
 using Ink.UI.Controls;
 using Ink.UI.Platform;
@@ -35,6 +37,11 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        // Font Awesome icons registration
+        FontAwesomeFontFamilies.ClassicSolid = new FontFamily("avares://Ink.Demo/Assets/Font Awesome 7 Free-Solid-900.otf#Font Awesome 7 Free");
+        FontAwesomeFontFamilies.ClassicRegular = new FontFamily("avares://Ink.Demo/Assets/Font Awesome 7 Free-Regular-400.otf#Font Awesome 7 Free");
+        FontAwesomeFontFamilies.Brands = new FontFamily("avares://Ink.Demo/Assets/Font Awesome 7 Brands-Regular-400.otf#Font Awesome 7 Brands");
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit.

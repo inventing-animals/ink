@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Ink.Demo.ViewModels"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:fa="using:Ink.FontAwesome"
              xmlns:demo="using:Ink.Demo.Views"
              x:Class="Ink.Demo.Views.ButtonsView"
              x:DataType="vm:ButtonsViewModel">
@@ -30,6 +31,60 @@
         <ink:Button Variant="Warning" IsEnabled="False" Margin="0,0,8,8">Warning</ink:Button>
         <ink:Button Variant="Success" IsEnabled="False" Margin="0,0,8,8">Success</ink:Button>
         <ink:Button Variant="Ghost" IsEnabled="False" Margin="0,0,8,8">Ghost</ink:Button>
+      </WrapPanel>
+    </StackPanel>
+
+    <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+      <TextBlock Classes="h4" Text="ink:Button - With icons" />
+      <TextBlock Classes="small muted" Text="Buttons accept rich content, so icons can be composed directly with labels." />
+      <WrapPanel>
+        <ink:Button Variant="Primary" Margin="0,0,8,8">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.FloppyDisk}" Face="ClassicSolid" />
+            <TextBlock Text="Save changes" />
+          </StackPanel>
+        </ink:Button>
+        <ink:Button Margin="0,0,8,8">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.MagnifyingGlass}" Face="ClassicSolid" />
+            <TextBlock Text="Search" />
+          </StackPanel>
+        </ink:Button>
+        <ink:Button Variant="Success" Margin="0,0,8,8">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.CircleCheck}" Face="ClassicSolid" />
+            <TextBlock Text="Confirmed" />
+          </StackPanel>
+        </ink:Button>
+        <ink:Button Variant="Ghost" Margin="0,0,8,8">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.SquareGithub}" Face="Brands" />
+            <TextBlock Text="Open GitHub" />
+          </StackPanel>
+        </ink:Button>
+      </WrapPanel>
+      <TextBlock Classes="small muted" Text="Compact icon-only buttons also work well for toolbars and utility actions." />
+      <WrapPanel>
+        <ink:Button Variant="Primary" Margin="0,0,8,8" ToolTip.Tip="Save">
+          <Grid Width="16" Height="16">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.FloppyDisk}" Face="ClassicSolid" />
+          </Grid>
+        </ink:Button>
+        <ink:Button Margin="0,0,8,8" ToolTip.Tip="Search">
+          <Grid Width="16" Height="16">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.MagnifyingGlass}" Face="ClassicSolid" />
+          </Grid>
+        </ink:Button>
+        <ink:Button Variant="Success" Margin="0,0,8,8" ToolTip.Tip="Confirmed">
+          <Grid Width="16" Height="16">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.CircleCheck}" Face="ClassicSolid" />
+          </Grid>
+        </ink:Button>
+        <ink:Button Variant="Ghost" Margin="0,0,8,8" ToolTip.Tip="Open GitHub">
+          <Grid Width="16" Height="16">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.SquareGithub}" Face="Brands" />
+          </Grid>
+        </ink:Button>
       </WrapPanel>
     </StackPanel>
 

@@ -37,6 +37,17 @@ UI component library for [Avalonia](https://avaloniaui.net/) applications, suppo
 - `LocalStorageSettingsService` - settings backed by browser `localStorage`
 - `BrowserHistoryRouter` - routing via the History API (`pushState` / `popstate`)
 
+### Ink.FontAwesome
+
+[![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.FontAwesome)](https://www.nuget.org/packages/InventingAnimals.Ink.FontAwesome)
+
+`InventingAnimals.Ink.FontAwesome` - optional Font Awesome icon control and generated icon definitions for Ink applications.
+
+- `FontAwesomeIcon` control with strongly typed `Icon` and `Face` properties
+- Generated icon metadata in C# so applications do not allocate one object per icon definition
+- Consumer applications provide the actual Font Awesome font files and configure the face-to-font-family mapping
+- Separate package so applications only take the dependency when they want the icon set
+
 ### Ink.Localization
 
 [![NuGet](https://img.shields.io/nuget/v/InventingAnimals.Ink.Localization)](https://www.nuget.org/packages/InventingAnimals.Ink.Localization)
@@ -90,7 +101,31 @@ For platform services:
 ```
 dotnet add package InventingAnimals.Ink.Platform
 dotnet add package InventingAnimals.Ink.Platform.Browser  # WASM projects only
+dotnet add package InventingAnimals.Ink.FontAwesome       # optional icon resources
 dotnet add package InventingAnimals.Ink.Localization
+```
+
+Example:
+
+```csharp
+using Avalonia.Media;
+using Ink.FontAwesome;
+
+FontAwesomeFontFamilies.ClassicSolid = new FontFamily("avares://MyApp/Assets/Font Awesome 7 Free-Solid-900.otf#Font Awesome 7 Free");
+FontAwesomeFontFamilies.ClassicRegular = new FontFamily("avares://MyApp/Assets/Font Awesome 7 Free-Regular-400.otf#Font Awesome 7 Free");
+FontAwesomeFontFamilies.Brands = new FontFamily("avares://MyApp/Assets/Font Awesome 7 Brands-Regular-400.otf#Font Awesome 7 Brands");
+```
+
+```xml
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:fa="using:Ink.FontAwesome">
+
+    <fa:FontAwesomeIcon
+        Icon="{x:Static fa:Icon.RectanglePro}"
+        Face="ClassicThin" />
+</Window>
 ```
 
 For the DataGrid control:
