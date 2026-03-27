@@ -1,29 +1,36 @@
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Resources;
 
 namespace Ink.Localization;
 
 /// <summary>
-/// <see cref="IApiLocalizationService"/> implementation backed by a list of <see cref="ResourceManager"/> instances.
-/// Managers are searched in order; the first non-null value wins.
+/// <see cref="IApiLocalizationService"/> implementation backed by a list of <see cref="ILocalizationSource"/> instances.
+/// Sources are searched in order; the first non-null value wins.
 /// </summary>
 public sealed class ApiLocalizationService : IApiLocalizationService
 {
-    private readonly IReadOnlyList<ResourceManager> _managers;
+    private readonly IReadOnlyList<ILocalizationSource> _sources;
 
-    /// <summary>Initializes a new instance with the given resource managers, searched in order.</summary>
-    public ApiLocalizationService(IReadOnlyList<ResourceManager> managers)
+    /// <summary>Initializes a new instance with the given sources, searched in order.</summary>
+    public ApiLocalizationService(IReadOnlyList<ILocalizationSource> sources)
     {
-        _managers = managers;
+        _sources = sources;
+    }
+
+    /// <summary>Initializes a new instance backed by <see cref="ResourceManager"/> instances (backward-compatible overload).</summary>
+    public ApiLocalizationService(IReadOnlyList<ResourceManager> managers)
+        : this(managers.Select(m => (ILocalizationSource)new ResourceManagerLocalizationSource(m)).ToList())
+    {
     }
 
     /// <inheritdoc/>
     public string Get(string key, CultureInfo culture)
     {
-        foreach (var manager in _managers)
+        foreach (var source in _sources)
         {
-            var value = manager.GetString(key, culture);
+            var value = source.TryGet(key, culture);
             if (value is not null)
                 return value;
         }
@@ -44,9 +51,9 @@ public sealed class ApiLocalizationService : IApiLocalizationService
 
     private string? TryGet(string key, CultureInfo culture)
     {
-        foreach (var manager in _managers)
+        foreach (var source in _sources)
         {
-            var value = manager.GetString(key, culture);
+            var value = source.TryGet(key, culture);
             if (value is not null)
                 return value;
         }
