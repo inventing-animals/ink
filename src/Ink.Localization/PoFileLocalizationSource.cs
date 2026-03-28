@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace Ink.Localization;
 
@@ -36,9 +37,17 @@ public sealed class PoFileLocalizationSource : ILocalizationSource
     /// <param name="fallbackLanguage">Language code to fall back to when a key is missing. Defaults to <c>"en"</c>.</param>
     public PoFileLocalizationSource(string basePath, string fallbackLanguage = "en")
     {
+        BasePath = basePath;
         _fallbackLanguage = fallbackLanguage;
         _cache = Load(basePath);
     }
+
+    /// <summary>The base path that was passed to the constructor.</summary>
+    public string BasePath { get; }
+
+    /// <summary>Returns each loaded language code and the number of entries it contains.</summary>
+    public IReadOnlyDictionary<string, int> LoadedLanguages =>
+        _cache.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Count, StringComparer.OrdinalIgnoreCase);
 
     private static Dictionary<string, Dictionary<string, string>> Load(string basePath)
     {
