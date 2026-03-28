@@ -24,7 +24,7 @@
                 <Panel Name="RootPanel">
                     <Panel.Transitions>
                         <Transitions>
-                            <TransformOperationsTransition Duration="0:0:0.20" Property="RenderTransform" Easing="CubicEaseOut" />
+                            <TransformOperationsTransition Duration="0:0:0.14" Property="RenderTransform" Easing="CubicEaseOut" />
                         </Transitions>
                     </Panel.Transitions>
                     <Border
@@ -35,7 +35,7 @@
                         CornerRadius="{TemplateBinding CornerRadius}">
                         <Border.Transitions>
                             <Transitions>
-                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                                <DoubleTransition Duration="0:0:0.105" Property="Opacity" />
                             </Transitions>
                         </Border.Transitions>
                     </Border>
@@ -48,7 +48,7 @@
                         Opacity="0">
                         <Border.Transitions>
                             <Transitions>
-                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                                <DoubleTransition Duration="0:0:0.105" Property="Opacity" />
                             </Transitions>
                         </Border.Transitions>
                     </Border>
