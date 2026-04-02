@@ -75,6 +75,8 @@ public sealed class PoFileLocalizationSource : ILocalizationSource
     private static void ParseInto(string path, Dictionary<string, string> entries)
     {
         string? currentId = null;
+        string? currentValue = null;
+        var reading = PoSection.None;
 
         foreach (var rawLine in File.ReadLines(path))
         {
@@ -82,23 +84,47 @@ public sealed class PoFileLocalizationSource : ILocalizationSource
 
             if (line.Length == 0 || line[0] == '#')
             {
+                CommitEntry(entries, currentId, currentValue);
                 currentId = null;
+                currentValue = null;
+                reading = PoSection.None;
                 continue;
             }
 
             if (line.StartsWith("msgid \"", StringComparison.Ordinal))
             {
+                CommitEntry(entries, currentId, currentValue);
                 currentId = Unescape(line[7..^1]);
+                currentValue = null;
+                reading = PoSection.MsgId;
             }
-            else if (line.StartsWith("msgstr \"", StringComparison.Ordinal) && currentId is { Length: > 0 })
+            else if (line.StartsWith("msgstr \"", StringComparison.Ordinal))
             {
-                var value = Unescape(line[8..^1]);
-                if (value.Length > 0)
-                    entries[currentId] = value;
+                currentValue = Unescape(line[8..^1]);
+                reading = PoSection.MsgStr;
+            }
+            else if (line.StartsWith('"') && line.EndsWith('"') && line.Length >= 2)
+            {
+                var fragment = Unescape(line[1..^1]);
 
-                currentId = null;
+                if (reading == PoSection.MsgId)
+                {
+                    currentId = (currentId ?? string.Empty) + fragment;
+                }
+                else if (reading == PoSection.MsgStr)
+                {
+                    currentValue = (currentValue ?? string.Empty) + fragment;
+                }
             }
         }
+
+        CommitEntry(entries, currentId, currentValue);
+    }
+
+    private static void CommitEntry(Dictionary<string, string> entries, string? currentId, string? currentValue)
+    {
+        if (currentId is { Length: > 0 } && currentValue is { Length: > 0 })
+            entries[currentId] = currentValue;
     }
 
     private static string Unescape(string s) =>
@@ -106,6 +132,13 @@ public sealed class PoFileLocalizationSource : ILocalizationSource
          .Replace("\\t", "\t", StringComparison.Ordinal)
          .Replace("\\\"", "\"", StringComparison.Ordinal)
          .Replace("\\\\", "\\", StringComparison.Ordinal);
+
+    private enum PoSection
+    {
+        None,
+        MsgId,
+        MsgStr,
+    }
 
     /// <inheritdoc/>
     public string? TryGet(string key, CultureInfo culture)
