@@ -58,8 +58,11 @@ public static class PopupBackdrop
     {
         if (_backdrops.ContainsKey(popup)) return;
 
-        // The Popup element itself is in the main visual tree, so this walk is reliable.
-        var overlayLayer = OverlayLayer.GetOverlayLayer(popup);
+        // In Avalonia 12 the popup itself is not guaranteed to sit under the app's TopLevel.
+        // Resolve the host TopLevel from the placement target instead, then ask it for the overlay layer.
+        var anchor = popup.PlacementTarget ?? popup;
+        var topLevel = TopLevel.GetTopLevel(anchor);
+        var overlayLayer = topLevel is not null ? OverlayLayer.GetOverlayLayer(topLevel) : null;
         if (overlayLayer is null) return;
 
         var brush = GetBrush(popup) ?? new SolidColorBrush(Color.FromArgb(0x40, 0, 0, 0));

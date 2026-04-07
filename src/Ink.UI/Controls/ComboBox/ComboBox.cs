@@ -1,9 +1,12 @@
 using Avalonia;
+using Avalonia.Controls.Primitives;
 
 namespace Ink.UI.Controls;
 
 public class ComboBox : Avalonia.Controls.ComboBox
 {
+    private Popup? _popup;
+
     /// <summary>
     /// Optional content placed at the top of the dropdown, above the items list.
     /// Defined as an attached property so it can be referenced in the base ComboBox ControlTheme.
@@ -22,6 +25,15 @@ public class ComboBox : Avalonia.Controls.ComboBox
     {
         get => GetValue(PopupHeaderProperty);
         set => SetValue(PopupHeaderProperty, value);
+    }
+
+    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+    {
+        base.OnApplyTemplate(e);
+
+        _popup = e.NameScope.Find("PART_Popup") as Popup;
+        if (_popup is not null)
+            _popup.OverlayDismissEventPassThrough = System.OperatingSystem.IsBrowser();
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
