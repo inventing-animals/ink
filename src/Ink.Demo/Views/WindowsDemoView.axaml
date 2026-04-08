@@ -27,7 +27,8 @@
       <TextBlock Text="Tab — tab in current window on desktop · drawer on mobile · browser tab on web"
                  Foreground="{DynamicResource Ink.Brush.Content.Muted}"
                  FontSize="12" />
-      <ink:Button Command="{Binding OpenTabCommand}"
+      <ink:Button Variant="Tertiary"
+                  Command="{Binding OpenTabCommand}"
                   Margin="0,4,0,0">
         Open Tab
       </ink:Button>

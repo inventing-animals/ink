@@ -34,13 +34,13 @@
         </StackPanel>
         <TextBlock Classes="h4" Text="ink:Flyout" />
         <TextBlock Classes="small muted" Text="Opening a flyout dims the window." />
-        <ink:Button HorizontalAlignment="Left">
+        <ink:Button Variant="Tertiary" HorizontalAlignment="Left">
           <ink:Button.Flyout>
             <ink:Flyout>
               <StackPanel Spacing="12" Margin="16">
                 <TextBlock Classes="large" Text="Flyout content" />
                 <TextBlock Classes="small muted" Text="This is a flyout panel." />
-                <ink:Button Content="Confirm" />
+                <ink:Button Content="Confirm" Variant="Tertiary" />
               </StackPanel>
             </ink:Flyout>
           </ink:Button.Flyout>
@@ -48,7 +48,7 @@
         </ink:Button>
         <TextBlock Classes="h4" Text="Nested overlay dismissal" />
         <TextBlock Classes="small muted" Text="Flyout contains a ComboBox. Clicking the overlay closes the ComboBox first, then a second click closes the flyout." />
-        <ink:Button HorizontalAlignment="Left">
+        <ink:Button Variant="Tertiary" HorizontalAlignment="Left">
           <ink:Button.Flyout>
             <ink:Flyout>
               <StackPanel Spacing="12" Margin="16">
@@ -66,7 +66,7 @@
         </ink:Button>
         <TextBlock Classes="h4" Text="ink:PopupHeader in Flyout" />
         <TextBlock Classes="small muted" Text="PopupHeader provides a title, description, and close button at the top of a flyout." />
-        <ink:Button HorizontalAlignment="Left">
+        <ink:Button Variant="Tertiary" HorizontalAlignment="Left">
           <ink:Button.Flyout>
             <ink:Flyout>
               <StackPanel>
@@ -75,7 +75,7 @@
                   <ink:CheckBox Content="Show archived" />
                   <ink:CheckBox Content="Show drafts" />
                   <ink:CheckBox Content="Show deleted" />
-                  <ink:Button Content="Apply" Classes="ink-primary" />
+                  <ink:Button Content="Apply" Variant="Primary" />
                 </StackPanel>
               </StackPanel>
             </ink:Flyout>

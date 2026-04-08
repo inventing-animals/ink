@@ -25,19 +25,19 @@
     <StackPanel Spacing="8">
       <TextBlock Text="Navigate" />
       <WrapPanel>
-        <ink:Button Margin="0,0,8,8"
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8"
                     Command="{Binding NavigateToCommand}" CommandParameter="/router">
           /router
         </ink:Button>
-        <ink:Button Margin="0,0,8,8"
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8"
                     Command="{Binding NavigateToCommand}" CommandParameter="/router/reports">
           /router/reports
         </ink:Button>
-        <ink:Button Margin="0,0,8,8"
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8"
                     Command="{Binding NavigateToCommand}" CommandParameter="/router/reports/123">
           /router/reports/123
         </ink:Button>
-        <ink:Button Margin="0,0,8,8"
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8"
                     Command="{Binding NavigateToCommand}" CommandParameter="/router/reports/123?sort=asc&amp;page=2#summary">
           /router/reports/123?sort=asc&amp;page=2#summary
         </ink:Button>
@@ -48,8 +48,8 @@
     <StackPanel Spacing="8">
       <TextBlock Text="History" />
       <StackPanel Orientation="Horizontal" Spacing="8">
-        <ink:Button Command="{Binding BackCommand}">Back</ink:Button>
-        <ink:Button Command="{Binding ForwardCommand}">Forward</ink:Button>
+        <ink:Button Variant="Tertiary" Command="{Binding BackCommand}">Back</ink:Button>
+        <ink:Button Variant="Tertiary" Command="{Binding ForwardCommand}">Forward</ink:Button>
       </StackPanel>
     </StackPanel>
 

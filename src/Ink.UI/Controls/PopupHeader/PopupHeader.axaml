@@ -25,7 +25,7 @@
                                 IsVisible="{TemplateBinding Description, Converter={x:Static ObjectConverters.IsNotNull}}"
                                 FontFamily="{DynamicResource Ink.FontFamily.Base}"
                                 FontSize="{DynamicResource Ink.FontSize.S}"
-                                Foreground="{DynamicResource Ink.Brush.Content.Muted}"
+                                Foreground="{DynamicResource Ink.Brush.Content.Secondary}"
                                 TextWrapping="NoWrap"
                                 TextTrimming="CharacterEllipsis" />
                         </StackPanel>
@@ -46,7 +46,7 @@
                             Cursor="Hand">
                             <Path
                                 Data="M 4 4 L 12 12 M 12 4 L 4 12"
-                                Stroke="{DynamicResource Ink.Brush.Content.Muted}"
+                                Stroke="{DynamicResource Ink.Brush.Content.Secondary}"
                                 StrokeThickness="1.5"
                                 StrokeLineCap="Round"
                                 Width="16"

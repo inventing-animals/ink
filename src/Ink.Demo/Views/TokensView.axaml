@@ -252,9 +252,9 @@
                     <ink:Card Grid.Column="0" Classes="token-card">
                         <StackPanel Spacing="12">
                             <TextBlock Classes="token-note" Text="Control height tokens on actual Ink buttons." />
-                            <ink:Button Height="{DynamicResource Ink.ControlHeight.S}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.S = 32</ink:Button>
-                            <ink:Button Height="{DynamicResource Ink.ControlHeight.M}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.M = 40</ink:Button>
-                            <ink:Button Height="{DynamicResource Ink.ControlHeight.L}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.L = 48</ink:Button>
+                            <ink:Button Variant="Tertiary" Height="{DynamicResource Ink.ControlHeight.S}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.S = 32</ink:Button>
+                            <ink:Button Variant="Tertiary" Height="{DynamicResource Ink.ControlHeight.M}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.M = 40</ink:Button>
+                            <ink:Button Variant="Tertiary" Height="{DynamicResource Ink.ControlHeight.L}" HorizontalAlignment="Left" MinWidth="180">Ink.ControlHeight.L = 48</ink:Button>
                         </StackPanel>
                     </ink:Card>
 
@@ -454,7 +454,7 @@
 
                             <StackPanel Spacing="12">
                                 <ink:TextBox Width="240" HorizontalAlignment="Left" Watermark="Click here for focus" />
-                                <ink:Button HorizontalAlignment="Left">Then tab here</ink:Button>
+                                <ink:Button Variant="Tertiary" HorizontalAlignment="Left">Then tab here</ink:Button>
                             </StackPanel>
 
                             <WrapPanel Orientation="Horizontal">

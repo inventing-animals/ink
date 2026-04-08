@@ -151,15 +151,15 @@
             <Setter Property="IsVisible" Value="True" />
         </Style>
         <Style Selector="^:pointerover /template/ Border#HoverBackground">
-            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
             <Setter Property="Opacity" Value="1" />
         </Style>
         <Style Selector="^:selected /template/ Border#HoverBackground">
-            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
             <Setter Property="Opacity" Value="1" />
         </Style>
         <Style Selector="^:open /template/ Border#HoverBackground">
-            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
             <Setter Property="Opacity" Value="1" />
         </Style>
         <Style Selector="^:disabled">
