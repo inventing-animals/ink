@@ -89,6 +89,65 @@
           </ink:MenuItem>
         </ink:Menu>
       </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Custom trigger" />
+        <TextBlock Classes="small muted"
+                   Text="Top-level MenuItem uses the same variant and sizing API as Button, so you can tune the trigger without introducing a separate menu-button system." />
+        <WrapPanel HorizontalAlignment="Left" Orientation="Horizontal">
+          <ink:Menu Margin="0,0,12,12">
+            <ink:MenuItem Header="Publish"
+                          Variant="Primary"
+                          MinHeight="48"
+                          Padding="20,0"
+                          FontSize="17"
+                          CornerRadius="20">
+              <ink:MenuItem Header="Publish now" />
+              <ink:MenuItem Header="Schedule for later" />
+              <ink:MenuItem Header="Save as draft" />
+            </ink:MenuItem>
+          </ink:Menu>
+
+          <ink:Menu Margin="0,0,12,12">
+            <ink:MenuItem Header="Options"
+                          Variant="Tertiary"
+                          MinHeight="32"
+                          Padding="12,0"
+                          FontSize="13"
+                          CornerRadius="8">
+              <ink:MenuItem Header="Rename" />
+              <ink:MenuItem Header="Duplicate" />
+              <ink:MenuItem Header="Archive" />
+            </ink:MenuItem>
+          </ink:Menu>
+
+          <ink:Menu Margin="0,0,12,12">
+            <ink:MenuItem Header="View"
+                          Variant="Ghost"
+                          MinHeight="40"
+                          Padding="14,0"
+                          FontSize="15"
+                          CornerRadius="999">
+              <ink:MenuItem Header="List" IsChecked="True" ToggleType="Radio" GroupName="view-mode" />
+              <ink:MenuItem Header="Board" ToggleType="Radio" GroupName="view-mode" />
+              <ink:MenuItem Header="Calendar" ToggleType="Radio" GroupName="view-mode" />
+            </ink:MenuItem>
+          </ink:Menu>
+
+          <ink:Menu Margin="0,0,12,12">
+            <ink:MenuItem Header="Danger zone"
+                          Variant="Danger"
+                          MinHeight="44"
+                          Padding="18,0"
+                          FontSize="15"
+                          CornerRadius="16">
+              <ink:MenuItem Header="Remove member" />
+              <ink:MenuItem Header="Transfer ownership" />
+              <ink:MenuItem Header="Delete workspace" Classes="ink-danger" />
+            </ink:MenuItem>
+          </ink:Menu>
+        </WrapPanel>
+      </StackPanel>
     </StackPanel>
   </ScrollViewer>
 </UserControl>

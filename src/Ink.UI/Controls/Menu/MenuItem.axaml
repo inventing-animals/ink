@@ -194,21 +194,57 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme TargetType="MenuItem" x:Key="Ink.MenuTopLevelItemStyle" BasedOn="{StaticResource Ink.MenuItemStyle}">
+    <ControlTheme TargetType="MenuItem" x:Key="Ink.MenuTopLevelItemStyle">
+        <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Text}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Ink.FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource Ink.FontSize.M}" />
         <Setter Property="FontWeight" Value="{DynamicResource Ink.FontWeight.SemiBold}" />
+        <Setter Property="MinHeight" Value="{DynamicResource Ink.ControlHeight.M}" />
         <Setter Property="CornerRadius" Value="{DynamicResource Ink.CornerRadius.Pill}" />
-        <Setter Property="Padding" Value="18,12" />
+        <Setter Property="Padding" Value="16,0" />
         <Setter Property="MinWidth" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FocusAdorner" Value="{x:Null}" />
+        <Setter Property="ItemContainerTheme" Value="{DynamicResource Ink.MenuItemStyle}" />
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Spacing="2" />
+            </ItemsPanelTemplate>
+        </Setter>
         <Setter Property="Template">
             <ControlTemplate>
-                <Panel>
+                <Grid Name="RootPanel" MinHeight="{TemplateBinding MinHeight}">
+                    <Grid.Transitions>
+                        <Transitions>
+                            <TransformOperationsTransition Duration="0:0:0.14" Property="RenderTransform" Easing="CubicEaseOut" />
+                        </Transitions>
+                    </Grid.Transitions>
+                    <Border
+                        Name="BaseBackground"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        MinHeight="{TemplateBinding MinHeight}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Opacity="1">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
+                            </Transitions>
+                        </Border.Transitions>
+                    </Border>
+
                     <Border
                         Name="HoverBackground"
                         Background="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        MinHeight="{TemplateBinding MinHeight}"
                         CornerRadius="{TemplateBinding CornerRadius}"
-                        Opacity="1">
+                        Opacity="0">
                         <Border.Transitions>
                             <Transitions>
                                 <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
@@ -219,7 +255,11 @@
                     <ContentPresenter
                         Content="{TemplateBinding Header}"
                         ContentTemplate="{TemplateBinding HeaderTemplate}"
-                        Margin="{TemplateBinding Padding}"
+                        Padding="{TemplateBinding Padding}"
+                        TextElement.FontFamily="{TemplateBinding FontFamily}"
+                        TextElement.FontSize="{TemplateBinding FontSize}"
+                        TextElement.FontWeight="{TemplateBinding FontWeight}"
+                        TextElement.Foreground="{TemplateBinding Foreground}"
                         HorizontalContentAlignment="Left"
                         VerticalContentAlignment="Center" />
 
@@ -243,18 +283,189 @@
                             </Border>
                         </LayoutTransformControl>
                     </Popup>
-                </Panel>
+                </Grid>
             </ControlTemplate>
         </Setter>
 
+        <Style Selector="^:pointerover /template/ Border#BaseBackground">
+            <Setter Property="Opacity" Value="0.88" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+        <Style Selector="^:pressed /template/ Grid#RootPanel">
+            <Setter Property="RenderTransform" Value="scale(0.95, 0.95)" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="{DynamicResource Ink.Disabled.Opacity}" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
         <Style Selector="^:pointerover">
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Text}" />
         </Style>
+        <Style Selector="^:open /template/ Border#BaseBackground">
+            <Setter Property="Opacity" Value="0.88" />
+        </Style>
         <Style Selector="^:open /template/ Border#HoverBackground">
-            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+        <Style Selector="^:selected /template/ Border#BaseBackground">
+            <Setter Property="Opacity" Value="0.88" />
         </Style>
         <Style Selector="^:selected /template/ Border#HoverBackground">
-            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+
+        <Style Selector="^.ink-primary">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:open /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:open /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Accent.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
+
+        <Style Selector="^.ink-secondary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Text}" />
+        </Style>
+
+        <Style Selector="^.ink-tertiary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        </Style>
+
+        <Style Selector="^.ink-ghost">
+            <Setter Property="Background" Value="Transparent" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+                <Setter Property="Opacity" Value="0.7" />
+            </Style>
+            <Style Selector="^:open /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:open /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+                <Setter Property="Opacity" Value="0.7" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}" />
+                <Setter Property="Opacity" Value="0.7" />
+            </Style>
+        </Style>
+
+        <Style Selector="^.ink-danger">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Danger.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:open /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:open /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Danger.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
+
+        <Style Selector="^.ink-warning">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Warning.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:open /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:open /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Warning.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
+
+        <Style Selector="^.ink-success">
+            <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success}" />
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Success.Content}" />
+            <Style Selector="^ /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success.Hover}" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:open /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:open /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#BaseBackground">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#HoverBackground">
+                <Setter Property="Background" Value="{DynamicResource Ink.Brush.Success.Hover}" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
         </Style>
         <Style Selector="^:open /template/ LayoutTransformControl#PART_PopupLayout">
             <Style.Animations>
