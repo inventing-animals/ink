@@ -52,6 +52,7 @@ public partial class MainViewModel : ViewModelBase
             "radiobutton" => new RadioButtonViewModel(),
             "calendar"    => new CalendarViewModel(),
             "combobox"    => new ComboBoxViewModel(),
+            "menu"        => new MenuViewModel(),
             "listbox"     => new ListBoxViewModel(),
             "textbox"     => new TextBoxViewModel(),
             "toggle"      => new ToggleViewModel(),

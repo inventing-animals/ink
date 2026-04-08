@@ -24,6 +24,7 @@ public class ViewLocator : IDataTemplate
         [typeof(RadioButtonViewModel)] = () => new RadioButtonView(),
         [typeof(CalendarViewModel)] = () => new CalendarView(),
         [typeof(ComboBoxViewModel)] = () => new ComboBoxView(),
+        [typeof(MenuViewModel)] = () => new MenuView(),
         [typeof(ListBoxViewModel)] = () => new ListBoxView(),
         [typeof(TextBoxViewModel)] = () => new TextBoxView(),
         [typeof(ToggleViewModel)] = () => new ToggleView(),

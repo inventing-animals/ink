@@ -7,8 +7,8 @@
   <SolidColorBrush x:Key="Ink.Brush.Surface.Panel"            Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
   <SolidColorBrush x:Key="Ink.Brush.Surface.Raised"           Color="{DynamicResource Ink.Color.Fixed.Gray.870}" />
   <SolidColorBrush x:Key="Ink.Brush.Surface.Dialog"           Color="{DynamicResource Ink.Color.Fixed.Gray.900}" />
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Subtle"   Color="{DynamicResource Ink.Color.Fixed.Gray.870}" />
-  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger" Color="{DynamicResource Ink.Color.Fixed.Gray.850}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Subtle"   Color="{DynamicResource Ink.Color.Fixed.Gray.800}" />
+  <SolidColorBrush x:Key="Ink.Brush.Surface.Overlay.Stronger" Color="{DynamicResource Ink.Color.Fixed.Gray.700}" />
 
   <!-- Content -->
   <SolidColorBrush x:Key="Ink.Brush.Content.Primary"   Color="{DynamicResource Ink.Color.Fixed.Gray.Foreground.Subtle}" />

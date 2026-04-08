@@ -1,0 +1,94 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Ink.Demo.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
+             xmlns:demo="using:Ink.Demo.Views"
+             x:Class="Ink.Demo.Views.MenuView"
+             x:DataType="vm:MenuViewModel">
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      <demo:PageToolbar />
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Open-state reference" />
+        <TextBlock Classes="small muted"
+                   Text="Static composition preview of the intended look, using the same tokens as the interactive control below." />
+        <StackPanel Spacing="10" HorizontalAlignment="Left">
+          <Border Background="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}"
+                  CornerRadius="{DynamicResource Ink.CornerRadius.Pill}"
+                  Padding="18,12">
+            <TextBlock Text="Actions"
+                       Foreground="{DynamicResource Ink.Brush.Accent.Text}"
+                       FontSize="{DynamicResource Ink.FontSize.M}"
+                       FontWeight="{DynamicResource Ink.FontWeight.SemiBold}" />
+          </Border>
+          <Border Background="{DynamicResource Ink.Brush.Surface.Raised}"
+                  BorderBrush="{DynamicResource Ink.Brush.Border.Subtle}"
+                  BorderThickness="{DynamicResource Ink.Stroke.Thin}"
+                  BoxShadow="{DynamicResource Ink.Shadow.Overlay}"
+                  CornerRadius="{DynamicResource Ink.CornerRadius.L}"
+                  Padding="8"
+                  Width="268">
+            <StackPanel Spacing="2">
+              <Border CornerRadius="{DynamicResource Ink.CornerRadius.L}" Padding="18,14">
+                <TextBlock Text="New file"
+                           FontSize="{DynamicResource Ink.FontSize.L}"
+                           FontWeight="{DynamicResource Ink.FontWeight.Medium}" />
+              </Border>
+              <Border Background="{DynamicResource Ink.Brush.Surface.Overlay.Subtle}"
+                      CornerRadius="{DynamicResource Ink.CornerRadius.L}"
+                      Padding="18,14">
+                <TextBlock Text="Copy link"
+                           FontSize="{DynamicResource Ink.FontSize.L}"
+                           FontWeight="{DynamicResource Ink.FontWeight.Medium}" />
+              </Border>
+              <Border CornerRadius="{DynamicResource Ink.CornerRadius.L}" Padding="18,14">
+                <TextBlock Text="Edit file"
+                           FontSize="{DynamicResource Ink.FontSize.L}"
+                           FontWeight="{DynamicResource Ink.FontWeight.Medium}" />
+              </Border>
+              <Border CornerRadius="{DynamicResource Ink.CornerRadius.L}" Padding="18,14">
+                <TextBlock Text="Delete file"
+                           Foreground="{DynamicResource Ink.Brush.Danger.Text}"
+                           FontSize="{DynamicResource Ink.FontSize.L}"
+                           FontWeight="{DynamicResource Ink.FontWeight.Medium}" />
+              </Border>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Action menu" />
+        <TextBlock Classes="small muted"
+                   Text="This matches the action-sheet direction: a subtle trigger chip, a rounded popup surface, and clear destructive treatment." />
+        <ink:Menu HorizontalAlignment="Left">
+          <ink:MenuItem Header="Actions">
+            <ink:MenuItem Header="New file" />
+            <ink:MenuItem Header="Copy link" />
+            <ink:MenuItem Header="Edit file" />
+            <ink:MenuItem Classes="ink-danger" Header="Delete file" />
+          </ink:MenuItem>
+        </ink:Menu>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Nested and selectable" />
+        <TextBlock Classes="small muted"
+                   Text="MenuItem also supports nested actions, checkbox items, radio groups, and shortcuts while keeping the same popup treatment." />
+        <ink:Menu HorizontalAlignment="Left">
+          <ink:MenuItem Header="Project">
+            <ink:MenuItem Header="Share">
+              <ink:MenuItem Header="Copy invite link" InputGesture="Ctrl+Shift+C" />
+              <ink:MenuItem Header="Export summary" />
+            </ink:MenuItem>
+            <ink:MenuItem Header="Show archived items" IsChecked="True" ToggleType="CheckBox" />
+            <ink:MenuItem Header="Compact density" GroupName="density" ToggleType="Radio" />
+            <ink:MenuItem Header="Comfortable density" GroupName="density" IsChecked="True" ToggleType="Radio" />
+            <ink:MenuItem Header="Delete project" Classes="ink-danger" />
+          </ink:MenuItem>
+        </ink:Menu>
+      </StackPanel>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>
