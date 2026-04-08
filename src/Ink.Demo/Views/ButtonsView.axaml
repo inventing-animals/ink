@@ -12,9 +12,11 @@
     
     <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
       <TextBlock Classes="h4" Text="ink:Button - Variants" />
+      <TextBlock Classes="small muted" Text="Secondary uses the shared surface button background with accent text. Tertiary keeps the same background with neutral content text." />
       <WrapPanel>
-        <ink:Button Margin="0,0,8,8">Secondary</ink:Button>
         <ink:Button Variant="Primary" Margin="0,0,8,8">Primary</ink:Button>
+        <ink:Button Margin="0,0,8,8">Secondary</ink:Button>
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8">Tertiary</ink:Button>
         <ink:Button Variant="Danger" Margin="0,0,8,8">Danger</ink:Button>
         <ink:Button Variant="Warning" Margin="0,0,8,8">Warning</ink:Button>
         <ink:Button Variant="Success" Margin="0,0,8,8">Success</ink:Button>
@@ -25,8 +27,9 @@
     <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
       <TextBlock Classes="h4" Text="ink:Button - Disabled" />
       <WrapPanel>
-        <ink:Button IsEnabled="False" Margin="0,0,8,8">Secondary</ink:Button>
         <ink:Button Variant="Primary" IsEnabled="False" Margin="0,0,8,8">Primary</ink:Button>
+        <ink:Button IsEnabled="False" Margin="0,0,8,8">Secondary</ink:Button>
+        <ink:Button Variant="Tertiary" IsEnabled="False" Margin="0,0,8,8">Tertiary</ink:Button>
         <ink:Button Variant="Danger" IsEnabled="False" Margin="0,0,8,8">Danger</ink:Button>
         <ink:Button Variant="Warning" IsEnabled="False" Margin="0,0,8,8">Warning</ink:Button>
         <ink:Button Variant="Success" IsEnabled="False" Margin="0,0,8,8">Success</ink:Button>
@@ -47,7 +50,13 @@
         <ink:Button Margin="0,0,8,8">
           <StackPanel Orientation="Horizontal" Spacing="8">
             <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.MagnifyingGlass}" Face="ClassicSolid" />
-            <TextBlock Text="Search" />
+            <TextBlock Text="Search secondary" />
+          </StackPanel>
+        </ink:Button>
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.FolderOpen}" Face="ClassicSolid" />
+            <TextBlock Text="Browse tertiary" />
           </StackPanel>
         </ink:Button>
         <ink:Button Variant="Success" Margin="0,0,8,8">
@@ -73,6 +82,11 @@
         <ink:Button Margin="0,0,8,8" ToolTip.Tip="Search">
           <Grid Width="16" Height="16">
             <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.MagnifyingGlass}" Face="ClassicSolid" />
+          </Grid>
+        </ink:Button>
+        <ink:Button Variant="Tertiary" Margin="0,0,8,8" ToolTip.Tip="Browse">
+          <Grid Width="16" Height="16">
+            <fa:FontAwesomeIcon Icon="{x:Static fa:Icon.FolderOpen}" Face="ClassicSolid" />
           </Grid>
         </ink:Button>
         <ink:Button Variant="Success" Margin="0,0,8,8" ToolTip.Tip="Confirmed">

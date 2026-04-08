@@ -7,7 +7,7 @@ public class ToggleButton : Avalonia.Controls.Primitives.ToggleButton
     public static readonly StyledProperty<ButtonVariant> VariantProperty =
         AvaloniaProperty.Register<ToggleButton, ButtonVariant>(nameof(Variant), ButtonVariant.Secondary);
 
-    private static readonly string[] VariantClasses = ["ink-primary", "ink-secondary", "ink-ghost", "ink-danger", "ink-warning", "ink-success"];
+    private static readonly string[] VariantClasses = ["ink-primary", "ink-secondary", "ink-tertiary", "ink-ghost", "ink-danger", "ink-warning", "ink-success"];
 
     static ToggleButton()
     {
@@ -39,6 +39,7 @@ public class ToggleButton : Avalonia.Controls.Primitives.ToggleButton
         {
             ButtonVariant.Primary => "ink-primary",
             ButtonVariant.Secondary => "ink-secondary",
+            ButtonVariant.Tertiary => "ink-tertiary",
             ButtonVariant.Ghost => "ink-ghost",
             ButtonVariant.Danger => "ink-danger",
             ButtonVariant.Success => "ink-success",

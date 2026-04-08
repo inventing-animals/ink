@@ -84,6 +84,16 @@
             <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Content}" />
         </Style>
 
+        <!-- Secondary -->
+        <Style Selector="^.ink-secondary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Text}" />
+        </Style>
+
+        <!-- Tertiary -->
+        <Style Selector="^.ink-tertiary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        </Style>
+
         <!-- Ghost -->
         <Style Selector="^.ink-ghost">
             <Setter Property="Background" Value="Transparent" />

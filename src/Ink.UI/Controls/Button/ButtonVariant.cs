@@ -4,8 +4,9 @@ public enum ButtonVariant
 {
     Primary = 0,
     Secondary = 1,
-    Ghost = 2,
-    Danger = 3,
-    Success = 4,
-    Warning = 5,
+    Tertiary = 2,
+    Ghost = 3,
+    Danger = 4,
+    Success = 5,
+    Warning = 6,
 }

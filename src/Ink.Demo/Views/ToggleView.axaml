@@ -14,15 +14,18 @@
         <TextBlock Classes="h4" Text="ink:ToggleButton - Variants" />
         <TextBlock Classes="small muted" Text="Stateful button with the same variant API as ink:Button." />
         <WrapPanel>
-          <ink:ToggleButton Margin="0,0,8,8">Default</ink:ToggleButton>
-          <ink:ToggleButton IsChecked="True" Margin="0,0,8,8">Default</ink:ToggleButton>
+          <ink:ToggleButton Margin="0,0,8,8">Secondary</ink:ToggleButton>
+          <ink:ToggleButton IsChecked="True" Margin="0,0,8,8">Secondary</ink:ToggleButton>
+          <ink:ToggleButton Variant="Tertiary" Margin="0,0,8,8">Tertiary</ink:ToggleButton>
+          <ink:ToggleButton Variant="Tertiary" IsChecked="True" Margin="0,0,8,8">Tertiary</ink:ToggleButton>
           <ink:ToggleButton Variant="Ghost" Margin="0,0,8,8">Ghost</ink:ToggleButton>
           <ink:ToggleButton Variant="Ghost" IsChecked="True" Margin="0,0,8,8">Ghost</ink:ToggleButton>
         </WrapPanel>
         <TextBlock Classes="h4" Text="ink:ToggleButton - Disabled" />
         <WrapPanel>
-          <ink:ToggleButton IsEnabled="False" Margin="0,0,8,8">Disabled</ink:ToggleButton>
-          <ink:ToggleButton IsChecked="True" IsEnabled="False" Margin="0,0,8,8">Selected</ink:ToggleButton>
+          <ink:ToggleButton IsEnabled="False" Margin="0,0,8,8">Secondary</ink:ToggleButton>
+          <ink:ToggleButton IsChecked="True" IsEnabled="False" Margin="0,0,8,8">Secondary</ink:ToggleButton>
+          <ink:ToggleButton Variant="Tertiary" IsChecked="True" IsEnabled="False" Margin="0,0,8,8">Tertiary</ink:ToggleButton>
           <ink:ToggleButton Variant="Ghost" IsChecked="True" IsEnabled="False" Margin="0,0,8,8">Ghost</ink:ToggleButton>
         </WrapPanel>
         <TextBlock Classes="h4" Text="ink:ToggleButton - Icon actions" />

@@ -7,7 +7,7 @@ public class Button : Avalonia.Controls.Button
     public static readonly StyledProperty<ButtonVariant> VariantProperty =
         AvaloniaProperty.Register<Button, ButtonVariant>(nameof(Variant), ButtonVariant.Secondary);
 
-    private static readonly string[] VariantClasses = ["ink-primary", "ink-secondary", "ink-ghost", "ink-danger", "ink-warning", "ink-success"];
+    private static readonly string[] VariantClasses = ["ink-primary", "ink-secondary", "ink-tertiary", "ink-ghost", "ink-danger", "ink-warning", "ink-success"];
 
     static Button()
     {
@@ -39,6 +39,7 @@ public class Button : Avalonia.Controls.Button
         {
             ButtonVariant.Primary => "ink-primary",
             ButtonVariant.Secondary => "ink-secondary",
+            ButtonVariant.Tertiary => "ink-tertiary",
             ButtonVariant.Ghost => "ink-ghost",
             ButtonVariant.Danger => "ink-danger",
             ButtonVariant.Success => "ink-success",

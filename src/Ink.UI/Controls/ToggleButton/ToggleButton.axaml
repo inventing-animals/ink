@@ -142,6 +142,14 @@
             </Style>
         </Style>
 
+        <Style Selector="^.ink-secondary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Accent.Text}" />
+        </Style>
+
+        <Style Selector="^.ink-tertiary">
+            <Setter Property="Foreground" Value="{DynamicResource Ink.Brush.Content.Primary}" />
+        </Style>
+
         <Style Selector="^.ink-ghost">
             <Setter Property="Background" Value="Transparent" />
             <Style Selector="^ /template/ Border#HoverBackground">
