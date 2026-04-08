@@ -102,6 +102,27 @@
       </WrapPanel>
     </StackPanel>
 
+    <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Ink}">
+      <TextBlock Classes="h4" Text="ink:Button - Individual customization" />
+      <TextBlock Classes="small muted" Text="Buttons can be customized one by one when a screen needs a different feel, without changing the shared theme." />
+
+      <TextBlock Classes="small muted" Text="Radius overrides" />
+      <WrapPanel>
+        <ink:Button Variant="Tertiary" CornerRadius="6" Margin="0,0,8,8">Compact radius</ink:Button>
+        <ink:Button Variant="Tertiary" CornerRadius="12" Margin="0,0,8,8">Default radius</ink:Button>
+        <ink:Button Variant="Tertiary" CornerRadius="20" Margin="0,0,8,8">Soft radius</ink:Button>
+        <ink:Button Variant="Primary" CornerRadius="999" Margin="0,0,8,8">Full pill</ink:Button>
+      </WrapPanel>
+
+      <TextBlock Classes="small muted" Text="Size overrides" />
+      <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="8">
+        <ink:Button Grid.Column="0" Variant="Tertiary" MinHeight="30" Padding="10,0" FontSize="12" VerticalAlignment="Top">Small action</ink:Button>
+        <ink:Button Grid.Column="1" Variant="Tertiary" VerticalAlignment="Top">Default action</ink:Button>
+        <ink:Button Grid.Column="2" Variant="Tertiary" MinHeight="52" Padding="22,0" FontSize="18" VerticalAlignment="Top">Large action</ink:Button>
+        <ink:Button Grid.Column="3" Variant="Primary" MinHeight="64" Padding="28,0" FontSize="20" CornerRadius="20" VerticalAlignment="Top">Hero action</ink:Button>
+      </Grid>
+    </StackPanel>
+
     <StackPanel Spacing="8" IsVisible="{Binding SelectedSubpage, Converter={StaticResource InkEqualsConverter}, ConverterParameter=Avalonia}">
       <TextBlock Classes="h4" Text="Avalonia Button (themed)" />
       <TextBlock Classes="small muted" Text="Plain Avalonia Button with Ink base theme applied - no variant system." />

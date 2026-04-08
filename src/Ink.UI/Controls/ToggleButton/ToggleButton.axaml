@@ -21,17 +21,18 @@
 
         <Setter Property="Template">
             <ControlTemplate>
-                <Panel Name="RootPanel">
-                    <Panel.Transitions>
+                <Grid Name="RootPanel" MinHeight="{TemplateBinding MinHeight}">
+                    <Grid.Transitions>
                         <Transitions>
                             <TransformOperationsTransition Duration="0:0:0.25" Property="RenderTransform" Easing="CubicEaseOut" />
                         </Transitions>
-                    </Panel.Transitions>
+                    </Grid.Transitions>
                     <Border
                         Name="BaseBackground"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        MinHeight="{TemplateBinding MinHeight}"
                         CornerRadius="{TemplateBinding CornerRadius}">
                         <Border.Transitions>
                             <Transitions>
@@ -44,6 +45,7 @@
                         Background="{DynamicResource Ink.Brush.Surface.Overlay.Stronger}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        MinHeight="{TemplateBinding MinHeight}"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         Opacity="0">
                         <Border.Transitions>
@@ -57,6 +59,7 @@
                         Background="{DynamicResource Ink.Brush.Accent.Subtle}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        MinHeight="{TemplateBinding MinHeight}"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         Opacity="0">
                         <Border.Transitions>
@@ -70,6 +73,7 @@
                         Background="{DynamicResource Ink.Brush.Accent}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        MinHeight="{TemplateBinding MinHeight}"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         Opacity="0">
                         <Border.Transitions>
@@ -86,17 +90,20 @@
                         CornerRadius="{TemplateBinding CornerRadius}"
                         ClipToBounds="True"
                         RecognizesAccessKey="True"
+                        TextElement.FontFamily="{TemplateBinding FontFamily}"
+                        TextElement.FontSize="{TemplateBinding FontSize}"
+                        TextElement.FontWeight="{TemplateBinding FontWeight}"
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                         TextElement.Foreground="{TemplateBinding Foreground}" />
-                </Panel>
+                </Grid>
             </ControlTemplate>
         </Setter>
 
         <Style Selector="^:pointerover /template/ Border#BaseBackground">
             <Setter Property="Opacity" Value="0.8" />
         </Style>
-        <Style Selector="^:pressed /template/ Panel#RootPanel">
+        <Style Selector="^:pressed /template/ Grid#RootPanel">
             <Setter Property="RenderTransform" Value="scale(0.95, 0.95)" />
         </Style>
         <Style Selector="^:checked">
