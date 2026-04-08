@@ -5,6 +5,7 @@
     xmlns:ink="clr-namespace:Ink.UI.Controls">
 
     <ControlTheme TargetType="ComboBox" x:Key="Ink.ComboBoxStyle">
+        <Setter Property="(ink:ComboBox.OverlayEnabled)" Value="{DynamicResource Ink.Overlay.ComboBoxEnabled}" />
         <Setter Property="Background" Value="{DynamicResource Ink.Brush.Input.Background}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Ink.Brush.Input.Border}" />
         <Setter Property="BorderThickness" Value="{DynamicResource Ink.Stroke.Thick}" />

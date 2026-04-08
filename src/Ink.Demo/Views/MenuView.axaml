@@ -91,6 +91,35 @@
       </StackPanel>
 
       <StackPanel Spacing="8">
+        <TextBlock Classes="h4" Text="Overlay options" />
+        <TextBlock Classes="small muted"
+                   Text="Menus enable the shared window overlay by default. Set OverlayEnabled on Menu to opt out for one instance." />
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left">
+          <StackPanel Spacing="6" Margin="0,0,16,0">
+            <TextBlock Classes="small muted" Text="Default overlay" />
+            <ink:Menu HorizontalAlignment="Left">
+              <ink:MenuItem Header="Filters">
+                <ink:MenuItem Header="Unread only" />
+                <ink:MenuItem Header="Assigned to me" />
+                <ink:MenuItem Header="Recently updated" />
+              </ink:MenuItem>
+            </ink:Menu>
+          </StackPanel>
+          <StackPanel Spacing="6">
+            <TextBlock Classes="small muted" Text="Overlay disabled" />
+            <ink:Menu HorizontalAlignment="Left"
+                      OverlayEnabled="False">
+              <ink:MenuItem Header="Filters">
+                <ink:MenuItem Header="Unread only" />
+                <ink:MenuItem Header="Assigned to me" />
+                <ink:MenuItem Header="Recently updated" />
+              </ink:MenuItem>
+            </ink:Menu>
+          </StackPanel>
+        </WrapPanel>
+      </StackPanel>
+
+      <StackPanel Spacing="8">
         <TextBlock Classes="h4" Text="Custom trigger" />
         <TextBlock Classes="small muted"
                    Text="Top-level MenuItem uses the same variant and sizing API as Button, so you can tune the trigger without introducing a separate menu-button system." />

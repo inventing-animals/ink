@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia;
 
 namespace Ink.UI.Controls;
 
@@ -8,19 +9,35 @@ namespace Ink.UI.Controls;
 /// </summary>
 public class Flyout : Avalonia.Controls.Flyout
 {
+    public static readonly StyledProperty<bool?> OverlayEnabledProperty =
+        AvaloniaProperty.Register<Flyout, bool?>(nameof(OverlayEnabled));
+
+    private bool _overlayVisible;
+
+    public bool? OverlayEnabled
+    {
+        get => GetValue(OverlayEnabledProperty);
+        set => SetValue(OverlayEnabledProperty, value);
+    }
+
     protected override void OnOpened()
     {
         base.OnOpened();
         if (Target is not null)
         {
             var isBrowser = System.OperatingSystem.IsBrowser();
+            var overlayEnabled = IsOverlayEnabled();
 
-            // Browser popups are hosted in Avalonia's overlay layer, so enable
-            // light-dismiss there and let the click pass through to InkOverlayLayer.
-            // Desktop keeps the existing native-popup behavior.
-            Popup.IsLightDismissEnabled = isBrowser;
-            Popup.OverlayDismissEventPassThrough = isBrowser;
-            InkOverlay.Show(Target, Hide);
+            // When the shared Ink overlay is disabled, fall back to normal popup
+            // light-dismiss so clicking outside the flyout still closes it.
+            Popup.IsLightDismissEnabled = isBrowser || !overlayEnabled;
+            Popup.OverlayDismissEventPassThrough = isBrowser && overlayEnabled;
+
+            if (overlayEnabled)
+            {
+                InkOverlay.Show(Target, Hide);
+                _overlayVisible = true;
+            }
         }
     }
 
@@ -29,7 +46,12 @@ public class Flyout : Avalonia.Controls.Flyout
         base.OnClosed();
         Popup.IsLightDismissEnabled = true;
         Popup.OverlayDismissEventPassThrough = false;
-        if (Target is not null)
+        if (_overlayVisible && Target is not null)
+        {
             InkOverlay.Hide(Target);
+            _overlayVisible = false;
+        }
     }
+
+    private bool IsOverlayEnabled() => OverlayEnabled ?? true;
 }

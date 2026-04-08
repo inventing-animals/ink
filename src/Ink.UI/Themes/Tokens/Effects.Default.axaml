@@ -5,6 +5,9 @@
 
     <x:Boolean x:Key="Ink.Effects.ShadowsEnabled">True</x:Boolean>
     <x:Boolean x:Key="Ink.Effects.BlurEnabled">True</x:Boolean>
+    <x:Boolean x:Key="Ink.Overlay.ComboBoxEnabled">True</x:Boolean>
+    <x:Boolean x:Key="Ink.Overlay.FlyoutEnabled">True</x:Boolean>
+    <x:Boolean x:Key="Ink.Overlay.MenuEnabled">True</x:Boolean>
 
     <!-- Elevation levels (kept abstract; semantics/components will interpret them) -->
     <x:Int32 x:Key="Ink.Elevation.Level0">0</x:Int32>

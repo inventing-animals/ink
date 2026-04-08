@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Styles
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ink="clr-namespace:Ink.UI.Controls">
+
+    <Style Selector="ink|Flyout">
+        <Setter Property="OverlayEnabled" Value="{DynamicResource Ink.Overlay.FlyoutEnabled}" />
+    </Style>
 
     <!-- Popup hosts must be transparent so FlyoutPresenter rounded corners are not clipped.
          Desktop commonly uses PopupRoot; browser can use OverlayPopupHost. -->

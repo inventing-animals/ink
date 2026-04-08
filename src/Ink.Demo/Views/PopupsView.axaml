@@ -46,6 +46,21 @@
           </ink:Button.Flyout>
           Open Flyout
         </ink:Button>
+        <TextBlock Classes="h4" Text="ink:Flyout without overlay" />
+        <TextBlock Classes="small muted"
+                   Text="Disable the window overlay for an individual flyout with OverlayEnabled." />
+        <ink:Button Variant="Tertiary" HorizontalAlignment="Left">
+          <ink:Button.Flyout>
+            <ink:Flyout OverlayEnabled="False">
+              <StackPanel Spacing="12" Margin="16">
+                <TextBlock Classes="large" Text="Inline flyout" />
+                <TextBlock Classes="small muted" Text="This flyout keeps the background untouched." />
+                <ink:Button Content="Continue" Variant="Tertiary" />
+              </StackPanel>
+            </ink:Flyout>
+          </ink:Button.Flyout>
+          Open Flyout
+        </ink:Button>
         <TextBlock Classes="h4" Text="Nested overlay dismissal" />
         <TextBlock Classes="small muted" Text="Flyout contains a ComboBox. Clicking the overlay closes the ComboBox first, then a second click closes the flyout." />
         <ink:Button Variant="Tertiary" HorizontalAlignment="Left">

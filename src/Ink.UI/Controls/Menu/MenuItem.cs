@@ -34,8 +34,7 @@ public class MenuItem : Avalonia.Controls.MenuItem
         base.OnApplyTemplate(e);
 
         _popup = e.NameScope.Find("PART_Popup") as Popup;
-        if (_popup is not null)
-            _popup.OverlayDismissEventPassThrough = System.OperatingSystem.IsBrowser();
+        SyncPopupBehavior();
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -44,7 +43,9 @@ public class MenuItem : Avalonia.Controls.MenuItem
 
         if (change.Property == IsSubMenuOpenProperty && IsTopLevelTrigger())
         {
-            if (change.GetNewValue<bool>())
+            SyncPopupBehavior();
+
+            if (IsSubMenuOpen && IsOverlayEnabled())
                 ShowOverlay();
             else
                 HideOverlay();
@@ -68,6 +69,20 @@ public class MenuItem : Avalonia.Controls.MenuItem
     }
 
     private bool IsTopLevelTrigger() => Parent is Menu;
+
+    private bool IsOverlayEnabled()
+    {
+        if (Parent is not Menu menu)
+            return false;
+
+        return menu.OverlayEnabled ?? true;
+    }
+
+    private void SyncPopupBehavior()
+    {
+        if (_popup is not null)
+            _popup.OverlayDismissEventPassThrough = System.OperatingSystem.IsBrowser() && IsOverlayEnabled();
+    }
 
     private void ShowOverlay()
     {
